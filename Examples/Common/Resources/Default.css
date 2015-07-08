@@ -1,0 +1,35 @@
+
+#ExamplePanel-body
+{
+    background-image: url("data:image/gif;base64,R0lGODdhFAAUAIACAOfn5/Hx8SwAAAAAFAAUAAACJoSPiaGt7CKAstGaLj56T5+Bi8iRRrehmFqxkhvBjmyZU4Dn+r4XADs=");
+}
+
+.property
+{
+    color: red;
+}
+
+sup
+{
+    color: blue;
+}
+
+.title
+{
+    font-weight: bold;
+}
+
+.propertyList 
+{
+    padding-left: 20px;            
+}
+
+.propertyList li 
+{
+    margin-top: 10px;
+}
+
+div.syntaxhighlighter 
+{
+    overflow: visible !important;    
+}

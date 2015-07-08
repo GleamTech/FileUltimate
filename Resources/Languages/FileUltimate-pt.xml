@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Language version="1.0">
+  <Head />
+  <Body>
+    <Entry key="Label.View.Noun" />
+    <Entry key="Label.Panes" />
+    <Entry key="Label.NavigationPane" />
+    <Entry key="Label.PreviewPane" />
+    <Entry key="Label.DetailsPane" />
+    <Entry key="Label.Layout" />
+    <Entry key="Label.Layout.ExtraLargeIcons" />
+    <Entry key="Label.Layout.LargeIcons" />
+    <Entry key="Label.Layout.MediumIcons" />
+    <Entry key="Label.Layout.SmallIcons" />
+    <Entry key="Label.Layout.List" />
+    <Entry key="Label.Layout.Details" />
+    <Entry key="Label.Layout.Tiles" />
+    <Entry key="Label.Layout.Content" />
+    <Entry key="Label.Home" />
+    <Entry key="Label.Select" />
+    <Entry key="Label.SelectAll">
+      <Value>Selecionar tudo</Value>
+    </Entry>
+    <Entry key="Label.SelectNone" />
+    <Entry key="Label.InvertSelection">
+      <Value>Inverter seleção</Value>
+    </Entry>
+    <Entry key="Message.EmptyView" />
+    <Entry key="Label.ItemCount" />
+    <Entry key="Label.ItemsCount" />
+    <Entry key="Label.SelectedItemCount" />
+    <Entry key="Label.SelectedItemsCount" />
+    <Entry key="Label.Refresh.Verb">
+      <Value>Atualizar</Value>
+    </Entry>
+    <Entry key="Label.Expand">
+      <Value>Expandir</Value>
+    </Entry>
+    <Entry key="Label.Collapse">
+      <Value>Colapsar</Value>
+    </Entry>
+    <Entry key="Label.OK" />
+    <Entry key="Label.Yes" />
+    <Entry key="Label.No" />
+    <Entry key="Label.Cancel">
+      <Value>Cancelar</Value>
+    </Entry>
+    <Entry key="Label.Clipboard" />
+    <Entry key="Label.Cut.Verb">
+      <Value>Cortar</Value>
+    </Entry>
+    <Entry key="Label.Copy.Verb">
+      <Value>Copiar</Value>
+    </Entry>
+    <Entry key="Label.Paste.Verb">
+      <Value>Colar</Value>
+    </Entry>
+    <Entry key="Label.Organize" />
+    <Entry key="Label.Delete">
+      <Value>Excluir</Value>
+    </Entry>
+    <Entry key="Label.Rename">
+      <Value>Renomear</Value>
+    </Entry>
+    <Entry key="Label.New">
+      <Value>Novo(a)</Value>
+    </Entry>
+    <Entry key="Label.NewFolder">
+      <Value>Nova pasta</Value>
+    </Entry>
+    <Entry key="Label.NewFile" />
+    <Entry key="Label.Transfer.Verb" />
+    <Entry key="Label.Download.Verb">
+      <Value>Baixar</Value>
+    </Entry>
+    <Entry key="Label.Upload.Verb">
+      <Value>Carregar</Value>
+    </Entry>
+    <Entry key="Label.Compression" />
+    <Entry key="Label.AddToZip">
+      <Value>Adicionar a ZIP...</Value>
+    </Entry>
+    <Entry key="Label.ExtractAll" />
+    <Entry key="Label.ExtractAllTo">
+      <Value>Extrair para...</Value>
+    </Entry>
+    <Entry key="Label.ExtractAllHere">
+      <Value>Extrair aqui</Value>
+    </Entry>
+    <Entry key="Label.Open.Verb" />
+    <Entry key="Label.DeleteFile" />
+    <Entry key="Message.Confirm.DeleteFile">
+      <Value>Você tem certeza que quer excluir '{0}'?</Value>
+    </Entry>
+    <Entry key="Label.DeleteFolder" />
+    <Entry key="Message.Confirm.DeleteFolder" />
+    <Entry key="Label.DeleteMultipleItems" />
+    <Entry key="Message.Confirm.DeleteMultipleItems">
+      <Value>Você tem certeza que quer excluir estes {0} itens?</Value>
+    </Entry>
+    <Entry key="Label.RenameItem" />
+    <Entry key="Message.Prompt.RenameItem">
+      <Value>Digite um novo nome para este item:</Value>
+    </Entry>
+    <Entry key="Message.Error.InvalidFileName">
+      <Value>O nome não pode conter nenhum dos seguintes caracteres:</Value>
+    </Entry>
+    <Entry key="Label.CreateFolder" />
+    <Entry key="Message.Prompt.CreateFolder">
+      <Value>Digite um nome para a nova pasta:</Value>
+    </Entry>
+    <Entry key="Label.AddItemsToZip" />
+    <Entry key="Message.Prompt.AddItemsToZip">
+      <Value>Digite o nome do arquivo ZIP:</Value>
+    </Entry>
+    <Entry key="Label.ExtractItemsFromArchive" />
+    <Entry key="Message.Prompt.ExtractItemsFromArchive">
+      <Value>Digite um nome para de pasta para extrair o arquivo ZIP:</Value>
+    </Entry>
+    <Entry key="Label.Choose" />
+    <Entry key="Label.FolderType">
+      <Value>Pasta de arquivos</Value>
+    </Entry>
+    <Entry key="Label.FileType">
+      <Value>{0} Arquivo</Value>
+    </Entry>
+    <Entry key="Label.File">
+      <Value>Arquivo</Value>
+    </Entry>
+    <Entry key="Label.Column.Name">
+      <Value>Nome</Value>
+    </Entry>
+    <Entry key="Label.Column.DateModified">
+      <Value>Data de modificação</Value>
+    </Entry>
+    <Entry key="Label.Column.Type">
+      <Value>Tipo</Value>
+    </Entry>
+    <Entry key="Label.Column.Size">
+      <Value>Tamanho</Value>
+    </Entry>
+    <Entry key="Label.ByteSizeUnit.Bytes" />
+    <Entry key="Label.ByteSizeUnit.KB" />
+    <Entry key="Label.ByteSizeUnit.MB" />
+    <Entry key="Label.ByteSizeUnit.GB" />
+    <Entry key="Label.ByteSizeUnit.TB" />
+    <Entry key="Message.EmptyFolder">
+      <Value>Esta pasta está vazia.</Value>
+    </Entry>
+    <Entry key="Message.Error.FileNotAllowed">
+      <Value>'{0}' não é compatível com os tipos permitidos.</Value>
+    </Entry>
+    <Entry key="FileManager.Label.Folders">
+      <Value>Pastas</Value>
+    </Entry>
+    <Entry key="FileManager.Label.Subfolders">
+      <Value>{0} subpastas</Value>
+    </Entry>
+    <Entry key="FileManager.Label.Files">
+      <Value>{0} arquivos</Value>
+    </Entry>
+    <Entry key="FileManager.Label.NoRootFolders">
+      <Value>Não foi definido um arquivo raíz.</Value>
+    </Entry>
+    <Entry key="FileManager.Label.FolderUnavailable">
+      <Value>Esta pasta não está disponível.</Value>
+    </Entry>
+    <Entry key="FileManager.Action.UpOneLevel">
+      <Value>Um nível acima</Value>
+    </Entry>
+    <Entry key="FileManager.Action.CreateNewFolder">
+      <Value>Criar nova pasta</Value>
+    </Entry>
+    <Entry key="FileManager.Action.DownloadFiles">
+      <Value>Baixar arquivos</Value>
+    </Entry>
+    <Entry key="FileManager.Action.UploadFiles">
+      <Value>Carregar arquivos</Value>
+    </Entry>
+    <Entry key="FileManager.Action.DownloadAsZip">
+      <Value>Baixar como ZIP</Value>
+    </Entry>
+    <Entry key="FileManager.Action.OpenWith">
+      <Value>Abrir com</Value>
+    </Entry>
+    <Entry key="FileManager.Action.WebBrowser">
+      <Value>Navegador</Value>
+    </Entry>
+    <Entry key="FileManager.Action.Explore">
+      <Value>Explorar</Value>
+    </Entry>
+    <Entry key="FileManager.Action.Folder">
+      <Value>Pasta</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.SelectFiles">
+      <Value>Selecione os arquivos para carregar</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.TimeRemaining">
+      <Value>Tempo restante:</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.FilesRemaining">
+      <Value>Arquivos restantes:</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.Speed">
+      <Value>Velocidade:</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.TimeEstimate">
+      <Value>Sobre {0}</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.TimeEstimateHours">
+      <Value>{0} horas</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.TimeEstimateMinutes">
+      <Value>{0} minutos</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.TimeEstimateSeconds">
+      <Value>{0} segundos</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.SpeedEstimate">
+      <Value>{0}/segundo</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.Calculating">
+      <Value>Calculando...</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.NotAvailable">
+      <Value>Não disponível</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.SpecificFiles">
+      <Value>Arquivos específicos ({0})</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.Add">
+      <Value>Adicionar...</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.Remove">
+      <Value>Remover</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.Close">
+      <Value>Fechar</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.NewUpload">
+      <Value>Novo carregamento</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.UploadMethod">
+      <Value>Método de carregamento</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.Clear">
+      <Value>Limpar</Value>
+    </Entry>
+    <Entry key="FileUploader.UploadStatus.Pending">
+      <Value>Pendente</Value>
+    </Entry>
+    <Entry key="FileUploader.UploadStatus.Canceled">
+      <Value>Cancelado</Value>
+    </Entry>
+    <Entry key="FileUploader.UploadStatus.Failed">
+      <Value>Falhou</Value>
+    </Entry>
+    <Entry key="FileUploader.UploadStatus.Completed">
+      <Value>Concluído</Value>
+    </Entry>
+    <Entry key="FileUploader.Column.Status" />
+    <Entry key="FileUploader.Confirm.UploadStillInProgress">
+      <Value>O carregamento ainda está em andamento, tem certeza que deseja fechar?</Value>
+    </Entry>
+    <Entry key="FileUploader.Error.EmptyFile">
+      <Value>'{0}' é um arquivo vazio (zero byte).</Value>
+    </Entry>
+    <Entry key="FileUploader.Error.FileAlreadyAdded">
+      <Value>Já há um arquivo com o nome '{0}' nessa lista!</Value>
+    </Entry>
+    <Entry key="FileUploader.UploadStatus.Rejected" />
+    <Entry key="FileUploader.UploadStatus.Skipped" />
+    <Entry key="FileUploader.Label.DragAndDrop" />
+    <Entry key="FileUploader.Label.StatusReason" />
+    <Entry key="FileUploader.Label.ViewStatusReason" />
+    <Entry key="FileUploader.Label.UploadConflict" />
+    <Entry key="FileUploader.Label.UploadConflictDescription" />
+    <Entry key="FileUploader.Label.UploadAndReplace" />
+    <Entry key="FileUploader.Label.UploadAndReplaceDescription" />
+    <Entry key="FileUploader.Label.DoNotUpload" />
+    <Entry key="FileUploader.Label.DoNotUploadDescription" />
+    <Entry key="FileUploader.Label.UploadButKeepBoth" />
+    <Entry key="FileUploader.Label.UploadButKeepBothDescription" />
+    <Entry key="FileUploader.Label.SameForAllConflicts" />
+  </Body>
+</Language>

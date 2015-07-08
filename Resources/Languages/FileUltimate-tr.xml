@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Language version="1.0">
+  <Head />
+  <Body>
+    <Entry key="Label.View.Noun" />
+    <Entry key="Label.Panes" />
+    <Entry key="Label.NavigationPane" />
+    <Entry key="Label.PreviewPane" />
+    <Entry key="Label.DetailsPane" />
+    <Entry key="Label.Layout" />
+    <Entry key="Label.Layout.ExtraLargeIcons" />
+    <Entry key="Label.Layout.LargeIcons" />
+    <Entry key="Label.Layout.MediumIcons" />
+    <Entry key="Label.Layout.SmallIcons" />
+    <Entry key="Label.Layout.List" />
+    <Entry key="Label.Layout.Details" />
+    <Entry key="Label.Layout.Tiles" />
+    <Entry key="Label.Layout.Content" />
+    <Entry key="Label.Home" />
+    <Entry key="Label.Select" />
+    <Entry key="Label.SelectAll">
+      <Value>Hepsini Seç</Value>
+    </Entry>
+    <Entry key="Label.SelectNone" />
+    <Entry key="Label.InvertSelection">
+      <Value>Seçimi Çevir</Value>
+    </Entry>
+    <Entry key="Message.EmptyView" />
+    <Entry key="Label.ItemCount" />
+    <Entry key="Label.ItemsCount" />
+    <Entry key="Label.SelectedItemCount" />
+    <Entry key="Label.SelectedItemsCount" />
+    <Entry key="Label.Refresh.Verb">
+      <Value>Tazele</Value>
+    </Entry>
+    <Entry key="Label.Expand">
+      <Value>Genişlet</Value>
+    </Entry>
+    <Entry key="Label.Collapse">
+      <Value>Daralt</Value>
+    </Entry>
+    <Entry key="Label.OK">
+      <Value>Tamam</Value>
+    </Entry>
+    <Entry key="Label.Yes" />
+    <Entry key="Label.No" />
+    <Entry key="Label.Cancel">
+      <Value>İptal</Value>
+    </Entry>
+    <Entry key="Label.Clipboard" />
+    <Entry key="Label.Cut.Verb">
+      <Value>Kes</Value>
+    </Entry>
+    <Entry key="Label.Copy.Verb">
+      <Value>Kopyala</Value>
+    </Entry>
+    <Entry key="Label.Paste.Verb">
+      <Value>Yapıştır</Value>
+    </Entry>
+    <Entry key="Label.Organize" />
+    <Entry key="Label.Delete">
+      <Value>Sil</Value>
+    </Entry>
+    <Entry key="Label.Rename">
+      <Value>İsim Değiştir</Value>
+    </Entry>
+    <Entry key="Label.New">
+      <Value>Yeni</Value>
+    </Entry>
+    <Entry key="Label.NewFolder">
+      <Value>Yeni Klasör</Value>
+    </Entry>
+    <Entry key="Label.NewFile" />
+    <Entry key="Label.Transfer.Verb" />
+    <Entry key="Label.Download.Verb">
+      <Value>İndir</Value>
+    </Entry>
+    <Entry key="Label.Upload.Verb">
+      <Value>Gönder</Value>
+    </Entry>
+    <Entry key="Label.Compression" />
+    <Entry key="Label.AddToZip">
+      <Value>Zip Dosyasına Ekle...</Value>
+    </Entry>
+    <Entry key="Label.ExtractAll" />
+    <Entry key="Label.ExtractAllTo">
+      <Value>Zip Dosyasını Aç...</Value>
+    </Entry>
+    <Entry key="Label.ExtractAllHere">
+      <Value>Zip Dosyasını Buraya Aç</Value>
+    </Entry>
+    <Entry key="Label.Open.Verb" />
+    <Entry key="Label.DeleteFile" />
+    <Entry key="Message.Confirm.DeleteFile">
+      <Value>'{0}' isimli dosyayı silmek istediğinize emin misiniz?</Value>
+    </Entry>
+    <Entry key="Label.DeleteFolder" />
+    <Entry key="Message.Confirm.DeleteFolder" />
+    <Entry key="Label.DeleteMultipleItems" />
+    <Entry key="Message.Confirm.DeleteMultipleItems">
+      <Value>Bu {0} adet dosyayı silmek istediğinize emin misiniz?</Value>
+    </Entry>
+    <Entry key="Label.RenameItem" />
+    <Entry key="Message.Prompt.RenameItem">
+      <Value>Dosya için yeni bir isim giriniz:</Value>
+    </Entry>
+    <Entry key="Message.Error.InvalidFileName">
+      <Value>Bir dosya ismi, aşağıdaki karakterlerden hiçbirini içeremez:</Value>
+    </Entry>
+    <Entry key="Label.CreateFolder" />
+    <Entry key="Message.Prompt.CreateFolder">
+      <Value>Yeni klasör için bir isim giriniz:</Value>
+    </Entry>
+    <Entry key="Label.AddItemsToZip" />
+    <Entry key="Message.Prompt.AddItemsToZip">
+      <Value>Zip dosyasının ismini giriniz:</Value>
+    </Entry>
+    <Entry key="Label.ExtractItemsFromArchive" />
+    <Entry key="Message.Prompt.ExtractItemsFromArchive">
+      <Value>Zip dosyasının açılacağı bir klasör ismi giriniz:</Value>
+    </Entry>
+    <Entry key="Label.Choose" />
+    <Entry key="Label.FolderType">
+      <Value>Dosya Klasörü</Value>
+    </Entry>
+    <Entry key="Label.FileType">
+      <Value>{0} Dosyası</Value>
+    </Entry>
+    <Entry key="Label.File">
+      <Value>Dosya</Value>
+    </Entry>
+    <Entry key="Label.Column.Name">
+      <Value>İsim</Value>
+    </Entry>
+    <Entry key="Label.Column.DateModified">
+      <Value>Değiştirilme Tarihi</Value>
+    </Entry>
+    <Entry key="Label.Column.Type">
+      <Value>Tür</Value>
+    </Entry>
+    <Entry key="Label.Column.Size">
+      <Value>Boyut</Value>
+    </Entry>
+    <Entry key="Label.ByteSizeUnit.Bytes" />
+    <Entry key="Label.ByteSizeUnit.KB" />
+    <Entry key="Label.ByteSizeUnit.MB" />
+    <Entry key="Label.ByteSizeUnit.GB" />
+    <Entry key="Label.ByteSizeUnit.TB" />
+    <Entry key="Message.EmptyFolder" />
+    <Entry key="Message.Error.FileNotAllowed">
+      <Value>'{0}' isimli dosya izin verilen dosya türleriyle uyuşmuyor.</Value>
+    </Entry>
+    <Entry key="FileManager.Label.Folders">
+      <Value>Klasörler</Value>
+    </Entry>
+    <Entry key="FileManager.Label.Subfolders">
+      <Value>{0} klasör</Value>
+    </Entry>
+    <Entry key="FileManager.Label.Files">
+      <Value>{0} dosya</Value>
+    </Entry>
+    <Entry key="FileManager.Label.NoRootFolders" />
+    <Entry key="FileManager.Label.FolderUnavailable" />
+    <Entry key="FileManager.Action.UpOneLevel">
+      <Value>Bir Seviye Yukarı</Value>
+    </Entry>
+    <Entry key="FileManager.Action.CreateNewFolder">
+      <Value>Yeni Klasör Yarat</Value>
+    </Entry>
+    <Entry key="FileManager.Action.DownloadFiles">
+      <Value>Dosya İndir</Value>
+    </Entry>
+    <Entry key="FileManager.Action.UploadFiles">
+      <Value>Dosya Gönder</Value>
+    </Entry>
+    <Entry key="FileManager.Action.DownloadAsZip">
+      <Value>Zip Olarak İndir</Value>
+    </Entry>
+    <Entry key="FileManager.Action.OpenWith">
+      <Value>Birlikte Aç</Value>
+    </Entry>
+    <Entry key="FileManager.Action.WebBrowser">
+      <Value>Web Tarayıcısı</Value>
+    </Entry>
+    <Entry key="FileManager.Action.Explore">
+      <Value>Gez</Value>
+    </Entry>
+    <Entry key="FileManager.Action.Folder">
+      <Value>Klasör</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.SelectFiles" />
+    <Entry key="FileUploader.Label.TimeRemaining" />
+    <Entry key="FileUploader.Label.FilesRemaining" />
+    <Entry key="FileUploader.Label.Speed" />
+    <Entry key="FileUploader.Label.TimeEstimate" />
+    <Entry key="FileUploader.Label.TimeEstimateHours" />
+    <Entry key="FileUploader.Label.TimeEstimateMinutes">
+      <Value>{0} dakika</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.TimeEstimateSeconds">
+      <Value>{0} saniye</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.SpeedEstimate">
+      <Value>{0}/saniye</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.Calculating">
+      <Value>Hesaplanıyor...</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.NotAvailable" />
+    <Entry key="FileUploader.Label.SpecificFiles" />
+    <Entry key="FileUploader.Action.Add">
+      <Value>Ekle...</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.Remove">
+      <Value>Çıkar</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.Close">
+      <Value>Kapat</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.NewUpload">
+      <Value>Yeni Gönderim</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.UploadMethod" />
+    <Entry key="FileUploader.Action.Clear" />
+    <Entry key="FileUploader.UploadStatus.Pending" />
+    <Entry key="FileUploader.UploadStatus.Canceled" />
+    <Entry key="FileUploader.UploadStatus.Failed" />
+    <Entry key="FileUploader.UploadStatus.Completed" />
+    <Entry key="FileUploader.Column.Status" />
+    <Entry key="FileUploader.Confirm.UploadStillInProgress" />
+    <Entry key="FileUploader.Error.EmptyFile" />
+    <Entry key="FileUploader.Error.FileAlreadyAdded">
+      <Value>Listede zaten '{0}' isimli bir dosya mevcut!</Value>
+    </Entry>
+    <Entry key="FileUploader.UploadStatus.Rejected" />
+    <Entry key="FileUploader.UploadStatus.Skipped" />
+    <Entry key="FileUploader.Label.DragAndDrop" />
+    <Entry key="FileUploader.Label.StatusReason" />
+    <Entry key="FileUploader.Label.ViewStatusReason" />
+    <Entry key="FileUploader.Label.UploadConflict" />
+    <Entry key="FileUploader.Label.UploadConflictDescription" />
+    <Entry key="FileUploader.Label.UploadAndReplace" />
+    <Entry key="FileUploader.Label.UploadAndReplaceDescription" />
+    <Entry key="FileUploader.Label.DoNotUpload" />
+    <Entry key="FileUploader.Label.DoNotUploadDescription" />
+    <Entry key="FileUploader.Label.UploadButKeepBoth" />
+    <Entry key="FileUploader.Label.UploadButKeepBothDescription" />
+    <Entry key="FileUploader.Label.SameForAllConflicts" />
+  </Body>
+</Language>

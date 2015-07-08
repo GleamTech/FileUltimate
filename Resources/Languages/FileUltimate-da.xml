@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Language version="1.0">
+  <Head />
+  <Body>
+    <Entry key="Label.View.Noun" />
+    <Entry key="Label.Panes" />
+    <Entry key="Label.NavigationPane" />
+    <Entry key="Label.PreviewPane" />
+    <Entry key="Label.DetailsPane" />
+    <Entry key="Label.Layout" />
+    <Entry key="Label.Layout.ExtraLargeIcons" />
+    <Entry key="Label.Layout.LargeIcons" />
+    <Entry key="Label.Layout.MediumIcons" />
+    <Entry key="Label.Layout.SmallIcons" />
+    <Entry key="Label.Layout.List" />
+    <Entry key="Label.Layout.Details" />
+    <Entry key="Label.Layout.Tiles" />
+    <Entry key="Label.Layout.Content" />
+    <Entry key="Label.Home" />
+    <Entry key="Label.Select" />
+    <Entry key="Label.SelectAll">
+      <Value>Vælg Alt</Value>
+    </Entry>
+    <Entry key="Label.SelectNone" />
+    <Entry key="Label.InvertSelection">
+      <Value>Vælg alt andet end det valgte</Value>
+    </Entry>
+    <Entry key="Message.EmptyView" />
+    <Entry key="Label.ItemCount" />
+    <Entry key="Label.ItemsCount" />
+    <Entry key="Label.SelectedItemCount" />
+    <Entry key="Label.SelectedItemsCount" />
+    <Entry key="Label.Refresh.Verb">
+      <Value>Opdater</Value>
+    </Entry>
+    <Entry key="Label.Expand" />
+    <Entry key="Label.Collapse" />
+    <Entry key="Label.OK" />
+    <Entry key="Label.Yes" />
+    <Entry key="Label.No" />
+    <Entry key="Label.Cancel">
+      <Value>Fortryd</Value>
+    </Entry>
+    <Entry key="Label.Clipboard" />
+    <Entry key="Label.Cut.Verb">
+      <Value>Klip</Value>
+    </Entry>
+    <Entry key="Label.Copy.Verb">
+      <Value>Kopier</Value>
+    </Entry>
+    <Entry key="Label.Paste.Verb">
+      <Value>Sæt ind</Value>
+    </Entry>
+    <Entry key="Label.Organize" />
+    <Entry key="Label.Delete">
+      <Value>Slet</Value>
+    </Entry>
+    <Entry key="Label.Rename">
+      <Value>Omdøb</Value>
+    </Entry>
+    <Entry key="Label.New">
+      <Value>Ny</Value>
+    </Entry>
+    <Entry key="Label.NewFolder">
+      <Value>Ny Folder</Value>
+    </Entry>
+    <Entry key="Label.NewFile" />
+    <Entry key="Label.Transfer.Verb" />
+    <Entry key="Label.Download.Verb" />
+    <Entry key="Label.Upload.Verb" />
+    <Entry key="Label.Compression" />
+    <Entry key="Label.AddToZip">
+      <Value>Tilføj Til Zip...</Value>
+    </Entry>
+    <Entry key="Label.ExtractAll" />
+    <Entry key="Label.ExtractAllTo">
+      <Value>Udpak Til...</Value>
+    </Entry>
+    <Entry key="Label.ExtractAllHere">
+      <Value>Udpak Her</Value>
+    </Entry>
+    <Entry key="Label.Open.Verb" />
+    <Entry key="Label.DeleteFile" />
+    <Entry key="Message.Confirm.DeleteFile">
+      <Value>Er du sikker på du vil slette '{0}'?</Value>
+    </Entry>
+    <Entry key="Label.DeleteFolder" />
+    <Entry key="Message.Confirm.DeleteFolder" />
+    <Entry key="Label.DeleteMultipleItems" />
+    <Entry key="Message.Confirm.DeleteMultipleItems">
+      <Value>Er du sikker på du vil slette disse {0} filer?</Value>
+    </Entry>
+    <Entry key="Label.RenameItem" />
+    <Entry key="Message.Prompt.RenameItem">
+      <Value>Skriv et nyt navn til filen:</Value>
+    </Entry>
+    <Entry key="Message.Error.InvalidFileName">
+      <Value>Navnet på en fil eller en folder kan ikke indeholde disse karakterer:</Value>
+    </Entry>
+    <Entry key="Label.CreateFolder" />
+    <Entry key="Message.Prompt.CreateFolder">
+      <Value>Skriv navnet på den nye folder:</Value>
+    </Entry>
+    <Entry key="Label.AddItemsToZip" />
+    <Entry key="Message.Prompt.AddItemsToZip">
+      <Value>Skriv navnet på zip filen:</Value>
+    </Entry>
+    <Entry key="Label.ExtractItemsFromArchive" />
+    <Entry key="Message.Prompt.ExtractItemsFromArchive">
+      <Value>Skriv navnet på folderen, som zip filen skal udpakkes til:</Value>
+    </Entry>
+    <Entry key="Label.Choose" />
+    <Entry key="Label.FolderType" />
+    <Entry key="Label.FileType" />
+    <Entry key="Label.File" />
+    <Entry key="Label.Column.Name">
+      <Value>Navn</Value>
+    </Entry>
+    <Entry key="Label.Column.DateModified">
+      <Value>Dato Ændret</Value>
+    </Entry>
+    <Entry key="Label.Column.Type" />
+    <Entry key="Label.Column.Size">
+      <Value>Størrelse</Value>
+    </Entry>
+    <Entry key="Label.ByteSizeUnit.Bytes" />
+    <Entry key="Label.ByteSizeUnit.KB" />
+    <Entry key="Label.ByteSizeUnit.MB" />
+    <Entry key="Label.ByteSizeUnit.GB" />
+    <Entry key="Label.ByteSizeUnit.TB" />
+    <Entry key="Message.EmptyFolder" />
+    <Entry key="FileManager.Label.Folders">
+      <Value>Foldere</Value>
+    </Entry>
+    <Entry key="FileManager.Label.Subfolders">
+      <Value>{0} undermapper</Value>
+    </Entry>
+    <Entry key="FileManager.Label.Files">
+      <Value>{0} filer</Value>
+    </Entry>
+    <Entry key="FileManager.Label.NoRootFolders" />
+    <Entry key="FileManager.Label.FolderUnavailable" />
+    <Entry key="FileManager.Action.UpOneLevel">
+      <Value>Et niveau op</Value>
+    </Entry>
+    <Entry key="FileManager.Action.CreateNewFolder">
+      <Value>Opret Ny Folder</Value>
+    </Entry>
+    <Entry key="FileManager.Action.DownloadFiles">
+      <Value>Download Filer</Value>
+    </Entry>
+    <Entry key="FileManager.Action.UploadFiles">
+      <Value>Upload Filer</Value>
+    </Entry>
+    <Entry key="FileManager.Action.DownloadAsZip">
+      <Value>Download som Zip</Value>
+    </Entry>
+    <Entry key="FileManager.Action.OpenWith">
+      <Value>Åben Med</Value>
+    </Entry>
+    <Entry key="FileManager.Action.WebBrowser">
+      <Value>Internet Browser</Value>
+    </Entry>
+    <Entry key="FileManager.Action.Explore">
+      <Value>Åben</Value>
+    </Entry>
+    <Entry key="FileManager.Action.Folder" />
+    <Entry key="FileUploader.Label.SelectFiles" />
+    <Entry key="FileUploader.Label.TimeRemaining" />
+    <Entry key="FileUploader.Label.FilesRemaining" />
+    <Entry key="FileUploader.Label.Speed" />
+    <Entry key="FileUploader.Label.TimeEstimate" />
+    <Entry key="FileUploader.Label.TimeEstimateHours" />
+    <Entry key="FileUploader.Label.TimeEstimateMinutes" />
+    <Entry key="FileUploader.Label.TimeEstimateSeconds" />
+    <Entry key="FileUploader.Label.SpeedEstimate" />
+    <Entry key="FileUploader.Label.Calculating" />
+    <Entry key="FileUploader.Label.NotAvailable" />
+    <Entry key="FileUploader.Label.SpecificFiles" />
+    <Entry key="FileUploader.Action.Add">
+      <Value>Tilføj...</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.Remove">
+      <Value>Slet</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.Close">
+      <Value>Luk</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.NewUpload">
+      <Value>Ny Upload</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.UploadMethod" />
+    <Entry key="FileUploader.Action.Clear" />
+    <Entry key="FileUploader.UploadStatus.Pending" />
+    <Entry key="FileUploader.UploadStatus.Canceled" />
+    <Entry key="FileUploader.UploadStatus.Failed" />
+    <Entry key="FileUploader.UploadStatus.Completed" />
+    <Entry key="FileUploader.Column.Status" />
+    <Entry key="FileUploader.Confirm.UploadStillInProgress" />
+    <Entry key="FileUploader.Error.EmptyFile" />
+    <Entry key="FileUploader.Error.FileAlreadyAdded" />
+    <Entry key="FileUploader.UploadStatus.Rejected" />
+    <Entry key="FileUploader.UploadStatus.Skipped" />
+    <Entry key="FileUploader.Label.DragAndDrop" />
+    <Entry key="FileUploader.Label.StatusReason" />
+    <Entry key="FileUploader.Label.ViewStatusReason" />
+    <Entry key="FileUploader.Label.UploadConflict" />
+    <Entry key="FileUploader.Label.UploadConflictDescription" />
+    <Entry key="FileUploader.Label.UploadAndReplace" />
+    <Entry key="FileUploader.Label.UploadAndReplaceDescription" />
+    <Entry key="FileUploader.Label.DoNotUpload" />
+    <Entry key="FileUploader.Label.DoNotUploadDescription" />
+    <Entry key="FileUploader.Label.UploadButKeepBoth" />
+    <Entry key="FileUploader.Label.UploadButKeepBothDescription" />
+    <Entry key="FileUploader.Label.SameForAllConflicts" />
+  </Body>
+</Language>

@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Language version="1.0">
+  <Head />
+  <Body>
+    <Entry key="Label.View.Noun" />
+    <Entry key="Label.Panes" />
+    <Entry key="Label.NavigationPane" />
+    <Entry key="Label.PreviewPane" />
+    <Entry key="Label.DetailsPane" />
+    <Entry key="Label.Layout" />
+    <Entry key="Label.Layout.ExtraLargeIcons" />
+    <Entry key="Label.Layout.LargeIcons" />
+    <Entry key="Label.Layout.MediumIcons" />
+    <Entry key="Label.Layout.SmallIcons" />
+    <Entry key="Label.Layout.List" />
+    <Entry key="Label.Layout.Details" />
+    <Entry key="Label.Layout.Tiles" />
+    <Entry key="Label.Layout.Content" />
+    <Entry key="Label.Home" />
+    <Entry key="Label.Select" />
+    <Entry key="Label.SelectAll">
+      <Value>Seleccionar Tot</Value>
+    </Entry>
+    <Entry key="Label.SelectNone" />
+    <Entry key="Label.InvertSelection">
+      <Value>Invertir Selecció</Value>
+    </Entry>
+    <Entry key="Message.EmptyView" />
+    <Entry key="Label.ItemCount" />
+    <Entry key="Label.ItemsCount" />
+    <Entry key="Label.SelectedItemCount" />
+    <Entry key="Label.SelectedItemsCount" />
+    <Entry key="Label.Refresh.Verb">
+      <Value>Actualitzar</Value>
+    </Entry>
+    <Entry key="Label.Expand" />
+    <Entry key="Label.Collapse" />
+    <Entry key="Label.OK" />
+    <Entry key="Label.Yes" />
+    <Entry key="Label.No" />
+    <Entry key="Label.Cancel">
+      <Value>Cancel·lar</Value>
+    </Entry>
+    <Entry key="Label.Clipboard" />
+    <Entry key="Label.Cut.Verb">
+      <Value>Tallar</Value>
+    </Entry>
+    <Entry key="Label.Copy.Verb">
+      <Value>Copiar</Value>
+    </Entry>
+    <Entry key="Label.Paste.Verb">
+      <Value>Enganxar</Value>
+    </Entry>
+    <Entry key="Label.Organize" />
+    <Entry key="Label.Delete">
+      <Value>Esborrar</Value>
+    </Entry>
+    <Entry key="Label.Rename">
+      <Value>Renombrar</Value>
+    </Entry>
+    <Entry key="Label.New">
+      <Value>Nou</Value>
+    </Entry>
+    <Entry key="Label.NewFolder">
+      <Value>Nova Carpeta</Value>
+    </Entry>
+    <Entry key="Label.NewFile" />
+    <Entry key="Label.Transfer.Verb" />
+    <Entry key="Label.Download.Verb">
+      <Value>Descarregar</Value>
+    </Entry>
+    <Entry key="Label.Upload.Verb">
+      <Value>Carregar</Value>
+    </Entry>
+    <Entry key="Label.Compression" />
+    <Entry key="Label.AddToZip">
+      <Value>Afegir a Zip...</Value>
+    </Entry>
+    <Entry key="Label.ExtractAll" />
+    <Entry key="Label.ExtractAllTo">
+      <Value>Extraure en...</Value>
+    </Entry>
+    <Entry key="Label.ExtractAllHere">
+      <Value>Extraure Aquí</Value>
+    </Entry>
+    <Entry key="Label.Open.Verb" />
+    <Entry key="Label.DeleteFile" />
+    <Entry key="Message.Confirm.DeleteFile">
+      <Value>Estàs segur de voler eliminar '{0}'?</Value>
+    </Entry>
+    <Entry key="Label.DeleteFolder" />
+    <Entry key="Message.Confirm.DeleteFolder" />
+    <Entry key="Label.DeleteMultipleItems" />
+    <Entry key="Message.Confirm.DeleteMultipleItems">
+      <Value>Estàs segur de voler eliminar aquests {0} objetes?</Value>
+    </Entry>
+    <Entry key="Label.RenameItem" />
+    <Entry key="Message.Prompt.RenameItem">
+      <Value>Introdueix el nou nom per aquest objecte:</Value>
+    </Entry>
+    <Entry key="Message.Error.InvalidFileName">
+      <Value>El nom de l'arxiu o carpeta no pot contenir un dels siguents caràcters:</Value>
+    </Entry>
+    <Entry key="Label.CreateFolder" />
+    <Entry key="Message.Prompt.CreateFolder">
+      <Value>Introdueix un nom per la nova carpeta:</Value>
+    </Entry>
+    <Entry key="Label.AddItemsToZip" />
+    <Entry key="Message.Prompt.AddItemsToZip">
+      <Value>Introdueix el nom de l'arxiu zip:</Value>
+    </Entry>
+    <Entry key="Label.ExtractItemsFromArchive" />
+    <Entry key="Message.Prompt.ExtractItemsFromArchive">
+      <Value>Introdueix un nom de carpeta per extraure l'arxiu zip en:</Value>
+    </Entry>
+    <Entry key="Label.Choose" />
+    <Entry key="Label.FolderType" />
+    <Entry key="Label.FileType" />
+    <Entry key="Label.File" />
+    <Entry key="Label.Column.Name">
+      <Value>Nom</Value>
+    </Entry>
+    <Entry key="Label.Column.DateModified">
+      <Value>Data de Modificació</Value>
+    </Entry>
+    <Entry key="Label.Column.Type">
+      <Value>Tipus</Value>
+    </Entry>
+    <Entry key="Label.Column.Size">
+      <Value>Tamany</Value>
+    </Entry>
+    <Entry key="Label.ByteSizeUnit.Bytes" />
+    <Entry key="Label.ByteSizeUnit.KB" />
+    <Entry key="Label.ByteSizeUnit.MB" />
+    <Entry key="Label.ByteSizeUnit.GB" />
+    <Entry key="Label.ByteSizeUnit.TB" />
+    <Entry key="Message.EmptyFolder" />
+    <Entry key="FileManager.Label.Folders">
+      <Value>Carpetes</Value>
+    </Entry>
+    <Entry key="FileManager.Label.Subfolders">
+      <Value>{0} subcarpetes</Value>
+    </Entry>
+    <Entry key="FileManager.Label.Files">
+      <Value>{0} arxius</Value>
+    </Entry>
+    <Entry key="FileManager.Label.NoRootFolders" />
+    <Entry key="FileManager.Label.FolderUnavailable" />
+    <Entry key="FileManager.Action.UpOneLevel">
+      <Value>Pujar un nivell</Value>
+    </Entry>
+    <Entry key="FileManager.Action.CreateNewFolder">
+      <Value>Crear Nova Carpeta</Value>
+    </Entry>
+    <Entry key="FileManager.Action.DownloadFiles">
+      <Value>Descarregar Arxius</Value>
+    </Entry>
+    <Entry key="FileManager.Action.UploadFiles">
+      <Value>Carregar Arxius</Value>
+    </Entry>
+    <Entry key="FileManager.Action.DownloadAsZip">
+      <Value>Descarregar com Zip</Value>
+    </Entry>
+    <Entry key="FileManager.Action.OpenWith">
+      <Value>Obrir Amb</Value>
+    </Entry>
+    <Entry key="FileManager.Action.WebBrowser">
+      <Value>Explorador Web</Value>
+    </Entry>
+    <Entry key="FileManager.Action.Explore">
+      <Value>Explorar</Value>
+    </Entry>
+    <Entry key="FileManager.Action.Folder">
+      <Value>Carpeta</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.SelectFiles" />
+    <Entry key="FileUploader.Label.TimeRemaining" />
+    <Entry key="FileUploader.Label.FilesRemaining" />
+    <Entry key="FileUploader.Label.Speed" />
+    <Entry key="FileUploader.Label.TimeEstimate" />
+    <Entry key="FileUploader.Label.TimeEstimateHours" />
+    <Entry key="FileUploader.Label.TimeEstimateMinutes" />
+    <Entry key="FileUploader.Label.TimeEstimateSeconds" />
+    <Entry key="FileUploader.Label.SpeedEstimate" />
+    <Entry key="FileUploader.Label.Calculating" />
+    <Entry key="FileUploader.Label.NotAvailable" />
+    <Entry key="FileUploader.Label.SpecificFiles" />
+    <Entry key="FileUploader.Action.Add">
+      <Value>Afegir...</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.Remove">
+      <Value>Esborrar</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.Close">
+      <Value>Tancar</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.NewUpload">
+      <Value>Nova Càrrega</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.UploadMethod" />
+    <Entry key="FileUploader.Action.Clear" />
+    <Entry key="FileUploader.UploadStatus.Pending" />
+    <Entry key="FileUploader.UploadStatus.Canceled" />
+    <Entry key="FileUploader.UploadStatus.Failed" />
+    <Entry key="FileUploader.UploadStatus.Completed" />
+    <Entry key="FileUploader.Column.Status" />
+    <Entry key="FileUploader.Confirm.UploadStillInProgress" />
+    <Entry key="FileUploader.Error.EmptyFile" />
+    <Entry key="FileUploader.Error.FileAlreadyAdded" />
+    <Entry key="FileUploader.UploadStatus.Rejected" />
+    <Entry key="FileUploader.UploadStatus.Skipped" />
+    <Entry key="FileUploader.Label.DragAndDrop" />
+    <Entry key="FileUploader.Label.StatusReason" />
+    <Entry key="FileUploader.Label.ViewStatusReason" />
+    <Entry key="FileUploader.Label.UploadConflict" />
+    <Entry key="FileUploader.Label.UploadConflictDescription" />
+    <Entry key="FileUploader.Label.UploadAndReplace" />
+    <Entry key="FileUploader.Label.UploadAndReplaceDescription" />
+    <Entry key="FileUploader.Label.DoNotUpload" />
+    <Entry key="FileUploader.Label.DoNotUploadDescription" />
+    <Entry key="FileUploader.Label.UploadButKeepBoth" />
+    <Entry key="FileUploader.Label.UploadButKeepBothDescription" />
+    <Entry key="FileUploader.Label.SameForAllConflicts" />
+  </Body>
+</Language>

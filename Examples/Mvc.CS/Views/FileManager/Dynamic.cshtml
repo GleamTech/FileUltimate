@@ -1,0 +1,23 @@
+﻿@using GleamTech.FileUltimate
+@model FileManager
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Dynamic</title>
+    @Html.RenderCss(Model)
+    @Html.RenderJs(Model)
+</head>
+<body style="margin: 20px;">
+
+@using (Html.BeginForm())
+{
+    <text>Change user: </text>@Html.DropDownList("userSelector", (SelectList) ViewBag.UserList, new {onchange = "this.form.submit();"})
+    <br/><br/>
+}
+
+@Html.RenderControl(Model)
+
+</body>
+</html>

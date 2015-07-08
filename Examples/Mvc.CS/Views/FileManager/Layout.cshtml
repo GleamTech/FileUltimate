@@ -1,0 +1,17 @@
+﻿@using GleamTech.FileUltimate
+@model FileManager
+
+@{
+    ViewBag.Title = "Layout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section fileUltimateJs {
+    @Html.RenderJs(Model)
+}
+@section fileUltimateCss {
+    @Html.RenderCss(Model)
+}
+
+@Html.RenderControl(Model)
+

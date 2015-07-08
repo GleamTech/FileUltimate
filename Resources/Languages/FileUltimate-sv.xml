@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Language version="1.0">
+  <Head />
+  <Body>
+    <Entry key="Label.View.Noun" >
+      <Value>Ordna</Value>
+    </Entry>    
+    <Entry key="Label.Panes" >
+      <Value>Layout</Value>
+    </Entry>    
+    <Entry key="Label.NavigationPane" >
+      <Value>Navigeringsfönstret av/på</Value>
+    </Entry>    
+    <Entry key="Label.PreviewPane" />
+    <Entry key="Label.DetailsPane" />
+    <Entry key="Label.Layout" >
+      <Value>Visa</Value>
+    </Entry>    
+    <Entry key="Label.Layout.ExtraLargeIcons" >
+      <Value>Extra stora ikoner</Value>
+    </Entry>
+    <Entry key="Label.Layout.LargeIcons" >
+      <Value>Stora ikoner</Value>
+    </Entry>    
+    <Entry key="Label.Layout.MediumIcons" >
+      <Value>Medelstora ikoner</Value>
+    </Entry>    
+    <Entry key="Label.Layout.SmallIcons" >
+      <Value>Små ikoner</Value>
+    </Entry>    
+    <Entry key="Label.Layout.List" >
+      <Value>Lista</Value>
+    </Entry>    
+    <Entry key="Label.Layout.Details" >
+      <Value>Detaljerad lista</Value>
+    </Entry>    
+    <Entry key="Label.Layout.Tiles" >
+      <Value>Sammanfattning</Value>
+    </Entry>    
+    <Entry key="Label.Layout.Content" >
+      <Value>Innehåll</Value>
+    </Entry>    
+    <Entry key="Label.Home" >
+      <Value>Hem</Value>
+    </Entry>    
+    <Entry key="Label.Select" >
+      <Value>Välj</Value>
+    </Entry>    
+    <Entry key="Label.SelectAll" >
+      <Value>Markera alla</Value>
+    </Entry>    
+    <Entry key="Label.SelectNone" >
+      <Value>Ta bort markering</Value>
+    </Entry>    
+    <Entry key="Label.InvertSelection" >
+      <Value>Omvänd markering</Value>
+    </Entry>    
+    <Entry key="Message.EmptyView" />
+    <Entry key="Label.ItemCount" >
+      <Value>Objekt</Value>
+    </Entry>    
+    <Entry key="Label.ItemsCount" >
+      <Value>Objekt</Value>
+    </Entry>    
+    <Entry key="Label.SelectedItemCount" >
+      <Value>Storlek för markerat objekt</Value>
+    </Entry>    
+    <Entry key="Label.SelectedItemsCount" >
+      <Value>Storlek för samtliga markerade objekt</Value>
+    </Entry>    
+    <Entry key="Label.Refresh.Verb" >
+      <Value>Uppdatera</Value>
+    </Entry>    
+    <Entry key="Label.Expand" >
+      <Value>Expandera</Value>
+    </Entry>    
+    <Entry key="Label.Collapse" >
+      <Value>Minimera</Value>
+    </Entry>    
+    <Entry key="Label.OK" >
+      <Value>OK</Value>
+    </Entry>    
+    <Entry key="Label.Yes" >
+      <Value>Ja</Value>
+    </Entry>    
+    <Entry key="Label.No" >
+      <Value>Nej</Value>
+    </Entry>    
+    <Entry key="Label.Cancel" >
+      <Value>Avbryt</Value>
+    </Entry>    
+    <Entry key="Label.Clipboard" >
+      <Value>Urklipp</Value>
+    </Entry>    
+    <Entry key="Label.Cut.Verb">
+      <Value>Klipp ut</Value>
+    </Entry>    
+    <Entry key="Label.Copy.Verb">
+      <Value>Kopiera</Value>
+    </Entry>
+    <Entry key="Label.Paste.Verb" >
+      <Value>Klistra in</Value>
+    </Entry>
+    <Entry key="Label.Organize" >
+      <Value>Organisera</Value>
+    </Entry>    
+    <Entry key="Label.Delete" >
+      <Value>Ta bort</Value>
+    </Entry>    
+    <Entry key="Label.Rename" >
+      <Value>Byt namn</Value>
+    </Entry>    
+    <Entry key="Label.New" >
+      <Value>Nytt</Value>
+    </Entry>    
+    <Entry key="Label.NewFolder" >
+      <Value>Ny mapp</Value>
+    </Entry>    
+    <Entry key="Label.NewFile" >
+      <Value>Ny fil</Value>
+    </Entry>    
+    <Entry key="Label.Transfer.Verb" >
+      <Value>Överföring</Value>
+    </Entry>    
+    <Entry key="Label.Download.Verb" >
+      <Value>Ladda ner</Value>
+    </Entry>    
+    <Entry key="Label.Upload.Verb" >
+      <Value>Ladda upp</Value>
+    </Entry>    
+    <Entry key="Label.Compression" >
+      <Value>Komprimera</Value>
+    </Entry>    
+    <Entry key="Label.AddToZip" >
+      <Value>Lägg till i zip-fil</Value>
+    </Entry>    
+    <Entry key="Label.ExtractAll" >
+      <Value>Packa upp filer</Value>
+    </Entry>    
+    <Entry key="Label.ExtractAllTo" >
+      <Value>Packa upp till</Value>
+    </Entry>    
+    <Entry key="Label.ExtractAllHere" >
+      <Value>Packa upp här</Value>
+    </Entry>    
+    <Entry key="Label.Open.Verb" >
+      <Value>Öppna</Value>
+    </Entry>    
+    <Entry key="Label.DeleteFile" >
+      <Value>Ta bort</Value>
+    </Entry>    
+    <Entry key="Message.Confirm.DeleteFile" >
+      <Value>Vill du ta bort denna filen permanent?</Value>
+    </Entry>    
+    <Entry key="Label.DeleteFolder" >
+      <Value>Ta bort</Value>
+    </Entry>    
+    <Entry key="Message.Confirm.DeleteFolder" >
+      <Value>Vill du ta bort den här mappen permanent?</Value>
+    </Entry>    
+    <Entry key="Label.DeleteMultipleItems" >
+      <Value>Ta bort</Value>
+    </Entry>    
+    <Entry key="Message.Confirm.DeleteMultipleItems" >
+      <Value>Vill du ta bort de här objekten permanent?</Value>
+    </Entry>    
+    <Entry key="Label.RenameItem" >
+      <Value>Byt namn</Value>
+    </Entry>    
+    <Entry key="Message.Prompt.RenameItem" >
+      <Value>Ange nytt namn för objektet:</Value>
+    </Entry>    
+    <Entry key="Message.Error.InvalidFileName" />
+    <Entry key="Label.CreateFolder" >
+      <Value>Nytt</Value>
+    </Entry>    
+    <Entry key="Message.Prompt.CreateFolder" >
+      <Value>Ange namn för mappen:</Value>
+    </Entry>    
+    <Entry key="Label.AddItemsToZip" >
+      <Value>Komprimera</Value>
+    </Entry>    
+    <Entry key="Message.Prompt.AddItemsToZip" >
+      <Value>Ange namn för zip-filen:</Value>
+    </Entry>    
+    <Entry key="Label.ExtractItemsFromArchive" />
+    <Entry key="Message.Prompt.ExtractItemsFromArchive" />
+    <Entry key="Label.Choose" >
+      <Value>Välj</Value>
+    </Entry>    
+    <Entry key="Label.FolderType" >
+      <Value>Filmapp</Value>
+    </Entry>    
+    <Entry key="Label.FileType" >
+      <Value>{0}-fil</Value>
+    </Entry>    
+    <Entry key="Label.File" >
+      <Value>Fil</Value>
+    </Entry>    
+    <Entry key="Label.Column.Name" >
+      <Value>Namn</Value>
+    </Entry>    
+    <Entry key="Label.Column.DateModified" >
+      <Value>Senast ändrad</Value>
+    </Entry>    
+    <Entry key="Label.Column.Type" >
+      <Value>Typ</Value>
+    </Entry>    
+    <Entry key="Label.Column.Size" >
+      <Value>Storlek</Value>
+    </Entry>    
+    <Entry key="Label.ByteSizeUnit.Bytes" />
+    <Entry key="Label.ByteSizeUnit.KB" />
+    <Entry key="Label.ByteSizeUnit.MB" />
+    <Entry key="Label.ByteSizeUnit.GB" />
+    <Entry key="Label.ByteSizeUnit.TB" />
+    <Entry key="Message.EmptyFolder" />
+    <Entry key="Message.Error.FileNotAllowed">
+      <Value>'{0}' matchar inte tillåtna filtyper.</Value>
+    </Entry>
+    <Entry key="FileManager.Label.Folders">
+      <Value>Mappar</Value>
+    </Entry>
+    <Entry key="FileManager.Label.Subfolders">
+      <Value>{0} mappar</Value>
+    </Entry>
+    <Entry key="FileManager.Label.Files">
+      <Value>{0} filer</Value>
+    </Entry>
+    <Entry key="FileManager.Label.NoRootFolders">
+      <Value>Inga rotkataloger angivna.</Value>
+    </Entry>
+    <Entry key="FileManager.Label.FolderUnavailable">
+      <Value>Mappen är inte tillgänglig.</Value>
+    </Entry>
+    <Entry key="FileManager.Action.UpOneLevel">
+      <Value>Upp en nivå</Value>
+    </Entry>
+    <Entry key="FileManager.Action.CreateNewFolder">
+      <Value>Skapa ny mapp</Value>
+    </Entry>
+    <Entry key="FileManager.Action.DownloadFiles">
+      <Value>Ladda ner fil(er)</Value>
+    </Entry>
+    <Entry key="FileManager.Action.UploadFiles">
+      <Value>Ladda upp fil(er)</Value>
+    </Entry>
+    <Entry key="FileManager.Action.DownloadAsZip">
+      <Value>Ladda ner som zip-fil</Value>
+    </Entry>
+    <Entry key="FileManager.Action.OpenWith">
+      <Value>Öppna med</Value>
+    </Entry>
+    <Entry key="FileManager.Action.WebBrowser">
+      <Value>Webbläsare</Value>
+    </Entry>
+    <Entry key="FileManager.Action.Explore">
+      <Value>Utforska</Value>
+    </Entry>
+    <Entry key="FileManager.Action.Folder">
+      <Value>Mapp</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.SelectFiles">
+      <Value>Välj filer</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.TimeRemaining">
+      <Value>Återstående tid:</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.FilesRemaining">
+      <Value>Återstående filer:</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.Speed">
+      <Value>Hastighet:</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.TimeEstimate">
+      <Value>{0}</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.TimeEstimateHours">
+      <Value>{0} timmar</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.TimeEstimateMinutes">
+      <Value>{0} minuter</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.TimeEstimateSeconds">
+      <Value>{0} sekunder</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.SpeedEstimate">
+      <Value>{0}/sekund</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.Calculating">
+      <Value>Bäräknar...</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.NotAvailable">
+      <Value>Inte tillgänglig</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.SpecificFiles">
+      <Value>Specifika filer ({0})</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.Add">
+      <Value>Lägg till..</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.Remove">
+      <Value>Ta bort</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.Close">
+      <Value>Stäng</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.NewUpload">
+      <Value>Ny uppladdning</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.UploadMethod">
+      <Value>Protokoll för uppladdning</Value>
+    </Entry>
+    <Entry key="FileUploader.Action.Clear">
+      <Value>Rensa</Value>
+    </Entry>
+    <Entry key="FileUploader.UploadStatus.Pending">
+      <Value>Väntar</Value>
+    </Entry>
+    <Entry key="FileUploader.UploadStatus.Canceled">
+      <Value>Avbruten</Value>
+    </Entry>
+    <Entry key="FileUploader.UploadStatus.Failed">
+      <Value>Misslyckades</Value>
+    </Entry>
+    <Entry key="FileUploader.UploadStatus.Completed">
+      <Value>Färdig</Value>
+    </Entry>
+    <Entry key="FileUploader.Column.Status">
+      <Value>Status</Value>
+    </Entry>
+    <Entry key="FileUploader.Confirm.UploadStillInProgress">
+      <Value>Filöverföring pågår, är du säker på att du vill stänga?</Value>
+    </Entry>
+    <Entry key="FileUploader.Error.EmptyFile">
+      <Value>'{0}' är en tom (0 byte filstorlek) fil.</Value>
+    </Entry>
+    <Entry key="FileUploader.Error.FileAlreadyAdded">
+      <Value>Det finns redan en fil med namnet'{0}' i listan!</Value>
+    </Entry>
+    <Entry key="FileUploader.UploadStatus.Rejected">
+      <Value>Ej tillåten</Value>
+    </Entry>
+    <Entry key="FileUploader.UploadStatus.Skipped">
+      <Value>Slopade</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.DragAndDrop">
+      <Value>Använd "dra-och-släpp" för att lägga till filer här.</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.StatusReason">
+      <Value>Status orsak</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.ViewStatusReason">
+      <Value>Klicka för att visa status orsak</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.UploadConflict">
+      <Value>Konflikt för objekt</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.UploadConflictDescription">
+      <Value>Det finns redan en fil med samma namn.</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.UploadAndReplace">
+      <Value>Ladda upp och skriv över</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.UploadAndReplaceDescription">
+      <Value>Skriv över nuvarande fil:</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.DoNotUpload">
+      <Value>Ladda inte upp</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.DoNotUploadDescription">
+      <Value>Inga filer skrivs över. Behåll nuvarande fil:</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.UploadButKeepBoth">
+      <Value>Ladda upp, men behåll båda filerna</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.UploadButKeepBothDescription">
+      <Value>Filen du laddar upp blir namnändrad:</Value>
+    </Entry>
+    <Entry key="FileUploader.Label.SameForAllConflicts">
+      <Value>Gör detta för alla nästkommande objekt.</Value>
+    </Entry>
+  </Body>
+</Language>

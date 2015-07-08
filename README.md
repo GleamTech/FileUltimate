@@ -7,6 +7,6 @@ Integrate a file manager into your ASP.NET application or site rapidly.
 - Accept files with the advanced upload functionality.
 - Offer a structured and neat download area.
 
-![](fileultimate.png)
+![ASP.NET File Manager](fileultimate.png)
 
-Note: This project contains a fully working version of the product, however without a license key it will run in trial mode. For more information, please see FileUltimate: ASP.NET File Manager product page.
+**Note:** This project contains a fully working version of the product, however without a license key it will run in trial mode. For more information, please see [FileUltimate: ASP.NET File Manager](http://www.gleamtech.com/fileultimate) product page.

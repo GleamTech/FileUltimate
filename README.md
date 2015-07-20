@@ -1,4 +1,4 @@
-# FileUltimate: ASP.NET File Manager
+![FileUltimate Logo](fileultimate-logo.png) # FileUltimate: ASP.NET File Manager
 File Manager Control for ASP.NET WebForms and ASP:NET MVC 3+ (.NET Framework 4.0+).
 
 Integrate a file manager into your ASP.NET application or site rapidly. 

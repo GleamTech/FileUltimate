@@ -1,4 +1,4 @@
-FileUltimate v4.7.1 - ASP.NET File Handling Controls
+FileUltimate v4.7.3 - ASP.NET File Handling Controls
 Copyright © 2006-2015 GleamTech
 http://www.gleamtech.com
 
@@ -11,7 +11,7 @@ Information on package contents:
      Please see below for the full instructions on how to reference and use this dll in your ASP.NET project.
 
   - "Examples" folder contains the example projects for ASP.NET Web Forms (C# and VB) and ASP.NET MVC (C# and VB). 
-    Please open one of the solution files with Visual Studio 2013/2012/2010 to load an example project. 
+    Please open one of the solution files with Visual Studio 2015/2013/2012/2010 to load an example project. 
 	The example projects demonstrate various features and settings of FileUltimate controls. Note that, 
 	the projects reference GleamTech.FileUltimate.dll which is at "Bin" folder of the root of this package 
 	so make sure you extract the whole package (not only "Examples" folder) before opening a solution.
@@ -24,7 +24,7 @@ Information on package contents:
 Instructions for using the controls in your project (Web Forms):
 ---------------------------------------------------
 
-  1. Open your existing project with Visual Studio 2013/2012/2010 and add reference to GleamTech.FileUltimate.dll 
+  1. Open your existing project with Visual Studio 2015/2013/2012/2010 and add reference to GleamTech.FileUltimate.dll 
      found in "Bin" folder.
 
   2. Add the tag registration at the top of an aspx page which will host the control:

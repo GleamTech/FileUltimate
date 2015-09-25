@@ -9,18 +9,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csp
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		1. Release|Any CPU = 1. Release|Any CPU
-		2. Debug|Any CPU = 2. Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FDE17698-EFB0-4A51-BA3C-0911F50EB23F}.1. Release|Any CPU.ActiveCfg = 1. Release|Any CPU
-		{FDE17698-EFB0-4A51-BA3C-0911F50EB23F}.1. Release|Any CPU.Build.0 = 1. Release|Any CPU
-		{FDE17698-EFB0-4A51-BA3C-0911F50EB23F}.2. Debug|Any CPU.ActiveCfg = 2. Debug|Any CPU
-		{FDE17698-EFB0-4A51-BA3C-0911F50EB23F}.2. Debug|Any CPU.Build.0 = 2. Debug|Any CPU
-		{6475DC74-3455-445B-A37A-C9CE28CC7771}.1. Release|Any CPU.ActiveCfg = 1. Release|Any CPU
-		{6475DC74-3455-445B-A37A-C9CE28CC7771}.1. Release|Any CPU.Build.0 = 1. Release|Any CPU
-		{6475DC74-3455-445B-A37A-C9CE28CC7771}.2. Debug|Any CPU.ActiveCfg = 2. Debug|Any CPU
-		{6475DC74-3455-445B-A37A-C9CE28CC7771}.2. Debug|Any CPU.Build.0 = 2. Debug|Any CPU
+		{FDE17698-EFB0-4A51-BA3C-0911F50EB23F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDE17698-EFB0-4A51-BA3C-0911F50EB23F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDE17698-EFB0-4A51-BA3C-0911F50EB23F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDE17698-EFB0-4A51-BA3C-0911F50EB23F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6475DC74-3455-445B-A37A-C9CE28CC7771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6475DC74-3455-445B-A37A-C9CE28CC7771}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6475DC74-3455-445B-A37A-C9CE28CC7771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6475DC74-3455-445B-A37A-C9CE28CC7771}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

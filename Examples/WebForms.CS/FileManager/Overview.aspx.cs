@@ -17,10 +17,10 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager
 
         private void PopulateLanguageSelector()
         {
-            foreach (var culture in FileUltimate.FileManager.AvailableDisplayCultures)
+            foreach (var culture in FileUltimateConfiguration.AvailableDisplayCultures)
             {
                 var listItem = new ListItem(culture.NativeName, culture.Name);
-                if (culture.Name == ControlContext.CurrentLanguage.ClosestCulture.Name)
+                if (culture.Name == FileUltimateConfiguration.CurrentLanguage.ClosestCulture.Name)
                     listItem.Selected = true;
                 LanguageSelector.Items.Add(listItem);
             }

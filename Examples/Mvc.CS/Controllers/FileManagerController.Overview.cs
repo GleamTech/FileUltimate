@@ -278,10 +278,10 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
         private void PopulateLanguageSelector()
         {
             ViewBag.LanguageList = new SelectList(
-                FileManager.AvailableDisplayCultures, 
+                FileUltimateConfiguration.AvailableDisplayCultures, 
                 "Name", 
                 "NativeName",
-                Request["languageSelector"] ?? ControlContext.CurrentLanguage.ClosestCulture.Name
+                Request["languageSelector"] ?? FileUltimateConfiguration.CurrentLanguage.ClosestCulture.Name
             );
         }
     }

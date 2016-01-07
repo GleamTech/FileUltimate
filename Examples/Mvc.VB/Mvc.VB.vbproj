@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>
-    </ProductVersion>
+		</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{C416C73F-1705-4E4A-BE1F-87B65B42A88E}</ProjectGuid>
     <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
@@ -21,14 +21,14 @@
     <UseIISExpress>false</UseIISExpress>
     <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
     <FileUpgradeFlags>
-    </FileUpgradeFlags>
+		</FileUpgradeFlags>
     <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
+		</UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressSSLPort/>
+    <IISExpressAnonymousAuthentication/>
+    <IISExpressWindowsAuthentication/>
+    <IISExpressUseClassicPipelineMode/>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,7 +37,7 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\</OutputPath>
     <DocumentationFile>
-    </DocumentationFile>
+		</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -47,55 +47,61 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
     <DocumentationFile>
-    </DocumentationFile>
+		</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.Routing" />
+    <Reference Include="GleamTech.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a05198837413a6d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\GleamTech.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GleamTech.FileUltimate, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\GleamTech.FileUltimate.dll</HintPath>
+    </Reference>
+    <Reference Include="System"/>
+    <Reference Include="System.Core"/>
+    <Reference Include="System.Web"/>
+    <Reference Include="System.Web.Abstractions"/>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"/>
+    <Reference Include="System.Web.Routing"/>
   </ItemGroup>
   <ItemGroup>
-    <Import Include="Microsoft.VisualBasic" />
-    <Import Include="System" />
-    <Import Include="System.Collections" />
-    <Import Include="System.Collections.Generic" />
-    <Import Include="System.Data" />
-    <Import Include="System.Linq" />
-    <Import Include="System.Web.Mvc" />
-    <Import Include="System.Xml.Linq" />
-    <Import Include="System.Diagnostics" />
-    <Import Include="System.Collections.Specialized" />
-    <Import Include="System.Configuration" />
-    <Import Include="System.Text" />
-    <Import Include="System.Text.RegularExpressions" />
-    <Import Include="System.Web" />
-    <Import Include="System.Web.Caching" />
-    <Import Include="System.Web.Routing" />
-    <Import Include="System.Web.SessionState" />
-    <Import Include="System.Web.Security" />
-    <Import Include="System.Web.Profile" />
-    <Import Include="System.Web.UI" />
-    <Import Include="System.Web.UI.WebControls" />
-    <Import Include="System.Web.UI.WebControls.WebParts" />
-    <Import Include="System.Web.UI.HtmlControls" />
+    <Import Include="Microsoft.VisualBasic"/>
+    <Import Include="System"/>
+    <Import Include="System.Collections"/>
+    <Import Include="System.Collections.Generic"/>
+    <Import Include="System.Linq"/>
+    <Import Include="System.Web.Mvc"/>
+    <Import Include="System.Diagnostics"/>
+    <Import Include="System.Collections.Specialized"/>
+    <Import Include="System.Configuration"/>
+    <Import Include="System.Text"/>
+    <Import Include="System.Text.RegularExpressions"/>
+    <Import Include="System.Web"/>
+    <Import Include="System.Web.Caching"/>
+    <Import Include="System.Web.Routing"/>
+    <Import Include="System.Web.SessionState"/>
+    <Import Include="System.Web.Security"/>
+    <Import Include="System.Web.Profile"/>
+    <Import Include="System.Web.UI"/>
+    <Import Include="System.Web.UI.WebControls"/>
+    <Import Include="System.Web.UI.WebControls.WebParts"/>
+    <Import Include="System.Web.UI.HtmlControls"/>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\FileManagerController.Overview.vb" />
-    <Compile Include="Controllers\FileManagerController.Layout.vb" />
-    <Compile Include="Controllers\FileManagerController.Events.vb" />
-    <Compile Include="Controllers\FileManagerController.Dynamic.vb" />
-    <Compile Include="Controllers\FileManagerController.Display.vb" />
-    <Compile Include="Controllers\FileManagerController.Chooser.vb" />
-    <Compile Include="Controllers\FileManagerController.vb" />
-    <Compile Include="Controllers\HomeController.vb" />
+    <Compile Include="Controllers\FileManagerController.Overview.vb"/>
+    <Compile Include="Controllers\FileManagerController.Layout.vb"/>
+    <Compile Include="Controllers\FileManagerController.Events.vb"/>
+    <Compile Include="Controllers\FileManagerController.Dynamic.vb"/>
+    <Compile Include="Controllers\FileManagerController.Display.vb"/>
+    <Compile Include="Controllers\FileManagerController.Chooser.vb"/>
+    <Compile Include="Controllers\FileManagerController.vb"/>
+    <Compile Include="Controllers\HomeController.vb"/>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb"/>
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
@@ -129,34 +135,31 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <Content Include="Views\FileManager\Chooser.vbhtml" />
-    <Content Include="Views\FileManager\Display.vbhtml" />
-    <Content Include="Views\FileManager\Dynamic.vbhtml" />
-    <Content Include="Views\FileManager\Events.vbhtml" />
-    <Content Include="Views\FileManager\Layout.vbhtml" />
-    <Content Include="Views\FileManager\Overview.vbhtml" />
-    <Content Include="Views\Home\Index.vbhtml" />
+    <Content Include="Views\FileManager\Chooser.vbhtml"/>
+    <Content Include="Views\FileManager\Display.vbhtml"/>
+    <Content Include="Views\FileManager\Dynamic.vbhtml"/>
+    <Content Include="Views\FileManager\Events.vbhtml"/>
+    <Content Include="Views\FileManager\Layout.vbhtml"/>
+    <Content Include="Views\FileManager\Overview.vbhtml"/>
+    <Content Include="Views\Home\Index.vbhtml"/>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Global.asax"/>
+    <Content Include="Web.config"/>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\Shared\_Layout.vbhtml" />
+    <Content Include="Views\Web.config"/>
+    <Content Include="Views\Shared\_Layout.vbhtml"/>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="App_GlobalResources\Languages\" />
+    <Folder Include="App_Data\"/>
+    <Folder Include="App_GlobalResources\Languages\"/>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\..\Bin\GleamTech.FileUltimate.dll</HintPath>
-</Reference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{6475DC74-3455-445B-A37A-C9CE28CC7771}</Project>
       <Name>Common</Name>
@@ -166,19 +169,19 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
-  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
-  <!-- Import custom project target -->
-  <Import Project="$(MSBuildProjectDirectory)\..\Common\Properties\Project.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets"/>
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''"/>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false"/>
+	<!-- Import custom project target -->
+  <Import Project="$(MSBuildProjectDirectory)\..\Common\Properties\Project.targets"/>
+	<!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
   </Target> -->
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
-    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)"/>
   </Target>
   <ProjectExtensions>
     <VisualStudio>
@@ -189,11 +192,11 @@
           <DevelopmentServerPort>42708</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
-          </IISUrl>
+					</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
-          </CustomServerUrl>
+					</CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

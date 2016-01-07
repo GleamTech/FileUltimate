@@ -219,7 +219,7 @@ Namespace Controllers
         End Function
 
         Private Sub PopulateLanguageSelector()
-            ViewBag.LanguageList = New SelectList(FileManager.AvailableDisplayCultures, "Name", "NativeName", If(Request("languageSelector"), ControlContext.CurrentLanguage.ClosestCulture.Name))
+            ViewBag.LanguageList = New SelectList(FileUltimateConfiguration.AvailableDisplayCultures, "Name", "NativeName", If(Request("languageSelector"), FileUltimateConfiguration.CurrentLanguage.ClosestCulture.Name))
         End Sub
     End Class
 End Namespace

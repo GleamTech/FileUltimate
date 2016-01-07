@@ -6,7 +6,6 @@ using GleamTech.Web;
 
 namespace GleamTech.FileUltimateExamples.Common
 {
-    [HttpHandlerRoute("examplesexplorer.ashx")]
     [HttpHandlerSessionState(SessionStateBehavior.ReadOnly)]
     public class ExamplesExplorerHandler : JsonMethodHandler
     {

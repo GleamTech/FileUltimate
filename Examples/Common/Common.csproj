@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -31,51 +31,48 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
+    <Reference Include="GleamTech.Core">
+      <HintPath>..\..\Bin\GleamTech.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System"/>
+    <Reference Include="System.Core"/>
+    <Reference Include="System.Web"/>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExamplesExplorerHandler.cs" />
-    <Compile Include="ExamplesExplorerContext.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\AssemblyResourceLocator.cs" />
+    <Compile Include="ExamplesExplorerHandler.cs"/>
+    <Compile Include="ExamplesExplorerContext.cs"/>
+    <Compile Include="Properties\AssemblyInfo.cs"/>
+    <Compile Include="Resources\AssemblyResourceLocator.cs"/>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Descriptions\Mvc\FileManager\Chooser.html" />
-    <EmbeddedResource Include="Descriptions\Mvc\FileManager\Display.html" />
-    <EmbeddedResource Include="Descriptions\Mvc\FileManager\Dynamic.html" />
-    <EmbeddedResource Include="Descriptions\Mvc\FileManager\Events.html" />
-    <EmbeddedResource Include="Descriptions\Mvc\FileManager\Overview.html" />
-    <EmbeddedResource Include="Descriptions\Mvc\FileManager\Layout.html" />
-    <EmbeddedResource Include="Descriptions\WebForms\FileManager\Chooser.html" />
-    <EmbeddedResource Include="Descriptions\WebForms\FileManager\Display.html" />
-    <EmbeddedResource Include="Descriptions\WebForms\FileManager\Dynamic.html" />
-    <EmbeddedResource Include="Descriptions\WebForms\FileManager\Events.html" />
-    <EmbeddedResource Include="Descriptions\WebForms\FileManager\Programmatic.html" />
-    <EmbeddedResource Include="Descriptions\WebForms\FileManager\Overview.html" />
-    <EmbeddedResource Include="Resources\Default.css" />
-    <EmbeddedResource Include="Resources\shThemeVS.css" />
-    <EmbeddedResource Include="Resources\shCore.js" />
-    <EmbeddedResource Include="Resources\shCore.css" />
-    <EmbeddedResource Include="Resources\shBrushXml.js" />
-    <EmbeddedResource Include="Resources\shBrushVb.js" />
-    <EmbeddedResource Include="Resources\shBrushCSharp.js" />
-    <EmbeddedResource Include="Resources\Default.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\..\Bin\GleamTech.FileUltimate.dll</HintPath>
-      <Private>False</Private>
-</Reference>
+    <EmbeddedResource Include="Descriptions\Mvc\FileManager\Chooser.html"/>
+    <EmbeddedResource Include="Descriptions\Mvc\FileManager\Display.html"/>
+    <EmbeddedResource Include="Descriptions\Mvc\FileManager\Dynamic.html"/>
+    <EmbeddedResource Include="Descriptions\Mvc\FileManager\Events.html"/>
+    <EmbeddedResource Include="Descriptions\Mvc\FileManager\Overview.html"/>
+    <EmbeddedResource Include="Descriptions\Mvc\FileManager\Layout.html"/>
+    <EmbeddedResource Include="Descriptions\WebForms\FileManager\Chooser.html"/>
+    <EmbeddedResource Include="Descriptions\WebForms\FileManager\Display.html"/>
+    <EmbeddedResource Include="Descriptions\WebForms\FileManager\Dynamic.html"/>
+    <EmbeddedResource Include="Descriptions\WebForms\FileManager\Events.html"/>
+    <EmbeddedResource Include="Descriptions\WebForms\FileManager\Programmatic.html"/>
+    <EmbeddedResource Include="Descriptions\WebForms\FileManager\Overview.html"/>
+    <EmbeddedResource Include="Resources\Default.css"/>
+    <EmbeddedResource Include="Resources\shThemeVS.css"/>
+    <EmbeddedResource Include="Resources\shCore.js"/>
+    <EmbeddedResource Include="Resources\shCore.css"/>
+    <EmbeddedResource Include="Resources\shBrushXml.js"/>
+    <EmbeddedResource Include="Resources\shBrushVb.js"/>
+    <EmbeddedResource Include="Resources\shBrushCSharp.js"/>
+    <EmbeddedResource Include="Resources\Default.js"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Project.targets">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+	<!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

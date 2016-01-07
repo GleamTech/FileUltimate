@@ -1,6 +1,6 @@
-FileUltimate v4.8 - ASP.NET File Handling Controls
-Copyright © 2006-2015 GleamTech
-http://www.gleamtech.com
+FileUltimate v5.0.1 - ASP.NET File Manager
+Copyright © 2006-2016 GleamTech
+http://www.gleamtech.com/fileultimate
 
 ---------------------------------------------------
 Information on package contents:
@@ -71,14 +71,37 @@ Instructions for using the controls in your project (Web Forms):
 Overriding resource files:
 ---------------------------------------------------
 
-  Please only copy the required files and not the whole folder as future updates to GleamTech.FileUltimate.dll may include 
-  newer versions of those files which may be necessary to run the latest version properly.
+  "Resources" folder contains the copies of resource files such as the language files which are 
+  already embedded into GleamTech.FileUltimate.dll. For example, you can use these files to create
+  a new translation or modify an existing translation. You should copy the modified files to the 
+  corresponding place under "Project\App_GlobalResources" to override an embedded resource. Please 
+  only copy the required files and not the whole folder as future updates to GleamTech.FileUltimate.dll 
+  may include newer versions of those files which may be necessary to run the latest version properly.
+ 
+  New or modified files under "Project\App_GlobalResources" folder should trigger restarting of the ASP.NET 
+  application. So, FileUltimate should automatically recognize the changes to the resource files under this 
+  folder. If FileUltimate does not recognize the changes then you can touch (simply open & save) 
+  "Project\Web.config" file to force FileUltimate to see the changes.
 
-  To override an existing embedded language or to add a newly translated language, 
-  create "App_GlobalResources\Languages" subfolder under your project's root folder and 
-  put the modified language file or the newly translated language file in this subfolder.
+---------------------------------------------------
+Translating to a new language:
+---------------------------------------------------
 
-  New or modified files under App_GlobalResources folder should trigger restarting of the ASP.NET application.
-  So, FileUltimate should automatically recognize the changes to the resource files under this folder.
-  If FileUltimate does not recognize the changes then you can touch (simply open & save) your project's
-  Web.config file to force the control to see the changes.
+  Please first see "Overriding resource files" above for information on where to find original language files.
+
+  To override an existing embedded language or to add a newly translated language, create 
+  "Project\App_GlobalResources\Languages" folder and put the modified language file or the newly 
+  translated language file in this subfolder.
+
+  Language files are simple XML files. To create a new language file, make a copy of "FileUltimate-en.xml"
+  and rename it to a standard language name (refer to Culture Name column in this table: 
+  https://msdn.microsoft.com/en-us/goglobal/bb896001.aspx). For instance, rename it to "FileUltimate-de.xml" 
+  for German language. Edit the new xml file and translate each string element but do not modify the key 
+  attributes. If a string includes a place holder {0}, do not forget to include it in the translated 
+  string too. You can create language files also for specific cultures. For instance, you can create 
+  "FileUltimate-de-CH.xml" for German in Switzerland. There is a fallback mechanism, FileUltimate will 
+  first look for the language file "FileUltimate-de-CH.xml" and if the file is not found, it will load 
+  the general language file of that culture which is "FileUltimate-de.xml".
+
+  We will appreciate if you send us the language files you created so that we can bundle them in 
+  future versions.

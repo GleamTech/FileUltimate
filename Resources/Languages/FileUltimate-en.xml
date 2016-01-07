@@ -424,6 +424,9 @@ Since these tend to be longer than labels, they tend to be slightly easier to tr
     <Entry key="Label.DocumentViewer">
       <Value>Document Viewer</Value>
     </Entry>
+    <Entry key="Label.ImageViewer">
+      <Value>Image Viewer</Value>
+    </Entry>
 
     <!-- Old keys below. They will be updated in future -->
 

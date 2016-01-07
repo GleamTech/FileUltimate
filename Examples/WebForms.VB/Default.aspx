@@ -11,10 +11,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>FileUltimate Examples - ASP.NET Web Forms (VB)</title>
         
-        <link href="<%=ResourceManager.GetUrl(ControlContext.LibraryCssBundle)%>" rel="stylesheet" />
+        <link href="<%=ResourceManager.GetUrl(FileUltimateConfiguration.LibraryCssBundle)%>" rel="stylesheet" />
         <link href="<%=ResourceManager.GetUrl(ExamplesExplorerContext.CssBundle)%>" rel="stylesheet" />
         
-        <script src="<%=ResourceManager.GetUrl(ControlContext.LibraryJsBundle)%>"></script>
+        <script src="<%=ResourceManager.GetUrl(FileUltimateConfiguration.LibraryJsBundle)%>"></script>
         <script src="<%=ResourceManager.GetUrl(ExamplesExplorerContext.JsBundle)%>"></script>
 
         <script type="text/javascript">

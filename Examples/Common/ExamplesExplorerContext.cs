@@ -21,12 +21,13 @@ namespace GleamTech.FileUltimateExamples.Common
 
         private static void RegisterRoutes()
         {
-            HttpHandlerRouteHandler<ExamplesExplorerHandler>.Register();
+            HttpHandlerRouteHandler<ExamplesExplorerHandler>.Register("examplesexplorer.ashx");
         }
 
         private static void RegisterResources()
         {
             AssemblyResourceStore = new AssemblyResourceStore(
+                "ee",
                 typeof (AssemblyResourceLocator),
                 HostingPathHelper.ApplicationPhysicalPath.Append("App_GlobalResources").ToString()
             );

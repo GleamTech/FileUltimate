@@ -31,31 +31,31 @@
         <GleamTech:FileManagerRootFolder Name="2. Feature Tests" Location="~/App_Data/Feature Tests" > 
             <GleamTech:FileManagerAccessControl Path="\" AllowedPermissions="ReadOnly"/>
 
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions" AllowedPermissions="ListFiles, ListSubfolders" /> 
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions\01. Full" AllowedPermissions="Full"/>
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions\02. Read" AllowedPermissions="ReadOnly"/>
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions\03. List subfolders" AllowedPermissions="ListSubfolders"/>
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions\04. List files" AllowedPermissions="ListFiles"/>
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions\05. Create" AllowedPermissions="Create, ListFiles, ListSubfolders"/>
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions\06. Delete" AllowedPermissions="Delete, ListFiles, ListSubfolders"/>
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions\07. Rename" AllowedPermissions="Rename, ListFiles, ListSubfolders"/>
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions\08. Edit" AllowedPermissions="Edit, ListFiles, ListSubfolders"/>
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions\09. Upload" AllowedPermissions="Upload, ListFiles, ListSubfolders"/>
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions\10. Download" AllowedPermissions="Download, ListFiles, ListSubfolders"/>
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions\11. Compress" AllowedPermissions="Compress, ListFiles, ListSubfolders"/>
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions\12. Extract" AllowedPermissions="Extract, ListFiles, ListSubfolders"/>
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions\13. Cut" AllowedPermissions="Cut, ListFiles, ListSubfolders"/>
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions\14. Copy" AllowedPermissions="Copy, ListFiles, ListSubfolders"/>
-            <GleamTech:FileManagerAccessControl Path="\5. Permissions\15. Paste" AllowedPermissions="Paste, ListFiles, ListSubfolders"/>
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions" AllowedPermissions="ListFiles, ListSubfolders" /> 
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions\01. Full" AllowedPermissions="Full"/>
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions\02. Read" AllowedPermissions="ReadOnly"/>
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions\03. List subfolders" AllowedPermissions="ListSubfolders"/>
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions\04. List files" AllowedPermissions="ListFiles"/>
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions\05. Create" AllowedPermissions="Create, ListFiles, ListSubfolders"/>
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions\06. Delete" AllowedPermissions="Delete, ListFiles, ListSubfolders"/>
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions\07. Rename" AllowedPermissions="Rename, ListFiles, ListSubfolders"/>
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions\08. Edit" AllowedPermissions="Edit, ListFiles, ListSubfolders"/>
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions\09. Upload" AllowedPermissions="Upload, ListFiles, ListSubfolders"/>
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions\10. Download" AllowedPermissions="Download, ListFiles, ListSubfolders"/>
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions\11. Compress" AllowedPermissions="Compress, ListFiles, ListSubfolders"/>
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions\12. Extract" AllowedPermissions="Extract, ListFiles, ListSubfolders"/>
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions\13. Cut" AllowedPermissions="Cut, ListFiles, ListSubfolders"/>
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions\14. Copy" AllowedPermissions="Copy, ListFiles, ListSubfolders"/>
+            <GleamTech:FileManagerAccessControl Path="\6. Permissions\15. Paste" AllowedPermissions="Paste, ListFiles, ListSubfolders"/>
 
-            <GleamTech:FileManagerAccessControl Path="\6. File Type Restrictions\1. Only Image files (jpg, png, bmp, gif)" AllowedPermissions="Full" AllowedFileTypes="*.jpg|*.png|*.bmp|*.gif"/>
+            <GleamTech:FileManagerAccessControl Path="\7. File Type Restrictions\1. Only Image files (jpg, png, bmp, gif)" AllowedPermissions="Full" AllowedFileTypes="*.jpg|*.png|*.bmp|*.gif"/>
 
-            <GleamTech:FileManagerAccessControl Path="\7. Quota Restrictions\1. Quota (1 MB)" AllowedPermissions="Full" Quota="1MB"/>
-            <GleamTech:FileManagerAccessControl Path="\7. Quota Restrictions\2. Quota (15 MB)" AllowedPermissions="Full" Quota="15MB"/>
-            <GleamTech:FileManagerAccessControl Path="\7. Quota Restrictions\2. Quota (15 MB)\Quota (1 MB)" AllowedPermissions="Full" Quota="1MB"/>
-            <GleamTech:FileManagerAccessControl Path="\7. Quota Restrictions\2. Quota (15 MB)\Deep\Quota (1 MB)" AllowedPermissions="Full" Quota="1MB"/>
-            <GleamTech:FileManagerAccessControl Path="\7. Quota Restrictions\3. Quota (Unlimited)" AllowedPermissions="Full" />
-            <GleamTech:FileManagerAccessControl Path="\7. Quota Restrictions\3. Quota (Unlimited)\Quota (1 MB)" AllowedPermissions="Full" Quota="1MB"/>
+            <GleamTech:FileManagerAccessControl Path="\8. Quota Restrictions\1. Quota (1 MB)" AllowedPermissions="Full" Quota="1MB"/>
+            <GleamTech:FileManagerAccessControl Path="\8. Quota Restrictions\2. Quota (15 MB)" AllowedPermissions="Full" Quota="15MB"/>
+            <GleamTech:FileManagerAccessControl Path="\8. Quota Restrictions\2. Quota (15 MB)\Quota (1 MB)" AllowedPermissions="Full" Quota="1MB"/>
+            <GleamTech:FileManagerAccessControl Path="\8. Quota Restrictions\2. Quota (15 MB)\Deep\Quota (1 MB)" AllowedPermissions="Full" Quota="1MB"/>
+            <GleamTech:FileManagerAccessControl Path="\8. Quota Restrictions\3. Quota (Unlimited)" AllowedPermissions="Full" />
+            <GleamTech:FileManagerAccessControl Path="\8. Quota Restrictions\3. Quota (Unlimited)\Quota (1 MB)" AllowedPermissions="Full" Quota="1MB"/>
 
         </GleamTech:FileManagerRootFolder>   
         

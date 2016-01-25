@@ -84,106 +84,106 @@ Namespace Controllers
              .AllowedPermissions = FileManagerPermissions.[ReadOnly]
             })
 
-            'Access controls for subfolder "5. Permissions" and below
+            'Access controls for subfolder "6. Permissions" and below
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions",
+             .Path = "\6. Permissions",
              .AllowedPermissions = FileManagerPermissions.ListFiles Or FileManagerPermissions.ListSubfolders
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions\01. Full",
+             .Path = "\6. Permissions\01. Full",
              .AllowedPermissions = FileManagerPermissions.Full
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions\02. Read",
+             .Path = "\6. Permissions\02. Read",
              .AllowedPermissions = FileManagerPermissions.[ReadOnly]
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions\03. List subfolders",
+             .Path = "\6. Permissions\03. List subfolders",
              .AllowedPermissions = FileManagerPermissions.ListSubfolders
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions\04. List files",
+             .Path = "\6. Permissions\04. List files",
              .AllowedPermissions = FileManagerPermissions.ListFiles
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions\05. Create",
+             .Path = "\6. Permissions\05. Create",
              .AllowedPermissions = FileManagerPermissions.Create Or FileManagerPermissions.ListFiles Or FileManagerPermissions.ListSubfolders
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions\06. Delete",
+             .Path = "\6. Permissions\06. Delete",
              .AllowedPermissions = FileManagerPermissions.Delete Or FileManagerPermissions.ListFiles Or FileManagerPermissions.ListSubfolders
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions\07. Rename",
+             .Path = "\6. Permissions\07. Rename",
              .AllowedPermissions = FileManagerPermissions.Rename Or FileManagerPermissions.ListFiles Or FileManagerPermissions.ListSubfolders
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions\08. Edit",
+             .Path = "\6. Permissions\08. Edit",
              .AllowedPermissions = FileManagerPermissions.Edit Or FileManagerPermissions.ListFiles Or FileManagerPermissions.ListSubfolders
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions\09. Upload",
+             .Path = "\6. Permissions\09. Upload",
              .AllowedPermissions = FileManagerPermissions.Upload Or FileManagerPermissions.ListFiles Or FileManagerPermissions.ListSubfolders
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions\10. Download",
+             .Path = "\6. Permissions\10. Download",
              .AllowedPermissions = FileManagerPermissions.Download Or FileManagerPermissions.ListFiles Or FileManagerPermissions.ListSubfolders
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions\11. Compress",
+             .Path = "\6. Permissions\11. Compress",
              .AllowedPermissions = FileManagerPermissions.Compress Or FileManagerPermissions.ListFiles Or FileManagerPermissions.ListSubfolders
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions\12. Extract",
+             .Path = "\6. Permissions\12. Extract",
              .AllowedPermissions = FileManagerPermissions.Extract Or FileManagerPermissions.ListFiles Or FileManagerPermissions.ListSubfolders
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions\13. Cut",
+             .Path = "\6. Permissions\13. Cut",
              .AllowedPermissions = FileManagerPermissions.Cut Or FileManagerPermissions.ListFiles Or FileManagerPermissions.ListSubfolders
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions\14. Copy",
+             .Path = "\6. Permissions\14. Copy",
              .AllowedPermissions = FileManagerPermissions.Copy Or FileManagerPermissions.ListFiles Or FileManagerPermissions.ListSubfolders
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\5. Permissions\15. Paste",
+             .Path = "\6. Permissions\15. Paste",
              .AllowedPermissions = FileManagerPermissions.Paste Or FileManagerPermissions.ListFiles Or FileManagerPermissions.ListSubfolders
             })
 
-            'Access controls for subfolder "6. File Type Restrictions" and below
+            'Access controls for subfolder "7. File Type Restrictions" and below
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\6. File Type Restrictions\1. Only Image files (jpg, png, bmp, gif)",
+             .Path = "\7. File Type Restrictions\1. Only Image files (jpg, png, bmp, gif)",
              .AllowedPermissions = FileManagerPermissions.Full,
              .AllowedFileTypes = FileTypeSet.Parse("*.jpg|*.png|*.bmp|*.gif")
             })
 
-            'Access controls for subfolder "7. Quota Restrictions" and below
+            'Access controls for subfolder "8. Quota Restrictions" and below
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\7. Quota Restrictions\1. Quota (1 MB)",
+             .Path = "\8. Quota Restrictions\1. Quota (1 MB)",
              .AllowedPermissions = FileManagerPermissions.Full,
              .Quota = ByteSizeValue.Parse("1MB")
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\7. Quota Restrictions\2. Quota (15 MB)",
+             .Path = "\8. Quota Restrictions\2. Quota (15 MB)",
              .AllowedPermissions = FileManagerPermissions.Full,
              .Quota = ByteSizeValue.Parse("15MB")
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\7. Quota Restrictions\2. Quota (15 MB)\Quota (1 MB)",
+             .Path = "\8. Quota Restrictions\2. Quota (15 MB)\Quota (1 MB)",
              .AllowedPermissions = FileManagerPermissions.Full,
              .Quota = ByteSizeValue.Parse("1MB")
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\7. Quota Restrictions\2. Quota (15 MB)\Deep\Quota (1 MB)",
+             .Path = "\8. Quota Restrictions\2. Quota (15 MB)\Deep\Quota (1 MB)",
              .AllowedPermissions = FileManagerPermissions.Full,
              .Quota = ByteSizeValue.Parse("1MB")
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\7. Quota Restrictions\3. Quota (Unlimited)",
+             .Path = "\8. Quota Restrictions\3. Quota (Unlimited)",
              .AllowedPermissions = FileManagerPermissions.Full
             })
             rootFolder.AccessControls.Add(New FileManagerAccessControl() With {
-             .Path = "\7. Quota Restrictions\3. Quota (Unlimited)\Quota (1 MB)",
+             .Path = "\8. Quota Restrictions\3. Quota (Unlimited)\Quota (1 MB)",
              .AllowedPermissions = FileManagerPermissions.Full,
              .Quota = ByteSizeValue.Parse("1MB")
             })

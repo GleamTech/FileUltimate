@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GleamTech.DocumentUltimate</name>
+    </assembly>
+    <members>
+        <member name="T:GleamTech.DocumentUltimate.DocumentConversion">
+            <summary>
+            Converts document files to another format.
+            </summary>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.DocumentConversion.Convert(System.String,System.String)">
+            <summary>
+            Converts a given document file to another format.
+            </summary>
+            <param name="inputFile">The path to the document file to convert.</param>
+            <param name="outputFile">The path to the converted document file.</param>
+        </member>
+        <member name="T:GleamTech.DocumentUltimate.DocumentUltimateConfiguration">
+            <summary>
+            Provides properties and methods for changing this library's configuration.
+            </summary>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.DocumentUltimateConfiguration.CreateLicense(System.String)">
+            <summary>Create a new license.</summary>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.DocumentUltimateConfiguration.InitCurrent">
+            <summary>Initializes only the static Current instance.</summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.DocumentUltimateConfiguration.Current">
+            <summary>Gets current global configuration instance.</summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.DocumentUltimateConfiguration.AssemblyInfo">
+            <summary>Gets information on this library's assembly.</summary>
+        </member>
+        <member name="T:GleamTech.DocumentUltimate.Resources.AssemblyResourceLocator">
+            <summary>Dummy type for locating the root namespace of the assembly resources.</summary>
+        </member>
+        <member name="T:GleamTech.DocumentUltimate.Web.DocumentViewer">
+            <summary>
+            The control for viewing several formats of documents.
+            </summary>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.#ctor(GleamTech.DocumentUltimate.DocumentUltimateConfiguration,GleamTech.DocumentUltimate.Web.DocumentUltimateWebConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GleamTech.DocumentUltimate.Web.DocumentViewer"/> class with custom configuration.
+            </summary>
+            <param name="configuration">The configuration to use instead of the global configuration.</param>
+            <param name="webConfiguration">The web configuration to use instead of the global web configuration.</param>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GleamTech.DocumentUltimate.Web.DocumentViewer"/> class.
+            </summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.Width">
+            <summary>Gets or sets the width of the control.</summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.Height">
+            <summary>Gets or sets the height of the control.</summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DisablePrinting">
+            <summary>
+            Gets or sets a value that specifies whether printing the displayed document 
+            should be disabled for additional security (DRM) purpose.
+            </summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DisableTextSelection">
+            <summary>
+            Gets or sets a value that specifies whether selecting text in the displayed document 
+            should be disabled for additional security (DRM) purpose.
+            </summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.Language">
+            <summary>Gets or sets the display language of the control.</summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DocumentPath">
+            <summary>Gets or sets the document file to load and display.</summary>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.SetDocumentStream(System.Func{System.IO.Stream},System.String,System.Int64,System.DateTime,System.Boolean)">
+            <summary>
+            Sets the document stream to load and display. When you don't have a file on disk, you should
+            use this method instead of <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DocumentPath"/> property. 
+            </summary>
+            <param name="openStream">
+            The callback method to return an opened stream containing the document. The stream is not required to
+            be seekable because it will be immediately copied to cache folder if not already exists. This callback 
+            will only be called when necessary, i.e. if the stream is already cached before or if the required
+            conversions are already done and cached before then the callback will not be called. The reason this
+            is implemented as a callback rather than a direct <see cref="T:System.IO.Stream"/> instance is for extra performance,
+            consider opening a stream is costly in your implementation, for example you are retrieving it from network
+            or a database or even from a zip file so opening the stream only when it's really necessary would be more
+            performant when your document is viewed several times by several users.
+            </param>
+            <param name="fileExtension">
+            The extension of the file (e.g. docx, pdf). 
+            This is required for determining the document format of the stream and 
+            also for generating a proper cache key for uniquely identifying streams.
+            </param>
+            <param name="fileSize">
+            The size of the file. 
+            This is required for generating a proper cache key for uniquely identifying streams.
+            </param>
+            <param name="fileDateModified">
+            The last modified time of the file. 
+            This is required for generating a proper cache key for uniquely identifying streams.
+            </param>
+            <param name="leaveStreamOpen">
+            Whether to leave the stream (returned by <paramref name="openStream"/> callback) open 
+            after the copying is complete.
+            </param>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.GetScriptTags">
+            <summary>Gets script tags of the control.</summary>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>Renders the control.</summary>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.SaveState">
+            <summary>Saves the control state.</summary>
+        </member>
+        <member name="T:GleamTech.DocumentUltimate.Web.DocumentViewerState">
+            <tocexclude />
+        </member>
+        <member name="T:GleamTech.DocumentUltimate.Web.DocumentUltimateWebConfiguration">
+            <summary>
+            Provides properties and methods for changing this library's configuration for web use.
+            </summary>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentUltimateWebConfiguration.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GleamTech.DocumentUltimate.Web.DocumentUltimateWebConfiguration"/> class
+            </summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentUltimateWebConfiguration.CachePath">
+            <summary>
+            Gets or sets the path to store cached documents. 
+            Value can be a virtual or physical path, however always returns a physical path, ie. if the original
+            value was a virtual path, returns the resolved physical path.
+            </summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentUltimateWebConfiguration.CacheMaxDays">
+            <summary>
+            Gets or sets the maximum number of days to store cached documents.
+            The default value is 90 days.
+            </summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentUltimateWebConfiguration.DisableEncryption">
+            <summary>
+            Gets or sets a value that specifies whether encryption of documents should be disabled.
+            Document viewer downloads a special document format on the client-side but for additional 
+            security (DRM), the document is also encypted by default.
+            </summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentUltimateWebConfiguration.DocumentViewerHandlerPath">
+            <summary>
+            Gets or sets a value that specifies the path for the document viewer handler (eg. documentviewer.ashx). 
+            Normally you would not need to change the default value.
+            </summary>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentUltimateWebConfiguration.InitCurrent">
+            <summary>Initializes only the static Current instance.</summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentUltimateWebConfiguration.Current">
+            <summary>Gets current global configuration instance.</summary>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentUltimateWebConfiguration.PreApplicationStart">
+            <summary>Runs automatically before the ASP.NET application is started.</summary>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentUltimateWebConfiguration.RestoreRoutes">
+            <summary>
+            Restores the necessary routes in case you cleared RouteTable.Routes in your application.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -29,14 +29,6 @@
             <param name="relativeFilePath">File path of the embedded resource in the assembly. Path should be in [Folder1]\[Folder2]\[FileName] format and case insensitive values are allowed.</param>
             <returns>The stream of the embedded resource or null if the given resource name does not exist</returns>
         </member>
-        <member name="M:GleamTech.Reflection.AssemblyResourceHelper.GetResourceStream(System.Reflection.Assembly,System.String)">
-            <summary>
-            Gets the stream of an embedded resource from a given assembly. Allows case insensitive resource names.
-            </summary>
-            <param name="resourceAssembly">Assembly which contains the embedded resource.</param>
-            <param name="resourceName">Name of the embedded resource in the assembly. Name should be in [Namespace].[Folder1].[Folder2].[FileName] format and case insensitive values are allowed.</param>
-            <returns>The stream of the embedded resource or null if the given resource name does not exist</returns>
-        </member>
         <member name="T:GleamTech.Enum`1">
             <summary>
             Strongly typed version of Enum with Parsing and performance improvements.

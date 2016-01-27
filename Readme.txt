@@ -1,4 +1,4 @@
-FileUltimate v5.0.6 - ASP.NET File Manager
+FileUltimate v5.0.7 - ASP.NET File Manager
 Copyright © 2006-2016 GleamTech
 http://www.gleamtech.com/fileultimate
 

@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
-using GleamTech.FileUltimateExamples.Common;
 
 namespace GleamTech.FileUltimateExamples.Mvc.CS
 {
@@ -23,8 +22,6 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS
 
         protected void Application_Start()
         {
-            ExamplesExplorerContext.Start();
-
             AreaRegistration.RegisterAllAreas();
 
             RegisterRoutes(RouteTable.Routes);

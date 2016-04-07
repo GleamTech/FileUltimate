@@ -1,6 +1,5 @@
 ﻿' Note: For instructions on enabling IIS6 or IIS7 classic mode, 
 ' visit http://go.microsoft.com/?LinkId=9394802
-Imports GleamTech.FileUltimateExamples.Common
 
 Public Class MvcApplication
     Inherits System.Web.HttpApplication
@@ -21,8 +20,6 @@ Public Class MvcApplication
     End Sub
 
     Sub Application_Start()
-        ExamplesExplorerContext.Start()
-
         AreaRegistration.RegisterAllAreas()
         
         RegisterRoutes(RouteTable.Routes)

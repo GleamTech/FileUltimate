@@ -29,6 +29,7 @@
     <IISExpressAnonymousAuthentication/>
     <IISExpressWindowsAuthentication/>
     <IISExpressUseClassicPipelineMode/>
+    <UseGlobalApplicationHostFile/>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,6 +40,7 @@
     <DocumentationFile>
 		</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -49,11 +51,15 @@
     <DocumentationFile>
 		</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a05198837413a6d8, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Bin\GleamTech.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GleamTech.ExamplesCore">
+      <HintPath>..\References\GleamTech.ExamplesCore.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.FileUltimate, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -135,6 +141,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <Content Include="Descriptions\FileManager\Chooser.html"/>
+    <Content Include="Descriptions\FileManager\Display.html"/>
+    <Content Include="Descriptions\FileManager\Dynamic.html"/>
+    <Content Include="Descriptions\FileManager\Events.html"/>
+    <Content Include="Descriptions\FileManager\Layout.html"/>
+    <Content Include="Descriptions\FileManager\Overview.html"/>
     <Content Include="Views\FileManager\Chooser.vbhtml"/>
     <Content Include="Views\FileManager\Display.vbhtml"/>
     <Content Include="Views\FileManager\Dynamic.vbhtml"/>
@@ -159,12 +171,6 @@
     <Folder Include="App_Data\"/>
     <Folder Include="App_GlobalResources\Languages\"/>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{6475DC74-3455-445B-A37A-C9CE28CC7771}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -172,8 +178,6 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets"/>
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''"/>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false"/>
-	<!-- Import custom project target -->
-  <Import Project="$(MSBuildProjectDirectory)\..\Common\Properties\Project.targets"/>
 	<!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

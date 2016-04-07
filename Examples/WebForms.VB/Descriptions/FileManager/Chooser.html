@@ -1,0 +1,11 @@
+﻿
+The control can be used as a file/folder chooser. Choosable item types can be set as file only, folder only or both.
+Single or multiple selections are possible.
+<br/><br/>
+After user chooses items or cancels, the control hides and raises a client-side chosen event with event arguments (eventArgs).
+When canceled, eventArgs.IsCanceled will be set to true and other properties will not be set.
+When a valid choice is made, the full path of the parent folder (eventArgs.ParentFullPath) and an array of chosen items (eventArgs.Items) with details (item.Name, item.FullPath and item.IsFolder) will be set.
+<br/><br/>
+Note that actual physical paths (like C:\folder) should not be visible or readable on the client side for security reasons.
+That's why, path properties will be in "RootFolderName:\Subfolder" format.
+If required, you can convert these paths to physical paths by replacing RootFolderName with the location of the corresponding root folder on the server side.

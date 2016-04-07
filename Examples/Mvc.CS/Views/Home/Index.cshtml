@@ -1,74 +1,75 @@
-﻿@using GleamTech.FileUltimate
-@using GleamTech.FileUltimateExamples.Common
-@using GleamTech.FileUltimateExamples.Mvc.CS
-@using GleamTech.Web
-
+﻿@using GleamTech.ExamplesCore
+@using GleamTech.Web.Mvc
+@{
+    var exampleExplorer = new ExampleExplorer
+    {
+        FullViewport = true,
+        NavigationTitle = "FileUltimate Examples",
+        Examples = new ExampleBase[]
+        {
+            new ExampleFolder
+            {
+                Title = "FileManager",
+                Children = new ExampleBase[]
+                {
+                    new Example
+                    {
+                        Title = "Overview",
+                        Url = "filemanager/overview",
+                        SourceFiles = new[] {"Views/FileManager/Overview.cshtml", "Controllers/FileManagerController.Overview.cs"},
+                        DescriptionFile = "Descriptions/FileManager/Overview.html"
+                    },
+                    new Example
+                    {
+                        Title = "Using page layouts",
+                        Url = "filemanager/layout",
+                        SourceFiles = new[] {"Views/FileManager/Layout.cshtml", "Views/Shared/_Layout.cshtml", "Controllers/FileManagerController.Layout.cs"},
+                        DescriptionFile = "Descriptions/FileManager/Layout.html"
+                    },
+                    new Example
+                    {
+                        Title = "Displaying control on demand",
+                        Url = "filemanager/display",
+                        SourceFiles = new[] {"Views/FileManager/Display.cshtml", "Controllers/FileManagerController.Display.cs"},
+                        DescriptionFile = "Descriptions/FileManager/Display.html"
+                    },
+                    new Example
+                    {
+                        Title = "Events",
+                        Url = "filemanager/events",
+                        SourceFiles = new[] {"Views/FileManager/Events.cshtml", "Controllers/FileManagerController.Events.cs"},
+                        DescriptionFile = "Descriptions/FileManager/Events.html"
+                    },
+                    new Example
+                    {
+                        Title = "Dynamic folder and permissions",
+                        Url = "filemanager/dynamic",
+                        SourceFiles = new[] {"Views/FileManager/Dynamic.cshtml", "Controllers/FileManagerController.Dynamic.cs"},
+                        DescriptionFile = "Descriptions/FileManager/Dynamic.html"
+                    },
+                    new Example
+                    {
+                        Title = "File/Folder chooser",
+                        Url = "filemanager/chooser",
+                        SourceFiles = new[] {"Views/FileManager/Chooser.cshtml", "Controllers/FileManagerController.Chooser.cs"},
+                        DescriptionFile = "Descriptions/FileManager/Chooser.html"
+                    }
+                }
+            }
+        }
+    };
+}
 <!DOCTYPE html>
 
 <html>
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>FileUltimate Examples - ASP.NET MVC (C#)</title>
 
-    <link href="@ResourceManager.GetUrl(FileUltimateConfiguration.LibraryCssBundle)" rel="stylesheet"/>
-    <link href="@ResourceManager.GetUrl(ExamplesExplorerContext.CssBundle)" rel="stylesheet"/>
+    @Html.RenderCss(exampleExplorer)
+    @Html.RenderJs(exampleExplorer)
 
-    <script src="@ResourceManager.GetUrl(FileUltimateConfiguration.LibraryJsBundle)"></script>
-    <script src="@ResourceManager.GetUrl(ExamplesExplorerContext.JsBundle)"></script>
-
-    <script type="text/javascript">
-        examplesData = [
-            {
-                text: "FileManager",
-                assemblyResourceLocator: "@typeof(MvcApplication).AssemblyQualifiedName",
-                children: [
-                    {
-                        text: "Overview",
-                        url: "filemanager/overview",
-                        sourceFiles: ["Views/FileManager/Overview.cshtml", "Controllers/FileManagerController.Overview.cs"],
-                        descriptionFile: "Descriptions/Mvc/FileManager/Overview.html",
-                        leaf: true
-                    },
-                    {
-                        text: "Using page layouts",
-                        url: "filemanager/layout",
-                        sourceFiles: ["Views/FileManager/Layout.cshtml", "Views/Shared/_Layout.cshtml", "Controllers/FileManagerController.Layout.cs"],
-                        descriptionFile: "Descriptions/Mvc/FileManager/Layout.html",
-                        leaf: true
-                    },
-                    {
-                        text: "Displaying control on demand",
-                        url: "filemanager/display",
-                        sourceFiles: ["Views/FileManager/Display.cshtml", "Controllers/FileManagerController.Display.cs"],
-                        descriptionFile: "Descriptions/Mvc/FileManager/Display.html",
-                        leaf: true
-                    },
-                    {
-                        text: "Events",
-                        url: "filemanager/events",
-                        sourceFiles: ["Views/FileManager/Events.cshtml", "Controllers/FileManagerController.Events.cs"],
-                        descriptionFile: "Descriptions/Mvc/FileManager/Events.html",
-                        leaf: true
-                    },
-                    {
-                        text: "Dynamic folder and permissions",
-                        url: "filemanager/dynamic",
-                        sourceFiles: ["Views/FileManager/Dynamic.cshtml", "Controllers/FileManagerController.Dynamic.cs"],
-                        descriptionFile: "Descriptions/Mvc/FileManager/Dynamic.html",
-                        leaf: true
-                    },
-                    {
-                        text: "File/Folder chooser",
-                        url: "filemanager/chooser",
-                        sourceFiles: ["Views/FileManager/Chooser.cshtml", "Controllers/FileManagerController.Chooser.cs"],
-                        descriptionFile: "Descriptions/Mvc/FileManager/Chooser.html",
-                        leaf: true
-                    }
-                ]
-            }
-        ];
-    </script>
 </head>
-    <body>
-    </body>
+<body>
+    @Html.RenderControl(exampleExplorer)
+</body>
 </html>

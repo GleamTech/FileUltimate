@@ -12,4 +12,13 @@ Option Explicit On
 
 
 Partial Public Class DefaultPage
+    
+    '''<summary>
+    '''exampleExplorer control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents exampleExplorer As Global.GleamTech.ExamplesCore.ExampleExplorer
 End Class

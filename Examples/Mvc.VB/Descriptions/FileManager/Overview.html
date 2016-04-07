@@ -1,0 +1,341 @@
+﻿
+For rendering a FileManager in a MVC view, you need to call the 3 methods <b>Html.RenderCss</b>, <b>Html.RenderJs</b> and <b>Html.RenderControl</b> with an instance of FileManager class as the parameter.
+<br/><br />
+<span class="title">Control properties:</span>
+<ul class="propertyList">
+    <li>
+        <span class="property">ID</span> property specifies the control identifier. 
+        A javascript variable with the same name is automatically defined and it can be used to access the client-side implementation of the control.
+        If omitted, id will be set to <b>fileManager</b> for the first instance and to <b>fileManager2</b> ... <b>fileManagerX</b> for the following instances on the same page.
+    </li>
+    <li>
+        <span class="property">Width</span> property specifies the width of the control (default unit is pixels).
+    </li>
+    <li>
+        <span class="property">Height</span> property specifies the height of the control (default unit is pixels).
+    </li>
+    <li>
+        <span class="property">Resizable</span> property specifies if the control can be resized when the user drags sides. Default value is <b>false</b>.
+    </li>
+    <li>
+        <span class="property">ResizeHandles</span> property specifies the sides of the control that the resizing should be possible.
+        Resize handle types are <b>North, South, East, West, SouthEast, SouthWest, NorthWest, NorthEast</b> and <b>All</b> (includes all sides).
+        When combining values, they should be separated by comma. If not set, resize handles will exist at South, East, SouthEast sides except when ModalDialog mode is on, resize handles will exist at all sides.
+    </li>
+    <li>
+        <span class="property">FullViewport</span> property, when set to <b>true</b>, discards Width and Height properties and resizes the control
+        to fit the browser's viewport (interior of the browser window).
+    </li>
+    <li>
+        <span class="property">ModalDialog</span> property, when set to <b>true</b>, displays the control within a modal dialog which masks the parent element.
+        If FullViewport mode is active then the modal dialog will mask the browser's viewport instead.    
+    </li>      
+    <li>
+        <span class="property">ModalDialogTitle</span> property specifies the title of the modal dialog.
+    </li>
+    <li>
+        <span class="property">ShowOnLoad</span> property, when set to <b>false</b>, hides the control when page is loaded.
+        This is useful when the control will be displayed later on client-side manually. For example, the control can be displayed via a button's click event.
+    </li>
+    <li>
+        <sup>New in v4.3</sup> <span class="property">InitialFolder</span> property specifies the folder that should be selected and displayed initially.
+        It should be set to the full path of the folder like <b>[RootFolderName]:\Some\Folder</b>.
+        If omitted, the first root folder will be selected automatically.
+    </li>
+    <li>
+        <span class="property">Chooser</span> property, when set to <b>true</b>, displays the control as a file/folder chooser.
+        In chooser mode, "Choose" and "Cancel" buttons will be displayed at the bottom of the control and double-clicking on a item of allowed type will choose that item instead of doing the default action (download/explore).
+    </li>      
+    <li>
+        <span class="property">ChooserType</span> property specifies the item type that will be allowed to be chosen in chooser mode.
+        Possible values are <b>File</b>, <b>Folder</b> and <b>FileOrFolder</b>. If omitted, <b>File</b> will be used.
+    </li>      
+    <li>
+        <span class="property">ChooserMultipleSelection</span> property, when set to <b>true</b>, allows multiple item selections in chooser mode.
+    </li>      
+    <li>
+        <span class="property">ClientLoading</span>, <span class="property">ClientLoaded</span> and <span class="property">ClientChosen</span> properties specifies the client-side events.
+        ClientLoading is raised before control is loaded and ClientLoaded is raised after control is loaded.
+        ClientChosen is raised after user chooses items when using chooser mode.
+        The value should be a valid JavaScript function name which is accessible on the host page. Function names should be specified without parentheses like <b>FunctionName</b> or <b>Namespace.FunctionName</b>.
+        Example function:<br/><br/>function fileManagerLoaded(sender, eventArgs) { var fileManager = sender; }
+    </li>
+    <li>
+        <span class="property">DisplayLanguage</span> property specifies the user interface language.
+        It is usually set as the two-letter language names like <b>en</b>, <b>de</b>, <b>fr</b> etc. as the bundled
+        languages are usually for general language names.
+        However it can be also set to specific cultures like <b>en-US</b>, <b>de-DE</b>, <b>fr-FR</b> etc.
+        For example, if the property is set to a specific culture like <b>de-CH</b>
+        (German in Switzerland), the control will first look for the language file <b>FileUltimate-de-CH.xml</b> 
+        and if the file is not found, it will load the general (fallback) language file 
+        of that culture which is <b>FileUltimate-de.xml</b>. If omitted, the language file which matches the current 
+        UICulture of the host application will be loaded. If there is no language file 
+        which matches the current UICulture or its fallback, then the default language 
+        file <b>FileUltimate.xml</b> is loaded.
+    </li>
+    <li>
+        <span class="property">FormatLanguage</span> property specifies the language used for the number and date/time formats.
+        If omitted, the current Culture of the host application will be used.
+    </li>
+    <li>
+        <span class="property">LicenseKey</span> property, when set to a valid license key, unlocks the trial mode. If omitted, the control will run in trial mode.
+    </li>
+    <li>
+        <span class="property">UploadMethods</span> property specifies comma separated upload methods in priority order.
+        The default value is <b>Html5, Silverlight, Flash, Html4</b> and it's recommended not to change this property as the default order offers the best upload experience.
+        <br/><b>Html5:</b> This is the best one as it supports unlimited file size (via chunking), multiple selection at once and drag & drop. This method is available on IE 10 and all other recent browsers. You can also drag and drop files from local folders to the upload window with this method.
+        <br/><b>Silverlight:</b> This is the second best one as it's similar to Html5 except it does not support drag & drop currently. Silverlight method can be a good alternative when users can not upgrade to browsers that support Html5. This method is also good for large files like Html5.
+        <br/><b>Flash:</b> This supports multiple selection at once like Html5 and Silverlight but it does not work well with large files due to problems in Adobe Flash plugin. If you are uploading files larger than few hundred MBs of files, it will probably fail before even starting the upload. Flash plugin loads the whole file into memory which is inefficient and which causes a delay before starting the upload. However this method is different than the Flash method in previous versions as it will now retain cookies and authentication headers. This method should be only used when uploading small files and multiple selection at once is required.
+        <br/><b>Html4:</b> This method works on all browsers. Browser and Ajax methods in previous versions is merged into this method. This method always provides progress information even if the application is hosted on a shared host (medium-trust) unlike previous Ajax method which required full-trust. This is the only method that chunking the file is not possible so there is a maximum limit of 2GB per file imposed by IIS and ASP.NET.
+        <br/><br/><b>Warning:</b> Due to a bug in Visual Studio's web server (ASP.NET Development Server), when running the control on this web server, there can be a delay with Html4 method while uploading.
+        This delay can be observed especially with large files: the file will be received as a whole first and then progress will start to be updated while writing to disk.
+        Note that this will never happen when running on IIS or IIS Express.
+    </li>
+    <li>
+        <sup>Renamed in v4.3 (MaxZipFileSize)</sup> <span class="property">MaxSizeToCompress</span> property
+        specifies maximum allowed size to compress (per action). This property can be used to prevent users
+        creating large zip files (or other compressed archive files in future) which is CPU intensive.
+        It can be set in <b>&lt;Number&gt; B/KB/MB/GB/TB</b> format (eg. <b>1024</b> or <b>1024 B</b>, <b>200 KB</b>, <b>30 MB</b>, <b>5 GB</b>, <b>1 TB</b>). 
+        If omitted, there will be no size limit for compression.
+    </li>
+    <li>
+        <span class="property">DownloadWithChunkedTransferThreshold</span> property is only useful if you have problems downloading large files due to your environment limitations (reverse proxy etc.).
+        For example, Microsoft Forefront UAG can not parse http reponses when content-length is larger than 2GB (throws HTTP 500 due to 32-bit integer limit). By setting this property to <b>2GB</b>, files upto 2GB will be sent with content-length set (default download method)
+        but files larger than 2GB will be sent without content-length and with chunked-transfer encoding so that you can bypass UAG's limitation and successfully download the files.
+        The reason this setting is specified as a threshold is that default download method (content-length set) is always better as it allows the browser to know the whole file size thus show progress information. 
+        However with chunked-transfer encoding, the browser will not know the whole file size so it will not be able to show progress information but it will still be able to download the file as long as it receives the stream.
+        So users downloading files smaller than this threshold should not be punished with indeterminate progress but also users downloading files larger than this threshold should still be able successfully download even there is no progress.
+    </li>
+    <li>
+        <span class="property">ShowHiddenFilesAndFolders</span> property, when set to <b>true</b>, shows hidden files and subfolders in folders.
+    </li>
+    <li>
+        <span class="property">ShowSystemFilesAndFolders</span> property, when set to <b>true</b>, shows system files and subfolders in folders.
+    </li>
+    <li>
+        <span class="property">ShowFileExtensions</span> property, when set to <b>true</b>, shows the extension part of the file names in folders. 
+        When this property is enabled, the extensions will be also editable in dialog boxes when user is prompted (eg. on <b>Rename</b> and <b>Add to Zip</b> actions).
+    </li>
+    <li>
+        <span class="property">ShowSystemTypeDescriptions</span> property, when set to <b>true</b>, shows file and folder type descriptions from the system's registry (eg. <b>Microsoft Word Document</b>).
+        If not enabled (default behaviour), then simple but current language dependant type descriptions (eg. <b>DOC File</b>) will be shown.
+        Under Medium-Trust, registry access will not be possible so even if this property is enabled, simple type descriptions will be shown.
+    </li>
+    <li>
+        <sup>New in v4.4.5</sup> <span class="property">ShowRibbon</span> property, when set to <b>false</b>, hides the ribbon (top pane) completely.
+    </li>
+    <li>
+        <sup>New in v4.4.5</sup> <span class="property">CollapseRibbon</span> property, when set to <b>true</b>, shows the ribbon (top pane) in collapsed state.
+    </li>
+    <li>
+        <span class="property">ShowFoldersPane</span> property, when set to <b>false</b>, hides the folders pane (left pane).
+    </li>
+    <li>
+        <span class="property">SortRootFolders</span> property, when set to <b>false</b>, displays the root folders in the original order
+        instead of alphabetically sorted order.
+    </li>
+    <li>
+        <span class="property">ViewLayout</span> property specifies the initial view layout type to display files and folders.
+        Possible values are <b>ExtraLargeIcons</b>, <b>LargeIcons</b>, <b>MediumIcons</b>, <b>SmallIcons</b>, <b>Details</b> and <b>Tiles</b>. If omitted, <b>LargeIcons</b> will be used.
+    </li>
+    <li>
+        <sup>New in v4.6</sup> <span class="property">DownloadOnDoubleClick</span> property, when set to <b>true</b>,
+        "Download" action will be triggered on double click just like in previous versions.
+        From now on, when you double-click on a file, by default (set to false) "Preview" action will be
+        triggered. If "Preview" permission is not allowed or the file type is not previewable by any of the built-in viewers,
+        then "Open" (open inline in browser or open locally) action will be triggered.
+    </li>
+        <sup>New in v4.6.2</sup> <span class="property">DisablePreviewerTextSelection</span> property, when set to <b>true</b>,
+        text selection (ie. copying via CTRL + C) on the Document Viewer will be disabled for further protection of your files.
+    </li>
+    <li>
+        <sup>New in v4.6.4</sup> <span class="property">ExcludedExtensionsForPreview</span> property can be set to comma-separated 
+        file extensions. "Preview" action for these file extensions will be disabled.
+    </li>
+</ul>
+ 
+<br /><br />
+<span class="title">Root folder properties:</span>
+<ul class="propertyList">
+    <li>
+        <span class="property">Name</span> property specifies the display name of the root folder. 
+        This property can not be empty and can not contain the character sequence "]:" (right square bracket preceding colon).
+    </li>
+    <li>
+        <span class="property">Location</span> property specifies the actual location of the root folder.
+        This property is required and can not be omitted. Location should be specified as one of the following:
+        <ul>
+            <li>
+                A local path: <b>d:\files</b>
+            </li>
+            <li>
+                A network path (UNC): <b>\\server\share</b>
+            </li>
+            <li>
+                An application-relative path: <b>~/App_Data/RootFolder1</b>
+            </li>
+            <li>
+                A virtual path: <b>/webfolder/test</b>
+            </li>
+            <li>
+                For connecting as a specific user to a path (usually network paths), location should be specified with credentials in this format:
+                <br/>
+                <div style="margin: 5px 0 5px 0"><b>Path=\\server\share; User Name=USERNAME; Password=PASSWORD</b>
+                </div>
+                Path can be any of the above types.
+                User Name can be speficied as Domain\User, User@Domain (UPN format), MachineName\User or User (local user).
+                If a value contains semi-colon character, that value should be enclosed in single quotes (eg. Password='PASSWORD') or double quotes (eg. Password="PASSWORD").
+            </li>
+            <li>
+                If Windows Authentication is used in IIS for this site, location can be specified like this to connect as the already authenticated user:
+                <br/>
+                <div style="margin: 5px 0 5px 0"><b>Path=\\server\share; Authenticated User=Windows</b>
+                </div>
+            </li>
+        </ul>
+        <div>
+            <div>Information on FileManagerRootFolder.Location property as of v4.7:</div>
+
+            <div>&nbsp;</div>
+
+            <div>
+                &nbsp; This property is now of type Location class instead of string. You can still assign<br />
+                &nbsp; a string to this property as it's automatically casted so this is not a breaking change. The advantage of this special<br />
+                &nbsp; Location class is that you can now set it directly to an instance of PhysicalLocation or AmazonS3Location (more will<br />
+                &nbsp; be available in the future) classes. For instance this line:<br />
+                &nbsp;&nbsp;<br />
+                &nbsp; rootFolder.Location = &quot;Type=AmazonS3; Bucket Name=mybucket&quot;;
+            </div>
+
+            <div>&nbsp;</div>
+
+            <div>&nbsp; is same as this line:</div>
+
+            <div>&nbsp;</div>
+
+            <div>&nbsp; rootFolder.Location = new AmazonS3Location { BucketName = &quot;mybucket&quot; };</div>
+
+            <div>&nbsp;</div>
+
+            <div>
+                &nbsp; This means you don't need to bother with formatting location strings correctly (eg. guessing property names)<br />
+                &nbsp; Except in aspx markup, you will still need to use strings which look like connection strings if you need to set&nbsp;<br />
+                &nbsp; advanced properties. Also note that this line:
+            </div>
+
+            <div>&nbsp;</div>
+
+            <div>&nbsp; rootFolder.Location = &quot;c:\some\folder&quot;;</div>
+
+            <div>&nbsp;</div>
+
+            <div>&nbsp; is same as this line:</div>
+
+            <div>&nbsp;</div>
+
+            <div>&nbsp; rootFolder.Location = &quot;Type=Physical; Path=c:\some\folder&quot;;</div>
+
+            <div>&nbsp;</div>
+
+            <div>&nbsp; and also same as this line:</div>
+
+            <div>&nbsp;</div>
+
+            <div>&nbsp; rootFolder.Location = new PhysicalLocation { Path = &quot;c:\some\folder&quot; };</div>
+
+            <div>&nbsp;</div>
+
+            <div>&nbsp; So as in previous versions, setting location to a path string directly means it's a physical location by default.</div>
+        </div>
+    </li>
+</ul>
+
+<br /><br />
+<span class="title">Access control properties:</span>
+<ul class="propertyList">
+    <li>
+        <span class="property">Path</span> property specifies the relative path of a root folder where the access control will be applied to. 
+        For instance, to apply the access control to the root level, the value should be set to <b>\</b>.
+        To apply the access control to a subfolder named <b>subfolder1</b>, the value should be set to <b>\subfolder1</b>.
+        This property can not be empty and should start with backslash (\) or forward slash (/).
+        By default, a subfolder inherits from first parent with an access control unless there is an explicit access control for that subfolder.
+    </li>
+    <li>
+        <span class="property">AllowedPermissions</span> property specifies permission types that are allowed.
+        Permission types are <b>ListSubfolders, ListFiles, Create, Delete, Rename, Edit, Upload, Download, Compress, Extract, Cut, Copy, Paste, Preview, Print</b>
+        and <b>Full</b> (includes all permissions) and <b>ReadOnly</b> (includes only ListSubfolders, ListFiles, Download, Copy).
+        When combining permissions, they should be separated by comma. If omitted, all permissions will be considered denied.
+    </li>
+    <li>
+        <span class="property">DeniedPermissions</span> property specifies permission types that are denied. Denied permissions take precedence over allowed permissions.
+        For instance, when AllowedPermissions is set to <b>Full</b> and DeniedPermissions is set to <b>Upload, Download</b>, all permission except Upload and Download will be allowed.
+    </li>
+    <li>
+        <span class="property">AllowedFileTypes</span> property specifies file patterns that are allowed.
+        This property restricts all actions (List, Delete, Rename, 
+        Copy, Move, Extract, Compress, Download and Upload). This means 
+        only allowed file types will be visible and manageable in the file list. If omitted, any file type (ie.
+        <b>*</b>) is allowed.  When combining patterns, they should be separated by vertical bar (|).
+        <br/><br/>In a pattern, you can use these wildcards:<br/>
+        <table>
+            <tr>
+                <td style="width: 50px;"><b>*</b></td>
+                <td>matches zero or more characters</td>
+            </tr>
+            <tr>
+                <td><b>?</b></td>
+                <td>matches exactly one character</td>
+            </tr>
+        </table>
+            <br/>
+        Some pattern examples:<br/><br/>
+        <table style="border-collapse:separate; border-spacing: 5px;">
+            <tr>
+                <td><b>*.*</b></td>
+                <td>matches files with any extension (does not match files without an extension)</td>
+            </tr>
+            <tr>
+                <td><b>*.jpg</b></td>
+                <td>matches files only with jpg extension</td>
+            </tr>
+            <tr>
+                <td><b>picture*.jpg</b></td>
+                <td>matches files only with jpg extension and which names start with 'picture'</td>
+            </tr>
+            <tr>
+                <td><b>picture.*</b></td>
+                <td>matches files with any extension and which names start with 'picture'</td>
+            </tr>
+            <tr>
+                <td><b>picture</b></td>
+                <td>matches files with no extension and which names are exactly 'picture'</td>
+            </tr>
+            <tr>
+                <td><b>*.jp*</b></td>
+                <td>matches files like 'picture.jpg', 'otherpicture.jpe', 'somepicture.jpeg' etc.</td>
+            </tr>
+            <tr>
+                <td><b>*.jp?</b></td>
+                <td>matches files like 'picture.jpg', 'otherpicture.jpe' etc.</td>
+            </tr>
+            <tr>
+                <td><b>picture?.jpg</b></td>
+                <td>matches files like 'picture1.jpg', 'picture2.jpg', 'pictures.jpg' etc.</td>
+            </tr>
+        </table>
+        <br/>
+    </li>
+    <li>
+        <span class="property">DeniedFileTypes</span> property specifies file patterns that are denied. Denied patterns take precedence over allowed patterns.
+    </li>
+    <li>
+        <span class="property">Quota</span> property specifies the quota limit.
+        It can be set in <b>&lt;Number&gt; B/KB/MB/GB/TB</b> format (eg. <b>1024</b> or <b>1024 B</b>, <b>200 KB</b>, <b>30 MB</b>, <b>5 GB</b>, <b>1 TB</b>).
+        If omitted, the quota will be unlimited.
+    </li>
+    <li>
+        <sup>New in v4.3</sup> <span class="property">LimitDiskUsage</span> is only useful when set to <b>false</b> to override
+        the quota setting of the parent folder, ie. when you need unlimited disk space in a subfolder of a parent folder with limited disk space.
+        When <b>Quota</b> property is set, <b>LimitDiskUsage</b> is set to <b>true</b> implicitly.
+    </li>
+</ul>

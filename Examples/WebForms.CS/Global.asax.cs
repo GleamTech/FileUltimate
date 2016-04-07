@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web;
-using GleamTech.FileUltimateExamples.Common;
 
 namespace GleamTech.FileUltimateExamples.WebForms.CS
 {
@@ -8,7 +7,6 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            ExamplesExplorerContext.Start();
         }
     }
 }

@@ -1,74 +1,65 @@
-﻿@Imports GleamTech.FileUltimate
-@Imports GleamTech.FileUltimateExamples.Common
-@Imports GleamTech.FileUltimateExamples.Mvc.VB
-@Imports GleamTech.Web
-
+﻿@Imports GleamTech.ExamplesCore
+@Imports GleamTech.Web.Mvc
+@Code
+    Dim exampleExplorer = New ExampleExplorer() With {
+        .FullViewport = True,
+        .NavigationTitle = "FileUltimate Examples",
+        .Examples = New ExampleBase() {
+            New ExampleFolder() With {
+                .Title = "FileManager",
+                .Children = New ExampleBase() {
+                    New Example() With {
+                        .Title = "Overview",
+                        .Url = "filemanager/overview",
+                        .SourceFiles = New String() {"Views/FileManager/Overview.vbhtml", "Controllers/FileManagerController.Overview.vb"},
+                        .DescriptionFile = "Descriptions/FileManager/Overview.html"
+                    },
+                    New Example() With {
+                        .Title = "Using page layouts",
+                        .Url = "filemanager/layout",
+                        .SourceFiles = New String() {"Views/FileManager/Layout.vbhtml", "Views/Shared/_Layout.vbhtml", "Controllers/FileManagerController.Layout.vb"},
+                        .DescriptionFile = "Descriptions/FileManager/Layout.html"
+                    },
+                    New Example() With {
+                        .Title = "Displaying control on demand",
+                        .Url = "filemanager/display",
+                        .SourceFiles = New String() {"Views/FileManager/Display.vbhtml", "Controllers/FileManagerController.Display.vb"},
+                        .DescriptionFile = "Descriptions/FileManager/Display.html"
+                    },
+                    New Example() With {
+                        .Title = "Events",
+                        .Url = "filemanager/events",
+                        .SourceFiles = New String() {"Views/FileManager/Events.vbhtml", "Controllers/FileManagerController.Events.vb"},
+                        .DescriptionFile = "Descriptions/FileManager/Events.html"
+                    },
+                    New Example() With {
+                        .Title = "Dynamic folder and permissions",
+                        .Url = "filemanager/dynamic",
+                        .SourceFiles = New String() {"Views/FileManager/Dynamic.vbhtml", "Controllers/FileManagerController.Dynamic.vb"},
+                        .DescriptionFile = "Descriptions/FileManager/Dynamic.html"
+                    },
+                    New Example() With {
+                        .Title = "File/Folder chooser",
+                        .Url = "filemanager/chooser",
+                        .SourceFiles = New String() {"Views/FileManager/Chooser.vbhtml", "Controllers/FileManagerController.Chooser.vb"},
+                        .DescriptionFile = "Descriptions/FileManager/Chooser.html"
+                    }
+                }
+            }
+        }
+    }
+End Code
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>FileUltimate Examples - ASP.NET MVC (VB)</title>
+<head>
+    <title>FileUltimate Examples - ASP.NET MVC (VB)</title>
 
-        <link href="@ResourceManager.GetUrl(FileUltimateConfiguration.LibraryCssBundle)" rel="stylesheet" />
-        <link href="@ResourceManager.GetUrl(ExamplesExplorerContext.CssBundle)" rel="stylesheet" />
-        
-        <script src="@ResourceManager.GetUrl(FileUltimateConfiguration.LibraryJsBundle)"></script>
-        <script src="@ResourceManager.GetUrl(ExamplesExplorerContext.JsBundle)"></script>
+    @Html.RenderCss(exampleExplorer)
+    @Html.RenderJs(exampleExplorer)
 
-        <script type="text/javascript">
-            examplesData = [
-                {
-                    text: "FileManager",
-                    assemblyResourceLocator: "@GetType(MvcApplication).AssemblyQualifiedName",
-                    children: [
-                        {
-                            text: "Overview",
-                            url: "filemanager/overview",
-                            sourceFiles: ["Views/FileManager/Overview.vbhtml", "Controllers/FileManagerController.Overview.vb"],
-                            descriptionFile: "Descriptions/Mvc/FileManager/Overview.html",
-                            leaf: true
-                        },
-                        {
-                            text: "Using page layouts",
-                            url: "filemanager/layout",
-                            sourceFiles: ["Views/FileManager/Layout.vbhtml", "Views/Shared/_Layout.vbhtml", "Controllers/FileManagerController.Layout.vb"],
-                            descriptionFile: "Descriptions/Mvc/FileManager/Layout.html",
-                            leaf: true
-                        },
-                        {
-                            text: "Displaying control on demand",
-                            url: "filemanager/display",
-                            sourceFiles: ["Views/FileManager/Display.vbhtml", "Controllers/FileManagerController.Display.vb"],
-                            descriptionFile: "Descriptions/Mvc/FileManager/Display.html",
-                            leaf: true
-                        },
-                        {
-                            text: "Events",
-                            url: "filemanager/events",
-                            sourceFiles: ["Views/FileManager/Events.vbhtml", "Controllers/FileManagerController.Events.vb"],
-                            descriptionFile: "Descriptions/Mvc/FileManager/Events.html",
-                            leaf: true
-                        },
-                        {
-                            text: "Dynamic folder and permissions",
-                            url: "filemanager/dynamic",
-                            sourceFiles: ["Views/FileManager/Dynamic.vbhtml", "Controllers/FileManagerController.Dynamic.vb"],
-                            descriptionFile: "Descriptions/Mvc/FileManager/Dynamic.html",
-                            leaf: true
-                        },
-                        {
-                            text: "File/Folder chooser",
-                            url: "filemanager/chooser",
-                            sourceFiles: ["Views/FileManager/Chooser.vbhtml", "Controllers/FileManagerController.Chooser.vb"],
-                            descriptionFile: "Descriptions/Mvc/FileManager/Chooser.html",
-                            leaf: true
-                        }
-                    ]
-                }
-            ]; 
-        </script>
-    </head>
-    <body>
-    </body>
+</head>
+<body>
+    @Html.RenderControl(exampleExplorer)
+</body>
 </html>

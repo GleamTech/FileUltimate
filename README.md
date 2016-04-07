@@ -22,11 +22,11 @@ Integrate a file manager into your ASP.NET application or site rapidly.
         >The other DLLs in the same folder, i.e. **GleamTech.ImageUltimate.dll**, **GleamTech.VideoUltimate.dll** and **GleamTech.DocumentUltimate.dll** are assemblies that FileUltimate depends on for some of the features. They are separate assemblies as they are also standalone products with the same names. MSbuild or Visual Studio will automatically copy these 3 DLLs along with the main referenced assembly **GleamTech.FileUltimate.dll** to your bin folder during build so they don't need to be referenced directly (unless you are using these products separately in the same project and you have a license for them). Note that even without these 3 DLLs, FileUltimate will work but it will just turn off the corresponding features such as generating image or video thumbnails or the document viewer. So with this modular approach, you can opt-out of the features you do not need by excluding the corresponding DLL, i.e. MSBuild or Visual Studio would automatically copy a dependency only if that DLL is found in the same folder as the main referenced DLL so you can simply delete/move a DLL to opt-out.
 
     -   Or install NuGet package and add references automatically via NuGet Package Manager in Visual Studio: open **Tools -\> NuGet Package Manager -\> Package Manager Console** and run this command:
+
           
-        Install-Package FileUltimate
-          
-        If you prefer using the user interface when working with NuGet, you can also install the package this way: open **Tools -\> NuGet Package Manager -\> Manage NuGet Packages for Solution**, enter FileUltimate in the search field, and click **Install** button on the found package.
-          
+        `Install-Package FileUltimate`
+
+     If you prefer using the user interface when working with NuGet, you can also install the package this way: open **Tools -\> NuGet Package Manager -\> Manage NuGet Packages for Solution**, enter FileUltimate in the search field, and click **Install** button on the found package.          
 
 2.  Set FileUltimate's global configuration. For example, you may want to set the license key. Insert some of the following lines (if overriding a default value is required) into the Application\_Start method of your **Global.asax.cs**:
 
@@ -118,11 +118,11 @@ Integrate a file manager into your ASP.NET application or site rapidly.
         >The other DLLs in the same folder, i.e. **GleamTech.ImageUltimate.dll**, **GleamTech.VideoUltimate.dll** and **GleamTech.DocumentUltimate.dll** are assemblies that FileUltimate depends on for some of the features. They are separate assemblies as they are also standalone products with the same names. MSbuild or Visual Studio will automatically copy these 3 DLLs along with the main referenced assembly **GleamTech.FileUltimate.dll** to your bin folder during build so they don't need to be referenced directly (unless you are using these products separately in the same project and you have a license for them). Note that even without these 3 DLLs, FileUltimate will work but it will just turn off the corresponding features such as generating image or video thumbnails or the document viewer. So with this modular approach, you can opt-out of the features you do not need by excluding the corresponding DLL, i.e. MSBuild or Visual Studio would automatically copy a dependency only if that DLL is found in the same folder as the main referenced DLL so you can simply delete/move a DLL to opt-out.
 
     -   Or install NuGet package and add references automatically via NuGet Package Manager in Visual Studio: open **Tools -\> NuGet Package Manager -\> Package Manager Console** and run this command:
+
           
-        Install-Package FileUltimate
-          
-        If you prefer using the user interface when working with NuGet, you can also install the package this way: open **Tools -\> NuGet Package Manager -\> Manage NuGet Packages for Solution**, enter FileUltimate in the search field, and click **Install** button on the found package.
-          
+        `Install-Package FileUltimate`
+
+     If you prefer using the user interface when working with NuGet, you can also install the package this way: open **Tools -\> NuGet Package Manager -\> Manage NuGet Packages for Solution**, enter FileUltimate in the search field, and click **Install** button on the found package.          
 
 2.  Set FileUltimate's global configuration. For example, you may want to set the license key. Insert some of the following lines (if overriding a default value is required) into the Application\_Start method of your **Global.asax.cs**:
 

@@ -26,9 +26,9 @@ Integrate a file manager into your ASP.NET application or site rapidly.
           
         `Install-Package FileUltimate`
 
-     If you prefer using the user interface when working with NuGet, you can also install the package this way: open **Tools -\> NuGet Package Manager -\> Manage NuGet Packages for Solution**, enter FileUltimate in the search field, and click **Install** button on the found package.          
+     If you prefer using the user interface when working with NuGet, you can also install the package this way: open **Tools -\> NuGet Package Manager -\> Manage NuGet Packages for Solution**, enter **FileUltimate** in the search field, and click **Install** button on the found package.          
 
-2.  Set FileUltimate's global configuration. For example, you may want to set the license key. Insert some of the following lines (if overriding a default value is required) into the Application\_Start method of your **Global.asax.cs**:
+2.  Set FileUltimate's global configuration. For example, you may want to set the license key. Insert some of the following lines (if overriding a default value is required) into the ```Application_Start``` method of your **Global.asax.cs**:
 
     ~~~~ {style="font-family: Consolas; font-size: 13; color: black; background: white;"}
     //Set this property only if you have a valid license key, otherwise do not 
@@ -36,7 +36,7 @@ Integrate a file manager into your ASP.NET application or site rapidly.
     FileUltimateConfiguration.Current.LicenseKey = "QQJDJLJP34...";
     ~~~~
 
-    Alternatively you can specify the configuration in \<appSettings\> tag of your Web.config.
+    Alternatively you can specify the configuration in ```<appSettings>``` tag of your Web.config.
 
     ~~~~ {style="font-family: Consolas; font-size: 13; color: black; background: white;"}
     <appSettings> 
@@ -122,9 +122,9 @@ Integrate a file manager into your ASP.NET application or site rapidly.
           
         `Install-Package FileUltimate`
 
-     If you prefer using the user interface when working with NuGet, you can also install the package this way: open **Tools -\> NuGet Package Manager -\> Manage NuGet Packages for Solution**, enter FileUltimate in the search field, and click **Install** button on the found package.          
+     If you prefer using the user interface when working with NuGet, you can also install the package this way: open **Tools -\> NuGet Package Manager -\> Manage NuGet Packages for Solution**, enter **FileUltimate** in the search field, and click **Install** button on the found package.          
 
-2.  Set FileUltimate's global configuration. For example, you may want to set the license key. Insert some of the following lines (if overriding a default value is required) into the Application\_Start method of your **Global.asax.cs**:
+2.  Set FileUltimate's global configuration. For example, you may want to set the license key. Insert some of the following lines (if overriding a default value is required) into the ```Application_Start``` method of your **Global.asax.cs**:
 
 
     ~~~~ {style="font-family: Consolas; font-size: 13; color: black; background: white;"}
@@ -133,7 +133,7 @@ Integrate a file manager into your ASP.NET application or site rapidly.
     FileUltimateConfiguration.Current.LicenseKey = "QQJDJLJP34...";
     ~~~~
 
-    Alternatively you can specify the configuration in \<appSettings\> tag of your Web.config.
+    Alternatively you can specify the configuration in ```<appSettings>``` tag of your Web.config.
 
 
     ~~~~ {style="font-family: Consolas; font-size: 13; color: black; background: white;"}

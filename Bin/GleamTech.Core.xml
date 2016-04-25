@@ -9,6 +9,9 @@
             Comma separated assembly names.
             </summary>
         </member>
+        <member name="M:GleamTech.Configuration.ConfigurationBase`1.Load">
+            <summary>Loads from &lt;appSettings&gt; element of the Web.config or application configuration file.</summary>
+        </member>
         <member name="P:GleamTech.Configuration.ProductConfiguration`1.LicenseKey">
             <summary>
             Sets the purchased license key to register the product and remove any limitations.
@@ -74,6 +77,21 @@
         <member name="P:GleamTech.Resources.Strings.AssemblyResourceStore_ResourceOpenError">
             <summary>
               Looks up a localized string similar to Can not open resource &apos;{0}&apos; in assembly &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:GleamTech.Resources.Strings.ConfigurationFile_InvalidFileFormat">
+            <summary>
+              Looks up a localized string similar to Invalid configuration file format..
+            </summary>
+        </member>
+        <member name="P:GleamTech.Resources.Strings.ConfigurationFile_InvalidVersionAttribute">
+            <summary>
+              Looks up a localized string similar to Version attribute is invalid..
+            </summary>
+        </member>
+        <member name="P:GleamTech.Resources.Strings.ConfigurationFile_VersionNotSupported">
+            <summary>
+              Looks up a localized string similar to Configuration file version is not supported..
             </summary>
         </member>
         <member name="P:GleamTech.Resources.Strings.ControlBase_PageHeaderNotAvailable">
@@ -1191,12 +1209,12 @@
             The start position of the found sequence or -1 if nothing was found
             </returns>
         </member>
-        <member name="M:GleamTech.Web.WebConfiguration.InitCurrent">
+        <member name="M:GleamTech.Web.GleamTechWebConfiguration.InitCurrent">
             <summary>
             Initializes only the static Current instance.
             </summary>
         </member>
-        <member name="P:GleamTech.Web.WebConfiguration.Current">
+        <member name="P:GleamTech.Web.GleamTechWebConfiguration.Current">
             <summary>Gets current global configuration instance.</summary>
         </member>
     </members>

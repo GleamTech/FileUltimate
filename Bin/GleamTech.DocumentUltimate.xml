@@ -16,6 +16,14 @@
             <param name="inputFile">The path to the document file to convert.</param>
             <param name="outputFile">The path to the converted document file.</param>
         </member>
+        <member name="M:GleamTech.DocumentUltimate.DocumentConversion.Convert(System.String,System.String,GleamTech.DocumentUltimate.DocumentUltimateConfiguration)">
+            <summary>
+            Converts a given document file to another format.
+            </summary>
+            <param name="inputFile">The path to the document file to convert.</param>
+            <param name="outputFile">The path to the converted document file.</param>
+            <param name="configuration">The configuration to use instead of the global configuration.</param>
+        </member>
         <member name="T:GleamTech.DocumentUltimate.DocumentUltimateConfiguration">
             <summary>
             Provides properties and methods for changing this library's configuration.
@@ -65,6 +73,16 @@
             (interior of the browser window). When set to true, <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.Width"/> and 
             <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.Height"/> properties will be discarded.</summary>
         </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.Resizable">
+            <summary>
+            Gets or sets a value that specifies if the control can be resized when the user drags sides. 
+            </summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.ResizeHandles">
+            <summary>
+            Gets or sets a value that specifies the handles which can be used for resizing the control.
+            </summary>
+        </member>
         <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadUrl">
             <summary>
             Gets or sets a value that specifies the custom url that should be used for downloading. 
@@ -75,7 +93,7 @@
         <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadFileName">
             <summary>
             Gets or sets a value that specifies the custom file name used for downloading.
-            Whether you use <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DocumentPath"/> or <see cref="M:GleamTech.DocumentUltimate.Web.DocumentViewer.SetDocumentStream(System.Func{System.IO.Stream},System.String,System.Int64,System.DateTime,System.Boolean)"/>, this property
+            Whether you use <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DocumentPath"/> or <see cref="M:GleamTech.DocumentUltimate.Web.DocumentViewer.SetDocumentStream(System.Func{System.IO.Stream},System.String,System.Int64,System.DateTime,System.Boolean,System.Boolean)"/>, this property
             will override the original file name. 
             </summary>
         </member>
@@ -101,6 +119,19 @@
         <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.Language">
             <summary>Gets or sets the display language of the control.</summary>
         </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.LoadingMessage">
+            <summary>
+            Gets or sets a value that specifies the message displayed while the document is being prepared 
+            for the first-time viewing. For example, you can override the default message for localization purpose. 
+            </summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.HighlightedKeywords">
+            <summary>
+            Gets or sets a value that specifies the keywords to be highlighted when the document is displayed.
+            For example, if you launch the document viewer from a search results page, you can pass the searched
+            keywords.
+            </summary>
+        </member>
         <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DocumentPath">
             <summary>
             Gets or sets the document file to load and display. 
@@ -108,7 +139,7 @@
             paths are supported.
             </summary>
         </member>
-        <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.SetDocumentStream(System.Func{System.IO.Stream},System.String,System.Int64,System.DateTime,System.Boolean)">
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.SetDocumentStream(System.Func{System.IO.Stream},System.String,System.Int64,System.DateTime,System.Boolean,System.Boolean)">
             <summary>
             Sets the document stream to load and display. When you don't have a file on disk, you should
             use this method instead of <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DocumentPath"/> property. 
@@ -141,6 +172,16 @@
             Whether to leave the stream (returned by <paramref name="openStream"/> callback) open 
             after the copying is complete.
             </param>
+            <param name="keepStreamCached">
+            Whether to keep the copied stream in cache folder even after it is converted to a web-friendly format.
+            If set to false, "Download" button will be disabled ("Download as PDF" button will be still available)
+            because the viewer will not know how to access your original stream if it's not cached.
+            For example if you are using <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadUrl"/> property then you will not need to keep a copy of
+            the original stream in cache so you can set this to false in that case.
+            </param>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.GetLinkTags">
+            <summary>Gets link tags of the control.</summary>
         </member>
         <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.GetScriptTags">
             <summary>Gets script tags of the control.</summary>
@@ -200,6 +241,39 @@
             <summary>
             Restores the necessary routes in case you cleared RouteTable.Routes in your application.
             </summary>
+        </member>
+        <member name="T:GleamTech.DocumentUltimate.Web.ResizeHandles">
+            <summary>Defines the handles which can be used for resizing the control.</summary>
+        </member>
+        <member name="F:GleamTech.DocumentUltimate.Web.ResizeHandles.None">
+            <summary>No handle.</summary>
+        </member>
+        <member name="F:GleamTech.DocumentUltimate.Web.ResizeHandles.North">
+            <summary>North handle.</summary>
+        </member>
+        <member name="F:GleamTech.DocumentUltimate.Web.ResizeHandles.South">
+            <summary>South handle.</summary>
+        </member>
+        <member name="F:GleamTech.DocumentUltimate.Web.ResizeHandles.East">
+            <summary>East handle.</summary>
+        </member>
+        <member name="F:GleamTech.DocumentUltimate.Web.ResizeHandles.West">
+            <summary>West handle.</summary>
+        </member>
+        <member name="F:GleamTech.DocumentUltimate.Web.ResizeHandles.SouthEast">
+            <summary>South-east handle.</summary>
+        </member>
+        <member name="F:GleamTech.DocumentUltimate.Web.ResizeHandles.SouthWest">
+            <summary>South-west handle.</summary>
+        </member>
+        <member name="F:GleamTech.DocumentUltimate.Web.ResizeHandles.NorthWest">
+            <summary>North-west handle.</summary>
+        </member>
+        <member name="F:GleamTech.DocumentUltimate.Web.ResizeHandles.NorthEast">
+            <summary>North-east handle.</summary>
+        </member>
+        <member name="F:GleamTech.DocumentUltimate.Web.ResizeHandles.All">
+            <summary>All handles.</summary>
         </member>
     </members>
 </doc>

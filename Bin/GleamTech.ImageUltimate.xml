@@ -612,6 +612,9 @@
         <member name="F:GleamTech.ImageUltimate.ImageLoadFormat.Tiff">
             <summary>TIFF (Tagged Image File Format) is a bitmap file format for storing images that is very popular among professional photographers and graphic artists.</summary>
         </member>
+        <member name="F:GleamTech.ImageUltimate.ImageLoadFormat.Tga">
+            <summary>TGA (Truevision Graphics Adapter), often referred to as TARGA, is a raster graphics file format created by Truevision Inc. which is still used extensively throughout the animation and video industry.</summary>
+        </member>
         <member name="F:GleamTech.ImageUltimate.ImageLoadFormat.Eps">
             <summary>EPS (Encapsulated PostScript) is a PostScript document used as a graphics file format.</summary>
         </member>
@@ -705,6 +708,9 @@
         </member>
         <member name="F:GleamTech.ImageUltimate.ImageSaveFormat.Tiff">
             <summary>TIFF (Tagged Image File Format) is a bitmap file format for storing images that is very popular among professional photographers and graphic artists.</summary>
+        </member>
+        <member name="F:GleamTech.ImageUltimate.ImageSaveFormat.Tga">
+            <summary>TGA (Truevision Graphics Adapter), often referred to as TARGA, is a raster graphics file format created by Truevision Inc. which is still used extensively throughout the animation and video industry.</summary>
         </member>
         <member name="F:GleamTech.ImageUltimate.ImageSaveFormat.Eps">
             <summary>EPS (Encapsulated PostScript) is a PostScript document used as a graphics file format.</summary>

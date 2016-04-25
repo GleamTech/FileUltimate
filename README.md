@@ -22,7 +22,6 @@ Integrate a file manager into your ASP.NET application or site rapidly.
         >The other DLLs in the same folder, i.e. **GleamTech.ImageUltimate.dll**, **GleamTech.VideoUltimate.dll** and **GleamTech.DocumentUltimate.dll** are assemblies that FileUltimate depends on for some of the features. They are separate assemblies as they are also standalone products with the same names. MSbuild or Visual Studio will automatically copy these 3 DLLs along with the main referenced assembly **GleamTech.FileUltimate.dll** to your bin folder during build so they don't need to be referenced directly (unless you are using these products separately in the same project and you have a license for them). Note that even without these 3 DLLs, FileUltimate will work but it will just turn off the corresponding features such as generating image or video thumbnails or the document viewer. So with this modular approach, you can opt-out of the features you do not need by excluding the corresponding DLL, i.e. MSBuild or Visual Studio would automatically copy a dependency only if that DLL is found in the same folder as the main referenced DLL so you can simply delete/move a DLL to opt-out.
 
     -   Or install NuGet package and add references automatically via NuGet Package Manager in Visual Studio: open **Tools -\> NuGet Package Manager -\> Package Manager Console** and run this command:
-
           
         `Install-Package FileUltimate`
 
@@ -30,33 +29,33 @@ Integrate a file manager into your ASP.NET application or site rapidly.
 
 2.  Set FileUltimate's global configuration. For example, you may want to set the license key. Insert some of the following lines (if overriding a default value is required) into the ```Application_Start``` method of your **Global.asax.cs**:
 
-    ~~~~ {style="font-family: Consolas; font-size: 13; color: black; background: white;"}
+    ```
     //Set this property only if you have a valid license key, otherwise do not 
     //set it so FileUltimate runs in trial mode.  
     FileUltimateConfiguration.Current.LicenseKey = "QQJDJLJP34...";
-    ~~~~
+    ```
 
     Alternatively you can specify the configuration in ```<appSettings>``` tag of your Web.config.
 
-    ~~~~ {style="font-family: Consolas; font-size: 13; color: black; background: white;"}
+    ```
     <appSettings> 
       <add key="FileUltimate:LicenseKey" value="QQJDJLJP34..." /> 
     </appSettings>
-    ~~~~
+    ```
 
-    As you would notice, FileUltimate: prefix maps to FileUltimateConfiguration.Current.
+    As you would notice, ```FileUltimate:``` prefix maps to ```FileUltimateConfiguration.Current```.
       
 
 3.  Open one of your View pages (eg. Index.cshtml) and at the top of your page add the necessary namespaces:
 
-    ~~~~ {style="font-family: Consolas; font-size: 13; color: black; background: white;"}
+    ```
     @using GleamTech.Web.Mvc
     @using GleamTech.FileUltimate
-    ~~~~
+    ```
 
     Alternatively you can add the namespaces globally in **Views/web.config** to avoid adding namespaces in your pages every time:
 
-    ~~~~ {style="font-family: Consolas; font-size: 13; color: black; background: white;"}
+    ```
       <system.web.webPages.razor>
         <pages pageBaseType="System.Web.Mvc.WebViewPage">
           <namespaces>
@@ -68,11 +67,11 @@ Integrate a file manager into your ASP.NET application or site rapidly.
           </namespaces>
         </pages>
       </system.web.webPages.razor>
-    ~~~~
+    ```
 
     Now in your page insert these lines:
 
-    ~~~~ {style="font-family: Consolas; font-size: 13; color: black; background: white;"}
+    ```
     @{
         var fileManager = new FileManager
         {
@@ -104,7 +103,7 @@ Integrate a file manager into your ASP.NET application or site rapidly.
         @Html.RenderControl(fileManager)
     </body>
     </html>
-    ~~~~
+    ```
 
     This will render a file manager control in the page which displays one root folder named "A Root Folder" which points to "\~/App\_Data/RootFolder1" with Full permissions.
 
@@ -127,35 +126,35 @@ Integrate a file manager into your ASP.NET application or site rapidly.
 2.  Set FileUltimate's global configuration. For example, you may want to set the license key. Insert some of the following lines (if overriding a default value is required) into the ```Application_Start``` method of your **Global.asax.cs**:
 
 
-    ~~~~ {style="font-family: Consolas; font-size: 13; color: black; background: white;"}
+    ```
     //Set this property only if you have a valid license key, otherwise do not 
     //set it so FileUltimate runs in trial mode.  
     FileUltimateConfiguration.Current.LicenseKey = "QQJDJLJP34...";
-    ~~~~
+    ```
 
     Alternatively you can specify the configuration in ```<appSettings>``` tag of your Web.config.
 
 
-    ~~~~ {style="font-family: Consolas; font-size: 13; color: black; background: white;"}
+    ```
     <appSettings> 
       <add key="FileUltimate:LicenseKey" value="QQJDJLJP34..." /> 
     </appSettings>
-    ~~~~
+    ```
 
-    As you would notice, FileUltimate: prefix maps to FileUltimateConfiguration.Current.
+    As you would notice, ```FileUltimate:``` prefix maps to ```FileUltimateConfiguration.Current```.
       
 
 3.  Open one of your pages (eg. Default.aspx) and at the top of your page add add the necessary namespaces:
 
 
-    ~~~~ {style="font-family: Consolas; font-size: 13; color: black; background: white;"}
+    ```
     <%@ Register TagPrefix="GleamTech" Namespace="GleamTech.FileUltimate" Assembly="GleamTech.FileUltimate" %>
-    ~~~~
+    ```
 
     Alternatively you can add the namespaces globally in **Web.config** to avoid adding namespaces in your pages every time:
 
 
-    ~~~~ {style="font-family: Consolas; font-size: 13; color: black; background: white;"}
+    ```
       <system.web>
         <pages>
           <controls>
@@ -166,11 +165,11 @@ Integrate a file manager into your ASP.NET application or site rapidly.
           </controls>
         </pages>
       </system.web>
-    ~~~~
+    ```
 
     Now in your page insert these lines:
 
-    ~~~~ {style="font-family: Consolas; font-size: 13; color: black; background: white;"}
+    ```
     <GleamTech:FileManager ID="fileManager" runat="server" 
                             Width="800"
                             Height="600" 
@@ -181,7 +180,7 @@ Integrate a file manager into your ASP.NET application or site rapidly.
         </GleamTech:FileManagerRootFolder>
      
     </GleamTech:FileManager> 
-    ~~~~
+    ```
 
     This will render a file manager control in the page which displays one root folder named "A Root Folder" which points to "\~/App\_Data/RootFolder1" with Full permissions.
 
@@ -191,7 +190,7 @@ FileUltimate does not depend on any Web.config settings to work (it's config-fre
  Edit your project's Web.config file and add the following settings inside \<configuration\> tag:
   
 
-~~~~ {style="font-family: Consolas; font-size: 13; color: black; background: white;"}
+```
   <!-- 
     Html4 upload method requires the limits to be set to the maximum value (2 GB).
     Other upload methods use chunking so there is no 2GB limit for them.
@@ -213,5 +212,5 @@ FileUltimate does not depend on any Web.config settings to work (it's config-fre
       <httpRuntime maxRequestLength="2097152"/>
     </system.web>
   </location>
-~~~~
+```
 

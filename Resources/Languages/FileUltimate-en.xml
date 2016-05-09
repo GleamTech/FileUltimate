@@ -427,6 +427,14 @@ Since these tend to be longer than labels, they tend to be slightly easier to tr
     <Entry key="Label.ImageViewer">
       <Value>Image Viewer</Value>
     </Entry>
+    <Entry key="Label.CopyTo">
+      <Value>Copy to {0}</Value>
+      <Tag>FileManager</Tag>
+    </Entry>
+    <Entry key="Label.MoveTo">
+      <Value>Move to {0}</Value>
+      <Tag>FileManager</Tag>
+    </Entry>
 
     <!-- Old keys below. They will be updated in future -->
 

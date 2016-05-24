@@ -116,6 +116,18 @@
             should be disabled for additional security (DRM) purpose.
             </summary>
         </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.ShowToolbar">
+            <summary>
+            Gets or sets a value that specifies whether the top toolbar is shown or not.
+            The default is true.
+            </summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.ShowSidePane">
+            <summary>
+            Gets or sets a value that specifies whether the left side pane is shown or not.
+            The default is true.
+            </summary>
+        </member>
         <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.Language">
             <summary>Gets or sets the display language of the control.</summary>
         </member>
@@ -172,12 +184,49 @@
             Whether to leave the stream (returned by <paramref name="openStream"/> callback) open 
             after the copying is complete.
             </param>
-            <param name="keepStreamCached">
+            <param name="keepCached">
             Whether to keep the copied stream in cache folder even after it is converted to a web-friendly format.
             If set to false, "Download" button will be disabled ("Download as PDF" button will be still available)
             because the viewer will not know how to access your original stream if it's not cached.
             For example if you are using <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadUrl"/> property then you will not need to keep a copy of
             the original stream in cache so you can set this to false in that case.
+            </param>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.SetDocumentBytes(System.Func{System.Byte[]},System.String,System.Int64,System.DateTime,System.Boolean)">
+            <summary>
+            Sets the document data to load and display. When you don't have a file on disk and also when you don't
+            have a stream, you should use this method instead of <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DocumentPath"/> property.
+            </summary>
+            <param name="getBytes">
+            The callback method to return a byte array containing the document. This data 
+            will be immediately copied to cache folder if not already exists. This callback 
+            will only be called when necessary, i.e. if the data is already cached before or if the required
+            conversions are already done and cached before then the callback will not be called. The reason this
+            is implemented as a callback rather than a direct <see cref="T:byte[]"/> instance is for extra performance,
+            consider retrieving the data is costly in your implementation, for example you are retrieving it from network
+            or a database or even from a zip file so retrieving the data only when it's really necessary would be more
+            performant when your document is viewed several times by several users.
+            </param>
+            <param name="fileName">
+            The name of the file (e.g. Document.docx, Document.pdf).
+            The extension is required for determining the document format of the data and 
+            also for generating a proper cache key for uniquely identifying data.
+            This file name will be also used for downloading if <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadFileName"/> is not specified.
+            </param>
+            <param name="fileSize">
+            The size of the file. 
+            This is required for generating a proper cache key for uniquely identifying data.
+            </param>
+            <param name="fileDateModified">
+            The last modified time of the file. 
+            This is required for generating a proper cache key for uniquely identifying data.
+            </param>
+            <param name="keepCached">
+            Whether to keep the copied data in cache folder even after it is converted to a web-friendly format.
+            If set to false, "Download" button will be disabled ("Download as PDF" button will be still available)
+            because the viewer will not know how to access your original data if it's not cached.
+            For example if you are using <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadUrl"/> property then you will not need to keep a copy of
+            the original data in cache so you can set this to false in that case.
             </param>
         </member>
         <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.GetLinkTags">

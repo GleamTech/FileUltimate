@@ -259,6 +259,11 @@ For rendering a FileManager in a MVC view, you need to call the 3 methods <b>Htm
         To apply the access control to a subfolder named <b>subfolder1</b>, the value should be set to <b>\subfolder1</b>.
         This property can not be empty and should start with backslash (\) or forward slash (/).
         By default, a subfolder inherits from first parent with an access control unless there is an explicit access control for that subfolder.
+        <br/><sup>New in v5.3.5</sup>Now, you can also use these wildcards in a path:
+        <br/>The ? wildcard character matches a single character.
+        <br/>The * wildcard character matches zero or more characters.
+        <br/>The ** wildcard character sequence matches a partial path. 
+        <br />For example, if you set Path="\**\*MatchMe*", this access control will appy to the folders containing MatchMe keyword in name under both root folder and under root folder's all subfolders (recursive).
     </li>
     <li>
         <span class="property">AllowedPermissions</span> property specifies permission types that are allowed.

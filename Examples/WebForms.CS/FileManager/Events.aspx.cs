@@ -321,7 +321,10 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager
                     {"Path", e.Folder.FullPath},
                     {"Downloaded Items", e.ItemNames},
                     {"Downloaded File Name", e.DownloadFileName},
-                    {"Opened in browser", e.OpenInBrowser}
+                    {"Opened in browser", e.OpenInBrowser},
+                    {"Total Size", new ByteSizeValue(e.TotalSize).ToFileSize()},
+                    {"Elapsed Time", e.ElapsedTime},
+                    {"Transfer Rate", e.TransferRate}
                 });
         }
 

@@ -533,6 +533,9 @@
             This logon type is supported only by the LOGON32_PROVIDER_WINNT50 logon provider.
             </summary>
         </member>
+        <member name="M:GleamTech.Collections.UniqueKeyedCollection`1.OnChange">
+            <summary>Called whenever the collection changes.</summary>
+        </member>
         <member name="T:GleamTech.Web.FileResponse">
             <summary>
             Class for transmitting file streams in a performant way.

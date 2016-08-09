@@ -238,6 +238,18 @@
         <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.Render(System.Web.UI.HtmlTextWriter)">
             <summary>Renders the control.</summary>
         </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.PreCacheDocument">
+            <summary>
+            Pre-caches a document. Normally the source document is converted to a special web-friendly format and cached
+            after the document viewer is displayed in the page and when the document is viewed for the first time. 
+            With this method, you can do the conversion and caching beforehand so this way, when a user opens the 
+            document for the first time, there will be no waiting and the document will be loaded immediately from 
+            the cache. Before calling this method, you should first set the source document via either 
+            <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DocumentPath"/> property, <see cref="M:GleamTech.DocumentUltimate.Web.DocumentViewer.SetDocumentStream(System.Func{System.IO.Stream},System.String,System.Int64,System.DateTime,System.Boolean,System.Boolean)"/> method or 
+            <see cref="M:GleamTech.DocumentUltimate.Web.DocumentViewer.SetDocumentBytes(System.Func{System.Byte[]},System.String,System.Int64,System.DateTime,System.Boolean)"/> method. If the source document is already converted and cached, 
+            then this method will return without doing anything.
+            </summary>
+        </member>
         <member name="T:GleamTech.DocumentUltimate.Web.DocumentViewerState">
             <tocexclude />
         </member>

@@ -4,33 +4,59 @@
         <name>GleamTech.ImageUltimate</name>
     </assembly>
     <members>
-        <member name="T:GleamTech.ImageUltimate.BitmapExtensions">
+        <member name="T:GleamTech.ImageUltimate.ImageFormatNotSupportedException">
             <summary>
-            Some extension methods for <see cref="T:System.Drawing.Bitmap"/> class.
+            The exception that indicates the image format specified is not supported.
             </summary>
         </member>
-        <member name="M:GleamTech.ImageUltimate.BitmapExtensions.SaveEx(System.Drawing.Bitmap,System.String,System.Nullable{GleamTech.ImageUltimate.ImageSaveFormat})">
+        <member name="M:GleamTech.ImageUltimate.ImageFormatNotSupportedException.#ctor">
             <summary>
-            Saves the bitmap to the specified file path.
+            Initializes a new instance of the <see cref="T:GleamTech.ImageUltimate.ImageFormatNotSupportedException"/> class
             </summary>
-            <param name="bitmap">Bitmap instance.</param>
-            <param name="imagePath">The absolute path to save the image to.</param>
-            <param name="imageSaveFormat">
-            The file format used to save the image.
-            If not specified, first the file format corresponding to the file extension in imagePath will be used
-            and if that format is not supported for saving, then Jpeg format will be used.
-            </param>
         </member>
-        <member name="M:GleamTech.ImageUltimate.BitmapExtensions.SaveEx(System.Drawing.Bitmap,System.IO.Stream,System.Nullable{GleamTech.ImageUltimate.ImageSaveFormat})">
+        <member name="T:GleamTech.ImageUltimate.MetadataPreserveOptions">
+            <summary>Specifies the metadata preserve options when saving an image.</summary>
+        </member>
+        <member name="F:GleamTech.ImageUltimate.MetadataPreserveOptions.None">
             <summary>
-            Saves the bitmap to the specified stream.
+            Do not preserve any of the metadata.
             </summary>
-            <param name="bitmap">Bitmap instance.</param>
-            <param name="imageStream">The stream to save the image to.</param>
-            <param name="imageSaveFormat">
-            The file format used to save the image.
-            If not specified, Jpeg format will be used.
-            </param>
+        </member>
+        <member name="F:GleamTech.ImageUltimate.MetadataPreserveOptions.Exif">
+            <summary>
+            Preserve EXIF (Exchangeable Image File Format) metadata. 
+            EXIF fields may contain such information as camera parameters during capturing, date and time of 
+            the capturing, photographer's name, and others. It can even contain GPS information.
+            </summary>
+        </member>
+        <member name="F:GleamTech.ImageUltimate.MetadataPreserveOptions.Iptc">
+            <summary>
+            Preserve IPTC (International Press Telecommunications Council) metadata.
+            IPTC Information Interchange Model is widely used 
+            in journalism to keep such information as byline, subject, location, etc. 
+            </summary>
+        </member>
+        <member name="F:GleamTech.ImageUltimate.MetadataPreserveOptions.Xmp">
+            <summary>
+            Preserve XMP (eXtensible Metadata Platform) metadata.
+            XMPis a specific type of XML that was first introduced by Adobe Systems. 
+            XMP defines a metadata model that can be used with any defined set of metadata items. 
+            It also defines some schemas for basic properties for recording the history of image modifications. 
+            XMP records metadata in a Resource Description Framework syntax (RDF) that is expressed in XML.
+            </summary>
+        </member>
+        <member name="F:GleamTech.ImageUltimate.MetadataPreserveOptions.AdobeResources">
+            <summary>
+            Preserve Adobe® Image Resource Blocks.
+            Adobe® applications store metadata in a special format called Adobe® image resource blocks. 
+            This format is used to store non-pixel data associated with an image, such as image resolution, 
+            color management settings, clipping path, and so on. 
+            </summary>
+        </member>
+        <member name="F:GleamTech.ImageUltimate.MetadataPreserveOptions.All">
+            <summary>
+            Preserve all of the metadata.
+            </summary>
         </member>
         <member name="T:GleamTech.ImageUltimate.ImageUltimateConfiguration">
             <summary>
@@ -543,29 +569,50 @@
             <param name="extension">The file extension of the image without the leading dot.</param>
             <returns></returns>
         </member>
+        <member name="M:GleamTech.ImageUltimate.ImageExtensionMapping.EnumerateLoadFormats">
+            <summary>Enumerates all supported image file formats for loading.</summary>
+        </member>
+        <member name="M:GleamTech.ImageUltimate.ImageExtensionMapping.EnumerateSaveFormats">
+            <summary>Enumerates all supported image file formats for loading.</summary>
+        </member>
         <member name="T:GleamTech.ImageUltimate.ImageInfo">
             <summary>Provides properties for reading image information and metadata. If also processing the image is required then <see cref="T:GleamTech.ImageUltimate.ImageTask"/> class should be used.</summary>
         </member>
-        <member name="M:GleamTech.ImageUltimate.ImageInfo.#ctor(System.String)">
+        <member name="M:GleamTech.ImageUltimate.ImageInfo.#ctor(System.String,System.Nullable{GleamTech.ImageUltimate.ImageLoadFormat})">
             <summary>Initializes a new instance of the <see cref="T:GleamTech.ImageUltimate.ImageInfo"/> class from the specified image file.</summary>
             <param name="imagePath">The path to the image to load.</param>
+            <param name="imageLoadFormat">
+            The image format if known. When not specified, the format will be detected automatically
+            first via file extension and then via file header.
+            </param>
         </member>
-        <member name="M:GleamTech.ImageUltimate.ImageInfo.#ctor(System.IO.Stream)">
+        <member name="M:GleamTech.ImageUltimate.ImageInfo.#ctor(System.IO.Stream,System.Nullable{GleamTech.ImageUltimate.ImageLoadFormat})">
             <summary>Initializes a new instance of the <see cref="T:GleamTech.ImageUltimate.ImageInfo"/> class from the specified image stream.</summary>
             <param name="imageStream">The stream containing the image to load.</param>
+            <param name="imageLoadFormat">
+            The image format if known. When not specified, the format will be detected automatically
+            via file header.
+            </param>
         </member>
         <member name="M:GleamTech.ImageUltimate.ImageInfo.Dispose">
             <summary>Releases all resources used by this instance.</summary>
+        </member>
+        <member name="M:GleamTech.ImageUltimate.ImageInfo.FromBitmap(System.Drawing.Bitmap)">
+            <summary>Creates a <see cref="T:GleamTech.ImageUltimate.ImageInfo"/> from a <see cref="T:System.Drawing.Bitmap"/>.</summary>
+            <param name="bitmap">The <see cref="T:System.Drawing.Bitmap"/> instance containing the image to load.</param>
         </member>
         <member name="T:GleamTech.ImageUltimate.ImageInfoBase">
             <summary>Represents image information and metadata. This is a base class for internal use which cannot be instantiated. Use the derived <see cref="T:GleamTech.ImageUltimate.ImageInfo"/> class instead.</summary>
             <tocexclude />
         </member>
-        <member name="F:GleamTech.ImageUltimate.ImageInfoBase.Reader">
+        <member name="F:GleamTech.ImageUltimate.ImageInfoBase.SourceImage">
             <summary>The underlying image reader.</summary>
         </member>
         <member name="P:GleamTech.ImageUltimate.ImageInfoBase.Format">
-            <summary>Get the file format of the image.</summary>
+            <summary>
+            Get the file format of the image.
+            This will return enum with 0 value if the source image is not a file, e.g. if it's a <see cref="T:System.Drawing.Bitmap"/>.
+            </summary>
         </member>
         <member name="P:GleamTech.ImageUltimate.ImageInfoBase.Width">
             <summary>Gets the width of the image in pixels.</summary>
@@ -586,10 +633,22 @@
             <summary>Gets information about the pixel format of the image.</summary>
         </member>
         <member name="P:GleamTech.ImageUltimate.ImageInfoBase.ExifDictionary">
-            <summary>Gets a dictionary representing EXIF data stored in the image.</summary>
+            <summary>
+            Gets a dictionary representing EXIF data stored in the image.
+            This dictionary will be always empty if the source image is not a file, e.g. if it's a <see cref="T:System.Drawing.Bitmap"/>.
+            </summary>
         </member>
         <member name="P:GleamTech.ImageUltimate.ImageInfoBase.IptcDictionary">
-            <summary>Gets a dictionary representing IPTC data stored in the image.</summary>
+            <summary>
+            Gets a dictionary representing IPTC data stored in the image.
+            This dictionary will be always empty if the source image is not a file, e.g. if it's a <see cref="T:System.Drawing.Bitmap"/>.
+            </summary>
+        </member>
+        <member name="M:GleamTech.ImageUltimate.ImageInfoBase.DisposeInternal">
+            <summary>
+            Releases all resources used by this instance.
+            This method is to be called from derived classes which implement IDisposable.
+            </summary>
         </member>
         <member name="T:GleamTech.ImageUltimate.ImageLoadFormat">
             <summary>Defines the supported image file formats for loading.</summary>
@@ -632,18 +691,26 @@
             processing is required.
             </summary>
         </member>
-        <member name="M:GleamTech.ImageUltimate.ImageTask.#ctor(System.String,GleamTech.ImageUltimate.ImageUltimateConfiguration)">
+        <member name="M:GleamTech.ImageUltimate.ImageTask.#ctor(System.String,System.Nullable{GleamTech.ImageUltimate.ImageLoadFormat},GleamTech.ImageUltimate.ImageUltimateConfiguration)">
             <summary>
             Initializes a new instance of the <see cref="T:GleamTech.ImageUltimate.ImageTask"/> class from the specified image file.
             </summary>
             <param name="imagePath">The path to the image to load.</param>
+            <param name="imageLoadFormat">
+            The image format if known. When not specified, the format will be detected automatically
+            first via file extension and then via file header.
+            </param>
             <param name="configuration">The configuration to use instead of the global configuration.</param>
         </member>
-        <member name="M:GleamTech.ImageUltimate.ImageTask.#ctor(System.IO.Stream,GleamTech.ImageUltimate.ImageUltimateConfiguration)">
+        <member name="M:GleamTech.ImageUltimate.ImageTask.#ctor(System.IO.Stream,System.Nullable{GleamTech.ImageUltimate.ImageLoadFormat},GleamTech.ImageUltimate.ImageUltimateConfiguration)">
             <summary>
             Initializes a new instance of the <see cref="T:GleamTech.ImageUltimate.ImageTask"/> class from the specified image stream.
             </summary>
             <param name="imageStream">The stream containing the image to load.</param>
+            <param name="imageLoadFormat">
+            The image format if known. When not specified, the format will be detected automatically
+            via file header.
+            </param>
             <param name="configuration">The configuration to use instead of the global configuration.</param>
         </member>
         <member name="M:GleamTech.ImageUltimate.ImageTask.Undo">
@@ -683,8 +750,19 @@
             </param>
             <returns>The same instance of this class.</returns>
         </member>
+        <member name="M:GleamTech.ImageUltimate.ImageTask.ToBitmap">
+            <summary>
+            Executes all the commands in the chain and returns a <see cref="T:System.Drawing.Bitmap"/> instance 
+            containing the resulting image.
+            </summary>
+        </member>
         <member name="M:GleamTech.ImageUltimate.ImageTask.Dispose">
             <summary>Releases all resources used by this instance.</summary>
+        </member>
+        <member name="M:GleamTech.ImageUltimate.ImageTask.FromBitmap(System.Drawing.Bitmap,GleamTech.ImageUltimate.ImageUltimateConfiguration)">
+            <summary>Creates a <see cref="T:GleamTech.ImageUltimate.ImageTask"/> from a <see cref="T:System.Drawing.Bitmap"/>.</summary>
+            <param name="bitmap">The <see cref="T:System.Drawing.Bitmap"/> instance containing the image to load.</param>
+            <param name="configuration">The configuration to use instead of the global configuration.</param>
         </member>
         <member name="T:GleamTech.ImageUltimate.ImageSaveFormat">
             <summary>
@@ -728,10 +806,10 @@
         <member name="F:GleamTech.ImageUltimate.ImageTaskBase`1.Pipeline">
             <summary>The pipeline for chaining commands.</summary>
         </member>
-        <member name="F:GleamTech.ImageUltimate.ImageTaskBase`1.ChangeList">
-            <summary>The list of chained commands and parameters to be used for generating a hash.</summary>
+        <member name="F:GleamTech.ImageUltimate.ImageTaskBase`1.TempPipeline">
+            <summary>The temporary pipeline which will be used once for each save.</summary>
         </member>
-        <member name="P:GleamTech.ImageUltimate.ImageTaskBase`1.Reader">
+        <member name="P:GleamTech.ImageUltimate.ImageTaskBase`1.SourceImage">
             <summary>The image reader.</summary>
         </member>
         <member name="P:GleamTech.ImageUltimate.ImageTaskBase`1.Info">
@@ -739,7 +817,15 @@
             Gets the source image information and metadata.
             </summary>
         </member>
-        <member name="M:GleamTech.ImageUltimate.ImageTaskBase`1.RunPipeline(Graphics.Codecs.ImageWriter)">
+        <member name="M:GleamTech.ImageUltimate.ImageTaskBase`1.OnChange(System.String,System.Object[])">
+            <summary>
+            Called whenever a new command is added to the chain.
+            In a derived class, this information can be accumulated to generate a unique hash to be used as cache key.
+            </summary>
+            <param name="command">Name of the added command.</param>
+            <param name="parameters">List of parameters of the added command.</param>
+        </member>
+        <member name="M:GleamTech.ImageUltimate.ImageTaskBase`1.RunPipeline(Graphics.PipelineElement)">
             <summary>
             Executes all the commands in the chain.
             </summary>
@@ -747,6 +833,10 @@
         <member name="M:GleamTech.ImageUltimate.ImageTaskBase`1.Resize(System.Int32,System.Int32,GleamTech.ImageUltimate.ResizeMode,GleamTech.ImageUltimate.ResizeQuality)">
             <summary>
             Resizes the current image to the given dimensions. The command is added to the chain and not executed until the actual processing is done. 
+            Note that if this command is the first one in the chain and the source image is a Jpeg file, 
+            the image will first be downscaled 2, 4, or 8 times while decoding it and additional resizing will be done
+            after that. This will ensure very fast performance because Jpeg downscaling works several times faster 
+            than conventional image resize operation.
             </summary>
             <param name="width">The width of the resulting image.</param>
             <param name="height">The height of the resulting image.</param>
@@ -757,6 +847,10 @@
         <member name="M:GleamTech.ImageUltimate.ImageTaskBase`1.ResizeWidth(System.Int32,GleamTech.ImageUltimate.ResizeQuality)">
             <summary>
             Resizes the current image to the given width while preserving the aspect ratio. The command is added to the chain and not executed until the actual processing is done. 
+            Note that if this command is the first one in the chain and the source image is a Jpeg file, 
+            the image will first be downscaled 2, 4, or 8 times while decoding it and additional resizing will be done
+            after that. This will ensure very fast performance because Jpeg downscaling works several times faster 
+            than conventional image resize operation.
             </summary>
             <param name="width">The width of the resulting image.</param>
             <param name="resizeQuality">The interpolation algorithm to use while resizing.</param>
@@ -765,6 +859,10 @@
         <member name="M:GleamTech.ImageUltimate.ImageTaskBase`1.ResizeHeight(System.Int32,GleamTech.ImageUltimate.ResizeQuality)">
             <summary>
             Resizes the current image to the given height while preserving the aspect ratio. The command is added to the chain and not executed until the actual processing is done. 
+            Note that if this command is the first one in the chain and the source image is a Jpeg file, 
+            the image will first be downscaled 2, 4, or 8 times while decoding it and additional resizing will be done
+            after that. This will ensure very fast performance because Jpeg downscaling works several times faster 
+            than conventional image resize operation.
             </summary>
             <param name="height">The height of the resulting image.</param>
             <param name="resizeQuality">The interpolation algorithm to use while resizing.</param>
@@ -844,6 +942,54 @@
             <param name="brightnessAmount">The brightness amount between -100 and 100. If it is more than 0, the image is brightened (100 will make the image completely white). If it is less than 0, the image is darkened (-100 will make the image completely black). 0 will cause no changes.</param>
             <param name="contrastAmount">The contrast amount between -100 and 100. If it is more than 0, the contrast is increased (100 will set the image contrast to the maximum). If it is less than 0, the contrast is decreased (-100 will make the image completely gray). 0 will cause no changes.</param>
             <returns>The same instance of this class.</returns>
+        </member>
+        <member name="M:GleamTech.ImageUltimate.ImageTaskBase`1.PreserveMetadata(GleamTech.ImageUltimate.MetadataPreserveOptions)">
+            <summary>
+            Ensures metadata like EXIF, IPTC, XMP fields and Adobe® image resource blocks of the source image are 
+            preserved, i.e. they are saved to the resulting image. Only applies if the resulting image format is 
+            Jpeg or Tiff.
+            </summary>
+            <param name="options">The metadata preserve options to use.</param>
+            <returns>The same instance of this class.</returns>
+        </member>
+        <member name="M:GleamTech.ImageUltimate.ImageTaskBase`1.Thumbnail(System.Int32,System.Int32)">
+            <summary>
+            Smartly generates a thumbnail from the current image. This method is optimized for thumbnails so
+            you should prefer it over <see cref="M:GleamTech.ImageUltimate.ImageTaskBase`1.Resize(System.Int32,System.Int32,GleamTech.ImageUltimate.ResizeMode,GleamTech.ImageUltimate.ResizeQuality)"/>, <see cref="M:GleamTech.ImageUltimate.ImageTaskBase`1.ResizeWidth(System.Int32,GleamTech.ImageUltimate.ResizeQuality)"/> or <see cref="M:GleamTech.ImageUltimate.ImageTaskBase`1.ResizeHeight(System.Int32,GleamTech.ImageUltimate.ResizeQuality)"/> 
+            methods. This command should be the first one in the chain.
+            Most image formats (Jpg, Tiff, Psd and Camera Raw files) can have EXIF thumbnails so this method 
+            will first try to read that image from EXIF metadata, remove black stripes above and below it and 
+            resize it down further if needed. This will ensure very fast performance when your whole purpose is generating thumbnails.
+            Only if there is no thumbnail in metadata or the thumbnail is smaller than the requested size, 
+            the thumbnail will be created by resizing the original image as usual (Jpeg downscaling will be used if 
+            possible for best performance). 
+            EXIF thumbnails are typically in size 160x120. All modern cameras write EXIF metadata when capturing 
+            an image most cameras save a thumbnail to the EXIF block. When a camera creates an EXIF thumbnail it 
+            fixes its size to the default industry size 160x120 pixels independently of an original image dimensions.
+            Thus, it is possible that proportions of an original image and its thumbnail will be different for some 
+            camera types. If so the thumbnail will have black stripes above and below it, fortunately this method 
+            automatically removes those black stripes for offering you the best thumbnail out of the box. 
+            Besides digital photos, also software like Photoshop can store EXIF thumbnails when saving some formats 
+            (eg. Psd, Jpg, Tiff). For example, instead of merging layers of a Psd file by using the already available
+            preview thumbnail in the file this method will run very quickly.
+            </summary>
+            <param name="width">
+            The width of the resulting image. If height parameter is set to 0, the resulting width will be exactly 
+            same as the given one. Otherwise width will be considered maximum value so the resulting width may be 
+            smaller than the given one to maintain the aspect ratio.
+            </param>
+            <param name="height">
+            The height of the resulting image. If width parameter is set to 0, the resulting height will be exactly 
+            same as the given one. Otherwise height will be considered maximum value so the resulting height may be 
+            smaller than the given one to maintain the aspect ratio.
+            </param>
+            <returns>The same instance of this class.</returns>
+        </member>
+        <member name="M:GleamTech.ImageUltimate.ImageTaskBase`1.DisposeInternal">
+            <summary>
+            Releases all resources used by this instance.
+            This method is to be called from derived classes which implement IDisposable.
+            </summary>
         </member>
         <member name="T:GleamTech.ImageUltimate.IptcDictionary">
             <summary>Represents a dictionary of IPTC entries.</summary>
@@ -1312,6 +1458,18 @@
             <param name="htmlAttributes">An object that contains the HTML attributes to set for the element.</param>
             <returns>The image element.</returns>
         </member>
+        <member name="T:GleamTech.ImageUltimate.Web.ImageWebExtensionMapping">
+            <summary>
+            Provides methods for determining load or save formats of images according to the file extension and vice versa.
+            </summary>
+        </member>
+        <member name="M:GleamTech.ImageUltimate.Web.ImageWebExtensionMapping.GetWebSaveFormat(System.String)">
+            <summary>
+            Gets the corresponding web-safe image save format for a file extension.
+            </summary>
+            <param name="extension">The file extension of the image without the leading dot.</param>
+            <returns></returns>
+        </member>
         <member name="T:GleamTech.ImageUltimate.Web.ImageModule">
             <summary>Processes image requests within the web application.</summary>
         </member>
@@ -1323,6 +1481,20 @@
         </member>
         <member name="M:GleamTech.ImageUltimate.Web.ImageModule.Dispose">
             <summary>Disposes the module.</summary>
+        </member>
+        <member name="T:GleamTech.ImageUltimate.Web.ImageWebSaveFormat">
+            <summary>
+            Defines the web-safe image file formats for saving.
+            </summary>
+        </member>
+        <member name="F:GleamTech.ImageUltimate.Web.ImageWebSaveFormat.Jpeg">
+            <summary>JPEG (Joint Photographic Experts Group) is the most popular bitmap image format for storing digital photos using lossy compression.</summary>
+        </member>
+        <member name="F:GleamTech.ImageUltimate.Web.ImageWebSaveFormat.Png">
+            <summary>PNG (Portable Network Graphics) was created to replace the obsolete GIF format due to a legal problem caused by the LZW algorithm used in GIF.</summary>
+        </member>
+        <member name="F:GleamTech.ImageUltimate.Web.ImageWebSaveFormat.Gif">
+            <summary>GIF (Graphics Interchange Format) is a bitmap image format which works well for saving any type of grayscale or 256 color image.</summary>
         </member>
         <member name="T:GleamTech.ImageUltimate.Web.ImageUltimateWebConfiguration">
             <summary>
@@ -1360,12 +1532,12 @@
             C:\SomeFolder\Picture.jpg), this source path will be ignored for that method call.
             </summary>
         </member>
-        <member name="P:GleamTech.ImageUltimate.Web.ImageUltimateWebConfiguration.DisableRewritePath">
+        <member name="P:GleamTech.ImageUltimate.Web.ImageUltimateWebConfiguration.RewritePathEnabled">
             <summary>
-            Gets or sets a value that specifies whether RewritePath should be disabled.
+            Gets or sets a value that specifies whether RewritePath should be enabled. The default is true.
             When you use a cache path within the current application's root directory, the request will be handled 
             directly via IIS (using RewritePath) for better download performance. 
-            If you set this property to true, then the internal download handler will be forced so that byte-range 
+            If you set this property to false, then the internal download handler will be forced so that byte-range 
             requests are supported.
             </summary>
         </member>
@@ -1398,13 +1570,21 @@
             image processing commands.
             </summary>
         </member>
-        <member name="M:GleamTech.ImageUltimate.Web.ImageWebTask.Format(GleamTech.ImageUltimate.ImageSaveFormat)">
+        <member name="M:GleamTech.ImageUltimate.Web.ImageWebTask.OnChange(System.String,System.Object[])">
+            <summary>
+            Called whenever a new command is added to the chain.
+            In a derived class, this information can be accumulated to generate a unique hash for cache key.
+            </summary>
+            <param name="command">Name of the command.</param>
+            <param name="parameters">List of parameters of the command.</param>
+        </member>
+        <member name="M:GleamTech.ImageUltimate.Web.ImageWebTask.Format(GleamTech.ImageUltimate.Web.ImageWebSaveFormat)">
             <summary>
             Overrides the file format for the resulting image.
             By default the same file format of the source image will be used 
             and if that format is not supported for saving, then Jpeg format will be used.
             </summary>
-            <param name="imageSaveFormat">The file format used to save the image.</param>
+            <param name="imageWebSaveFormat">The web-safe file format used to save the image.</param>
             <returns>The same instance of this class.</returns>
         </member>
         <member name="M:GleamTech.ImageUltimate.Web.ImageWebTask.FileName(System.String)">

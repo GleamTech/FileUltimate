@@ -4,45 +4,195 @@
         <name>GleamTech.DocumentUltimate</name>
     </assembly>
     <members>
-        <member name="T:GleamTech.DocumentUltimate.DocumentConversion">
+        <member name="T:GleamTech.DocumentUltimate.Web.DocumentCache">
             <summary>
-            Converts document files to another format.
+            Provides methods for handling caching of documents.
             </summary>
         </member>
-        <member name="M:GleamTech.DocumentUltimate.DocumentConversion.Convert(System.String,System.String)">
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentCache.#ctor">
             <summary>
-            Converts a given document file to another format.
+            Initializes a new instance of the <see cref="T:GleamTech.DocumentUltimate.Web.DocumentCache"/> class.
             </summary>
-            <param name="inputFile">The path to the document file to convert.</param>
-            <param name="outputFile">The path to the converted document file.</param>
         </member>
-        <member name="M:GleamTech.DocumentUltimate.DocumentConversion.Convert(System.String,System.String,GleamTech.DocumentUltimate.DocumentUltimateConfiguration)">
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentCache.EncryptionEnabled">
             <summary>
-            Converts a given document file to another format.
+            Gets or sets a value that specifies whether encryption of documents should be enabled.
+            The default is true.
+            Document viewer downloads a special document format on the client-side but for additional 
+            security (DRM), the document is also encypted by default.
             </summary>
-            <param name="inputFile">The path to the document file to convert.</param>
-            <param name="outputFile">The path to the converted document file.</param>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentCache.PreCacheDocument(GleamTech.DocumentUltimate.Web.DocumentSource)">
+            <summary>
+            Pre-caches a document. Normally the source document is converted to a special web-friendly format and cached
+            after the document viewer is displayed in the page and when the document is viewed for the first time. 
+            With this method, you can do the conversion and caching beforehand so this way, when a user opens the 
+            document for the first time, there will be no waiting and the document will be loaded immediately from 
+            the cache. If the source document is already converted and cached, then this method will return without 
+            doing anything.
+            </summary>
+            <param name="document">The document to pre-cache.</param>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentCache.PreCacheDocument(GleamTech.DocumentUltimate.Web.DocumentSource,GleamTech.DocumentUltimate.DocumentUltimateConfiguration)">
+            <summary>
+            Pre-caches a document. Normally the source document is converted to a special web-friendly format and cached
+            after the document viewer is displayed in the page and when the document is viewed for the first time. 
+            With this method, you can do the conversion and caching beforehand so this way, when a user opens the 
+            document for the first time, there will be no waiting and the document will be loaded immediately from 
+            the cache. If the source document is already converted and cached, then this method will return without 
+            doing anything.
+            </summary>
+            <param name="document">The document to pre-cache.</param>
             <param name="configuration">The configuration to use instead of the global configuration.</param>
         </member>
-        <member name="T:GleamTech.DocumentUltimate.DocumentUltimateConfiguration">
+        <member name="T:GleamTech.DocumentUltimate.Web.DocumentSource">
+            <summary>Defines a document that can be loaded either from a file on disk, a stream or a byte array.</summary>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentSource.#ctor(System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:GleamTech.DocumentUltimate.Web.DocumentSource"/> class from the specified document file.
+             </summary>
+             <param name="documentPath">
+             The path to the document to load. 
+             Both physical (eg. c:\document.docx) and virtual (eg. /document.docx or ~/document.docx) paths are supported.
+            </param>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentSource.#ctor(System.Func{System.IO.Stream},System.String,System.Int64,System.DateTime,System.Boolean,System.Boolean)">
             <summary>
-            Provides properties and methods for changing this library's configuration.
+            Initializes a new instance of the <see cref="T:GleamTech.DocumentUltimate.Web.DocumentSource"/> class from the specified document stream.
+            When you don't have a file on disk but you have a stream, you should use this constructor. 
+            </summary>
+            <param name="openStream">
+            The callback method to return an opened stream containing the document. The stream is not required to
+            be seekable because it will be immediately copied to cache folder if not already exists. This callback 
+            will only be called when necessary, i.e. if the stream is already cached before or if the required
+            conversions are already done and cached before then the callback will not be called. The reason this
+            is implemented as a callback rather than a direct <see cref="T:System.IO.Stream"/> instance is for extra performance,
+            consider opening a stream is costly in your implementation, for example you are retrieving it from network
+            or a database or even from a zip file so opening the stream only when it's really necessary would be more
+            performant when your document is viewed several times by several users.
+            </param>
+            <param name="fileName">
+            The name of the file (e.g. Document.docx, Document.pdf).
+            The extension is required for determining the document format of the stream and 
+            also for generating a proper cache key for uniquely identifying streams.
+            This file name will be also used for downloading if <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadFileName"/> is not specified.
+            </param>
+            <param name="fileSize">
+            The size of the file. 
+            This is required for generating a proper cache key for uniquely identifying streams.
+            </param>
+            <param name="fileDateModified">
+            The last modified time of the file. 
+            This is required for generating a proper cache key for uniquely identifying streams.
+            </param>
+            <param name="leaveStreamOpen">
+            Whether to leave the stream (returned by <paramref name="openStream"/> callback) open 
+            after the copying is complete.
+            </param>
+            <param name="keepCached">
+            Whether to keep the copied stream in cache folder even after it is converted to a web-friendly format.
+            If set to false, "Download" button will be disabled ("Download as PDF" button will be still available)
+            because the viewer will not know how to access your original stream if it's not cached.
+            For example if you are using <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadUrl"/> property then you will not need to keep a copy of
+            the original stream in cache so you can set this to false in that case.
+            </param>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentSource.#ctor(System.Func{System.Byte[]},System.String,System.Int64,System.DateTime,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GleamTech.DocumentUltimate.Web.DocumentSource"/> class from the specified document data.
+            When you don't have a file on disk or a stream, you should use this constructor.
+            </summary>
+            <param name="getBytes">
+            The callback method to return a byte array containing the document. This data 
+            will be immediately copied to cache folder if not already exists. This callback 
+            will only be called when necessary, i.e. if the data is already cached before or if the required
+            conversions are already done and cached before then the callback will not be called. The reason this
+            is implemented as a callback rather than a direct <see cref="T:byte[]"/> instance is for extra performance,
+            consider retrieving the data is costly in your implementation, for example you are retrieving it from network
+            or a database or even from a zip file so retrieving the data only when it's really necessary would be more
+            performant when your document is viewed several times by several users.
+            </param>
+            <param name="fileName">
+            The name of the file (e.g. Document.docx, Document.pdf).
+            The extension is required for determining the document format of the data and 
+            also for generating a proper cache key for uniquely identifying data.
+            This file name will be also used for downloading if <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadFileName"/> is not specified.
+            </param>
+            <param name="fileSize">
+            The size of the file. 
+            This is required for generating a proper cache key for uniquely identifying data.
+            </param>
+            <param name="fileDateModified">
+            The last modified time of the file. 
+            This is required for generating a proper cache key for uniquely identifying data.
+            </param>
+            <param name="keepCached">
+            Whether to keep the copied data in cache folder even after it is converted to a web-friendly format.
+            If set to false, "Download" button will be disabled ("Download as PDF" button will be still available)
+            because the viewer will not know how to access your original data if it's not cached.
+            For example if you are using <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadUrl"/> property then you will not need to keep a copy of
+            the original data in cache so you can set this to false in that case.
+            </param>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentSource.Name">
+            <summary>Gets the file name of the document.</summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentSource.Size">
+            <summary>Gets the file size of the document.</summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentSource.DateModified">
+            <summary>Gets the file last modified date of the document.</summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentSource.PhysicalPath">
+            <summary>
+            Gets the physical file path of the document.
+            The value is null if this instance is not created with <see cref="M:GleamTech.DocumentUltimate.Web.DocumentSource.#ctor(System.String)"/> constructor.</summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentSource.CopyToStream">
+            <summary>
+            Gets the function for copying document data to a target stream.
+            The value is null if this instance is not created from a stream or a byte array.
             </summary>
         </member>
-        <member name="M:GleamTech.DocumentUltimate.DocumentUltimateConfiguration.CreateLicense(System.String)">
-            <summary>Create a new license.</summary>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentSource.KeepCached">
+            <summary>Gets a value that specifies whether to keep the copied data in cache folder.</summary>
         </member>
-        <member name="M:GleamTech.DocumentUltimate.DocumentUltimateConfiguration.InitCurrent">
-            <summary>Initializes only the static Current instance.</summary>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentSource.ToString">
+            <summary>
+            Converts this instance to string.
+            </summary>
+            <returns></returns>
         </member>
-        <member name="P:GleamTech.DocumentUltimate.DocumentUltimateConfiguration.Current">
-            <summary>Gets current global configuration instance.</summary>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentSource.op_Implicit(System.String)~GleamTech.DocumentUltimate.Web.DocumentSource">
+            <summary>
+            Converts a string containing a document path to a <see cref="T:GleamTech.DocumentUltimate.Web.DocumentSource"/>.
+            </summary>
+            <param name="value">A <see cref="T:System.String"/> that contains the document path.</param>
         </member>
-        <member name="P:GleamTech.DocumentUltimate.DocumentUltimateConfiguration.AssemblyInfo">
-            <summary>Gets information on this library's assembly.</summary>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentSource.op_Implicit(GleamTech.IO.BackSlashPath)~GleamTech.DocumentUltimate.Web.DocumentSource">
+            <summary>
+            Converts a <see cref="T:GleamTech.IO.BackSlashPath"/> containing a document path to a <see cref="T:GleamTech.DocumentUltimate.Web.DocumentSource"/>.
+            </summary>
+            <param name="value">A <see cref="T:GleamTech.IO.BackSlashPath"/> that contains the document path.</param>
         </member>
-        <member name="T:GleamTech.DocumentUltimate.Resources.AssemblyResourceLocator">
-            <summary>Dummy type for locating the root namespace of the assembly resources.</summary>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentSource.op_Implicit(GleamTech.IO.ForwardSlashPath)~GleamTech.DocumentUltimate.Web.DocumentSource">
+            <summary>
+            Converts a <see cref="T:GleamTech.IO.ForwardSlashPath"/> containing a document path to a <see cref="T:GleamTech.DocumentUltimate.Web.DocumentSource"/>.
+            </summary>
+            <param name="value">A <see cref="T:GleamTech.IO.ForwardSlashPath"/> that contains the document path.</param>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentSource.op_Implicit(GleamTech.DocumentUltimate.Web.DocumentSource)~System.String">
+            <summary>
+            Converts a <see cref="T:GleamTech.DocumentUltimate.Web.DocumentSource"/> to a string containing a document path.
+            </summary>
+            <param name="value">A <see cref="T:GleamTech.DocumentUltimate.Web.DocumentSource"/> instance.</param>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.Web.DocumentSource.Parse(System.String)">
+            <summary>
+            Converts a string containing a document path to a <see cref="T:GleamTech.DocumentUltimate.Web.DocumentSource"/>.
+            </summary>
+            <param name="value">A <see cref="T:System.String"/> that contains the document path.</param>
         </member>
         <member name="T:GleamTech.DocumentUltimate.Web.DocumentViewer">
             <summary>
@@ -93,38 +243,42 @@
         <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadFileName">
             <summary>
             Gets or sets a value that specifies the custom file name used for downloading.
-            Whether you use <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DocumentPath"/> or <see cref="M:GleamTech.DocumentUltimate.Web.DocumentViewer.SetDocumentStream(System.Func{System.IO.Stream},System.String,System.Int64,System.DateTime,System.Boolean,System.Boolean)"/>, this property
-            will override the original file name. 
+            This property will override the original file name specified in <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.Document"/>. 
             </summary>
         </member>
-        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DisableDownload">
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadEnabled">
             <summary>
             Gets or sets a value that specifies whether downloading the original document 
-            should be disabled for security (DRM) purpose.
+            should be enabled. The default is true. Downloading can be disabled for security (DRM) purpose.
             </summary>
         </member>
-        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DisablePrint">
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadAsPdfEnabled">
+            <summary>
+            Gets or sets a value that specifies whether downloading a PDF version of the original document 
+            should be enabled. The default is true. Downloading as PDF can be disabled for additional security (DRM) purpose.
+            </summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.PrintEnabled">
             <summary>
             Gets or sets a value that specifies whether printing the displayed document 
-            should be disabled for additional security (DRM) purpose.
-            This property also effects "Download as PDF" option.
+            should be enabled. The default is true. Printing can be disabled for additional security (DRM) purpose.
             </summary>
         </member>
-        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DisableTextSelection">
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.TextSelectionEnabled">
             <summary>
             Gets or sets a value that specifies whether selecting text in the displayed document 
-            should be disabled for additional security (DRM) purpose.
+            should be enabled.The default is true. Text selection can be disabled for additional security (DRM) purpose.
             </summary>
         </member>
-        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.ShowToolbar">
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.ToolbarVisible">
             <summary>
-            Gets or sets a value that specifies whether the top toolbar is shown or not.
+            Gets or sets a value that specifies whether the top toolbar is visible.
             The default is true.
             </summary>
         </member>
-        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.ShowSidePane">
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.SidePaneVisible">
             <summary>
-            Gets or sets a value that specifies whether the left side pane is shown or not.
+            Gets or sets a value that specifies whether the left side pane is visible.
             The default is true.
             </summary>
         </member>
@@ -144,90 +298,10 @@
             keywords.
             </summary>
         </member>
-        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DocumentPath">
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentViewer.Document">
             <summary>
-            Gets or sets the document file to load and display. 
-            Both physical (eg. c:\document.docx) and virtual (eg. /document.docx or ~/document.docx)
-            paths are supported.
+            Gets or sets the document to load and display. 
             </summary>
-        </member>
-        <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.SetDocumentStream(System.Func{System.IO.Stream},System.String,System.Int64,System.DateTime,System.Boolean,System.Boolean)">
-            <summary>
-            Sets the document stream to load and display. When you don't have a file on disk, you should
-            use this method instead of <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DocumentPath"/> property. 
-            </summary>
-            <param name="openStream">
-            The callback method to return an opened stream containing the document. The stream is not required to
-            be seekable because it will be immediately copied to cache folder if not already exists. This callback 
-            will only be called when necessary, i.e. if the stream is already cached before or if the required
-            conversions are already done and cached before then the callback will not be called. The reason this
-            is implemented as a callback rather than a direct <see cref="T:System.IO.Stream"/> instance is for extra performance,
-            consider opening a stream is costly in your implementation, for example you are retrieving it from network
-            or a database or even from a zip file so opening the stream only when it's really necessary would be more
-            performant when your document is viewed several times by several users.
-            </param>
-            <param name="fileName">
-            The name of the file (e.g. Document.docx, Document.pdf).
-            The extension is required for determining the document format of the stream and 
-            also for generating a proper cache key for uniquely identifying streams.
-            This file name will be also used for downloading if <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadFileName"/> is not specified.
-            </param>
-            <param name="fileSize">
-            The size of the file. 
-            This is required for generating a proper cache key for uniquely identifying streams.
-            </param>
-            <param name="fileDateModified">
-            The last modified time of the file. 
-            This is required for generating a proper cache key for uniquely identifying streams.
-            </param>
-            <param name="leaveStreamOpen">
-            Whether to leave the stream (returned by <paramref name="openStream"/> callback) open 
-            after the copying is complete.
-            </param>
-            <param name="keepCached">
-            Whether to keep the copied stream in cache folder even after it is converted to a web-friendly format.
-            If set to false, "Download" button will be disabled ("Download as PDF" button will be still available)
-            because the viewer will not know how to access your original stream if it's not cached.
-            For example if you are using <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadUrl"/> property then you will not need to keep a copy of
-            the original stream in cache so you can set this to false in that case.
-            </param>
-        </member>
-        <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.SetDocumentBytes(System.Func{System.Byte[]},System.String,System.Int64,System.DateTime,System.Boolean)">
-            <summary>
-            Sets the document data to load and display. When you don't have a file on disk and also when you don't
-            have a stream, you should use this method instead of <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DocumentPath"/> property.
-            </summary>
-            <param name="getBytes">
-            The callback method to return a byte array containing the document. This data 
-            will be immediately copied to cache folder if not already exists. This callback 
-            will only be called when necessary, i.e. if the data is already cached before or if the required
-            conversions are already done and cached before then the callback will not be called. The reason this
-            is implemented as a callback rather than a direct <see cref="T:byte[]"/> instance is for extra performance,
-            consider retrieving the data is costly in your implementation, for example you are retrieving it from network
-            or a database or even from a zip file so retrieving the data only when it's really necessary would be more
-            performant when your document is viewed several times by several users.
-            </param>
-            <param name="fileName">
-            The name of the file (e.g. Document.docx, Document.pdf).
-            The extension is required for determining the document format of the data and 
-            also for generating a proper cache key for uniquely identifying data.
-            This file name will be also used for downloading if <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadFileName"/> is not specified.
-            </param>
-            <param name="fileSize">
-            The size of the file. 
-            This is required for generating a proper cache key for uniquely identifying data.
-            </param>
-            <param name="fileDateModified">
-            The last modified time of the file. 
-            This is required for generating a proper cache key for uniquely identifying data.
-            </param>
-            <param name="keepCached">
-            Whether to keep the copied data in cache folder even after it is converted to a web-friendly format.
-            If set to false, "Download" button will be disabled ("Download as PDF" button will be still available)
-            because the viewer will not know how to access your original data if it's not cached.
-            For example if you are using <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DownloadUrl"/> property then you will not need to keep a copy of
-            the original data in cache so you can set this to false in that case.
-            </param>
         </member>
         <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.GetLinkTags">
             <summary>Gets link tags of the control.</summary>
@@ -237,18 +311,6 @@
         </member>
         <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.Render(System.Web.UI.HtmlTextWriter)">
             <summary>Renders the control.</summary>
-        </member>
-        <member name="M:GleamTech.DocumentUltimate.Web.DocumentViewer.PreCacheDocument">
-            <summary>
-            Pre-caches a document. Normally the source document is converted to a special web-friendly format and cached
-            after the document viewer is displayed in the page and when the document is viewed for the first time. 
-            With this method, you can do the conversion and caching beforehand so this way, when a user opens the 
-            document for the first time, there will be no waiting and the document will be loaded immediately from 
-            the cache. Before calling this method, you should first set the source document via either 
-            <see cref="P:GleamTech.DocumentUltimate.Web.DocumentViewer.DocumentPath"/> property, <see cref="M:GleamTech.DocumentUltimate.Web.DocumentViewer.SetDocumentStream(System.Func{System.IO.Stream},System.String,System.Int64,System.DateTime,System.Boolean,System.Boolean)"/> method or 
-            <see cref="M:GleamTech.DocumentUltimate.Web.DocumentViewer.SetDocumentBytes(System.Func{System.Byte[]},System.String,System.Int64,System.DateTime,System.Boolean)"/> method. If the source document is already converted and cached, 
-            then this method will return without doing anything.
-            </summary>
         </member>
         <member name="T:GleamTech.DocumentUltimate.Web.DocumentViewerState">
             <tocexclude />
@@ -276,9 +338,10 @@
             The default value is 90 days.
             </summary>
         </member>
-        <member name="P:GleamTech.DocumentUltimate.Web.DocumentUltimateWebConfiguration.DisableEncryption">
+        <member name="P:GleamTech.DocumentUltimate.Web.DocumentUltimateWebConfiguration.EncryptionEnabled">
             <summary>
-            Gets or sets a value that specifies whether encryption of documents should be disabled.
+            Gets or sets a value that specifies whether encryption of documents should be enabled.
+            The default is true.
             Document viewer downloads a special document format on the client-side but for additional 
             security (DRM), the document is also encypted by default.
             </summary>
@@ -335,6 +398,46 @@
         </member>
         <member name="F:GleamTech.DocumentUltimate.Web.ResizeHandles.All">
             <summary>All handles.</summary>
+        </member>
+        <member name="T:GleamTech.DocumentUltimate.DocumentConverter">
+            <summary>
+            Converts document files to another format.
+            </summary>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.DocumentConverter.Convert(System.String,System.String)">
+            <summary>
+            Converts a given document file to another format.
+            </summary>
+            <param name="inputFile">The path to the document file to convert.</param>
+            <param name="outputFile">The path to the converted document file.</param>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.DocumentConverter.Convert(System.String,System.String,GleamTech.DocumentUltimate.DocumentUltimateConfiguration)">
+            <summary>
+            Converts a given document file to another format.
+            </summary>
+            <param name="inputFile">The path to the document file to convert.</param>
+            <param name="outputFile">The path to the converted document file.</param>
+            <param name="configuration">The configuration to use instead of the global configuration.</param>
+        </member>
+        <member name="T:GleamTech.DocumentUltimate.DocumentUltimateConfiguration">
+            <summary>
+            Provides properties and methods for changing this library's configuration.
+            </summary>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.DocumentUltimateConfiguration.CreateLicense(System.String)">
+            <summary>Create a new license.</summary>
+        </member>
+        <member name="M:GleamTech.DocumentUltimate.DocumentUltimateConfiguration.InitCurrent">
+            <summary>Initializes only the static Current instance.</summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.DocumentUltimateConfiguration.Current">
+            <summary>Gets current global configuration instance.</summary>
+        </member>
+        <member name="P:GleamTech.DocumentUltimate.DocumentUltimateConfiguration.AssemblyInfo">
+            <summary>Gets information on this library's assembly.</summary>
+        </member>
+        <member name="T:GleamTech.DocumentUltimate.Resources.AssemblyResourceLocator">
+            <summary>Dummy type for locating the root namespace of the assembly resources.</summary>
         </member>
     </members>
 </doc>

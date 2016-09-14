@@ -60,6 +60,9 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS
                     }
                 }
             };
+
+            exampleExplorer.ExampleProjectName = "ASP.NET Web Forms (C#)";
+            exampleExplorer.ExampleProjects = ExamplesCoreConfiguration.LoadExampleProjects(Server.MapPath("~/App_Data/ExampleProjects.json"));
         }
     }
 }

@@ -46,7 +46,9 @@
                     }
                 }
             }
-        }
+        },
+        .ExampleProjectName = "ASP.NET MVC (VB)",
+        .ExampleProjects = ExamplesCoreConfiguration.LoadExampleProjects(Server.MapPath("~/App_Data/ExampleProjects.json"))
     }
 End Code
 <!DOCTYPE html>

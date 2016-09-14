@@ -18,6 +18,14 @@
             If the value is null or empty, the license will be unset.
             </summary>
         </member>
+        <member name="M:GleamTech.IO.TemporaryPath.GetContext">
+            <summary>
+            Reverts to Application Pool Identity only if required.
+            If web mode, base temporary folder will be under "Temporary ASP.NET Files"
+            so to allow accessing this folder, any impersonation will be undone.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:GleamTech.Reflection.AssemblyResourceHelper">
             <summary>
             Class for handling resources embedded in assemblies. Allows case insensitive resource names.

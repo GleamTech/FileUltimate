@@ -4,6 +4,31 @@
         <name>GleamTech.Core</name>
     </assembly>
     <members>
+        <member name="M:GleamTech.Caching.DiskCacheKey.ToString">
+            <summary>Converts this instance to a string containing the cache key.</summary>
+        </member>
+        <member name="M:GleamTech.Caching.DiskCacheSourceKey.#ctor(GleamTech.IO.BackSlashPath,System.Int64,System.DateTime,System.Collections.Generic.IEnumerable{System.String})">
+            <param name="sourceFile">
+            The file name or path or extension (with or without leading dot) of the source file.
+            Only the extension part will be used for the cache key for uniquely identifying this source file.
+            If the file name or path does not have an extension, then the whole string (excluding the leading dot) 
+            will be considered as the identifier for the cache key.
+            </param>
+            <param name="sourceFileSize">
+            The size of the source file. 
+            This is required for generating a proper cache key for uniquely identifying this source file.
+            </param>
+            <param name="sourceFileDateModified">
+            The last modified time of the source file. 
+            This is required for generating a proper cache key for uniquely identifying this source file.
+            </param>
+            <param name="sourceChangeList">
+            Additional list of custom properties that should be included for unique cache key calculation.
+            </param>
+        </member>
+        <member name="M:GleamTech.Caching.DiskCacheSourceKey.ToString">
+            <summary>Converts this instance to a string containing the cache key.</summary>
+        </member>
         <member name="P:GleamTech.Configuration.ProductConfigurationAttribute.KnownAssemblies">
             <summary>
             Comma separated assembly names.
@@ -18,13 +43,283 @@
             If the value is null or empty, the license will be unset.
             </summary>
         </member>
+        <member name="P:GleamTech.Configuration.ProductConfiguration`1.TrialExtensionKey">
+            <summary>
+            Sets the trial extension key. If your trial has expired and you need more time for evaluation, you can request a trial extension key from support.
+            If the value is null or empty, this property will do nothing.
+            </summary>
+        </member>
+        <member name="T:GleamTech.Cryptography.Hashids">
+            <summary>
+            Generate YouTube-like hashes from one or many numbers. Use hashids when you do not want to expose your database ids to the user.
+            </summary>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.#ctor">
+            <summary>
+            Instantiates a new Hashids with the default setup.
+            </summary>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.#ctor(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Instantiates a new Hashids en/de-coder.
+            </summary>
+            <param name="salt"></param>
+            <param name="minHashLength"></param>
+            <param name="alphabet"></param>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.Encode(System.Int32[])">
+            <summary>
+            Encodes the provided numbers into a hashed string
+            </summary>
+            <param name="numbers">the numbers to encode</param>
+            <returns>the hashed string</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.Encode(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Encodes the provided numbers into a hashed string
+            </summary>
+            <param name="numbers">the numbers to encode</param>
+            <returns>the hashed string</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.Decode(System.String)">
+            <summary>
+            Decodes the provided hash into
+            </summary>
+            <param name="hash">the hash</param>
+            <exception cref="T:System.OverflowException">if the decoded number overflows integer</exception>
+            <returns>the numbers</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.EncodeHex(System.String)">
+            <summary>
+            Encodes the provided hex string to a hashids hash.
+            </summary>
+            <param name="hex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.DecodeHex(System.String)">
+            <summary>
+            Decodes the provided hash into a hex-string
+            </summary>
+            <param name="hash"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.DecodeLong(System.String)">
+            <summary>
+            Decodes the provided hashed string into an array of longs 
+            </summary>
+            <param name="hash">the hashed string</param>
+            <returns>the numbers</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.EncodeLong(System.Int64[])">
+            <summary>
+            Encodes the provided longs to a hashed string
+            </summary>
+            <param name="numbers">the numbers</param>
+            <returns>the hashed string</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.EncodeLong(System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            Encodes the provided longs to a hashed string
+            </summary>
+            <param name="numbers">the numbers</param>
+            <returns>the hashed string</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.Encrypt(System.Int32[])">
+            <summary>
+            Encodes the provided numbers into a string.
+            </summary>
+            <param name="number">the numbers</param>
+            <returns>the hash</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.EncryptHex(System.String)">
+            <summary>
+            Encrypts the provided hex string to a hashids hash.
+            </summary>
+            <param name="hex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.Decrypt(System.String)">
+            <summary>
+            Decodes the provided numbers into a array of numbers
+            </summary>
+            <param name="hash">hash</param>
+            <returns>array of numbers.</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.DecryptHex(System.String)">
+            <summary>
+            Decodes the provided hash to a hex-string
+            </summary>
+            <param name="hash"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.SetupSeps">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.SetupGuards">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.GenerateHashFrom(System.Int64[])">
+            <summary>
+            Internal function that does the work of creating the hash
+            </summary>
+            <param name="numbers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.Hashids.ConsistentShuffle(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="alphabet"></param>
+            <param name="salt"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GleamTech.Cryptography.IHashids">
+            <summary>
+            Describes a Hashids provider
+            </summary>
+        </member>
+        <member name="M:GleamTech.Cryptography.IHashids.Decode(System.String)">
+            <summary>
+            Decodes the provided hashed string.
+            </summary>
+            <param name="hash">the hashed string</param>
+            <exception cref="T:System.OverflowException">if one or many of the numbers in the hash overflowing the integer storage</exception>
+            <returns>the numbers</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.IHashids.DecodeLong(System.String)">
+            <summary>
+            Decodes the provided hashed string into longs
+            </summary>
+            <param name="hash">the hashed string</param>
+            <returns>the numbers</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.IHashids.DecodeHex(System.String)">
+            <summary>
+            Decodes the provided hashed string into a hex string
+            </summary>
+            <param name="hash">the hashed string</param>
+            <returns>the hex string</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.IHashids.Encode(System.Int32[])">
+            <summary>
+            Encodes the provided numbers into a hashed string
+            </summary>
+            <param name="numbers">the numbers</param>
+            <returns>the hashed string</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.IHashids.Encode(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Encodes the provided numbers into a hashed string
+            </summary>
+            <param name="numbers">the numbers</param>
+            <returns>the hashed string</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.IHashids.EncodeLong(System.Int64[])">
+            <summary>
+            Encodes the provided numbers into a hashed string
+            </summary>
+            <param name="numbers">the numbers</param>
+            <returns>the hashed string</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.IHashids.EncodeLong(System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            Encodes the provided numbers into a hashed string
+            </summary>
+            <param name="numbers">the numbers</param>
+            <returns>the hashed string</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.IHashids.EncodeHex(System.String)">
+            <summary>
+            Encodes the provided hex string
+            </summary>
+            <param name="hex">the hex string</param>
+            <returns>the hashed string</returns>
+        </member>
+        <member name="M:GleamTech.Cryptography.CryptoManager.Base36Encode(System.Int64)">
+            <summary>Encodes fastly long number to lower case base36 string.</summary>
+            <param name="number">The long number to encode.</param>
+            <returns></returns>
+        </member>
+        <member name="T:GleamTech.Cryptography.MD5Managed">
+            <summary>
+            MD5Managed: A HashAlgorithm implementation that acts as a thin wrapper
+            around a C# translation of the MD5 reference implementation. The C code
+            has been translated as closely as possible so that most of the original
+            structure remains and comparisons between the two are straightforward.
+            </summary>
+            <remarks>
+            Derived from the RSA Data Security, Inc. MD5 Message-Digest Algorithm.
+            
+            Specification:
+            RFC1321 - The MD5 Message-Digest Algorithm
+            http://www.faqs.org/rfcs/rfc1321.html
+            
+            Original license:
+            Copyright (C) 1991-2, RSA Data Security, Inc. Created 1991. All
+            rights reserved.
+            
+            License to copy and use this software is granted provided that it
+            is identified as the "RSA Data Security, Inc. MD5 Message-Digest
+            Algorithm" in all material mentioning or referencing this software
+            or this function.
+            
+            License is also granted to make and use derivative works provided
+            that such works are identified as "derived from the RSA Data
+            Security, Inc. MD5 Message-Digest Algorithm" in all material
+            mentioning or referencing the derived work.
+            
+            RSA Data Security, Inc. makes no representations concerning either
+            the merchantability of this software or the suitability of this
+            software for any particular purpose. It is provided "as is"
+            without express or implied warranty of any kind.
+            
+            These notices must be retained in any copies of any part of this
+            documentation and/or software.
+            </remarks>
+        </member>
+        <member name="M:GleamTech.Cryptography.MD5Managed.#ctor">
+            <summary>
+            Initializes a new instance.
+            </summary>
+        </member>
+        <member name="M:GleamTech.Cryptography.MD5Managed.Initialize">
+            <summary>
+            Initializes internal state.
+            </summary>
+        </member>
+        <member name="M:GleamTech.Cryptography.MD5Managed.InitializeVariables">
+            <summary>
+            Initializes variables.
+            </summary>
+        </member>
+        <member name="M:GleamTech.Cryptography.MD5Managed.HashCore(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Updates the hash code with the data provided.
+            </summary>
+            <param name="array">Data to hash.</param>
+            <param name="ibStart">Start position.</param>
+            <param name="cbSize">Number of bytes.</param>
+        </member>
+        <member name="M:GleamTech.Cryptography.MD5Managed.HashFinal">
+            <summary>
+            Finalizes the hash code and returns it.
+            </summary>
+        </member>
+        <member name="P:GleamTech.Cryptography.MD5Managed.Hash">
+            <summary>
+            Returns the hash as an array of bytes.
+            </summary>
+        </member>
         <member name="M:GleamTech.IO.TemporaryPath.GetContext">
             <summary>
             Reverts to Application Pool Identity only if required.
             If web mode, base temporary folder will be under "Temporary ASP.NET Files"
             so to allow accessing this folder, any impersonation will be undone.
             </summary>
-            <returns></returns>
         </member>
         <member name="T:GleamTech.Reflection.AssemblyResourceHelper">
             <summary>
@@ -307,75 +602,14 @@
               Looks up a localized string similar to {0} requires ASP.NET SessionState module to be in Read-Write mode. Please set EnableSessionState attribute to True instead of ReadOnly on the page directive..
             </summary>
         </member>
-        <member name="T:GleamTech.Cryptography.MD5Managed">
+        <member name="P:GleamTech.Resources.Strings.TimeTrial_CanNotExtend">
             <summary>
-            MD5Managed: A HashAlgorithm implementation that acts as a thin wrapper
-            around a C# translation of the MD5 reference implementation. The C code
-            has been translated as closely as possible so that most of the original
-            structure remains and comparisons between the two are straightforward.
-            </summary>
-            <remarks>
-            Derived from the RSA Data Security, Inc. MD5 Message-Digest Algorithm.
-            
-            Specification:
-            RFC1321 - The MD5 Message-Digest Algorithm
-            http://www.faqs.org/rfcs/rfc1321.html
-            
-            Original license:
-            Copyright (C) 1991-2, RSA Data Security, Inc. Created 1991. All
-            rights reserved.
-            
-            License to copy and use this software is granted provided that it
-            is identified as the "RSA Data Security, Inc. MD5 Message-Digest
-            Algorithm" in all material mentioning or referencing this software
-            or this function.
-            
-            License is also granted to make and use derivative works provided
-            that such works are identified as "derived from the RSA Data
-            Security, Inc. MD5 Message-Digest Algorithm" in all material
-            mentioning or referencing the derived work.
-            
-            RSA Data Security, Inc. makes no representations concerning either
-            the merchantability of this software or the suitability of this
-            software for any particular purpose. It is provided "as is"
-            without express or implied warranty of any kind.
-            
-            These notices must be retained in any copies of any part of this
-            documentation and/or software.
-            </remarks>
-        </member>
-        <member name="M:GleamTech.Cryptography.MD5Managed.#ctor">
-            <summary>
-            Initializes a new instance.
+              Looks up a localized string similar to Can not extend the trial due to system restrictions. When running on IIS, make sure &quot;Load User Profile&quot; option is set to &quot;true&quot; in &quot;Advanced Settings&quot; of the application pool. This allows your web application to access Windows Registry for storing trial information..
             </summary>
         </member>
-        <member name="M:GleamTech.Cryptography.MD5Managed.Initialize">
+        <member name="P:GleamTech.Resources.Strings.TimeTrial_KeyNotValid">
             <summary>
-            Initializes internal state.
-            </summary>
-        </member>
-        <member name="M:GleamTech.Cryptography.MD5Managed.InitializeVariables">
-            <summary>
-            Initializes variables.
-            </summary>
-        </member>
-        <member name="M:GleamTech.Cryptography.MD5Managed.HashCore(System.Byte[],System.Int32,System.Int32)">
-            <summary>
-            Updates the hash code with the data provided.
-            </summary>
-            <param name="array">Data to hash.</param>
-            <param name="ibStart">Start position.</param>
-            <param name="cbSize">Number of bytes.</param>
-        </member>
-        <member name="M:GleamTech.Cryptography.MD5Managed.HashFinal">
-            <summary>
-            Finalizes the hash code and returns it.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:GleamTech.Cryptography.MD5Managed.Hash">
-            <summary>
-            Returns the hash as an array of bytes.
+              Looks up a localized string similar to This trial extension key is not valid..
             </summary>
         </member>
         <member name="P:GleamTech.Util.LazyCache.DefaultCacheDuration">

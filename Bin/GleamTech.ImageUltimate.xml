@@ -532,48 +532,42 @@
             Gets the image save format by file extension.
             </summary>
             <param name="extension">The file extension of the image without the leading dot.</param>
-            <returns></returns>
         </member>
         <member name="M:GleamTech.ImageUltimate.ImageExtensionMapping.GetDefaultExtension(GleamTech.ImageUltimate.ImageSaveFormat)">
             <summary>
             Gets the default file extension for a image save format.
             </summary>
             <param name="imageSaveFormat">The image save format.</param>
-            <returns></returns>
         </member>
         <member name="M:GleamTech.ImageUltimate.ImageExtensionMapping.GetAllExtensions(GleamTech.ImageUltimate.ImageSaveFormat)">
             <summary>
             Gets all file extensions for a image save format.
             </summary>
             <param name="imageSaveFormat">The image save format.</param>
-            <returns></returns>
         </member>
         <member name="M:GleamTech.ImageUltimate.ImageExtensionMapping.GetDefaultExtension(GleamTech.ImageUltimate.ImageLoadFormat)">
             <summary>
             Gets the default file extension for a image load format.
             </summary>
             <param name="imageLoadFormat">The image load format.</param>
-            <returns></returns>
         </member>
         <member name="M:GleamTech.ImageUltimate.ImageExtensionMapping.GetAllExtensions(GleamTech.ImageUltimate.ImageLoadFormat)">
             <summary>
             Gets all file extensions for a image load format.
             </summary>
             <param name="imageLoadFormat">The image load format.</param>
-            <returns></returns>
         </member>
         <member name="M:GleamTech.ImageUltimate.ImageExtensionMapping.GetLoadFormat(System.String)">
             <summary>
             Gets the image load format by file extension.
             </summary>
             <param name="extension">The file extension of the image without the leading dot.</param>
-            <returns></returns>
         </member>
         <member name="M:GleamTech.ImageUltimate.ImageExtensionMapping.EnumerateLoadFormats">
             <summary>Enumerates all supported image file formats for loading.</summary>
         </member>
         <member name="M:GleamTech.ImageUltimate.ImageExtensionMapping.EnumerateSaveFormats">
-            <summary>Enumerates all supported image file formats for loading.</summary>
+            <summary>Enumerates all supported image file formats for saving.</summary>
         </member>
         <member name="T:GleamTech.ImageUltimate.ImageInfo">
             <summary>Provides properties for reading image information and metadata. If also processing the image is required then <see cref="T:GleamTech.ImageUltimate.ImageTask"/> class should be used.</summary>
@@ -898,7 +892,7 @@
             Rotates the current image by the given angle. The command is added to the chain and not executed until the actual processing is done. 
             </summary>
             <param name="angle">The angle in degrees to rotate the image by. A positive degree will cause a clockwise rotation and a negative degree will cause a counter-clockwise rotation. Angles of 90, 180, or 270 degrees will use a special algorithm for higher performance.</param>
-            <param name="backgroundColor">The background color for the rotated image. Default color is white. If the rotated image is not rectangular (ie. angle is not 90, 180, or 270 degrees), it will be padded with the background color to get a rectangular image.</param>
+            <param name="backgroundColor">The background color for the rotated image. Default color is transparent. If the rotated image is not rectangular (ie. angle is not 90, 180, or 270 degrees), it will be padded with the background color to get a rectangular image.</param>
             <param name="transformQuality">The interpolation algorithm to use while transforming.</param>
             <returns>The same instance of this class.</returns>
         </member>
@@ -1468,7 +1462,6 @@
             Gets the corresponding web-safe image save format for a file extension.
             </summary>
             <param name="extension">The file extension of the image without the leading dot.</param>
-            <returns></returns>
         </member>
         <member name="T:GleamTech.ImageUltimate.Web.ImageModule">
             <summary>Processes image requests within the web application.</summary>

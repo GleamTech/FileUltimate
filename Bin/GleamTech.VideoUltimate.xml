@@ -18,7 +18,6 @@
             The tolerance to consider the image blank, 
             higher the value higher the number of matches.
             </param>
-            <returns></returns>
         </member>
         <member name="T:GleamTech.VideoUltimate.GraphicsExtensions">
             <summary>
@@ -200,7 +199,6 @@
             <param name="maxSize">The maximum width or height of the thumbnail, aspect ratio is preserved.</param>
             <param name="overlayDuration">Whether to overlay the duration of the video on the bottom-right corner.</param>
             <param name="fontSize">The font size to be used for duration overlay.</param>
-            <returns></returns>
         </member>
         <member name="M:GleamTech.VideoUltimate.VideoThumbnailer.Dispose">
             <summary>Releases all resources used by this instance.</summary>

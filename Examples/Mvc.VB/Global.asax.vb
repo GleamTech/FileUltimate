@@ -1,5 +1,7 @@
 ﻿' Note: For instructions on enabling IIS6 or IIS7 classic mode, 
 ' visit http://go.microsoft.com/?LinkId=9394802
+Imports System.IO
+Imports GleamTech.FileUltimate
 
 Public Class MvcApplication
     Inherits System.Web.HttpApplication
@@ -23,6 +25,11 @@ Public Class MvcApplication
         AreaRegistration.RegisterAllAreas()
         
         RegisterRoutes(RouteTable.Routes)
+
+        Dim licenseFile = Server.MapPath("~/App_Data/License.dat")
+        If File.Exists(licenseFile) Then
+	        FileUltimateConfiguration.Current.LicenseKey = File.ReadAllText(licenseFile)
+        End If
     End Sub
 
 End Class

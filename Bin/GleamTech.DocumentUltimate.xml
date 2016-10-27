@@ -23,19 +23,25 @@
         </member>
         <member name="F:GleamTech.DocumentUltimate.DocumentEngineEnforcement.Auto">
             <summary>
-            Either the native or managed document engine will be chosen automatically according to the input and output formats.
+            The best document engine will be chosen automatically according to the input and output formats.
             </summary>
         </member>
         <member name="F:GleamTech.DocumentUltimate.DocumentEngineEnforcement.ForceNative">
             <summary>
-            Force conversion via native document engine.
+            Force conversion via the native document engine.
             The native document engine is usually faster but it supports a limited set of document formats.
             </summary>
         </member>
         <member name="F:GleamTech.DocumentUltimate.DocumentEngineEnforcement.ForceManaged">
             <summary>
-            Force conversion via managed document engine.
+            Force conversion via the managed document engine.
             The managed document engine supports wide range of document formats.
+            </summary>
+        </member>
+        <member name="F:GleamTech.DocumentUltimate.DocumentEngineEnforcement.ForceCad">
+            <summary>
+            Force conversion via the CAD engine.
+            The CAD engine supports only AutoCAD Drawing formats.
             </summary>
         </member>
         <member name="T:GleamTech.DocumentUltimate.DocumentEngineSupport">
@@ -46,21 +52,27 @@
         </member>
         <member name="F:GleamTech.DocumentUltimate.DocumentEngineSupport.Native">
             <summary>
-            The document format should be supported by native document engine.
+            The document format should be supported by the native document engine.
             The native document engine is usually faster but it supports a limited set of document formats.
             </summary>
         </member>
         <member name="F:GleamTech.DocumentUltimate.DocumentEngineSupport.Managed">
             <summary>
-            The document format should be supported by managed document engine.
+            The document format should be supported by the managed document engine.
             The managed document engine supports wide range of document formats.
             </summary>
         </member>
-        <member name="F:GleamTech.DocumentUltimate.DocumentEngineSupport.Both">
-            <summary>The document format should be supported by both native and managed document engines.</summary>
+        <member name="F:GleamTech.DocumentUltimate.DocumentEngineSupport.Cad">
+            <summary>
+            The document format should be supported by the CAD engine.
+            The CAD engine supports only AutoCAD Drawing formats.
+            </summary>
         </member>
-        <member name="F:GleamTech.DocumentUltimate.DocumentEngineSupport.Either">
-            <summary>The document format should be supported by either native or managed document engine.</summary>
+        <member name="F:GleamTech.DocumentUltimate.DocumentEngineSupport.All">
+            <summary>The document format should be supported by all document engines.</summary>
+        </member>
+        <member name="F:GleamTech.DocumentUltimate.DocumentEngineSupport.Any">
+            <summary>The document format should be supported by any document engine.</summary>
         </member>
         <member name="T:GleamTech.DocumentUltimate.DocumentEngineType">
             <summary>Defines the document engine types.</summary>
@@ -77,8 +89,14 @@
             The managed document engine supports wide range of document formats.
             </summary>
         </member>
-        <member name="F:GleamTech.DocumentUltimate.DocumentEngineType.Both">
-            <summary>The document format is supported by both native and managed document engines.</summary>
+        <member name="F:GleamTech.DocumentUltimate.DocumentEngineType.Cad">
+            <summary>
+            The document format is supported by the CAD engine.
+            The CAD engine supports only AutoCAD Drawing formats.
+            </summary>
+        </member>
+        <member name="F:GleamTech.DocumentUltimate.DocumentEngineType.All">
+            <summary>The document format is supported by all document engines.</summary>
         </member>
         <member name="T:GleamTech.DocumentUltimate.DocumentFormatGroupInfo">
             <summary>Provides information about a document format group.</summary>
@@ -301,10 +319,10 @@
             <summary>Plain Text Document.</summary>
         </member>
         <member name="F:GleamTech.DocumentUltimate.DocumentFormat.Dwg">
-            <summary>AutoCAD Drawing.</summary>
+            <summary>AutoCAD Drawing (R13 to 2016).</summary>
         </member>
         <member name="F:GleamTech.DocumentUltimate.DocumentFormat.Dxf">
-            <summary>AutoCAD Drawing Interchange.</summary>
+            <summary>AutoCAD Drawing Interchange (R12 to 2016).</summary>
         </member>
         <member name="F:GleamTech.DocumentUltimate.DocumentFormat.Tif">
             <summary>Tagged Image File Format (TIFF).</summary>
@@ -312,11 +330,17 @@
         <member name="F:GleamTech.DocumentUltimate.DocumentFormat.DjVu">
             <summary>Deja Vu (DjVu) Image.</summary>
         </member>
+        <member name="F:GleamTech.DocumentUltimate.DocumentFormat.Ps">
+            <summary>PostScript (PS).</summary>
+        </member>
         <member name="F:GleamTech.DocumentUltimate.DocumentFormat.Svg">
             <summary>Scalable Vector Graphics (SVG).</summary>
         </member>
         <member name="F:GleamTech.DocumentUltimate.DocumentFormat.Emf">
-            <summary>Microsoft Enhanced Metafile (EMF).</summary>
+            <summary>Windows Enhanced Metafile (EMF).</summary>
+        </member>
+        <member name="F:GleamTech.DocumentUltimate.DocumentFormat.Xaml">
+            <summary>Extensible Application Markup Language (XAML).</summary>
         </member>
         <member name="F:GleamTech.DocumentUltimate.DocumentFormat.Psd">
             <summary>Adobe Photoshop Document (PSD).</summary>
@@ -515,22 +539,21 @@
         <member name="T:GleamTech.DocumentUltimate.PageRange">
             <summary>Represents a range of page numbers.</summary>
             <remarks>
-            The range is specified as a string in the following forms or combination thereof:
-            
-            5           single value
-            1,2,3,4,5   sequence of values
-            1-5         closed range
-            -5          open range (converted to a sequence from 1 to 5)
-            1-          open range (converted to a sequence from 1 to final page)
-            all         keyword representing all page numbers.
-            odd         keyword representing odd page numbers.
-            even        keyword representing even page numbers.
-            
-            The value delimiter can be either ',' or ';' and the range separator can be
-            either '-' or ':'. Whitespace is permitted at any point in the input.
-            
-            Any elements of the sequence that contain non-digit, non-whitespace, or non-separator
-            characters or that are empty are ignored.
+            <para>The range is specified as a string in the following forms or combination thereof:</para>
+            <list type="table">
+            <item><term>5</term><description>single value</description></item>
+            <item><term>1,2,3,4,5</term><description>sequence of values</description></item>
+            <item><term>1-5</term><description>closed range</description></item>
+            <item><term>-5</term><description>open range (converted to a sequence from 1 to 5)</description></item>
+            <item><term>1-</term><description>open range (converted to a sequence from 1 to final page)</description></item>
+            <item><term>all</term><description>keyword representing all page numbers.</description></item>
+            <item><term>odd</term><description>keyword representing odd page numbers.</description></item>
+            <item><term>even</term><description>keyword representing even page numbers.</description></item>
+            </list>
+            <para>The value delimiter can be either ',' or ';' and the range separator can be
+            either '-' or ':'. Whitespace is permitted at any point in the input.</para>
+            <para>Any elements of the sequence that contain non-digit, non-whitespace, or non-separator
+            characters or that are empty are ignored.</para>
             </remarks>
         </member>
         <member name="M:GleamTech.DocumentUltimate.PageRange.#ctor(System.String)">
@@ -552,22 +575,21 @@
             <summary>Adds a range of page numbers to the sequence from a string representation (e.g. 1-5, 8, 11-13).</summary>
             <param name="rangeString">The string containing the range of page numbers.</param>
             <remarks>
-            The range is specified as a string in the following forms or combination thereof:
-            
-            5           single value
-            1,2,3,4,5   sequence of values
-            1-5         closed range
-            -5          open range (converted to a sequence from 1 to 5)
-            1-          open range (converted to a sequence from 1 to final page)
-            all         keyword representing all page numbers.
-            odd         keyword representing odd page numbers.
-            even        keyword representing even page numbers.
-            
-            The value delimiter can be either ',' or ';' and the range separator can be
-            either '-' or ':'. Whitespace is permitted at any point in the input.
-            
-            Any elements of the sequence that contain non-digit, non-whitespace, or non-separator
-            characters or that are empty are ignored.
+            <para>The range is specified as a string in the following forms or combination thereof:</para>
+            <list type="table">
+            <item><term>5</term><description>single value</description></item>
+            <item><term>1,2,3,4,5</term><description>sequence of values</description></item>
+            <item><term>1-5</term><description>closed range</description></item>
+            <item><term>-5</term><description>open range (converted to a sequence from 1 to 5)</description></item>
+            <item><term>1-</term><description>open range (converted to a sequence from 1 to final page)</description></item>
+            <item><term>all</term><description>keyword representing all page numbers.</description></item>
+            <item><term>odd</term><description>keyword representing odd page numbers.</description></item>
+            <item><term>even</term><description>keyword representing even page numbers.</description></item>
+            </list>
+            <para>The value delimiter can be either ',' or ';' and the range separator can be
+            either '-' or ':'. Whitespace is permitted at any point in the input.</para>
+            <para>Any elements of the sequence that contain non-digit, non-whitespace, or non-separator
+            characters or that are empty are ignored.</para>
             </remarks>
         </member>
         <member name="M:GleamTech.DocumentUltimate.PageRange.EnumeratePageNumbers(System.Int32)">
@@ -1231,7 +1253,7 @@
             <summary>Gets a value that indicates whether a direct conversion is possible to the specified format.</summary>
             <param name="outputFormat">The format to convert to.</param>
             <param name="engineEnforcement">
-            The document engine enforcement option. If not specified, either the native or managed document engine 
+            The document engine enforcement option. If not specified, the best document engine 
             will be chosen automatically according to the input and output formats.
             </param>
         </member>
@@ -1239,7 +1261,7 @@
             <summary>Gets a value that indicates whether a direct conversion is possible to the specified file.</summary>
             <param name="outputFile">The file name or path or extension (with or without leading dot) of the converted document file.</param>
             <param name="engineEnforcement">
-            The document engine enforcement option. If not specified, either the native or managed document engine 
+            The document engine enforcement option. If not specified, the best document engine 
             will be chosen automatically according to the input and output formats.
             </param>
         </member>
@@ -1251,7 +1273,7 @@
             </summary>
             <param name="outputFormat">The target format to convert the document file to.</param>
             <param name="engineEnforcement">
-            The document engine enforcement option. If not specified, either the native or managed document engine 
+            The document engine enforcement option. If not specified, the best document engine 
             will be chosen automatically according to the input and output formats.
             </param>
             <returns>A <see cref="T:GleamTech.DocumentUltimate.DocumentConverterResult" /> object that contains the result of the document conversion such as output file paths.</returns>
@@ -1266,7 +1288,7 @@
             The output options which contains format and other options for the converted file.
             </param>
             <param name="engineEnforcement">
-            The document engine enforcement option. If not specified, either the native or managed document engine 
+            The document engine enforcement option. If not specified, the best document engine 
             will be chosen automatically according to the input and output formats.
             </param>
             <returns>A <see cref="T:GleamTech.DocumentUltimate.DocumentConverterResult" /> object that contains the result of the document conversion such as output file paths.</returns>
@@ -1278,7 +1300,7 @@
             <param name="outputFile">The path to the converted document file.</param>
             <param name="outputFormat">The target format to convert the document file to.</param>
             <param name="engineEnforcement">
-            The document engine enforcement option. If not specified, either the native or managed document engine 
+            The document engine enforcement option. If not specified, the best document engine 
             will be chosen automatically according to the input and output formats.
             </param>
             <returns>A <see cref="T:GleamTech.DocumentUltimate.DocumentConverterResult" /> object that contains the result of the document conversion such as output file paths.</returns>
@@ -1293,7 +1315,7 @@
             the format will be automatically determined from the file extension in <paramref name="outputFile"/>.
             </param>
             <param name="engineEnforcement">
-            The document engine enforcement option. If not specified, either the native or managed document engine 
+            The document engine enforcement option. If not specified, the best document engine 
             will be chosen automatically according to the input and output formats.
             </param>
             <returns>A <see cref="T:GleamTech.DocumentUltimate.DocumentConverterResult" /> object that contains the result of the document conversion such as output file paths.</returns>
@@ -1303,7 +1325,7 @@
             <param name="inputFile">The file name or path or extension (with or without leading dot) of the document file to convert.</param>
             <param name="outputFormat">The format to convert to.</param>
             <param name="engineEnforcement">
-            The document engine enforcement option. If not specified, either the native or managed document engine 
+            The document engine enforcement option. If not specified, the best document engine 
             will be chosen automatically according to the input and output formats.
             </param>
         </member>
@@ -1312,7 +1334,7 @@
             <param name="inputFile">The file name or path or extension (with or without leading dot) of the document file to convert.</param>
             <param name="outputFile">The file name or path or extension (with or without leading dot) of the converted document file.</param>
             <param name="engineEnforcement">
-            The document engine enforcement option. If not specified, either the native or managed document engine 
+            The document engine enforcement option. If not specified, the best document engine 
             will be chosen automatically according to the input and output formats.
             </param>
         </member>
@@ -1321,7 +1343,7 @@
             <param name="inputFormat">The format to convert from</param>
             <param name="outputFormat">The format to convert to.</param>
             <param name="engineEnforcement">
-            The document engine enforcement option. If not specified, either the native or managed document engine 
+            The document engine enforcement option. If not specified, the best document engine 
             will be chosen automatically according to the input and output formats.
             </param>
         </member>

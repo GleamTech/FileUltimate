@@ -1,4 +1,10 @@
-﻿Imports GleamTech.FileUltimate
+﻿Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.Linq
+Imports System.Text
+Imports System.Text.RegularExpressions
+Imports GleamTech.FileUltimate
 
 Namespace Controllers
     Partial Public Class FileManagerController

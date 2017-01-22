@@ -47,14 +47,14 @@
   <ItemGroup>
     <Reference Include="GleamTech.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a05198837413a6d8, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\GleamTech.Core.1.5.5\lib\net40\GleamTech.Core.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Core.1.6.2\lib\net40\GleamTech.Core.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ExamplesCore">
-      <HintPath>..\packages\GleamTech.ExamplesCore.1.5.9\lib\net40\GleamTech.ExamplesCore.dll</HintPath>
+      <HintPath>..\packages\GleamTech.ExamplesCore.1.6.2\lib\net40\GleamTech.ExamplesCore.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.FileUltimate, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\FileUltimate.5.6.4\lib\net40\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\packages\FileUltimate.5.7.2\lib\net40\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="System"/>
     <Reference Include="System.Core"/>

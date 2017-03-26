@@ -6,7 +6,7 @@ Integrate a file manager into your ASP.NET application or site rapidly.
 - Browse and manage files with access control. 
 - Accept files with the advanced upload functionality.
 - Offer a structured and neat download area.
-- Preview documents (50+ file formats, including PDF &#169; Microsoft Office), images, audios and videos.
+- Preview documents (70+ file formats, including PDF &#169; Microsoft Office), images, audios and videos.
 
 ![ASP.NET File Manager](fileultimate.png)
 

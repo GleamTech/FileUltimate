@@ -61,7 +61,7 @@
     </Reference>
     <Reference Include="GleamTech.FileUltimate, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\FileUltimate.5.9.2\lib\net40\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\packages\FileUltimate.5.9.3\lib\net40\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -201,7 +201,5 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <ItemGroup>
-    <Content Include="Packages.config"/>
-  </ItemGroup>
+  <ItemGroup/>
 </Project>

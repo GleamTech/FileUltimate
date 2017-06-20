@@ -70,7 +70,7 @@
     </Reference>
     <Reference Include="GleamTech.FileUltimate, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\FileUltimate.5.9.12\lib\net40\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\packages\FileUltimate.5.10.0\lib\net40\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="System"/>
     <Reference Include="System.Core"/>

@@ -20,5 +20,5 @@ Partial Public Class DefaultPage
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents exampleExplorer As Global.GleamTech.ExamplesCore.ExampleExplorer
+    Protected WithEvents exampleExplorer As Global.GleamTech.Examples.ExampleExplorer
 End Class

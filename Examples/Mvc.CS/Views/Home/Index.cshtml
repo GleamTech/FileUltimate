@@ -1,4 +1,4 @@
-﻿@using GleamTech.ExamplesCore
+﻿@using GleamTech.Examples
 @using GleamTech.FileUltimate
 @using GleamTech.Web.Mvc
 @{
@@ -60,7 +60,7 @@
             }
         },
         ExampleProjectName = "ASP.NET MVC (C#)",
-        ExampleProjects = ExamplesCoreConfiguration.LoadExampleProjects(Server.MapPath("~/App_Data/ExampleProjects.json"))
+        ExampleProjects = ExamplesConfiguration.LoadExampleProjects(Server.MapPath("~/App_Data/ExampleProjects.json"))
     };
 }
 <!DOCTYPE html>

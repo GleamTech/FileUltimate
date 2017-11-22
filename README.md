@@ -117,7 +117,7 @@ Integrate a file manager into your ASP.NET application or site rapidly.
 
     This will render a file manager control in the page which displays one root folder named "A Root Folder" which points to "\~/App\_Data/RootFolder1" with Full permissions.
 
-###To use FileUltimate in an ASP.NET WebForms Project, do the following in Visual Studio:
+### To use FileUltimate in an ASP.NET WebForms Project, do the following in Visual Studio:
 
 1.  Add references to FileUltimate assemblies. There are two ways to perform this:
       

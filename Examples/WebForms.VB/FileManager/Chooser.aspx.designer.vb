@@ -11,9 +11,9 @@ Option Strict On
 Option Explicit On
 
 Namespace FileManager
-
+    
     Partial Public Class ChooserPage
-
+        
         '''<summary>
         '''fileManager1 control.
         '''</summary>
@@ -21,8 +21,8 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager1 As Global.GleamTech.FileUltimate.FileManager
-
+        Protected WithEvents fileManager1 As Global.GleamTech.FileUltimate.FileManagerControl
+        
         '''<summary>
         '''fileManager2 control.
         '''</summary>
@@ -30,8 +30,8 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager2 As Global.GleamTech.FileUltimate.FileManager
-
+        Protected WithEvents fileManager2 As Global.GleamTech.FileUltimate.FileManagerControl
+        
         '''<summary>
         '''fileManager3 control.
         '''</summary>
@@ -39,8 +39,8 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager3 As Global.GleamTech.FileUltimate.FileManager
-
+        Protected WithEvents fileManager3 As Global.GleamTech.FileUltimate.FileManagerControl
+        
         '''<summary>
         '''fileManager4 control.
         '''</summary>
@@ -48,8 +48,8 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager4 As Global.GleamTech.FileUltimate.FileManager
-
+        Protected WithEvents fileManager4 As Global.GleamTech.FileUltimate.FileManagerControl
+        
         '''<summary>
         '''fileManager5 control.
         '''</summary>
@@ -57,8 +57,8 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager5 As Global.GleamTech.FileUltimate.FileManager
-
+        Protected WithEvents fileManager5 As Global.GleamTech.FileUltimate.FileManagerControl
+        
         '''<summary>
         '''fileManager6 control.
         '''</summary>
@@ -66,8 +66,8 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager6 As Global.GleamTech.FileUltimate.FileManager
-
+        Protected WithEvents fileManager6 As Global.GleamTech.FileUltimate.FileManagerControl
+        
         '''<summary>
         '''fileManager7 control.
         '''</summary>
@@ -75,6 +75,6 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager7 As Global.GleamTech.FileUltimate.FileManager
+        Protected WithEvents fileManager7 As Global.GleamTech.FileUltimate.FileManagerControl
     End Class
 End Namespace

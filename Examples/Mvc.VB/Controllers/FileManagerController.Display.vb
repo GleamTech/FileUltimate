@@ -1,4 +1,5 @@
-﻿Imports GleamTech.FileUltimate
+﻿Imports GleamTech.AspNet.UI
+Imports GleamTech.FileUltimate
 
 Namespace Controllers
     Partial Public Class FileManagerController
@@ -9,7 +10,7 @@ Namespace Controllers
              .Width = 800,
              .Height = 600,
              .DisplayLanguage = "en",
-             .ShowOnLoad = False
+             .Hidden = true
             }
             fileManager1.RootFolders.Add(New FileManagerRootFolder() With {
              .Name = "Root Folder 1",
@@ -25,10 +26,12 @@ Namespace Controllers
              .Width = 800,
              .Height = 600,
              .DisplayLanguage = "en",
-             .ShowOnLoad = False,
-             .FullViewport = True,
-             .ModalDialog = True,
-             .ModalDialogTitle = "FileManager as a modal dialog of viewport"
+             .Hidden = true,
+             .DisplayMode = DisplayMode.Window,
+             .WindowOptions = New WindowOptions() With {
+               .Title = "FileManager as a modal dialog of viewport",
+               .Modal = true rem FullViewport = true,
+              }
             }
             fileManager2.RootFolders.Add(New FileManagerRootFolder() With {
              .Name = "Root Folder 1",
@@ -44,9 +47,11 @@ Namespace Controllers
              .Width = 800,
              .Height = 600,
              .DisplayLanguage = "en",
-             .ShowOnLoad = False,
-             .ModalDialog = True,
-             .ModalDialogTitle = "FileManager as a modal dialog of parent element"
+             .Hidden = true,             
+             .WindowOptions = New WindowOptions() With {
+               .Title = "FileManager as a modal dialog of parent element",
+               .Modal = true
+              }
             }
             fileManager3.RootFolders.Add(New FileManagerRootFolder() With {
              .Name = "Root Folder 1",

@@ -19,7 +19,7 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::GleamTech.FileUltimate.FileManager fileManager1;
+        protected global::GleamTech.FileUltimate.FileManagerControl fileManager1;
         
         /// <summary>
         /// fileManager2 control.
@@ -28,7 +28,7 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::GleamTech.FileUltimate.FileManager fileManager2;
+        protected global::GleamTech.FileUltimate.FileManagerControl fileManager2;
         
         /// <summary>
         /// fileManager3 control.
@@ -37,6 +37,6 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::GleamTech.FileUltimate.FileManager fileManager3;
+        protected global::GleamTech.FileUltimate.FileManagerControl fileManager3;
     }
 }

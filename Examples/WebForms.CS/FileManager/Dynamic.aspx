@@ -14,7 +14,7 @@
         <br /><br />
     </form>
     
-    <GleamTech:FileManager ID="fileManager" runat="server" Width="800" Height="600" DisplayLanguage="en" />
+    <GleamTech:FileManagerControl ID="fileManager" runat="server" Width="800" Height="600" DisplayLanguage="en" />
 
 </body>
 </html>

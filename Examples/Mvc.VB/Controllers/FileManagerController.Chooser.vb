@@ -1,19 +1,23 @@
-﻿Imports GleamTech.FileUltimate
+﻿Imports GleamTech.AspNet.UI
+Imports GleamTech.FileUltimate
 
 Namespace Controllers
     Partial Public Class FileManagerController
         Public Function Chooser() As ActionResult
 
             Dim fileManager1 = New FileManager() With {
-             .ID = "fileManager1",
+             .Id = "fileManager1",
              .Width = 800,
              .Height = 400,
              .Resizable = True,
              .DisplayLanguage = "en",
-             .ShowOnLoad = False,
+             .Hidden = true,
              .CollapseRibbon = True,
-             .ModalDialog = True,
-             .ModalDialogTitle = "Choose a file",
+             .DisplayMode = DisplayMode.Window,
+             .WindowOptions = new WindowOptions() With {
+                .Title = "Choose a file",
+                .Modal = true
+              },
              .ClientChosen = "fileManagerChosen",
              .Chooser = True
             }
@@ -27,18 +31,20 @@ Namespace Controllers
             })
 
             Dim fileManager2 = New FileManager() With {
-             .ID = "fileManager2",
+             .Id = "fileManager2",
              .Width = 800,
              .Height = 400,
              .Resizable = True,
              .DisplayLanguage = "en",
-             .ShowOnLoad = False,
+             .Hidden = true,
              .CollapseRibbon = True,
-             .ModalDialog = True,
-             .ModalDialogTitle = "Choose a folder",
+             .WindowOptions = new WindowOptions() With {
+                .Title = "Choose a folder",
+                .Modal = true
+              },
              .ClientChosen = "fileManagerChosen",
              .Chooser = True,
-            .ChooserType = FileManagerChooserType.Folder
+             .ChooserType = FileManagerChooserType.Folder
             }
             fileManager2.RootFolders.Add(New FileManagerRootFolder() With {
              .Name = "Root Folder 1",
@@ -50,18 +56,20 @@ Namespace Controllers
             })
 
             Dim fileManager3 = New FileManager() With {
-             .ID = "fileManager3",
+             .Id = "fileManager3",
              .Width = 800,
              .Height = 400,
              .Resizable = True,
              .DisplayLanguage = "en",
-             .ShowOnLoad = False,
+             .Hidden = true,
              .CollapseRibbon = True,
-             .ModalDialog = True,
-             .ModalDialogTitle = "Choose a file or a folder",
+             .WindowOptions = new WindowOptions() With {
+              .Title = "Choose a file or a folder",
+              .Modal = true
+              },
              .ClientChosen = "fileManagerChosen",
              .Chooser = True,
-            .ChooserType = FileManagerChooserType.FileOrFolder
+             .ChooserType = FileManagerChooserType.FileOrFolder
             }
             fileManager3.RootFolders.Add(New FileManagerRootFolder() With {
              .Name = "Root Folder 1",
@@ -73,15 +81,17 @@ Namespace Controllers
             })
 
             Dim fileManager4 = New FileManager() With {
-             .ID = "fileManager4",
+             .Id = "fileManager4",
              .Width = 800,
              .Height = 400,
              .Resizable = True,
              .DisplayLanguage = "en",
-             .ShowOnLoad = False,
+             .Hidden = true,
              .CollapseRibbon = True,
-             .ModalDialog = True,
-             .ModalDialogTitle = "Choose files",
+             .WindowOptions = new WindowOptions() With {
+               .Title = "Choose files",
+               .Modal = true
+              },
              .ClientChosen = "fileManagerChosen",
              .Chooser = True,
             .ChooserMultipleSelection = True
@@ -101,10 +111,12 @@ Namespace Controllers
              .Height = 400,
              .Resizable = True,
              .DisplayLanguage = "en",
-             .ShowOnLoad = False,
+             .Hidden = true,
              .CollapseRibbon = True,
-             .ModalDialog = True,
-             .ModalDialogTitle = "Choose folders",
+             .WindowOptions = new WindowOptions() With {
+               .Title = "Choose folders",
+               .Modal = true
+              },
              .ClientChosen = "fileManagerChosen",
              .Chooser = True,
              .ChooserType = FileManagerChooserType.Folder,
@@ -125,10 +137,12 @@ Namespace Controllers
              .Height = 400,
              .Resizable = True,
              .DisplayLanguage = "en",
-             .ShowOnLoad = False,
+             .Hidden = true,
              .CollapseRibbon = True,
-             .ModalDialog = True,
-             .ModalDialogTitle = "Choose files or folders",
+             .WindowOptions = new WindowOptions() With {
+               .Title = "Choose files or folders",
+               .Modal = true
+              },
              .ClientChosen = "fileManagerChosen",
              .Chooser = True,
              .ChooserType = FileManagerChooserType.FileOrFolder,
@@ -149,7 +163,7 @@ Namespace Controllers
              .Height = 400,
              .Resizable = True,
              .DisplayLanguage = "en",
-             .ShowOnLoad = False,
+             .Hidden = true,
              .ShowRibbon = False,
              .ClientChosen = "fileManagerChosen",
             .Chooser = True

@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using GleamTech.AspNet.UI;
 using GleamTech.FileUltimate;
 
 namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
@@ -9,15 +10,19 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
         {
             var fileManager1 = new FileManager
             {
-                ID = "fileManager1",
+                Id = "fileManager1",
                 Width = 800,
                 Height = 400,
                 Resizable = true,
                 DisplayLanguage = "en",
-                ShowOnLoad = false,
+                Hidden = true,
                 CollapseRibbon = true,
-                ModalDialog = true,
-                ModalDialogTitle="Choose a file",
+                DisplayMode = DisplayMode.Window,
+                WindowOptions =
+                {
+                    Title = "Choose a file",
+                    Modal = true
+                },
                 ClientChosen = "fileManagerChosen",
                 Chooser = true
             };
@@ -34,15 +39,19 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
 
             var fileManager2 = new FileManager
             {
-                ID = "fileManager2",
+                Id = "fileManager2",
                 Width = 800,
                 Height = 400,
                 Resizable = true,
                 DisplayLanguage = "en",
-                ShowOnLoad = false,
+                Hidden = true,
                 CollapseRibbon = true,
-                ModalDialog = true,
-                ModalDialogTitle = "Choose a folder",
+                DisplayMode = DisplayMode.Window,
+                WindowOptions =
+                {
+                    Title = "Choose a folder",
+                    Modal = true
+                },
                 ClientChosen = "fileManagerChosen",
                 Chooser = true,
                 ChooserType = FileManagerChooserType.Folder
@@ -60,15 +69,19 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
 
             var fileManager3 = new FileManager
             {
-                ID = "fileManager3",
+                Id = "fileManager3",
                 Width = 800,
                 Height = 400,
                 Resizable = true,
                 DisplayLanguage = "en",
-                ShowOnLoad = false,
+                Hidden = true,
                 CollapseRibbon = true,
-                ModalDialog = true,
-                ModalDialogTitle = "Choose a file or a folder",
+                DisplayMode = DisplayMode.Window,
+                WindowOptions =
+                {
+                    Title = "Choose a file or a folder",
+                    Modal = true
+                },
                 ClientChosen = "fileManagerChosen",
                 Chooser = true,
                 ChooserType = FileManagerChooserType.FileOrFolder
@@ -86,15 +99,19 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
 
             var fileManager4 = new FileManager
             {
-                ID = "fileManager4",
+                Id = "fileManager4",
                 Width = 800,
                 Height = 400,
                 Resizable = true,
                 DisplayLanguage = "en",
-                ShowOnLoad = false,
+                Hidden = true,
                 CollapseRibbon = true,
-                ModalDialog = true,
-                ModalDialogTitle = "Choose files",
+                DisplayMode = DisplayMode.Window,
+                WindowOptions =
+                {
+                    Title = "Choose files",
+                    Modal = true
+                },
                 ClientChosen = "fileManagerChosen",
                 Chooser = true,
                 ChooserMultipleSelection = true
@@ -112,15 +129,19 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
 
             var fileManager5 = new FileManager
             {
-                ID = "fileManager5",
+                Id = "fileManager5",
                 Width = 800,
                 Height = 400,
                 Resizable = true,
                 DisplayLanguage = "en",
-                ShowOnLoad = false,
+                Hidden = true,
                 CollapseRibbon = true,
-                ModalDialog = true,
-                ModalDialogTitle = "Choose folders",
+                DisplayMode = DisplayMode.Window,
+                WindowOptions =
+                {
+                    Title = "Choose folders",
+                    Modal = true
+                },
                 ClientChosen = "fileManagerChosen",
                 Chooser = true,
                 ChooserType = FileManagerChooserType.Folder,
@@ -139,15 +160,19 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
 
             var fileManager6 = new FileManager
             {
-                ID = "fileManager6",
+                Id = "fileManager6",
                 Width = 800,
                 Height = 400,
                 Resizable = true,
                 DisplayLanguage = "en",
-                ShowOnLoad = false,
+                Hidden = true,
                 CollapseRibbon = true,
-                ModalDialog = true,
-                ModalDialogTitle = "Choose files or folders",
+                DisplayMode = DisplayMode.Window,
+                WindowOptions =
+                {
+                    Title = "Choose files or folders",
+                    Modal = true
+                },
                 ClientChosen = "fileManagerChosen",
                 Chooser = true,
                 ChooserType = FileManagerChooserType.FileOrFolder,
@@ -166,12 +191,12 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
 
             var fileManager7 = new FileManager
             {
-                ID = "fileManager7",
+                Id = "fileManager7",
                 Width = 800,
                 Height = 400,
                 Resizable = true,
                 DisplayLanguage = "en",
-                ShowOnLoad = false,
+                Hidden = true,
                 ShowRibbon = false,
                 ClientChosen = "fileManagerChosen",
                 Chooser = true

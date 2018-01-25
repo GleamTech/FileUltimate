@@ -14,7 +14,7 @@
         <br /><br />
     </form>
 
-    <GleamTech:FileManager ID="fileManager" runat="server" 
+    <GleamTech:FileManagerControl ID="fileManager" runat="server" 
                            Width="800"
                            Height="600"
                            Resizable="True">
@@ -72,7 +72,7 @@
                                                 DeniedFileTypes="*.exe" />
         </GleamTech:FileManagerRootFolder>         
 
-    </GleamTech:FileManager>
+    </GleamTech:FileManagerControl>
     
 </body>
 </html>

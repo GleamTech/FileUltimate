@@ -37,6 +37,6 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::GleamTech.FileUltimate.FileManager fileManager;
+        protected global::GleamTech.FileUltimate.FileManagerControl fileManager;
     }
 }

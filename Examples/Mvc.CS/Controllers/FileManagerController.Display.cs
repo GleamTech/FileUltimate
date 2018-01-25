@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using GleamTech.AspNet.UI;
 using GleamTech.FileUltimate;
 
 namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
@@ -9,11 +10,11 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
         {
             var fileManager1 = new FileManager
             {
-                ID = "fileManager1",
+                Id = "fileManager1",
                 Width = 800,
                 Height = 600,
                 DisplayLanguage = "en",
-                ShowOnLoad = false
+                Hidden = true,
             };
             fileManager1.RootFolders.Add(new FileManagerRootFolder
             {
@@ -28,14 +29,18 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
 
             var fileManager2 = new FileManager
             {
-                ID = "fileManager2",
+                Id = "fileManager2",
                 Width = 800,
                 Height = 600,
                 DisplayLanguage = "en",
-                ShowOnLoad = false,
-                FullViewport = true,
-                ModalDialog = true,
-                ModalDialogTitle = "FileManager as a modal dialog of viewport"
+                Hidden = true,
+                DisplayMode = DisplayMode.Window,
+                WindowOptions =
+                {
+                    Title = "FileManager as a modal dialog of viewport",
+                    Modal = true,
+                    //FullViewport = true,
+                }
             };
             fileManager2.RootFolders.Add(new FileManagerRootFolder
             {
@@ -50,13 +55,17 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
 
             var fileManager3 = new FileManager
             {
-                ID = "fileManager3",
+                Id = "fileManager3",
                 Width = 800,
                 Height = 600,
                 DisplayLanguage = "en",
-                ShowOnLoad = false,
-                ModalDialog = true,
-                ModalDialogTitle = "FileManager as a modal dialog of parent element"
+                Hidden = true,
+                DisplayMode = DisplayMode.Window,
+                WindowOptions =
+                {
+                    Title = "FileManager as a modal dialog of parent element",
+                    Modal = true,
+                }
             };
             fileManager3.RootFolders.Add(new FileManagerRootFolder
             {

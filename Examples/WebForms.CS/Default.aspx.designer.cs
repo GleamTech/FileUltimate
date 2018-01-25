@@ -19,6 +19,6 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::GleamTech.Examples.ExampleExplorer exampleExplorer;
+        protected global::GleamTech.Examples.ExampleExplorerControl exampleExplorer;
     }
 }

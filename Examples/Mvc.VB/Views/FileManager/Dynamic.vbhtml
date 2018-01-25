@@ -1,4 +1,4 @@
-﻿@Imports GleamTech.Web.Mvc
+﻿@Imports GleamTech.AspNet.Mvc
 @Imports GleamTech.FileUltimate
 @ModelType FileManager
 
@@ -7,8 +7,7 @@
 <html>
 <head>
     <title>Dynamic</title>
-    @Html.RenderCss(Model)
-    @Html.RenderJs(Model)
+    @Me.RenderHead(Model)
 </head>
 <body style="margin: 20px;">
 
@@ -17,7 +16,7 @@
     @<br/>@<br/>
 End Using
 
-@Html.RenderControl(Model)
+@Me.RenderBody(Model)
 
 </body>
 </html>

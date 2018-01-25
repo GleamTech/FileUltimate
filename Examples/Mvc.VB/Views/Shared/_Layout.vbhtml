@@ -2,11 +2,8 @@
 <html>
 <head>
     <title>@ViewBag.Title</title>
-    @If (IsSectionDefined("fileUltimateCss")) Then
-        @RenderSection("fileUltimateCss")
-    End If
-    @If (IsSectionDefined("fileUltimateJs")) Then
-        @RenderSection("fileUltimateJs")
+    @If (IsSectionDefined("fileUltimateHead")) Then
+        @RenderSection("fileUltimateHead")
     End If
 </head>
 <body style="margin: 20px;">

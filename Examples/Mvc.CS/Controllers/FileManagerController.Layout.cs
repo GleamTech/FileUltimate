@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.UI.WebControls;
+using GleamTech.AspNet.UI;
 using GleamTech.FileUltimate;
 
 namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
@@ -10,7 +11,7 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
         {
             var fileManager = new FileManager
             {
-                Width = Unit.Percentage(100), 
+                Width = CssLength.Percentage(100), 
                 DisplayLanguage = "en"
             };
             fileManager.RootFolders.Add(new FileManagerRootFolder

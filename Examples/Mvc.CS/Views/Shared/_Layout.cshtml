@@ -2,13 +2,9 @@
 <html>
 <head>
     <title>@ViewBag.Title</title>
-    @if (IsSectionDefined("fileUltimateCss"))
+    @if (IsSectionDefined("fileUltimateHead"))
     {
-        @RenderSection("fileUltimateCss")
-    }
-    @if (IsSectionDefined("fileUltimateJs"))
-    {
-        @RenderSection("fileUltimateJs")
+        @RenderSection("fileUltimateHead")
     }
 </head>
 <body style="margin: 20px;">

@@ -9,7 +9,7 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
         {
             var fileManager = new FileManager
             {
-                Width = 800, //Default unit is pixels. Percentage can be specified as Unit.Percentage(100)
+                Width = 800, //Default unit is pixels. Percentage can be specified as CssLength.Percentage(100)
                 Height = 600,
                 Resizable = true
             };

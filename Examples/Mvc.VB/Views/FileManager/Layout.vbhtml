@@ -1,4 +1,4 @@
-﻿@Imports GleamTech.Web.Mvc
+﻿@Imports GleamTech.AspNet.Mvc
 @Imports GleamTech.FileUltimate
 @ModelType FileManager
 
@@ -7,12 +7,9 @@
     Layout = "~/Views/Shared/_Layout.vbhtml"
 End Code
 
-@Section fileUltimateJs
-    @Html.RenderJs(Model)
-End Section
-@Section fileUltimateCss
-    @Html.RenderCss(Model)
+@Section fileUltimateHead
+    @Me.RenderHead(Model)
 End Section
 
-@Html.RenderControl(Model)
+@Me.RenderBody(Model)
 

@@ -1,4 +1,5 @@
 ﻿Imports System.Web.UI.WebControls
+Imports GleamTech.AspNet.UI
 Imports GleamTech.FileUltimate
 
 Namespace Controllers
@@ -6,7 +7,7 @@ Namespace Controllers
 
         Public Function Layout() As ActionResult
             Dim fileManager = New FileManager() With {
-             .Width = Unit.Percentage(100),
+             .Width = CssLength.Percentage(100),
              .DisplayLanguage = "en"
             }
             fileManager.RootFolders.Add(New FileManagerRootFolder() With {

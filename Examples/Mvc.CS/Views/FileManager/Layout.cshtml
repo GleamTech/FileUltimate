@@ -1,4 +1,4 @@
-﻿@using GleamTech.Web.Mvc
+﻿@using GleamTech.AspNet.Mvc
 @using GleamTech.FileUltimate
 @model FileManager
 
@@ -7,12 +7,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@section fileUltimateJs {
-    @Html.RenderJs(Model)
-}
-@section fileUltimateCss {
-    @Html.RenderCss(Model)
+@section fileUltimateHead {
+    @this.RenderHead(Model)
 }
 
-@Html.RenderControl(Model)
+@this.RenderBody(Model)
 

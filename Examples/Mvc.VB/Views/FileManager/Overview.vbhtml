@@ -1,4 +1,4 @@
-﻿@Imports GleamTech.Web.Mvc
+﻿@Imports GleamTech.AspNet.Mvc
 @Imports GleamTech.FileUltimate
 @ModelType FileManager
 
@@ -7,8 +7,18 @@
 <html>
 <head>
     <title>Overview</title>
-    @Html.RenderCss(Model)
-    @Html.RenderJs(Model) @*If you choose, JS can also be rendered at the bottom of the page before the closing </body> tag*@
+    @Me.RenderHead(Model)
+
+    @*
+        If you prefer, JS can also be rendered at the bottom of the page,
+        by first calling RenderHeadWithoutJs in <head>:
+
+        @Me.RenderHeadWithoutJs(Model)
+
+        and then calling RenderJs before the closing </body> tag:
+
+        @Me.RenderJs(Model)
+    *@
 </head>
 <body style="margin: 20px;">
 
@@ -17,7 +27,7 @@
     @<br/>@<br/>
 End Using
 
-@Html.RenderControl(Model)
+@Me.RenderBody(Model)
 
 </body>
 </html>

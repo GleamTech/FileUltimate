@@ -12,14 +12,14 @@
     <br /><input type="button" value="Get Latest Events" onclick="document.getElementById('eventsIframe').contentWindow.location.reload();" />
     <br /><br />
 
-    <GleamTech:FileManager ID="fileManager" runat="server" 
+    <GleamTech:FileManagerControl ID="fileManager" runat="server" 
                            Width="800"
                            Height="600"
                            DisplayLanguage="en">
         <GleamTech:FileManagerRootFolder Name="Root Folder 1" Location="~/App_Data/RootFolder1" >
             <GleamTech:FileManagerAccessControl Path="\" AllowedPermissions="Full"/>
         </GleamTech:FileManagerRootFolder>       
-    </GleamTech:FileManager>
+    </GleamTech:FileManagerControl>
 
 </body>
 </html>

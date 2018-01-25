@@ -1,10 +1,10 @@
-﻿@using GleamTech.Examples
+﻿@using GleamTech.AspNet.Mvc
+@using GleamTech.Examples
 @using GleamTech.FileUltimate
-@using GleamTech.Web.Mvc
 @{
     var exampleExplorer = new ExampleExplorer
     {
-        FullViewport = true,
+        DisplayMode = GleamTech.AspNet.UI.DisplayMode.Viewport,
         NavigationTitle = "FileUltimate Examples",
         VersionTitle = "v" + FileUltimateConfiguration.AssemblyInfo.FileVersion,
         Examples = new ExampleBase[]
@@ -68,12 +68,9 @@
 <html>
 <head>
     <title>FileUltimate Examples - ASP.NET MVC (C#)</title>
-
-    @Html.RenderCss(exampleExplorer)
-    @Html.RenderJs(exampleExplorer)
-
+    @this.RenderHead(exampleExplorer)
 </head>
 <body>
-    @Html.RenderControl(exampleExplorer)
+    @this.RenderBody(exampleExplorer)
 </body>
 </html>

@@ -4,7 +4,7 @@ Namespace Controllers
     Partial Public Class FileManagerController
 
         Public Function Overview() As ActionResult
-            'Default unit is pixels. Percentage can be specified as Unit.Percentage(100)
+            'Default unit is pixels. Percentage can be specified as CssLength.Percentage(100)
             Dim fileManager = New FileManager() With {
              .Width = 800,
              .Height = 600,

@@ -9,10 +9,11 @@
 
 Option Strict On
 Option Explicit On
+
 Namespace FileManager
-
+    
     Partial Public Class ProgrammaticPage
-
+        
         '''<summary>
         '''fileManager control.
         '''</summary>
@@ -20,6 +21,6 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager As Global.GleamTech.FileUltimate.FileManager
+        Protected WithEvents fileManager As Global.GleamTech.FileUltimate.FileManagerControl
     End Class
 End Namespace

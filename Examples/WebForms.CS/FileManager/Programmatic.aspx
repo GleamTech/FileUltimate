@@ -9,7 +9,7 @@
 </head>
 <body style="margin: 20px;">
     <div style="width: 800px;">
-        <GleamTech:FileManager ID="fileManager" runat="server" />
+        <GleamTech:FileManagerControl ID="fileManager" runat="server" />
     </div>
 </body>
 </html>

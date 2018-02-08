@@ -48,9 +48,7 @@ Integrate a file manager into your ASP.NET application or site rapidly.
     Alternatively you can specify the configuration in ```<appSettings>``` tag of your Web.config.
 
     ```xml
-    <appSettings> 
-      <add key="FileUltimate:LicenseKey" value="QQJDJLJP34..." /> 
-    </appSettings>
+    <add key="FileUltimate:LicenseKey" value="QQJDJLJP34..." /> 
     ```
 
     As you would notice, ```FileUltimate:``` prefix maps to ```FileUltimateConfiguration.Current```.
@@ -59,59 +57,53 @@ Integrate a file manager into your ASP.NET application or site rapidly.
 3.  Open one of your View pages (eg. Index.cshtml) and at the top of your page add the necessary namespaces:
 
     ```cshtml
-    @using GleamTech.Web.Mvc
+    @using GleamTech.AspNet.Mvc
     @using GleamTech.FileUltimate
     ```
 
-    Alternatively you can add the namespaces globally in **Views/web.config** to avoid adding namespaces in your pages every time:
-
+    Alternatively you can add the namespaces globally in **Views/Web.config** 
+    under `<system.web.webPages.razor>/<pages>/<namespaces>` tag to avoid adding namespaces in your pages every time:
+	
     ```xml
-      <system.web.webPages.razor>
-        <pages pageBaseType="System.Web.Mvc.WebViewPage">
-          <namespaces>
-            .
-            .
-            .
-            <add namespace="GleamTech.Web.Mvc" />
-            <add namespace="GleamTech.FileUltimate" />
-          </namespaces>
-        </pages>
-      </system.web.webPages.razor>
+    <add namespace="GleamTech.AspNet.Mvc" />
+    <add namespace="GleamTech.FileUltimate" />
     ```
 
     Now in your page insert these lines:
 
     ```cshtml
+    <!DOCTYPE html>
     @{
-        var fileManager = new FileManager
-        {
-            Width = 800,
-            Height = 600,
-            Resizable = true
-        };
-     
-        var rootFolder = new FileManagerRootFolder
-        {
-            Name = "A Root Folder",
-            Location = "~/App_Data/RootFolder1"
-        };
-     
-        rootFolder.AccessControls.Add(new FileManagerAccessControl
-        {
-            Path = @"\",
-            AllowedPermissions = FileManagerPermissions.Full
-        });
-     
-        fileManager.RootFolders.Add(rootFolder);
+        var fileManager = new FileManager
+        {
+            Width = 800,
+            Height = 600,
+            Resizable = true
+        };
+
+        var rootFolder = new FileManagerRootFolder
+        {
+            Name = "A Root Folder",
+            Location = "~/App_Data/RootFolder1"
+        };
+
+        rootFolder.AccessControls.Add(new FileManagerAccessControl
+        {
+            Path = @"\",
+            AllowedPermissions = FileManagerPermissions.Full
+        });
+
+        fileManager.RootFolders.Add(rootFolder);
     }
     <html>
-    <head>
-        @Html.RenderCss(fileManager)
-        @Html.RenderJs(fileManager)
-    </head>
-    <body>
-        @Html.RenderControl(fileManager)
-    </body>
+    <html>
+        <head>
+            <title>File Manager</title>
+            @this.RenderHead(fileManager)
+        </head>
+        <body>
+            @this.RenderBody(fileManager)
+        </body>
     </html>
     ```
 
@@ -155,9 +147,7 @@ Integrate a file manager into your ASP.NET application or site rapidly.
 
 
     ```xml
-    <appSettings> 
-      <add key="FileUltimate:LicenseKey" value="QQJDJLJP34..." /> 
-    </appSettings>
+    <add key="FileUltimate:LicenseKey" value="QQJDJLJP34..." /> 
     ```
 
     As you would notice, ```FileUltimate:``` prefix maps to ```FileUltimateConfiguration.Current```.
@@ -170,35 +160,34 @@ Integrate a file manager into your ASP.NET application or site rapidly.
     <%@ Register TagPrefix="GleamTech" Namespace="GleamTech.FileUltimate" Assembly="GleamTech.FileUltimate" %>
     ```
 
-    Alternatively you can add the namespaces globally in **Web.config** to avoid adding namespaces in your pages every time:
-
+    Alternatively you can add the namespaces globally in **Web.config** under 
+    `<system.web>/<pages>/<controls>` tag to avoid adding namespaces in your pages every time:
 
     ```xml
-      <system.web>
-        <pages>
-          <controls>
-            .
-            .
-            .
-            <add tagPrefix="GleamTech" namespace="GleamTech.FileUltimate" assembly="GleamTech.FileUltimate" />
-          </controls>
-        </pages>
-      </system.web>
+    <add tagPrefix="GleamTech" namespace="GleamTech.FileUltimate" assembly="GleamTech.FileUltimate" />
     ```
 
     Now in your page insert these lines:
 
     ```aspx
-    <GleamTech:FileManager ID="fileManager" runat="server" 
-                            Width="800"
-                            Height="600" 
-                            Resizable="True">
-        
-        <GleamTech:FileManagerRootFolder Name="A Root Folder" Location="~/App_Data/RootFolder1" > 
-            <GleamTech:FileManagerAccessControl Path="\" AllowedPermissions="Full"/> 
-        </GleamTech:FileManagerRootFolder>
-     
-    </GleamTech:FileManager> 
+    <!DOCTYPE html>
+    <html>
+        <head runat="server">
+            <title>Document Viewer</title>
+        </head>
+        <body>
+            <GleamTech:FileManagerControl ID="fileManager" runat="server" 
+                                    Width="800"
+                                    Height="600" 
+                                    Resizable="True">
+                
+                <GleamTech:FileManagerRootFolder Name="A Root Folder" Location="~/App_Data/RootFolder1" > 
+                    <GleamTech:FileManagerAccessControl Path="\" AllowedPermissions="Full"/> 
+                </GleamTech:FileManagerRootFolder>
+
+            </GleamTech:FileManagerControl> 
+        </body>
+    </html>
     ```
 
     This will render a file manager control in the page which displays one root folder named "A Root Folder" which points to "\~/App\_Data/RootFolder1" with Full permissions.

@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using System.Web.UI.WebControls;
 using GleamTech.AspNet.UI;
 using GleamTech.FileUltimate;
 
@@ -7,11 +6,25 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
 {
     public partial class FileManagerController
     {
-        public ActionResult Layout()
+        public ActionResult UsingPartial()
+        {
+            var fileManager = GetFileManagerModel();
+
+            return View(fileManager);
+        }
+
+        public ActionResult FileManagerPartialView()
+        {
+            var fileManager = GetFileManagerModel();
+
+            return PartialView(fileManager);
+        }
+
+        private FileManager GetFileManagerModel()
         {
             var fileManager = new FileManager
             {
-                Width = CssLength.Percentage(100), 
+                Width = CssLength.Percentage(100),
                 DisplayLanguage = "en"
             };
             fileManager.RootFolders.Add(new FileManagerRootFolder
@@ -25,7 +38,7 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
                 AllowedPermissions = FileManagerPermissions.Full
             });
 
-            return View(fileManager);
+            return fileManager;
         }
     }
 }

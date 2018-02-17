@@ -30,6 +30,7 @@
     <IISExpressWindowsAuthentication/>
     <IISExpressUseClassicPipelineMode/>
     <UseGlobalApplicationHostFile/>
+    <Use64BitIISExpress/>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,20 +56,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\packages\FileUltimate.5.18.5\lib\net40\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\packages\FileUltimate.5.19.0\lib\net40\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.DocumentUltimate">
-      <HintPath>..\packages\DocumentUltimate.3.10.5\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>
+      <HintPath>..\packages\DocumentUltimate.3.11.0\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\ImageUltimate.2.4.0\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\ImageUltimate.2.4.1\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.VideoUltimate">
-      <HintPath>..\packages\VideoUltimate.1.7.2\lib\net40\GleamTech.VideoUltimate.dll</HintPath>
+      <HintPath>..\packages\VideoUltimate.1.7.3\lib\net40\GleamTech.VideoUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.Core">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\GleamTech.Core.2.2.0\lib\net40\GleamTech.Core.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Core.2.3.0\lib\net40\GleamTech.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -107,7 +108,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\FileManagerController.Overview.vb"/>
-    <Compile Include="Controllers\FileManagerController.Layout.vb"/>
+    <Compile Include="Controllers\FileManagerController.UsingPartial.vb"/>
+    <Compile Include="Controllers\FileManagerController.UsingLayout.vb"/>
     <Compile Include="Controllers\FileManagerController.Events.vb"/>
     <Compile Include="Controllers\FileManagerController.Dynamic.vb"/>
     <Compile Include="Controllers\FileManagerController.Display.vb"/>
@@ -155,15 +157,18 @@
     <Content Include="Descriptions\FileManager\Display.html"/>
     <Content Include="Descriptions\FileManager\Dynamic.html"/>
     <Content Include="Descriptions\FileManager\Events.html"/>
-    <Content Include="Descriptions\FileManager\Layout.html"/>
+    <Content Include="Descriptions\FileManager\UsingLayout.html"/>
     <Content Include="Descriptions\FileManager\Overview.html"/>
+    <Content Include="Descriptions\FileManager\UsingPartial.html"/>
     <Content Include="Views\FileManager\Chooser.vbhtml"/>
     <Content Include="Views\FileManager\Display.vbhtml"/>
     <Content Include="Views\FileManager\Dynamic.vbhtml"/>
     <Content Include="Views\FileManager\Events.vbhtml"/>
-    <Content Include="Views\FileManager\Layout.vbhtml"/>
+    <Content Include="Views\FileManager\UsingLayout.vbhtml"/>
     <Content Include="Views\FileManager\Overview.vbhtml"/>
     <Content Include="Views\Home\Index.vbhtml"/>
+    <Content Include="Views\FileManager\UsingPartial.vbhtml"/>
+    <Content Include="Views\FileManager\FileManagerPartialView.vbhtml"/>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax"/>
@@ -179,7 +184,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\**\Placeholder.txt"/>
-    <Folder Include="App_GlobalResources\Languages\"/>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Packages.config"/>
@@ -188,6 +192,9 @@
     <Import Include="Microsoft.VisualBasic"/>
     <Import Include="System.Web.Mvc"/>
     <Import Include="System.Web.Routing"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_GlobalResources\Languages\"/>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

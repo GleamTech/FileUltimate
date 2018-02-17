@@ -60,6 +60,7 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager
             accessControl1.AllowedPermissions = FileManagerPermissions.Full;
             rootFolder1.AccessControls.Add(accessControl1);
 
+
             //Create another root folder and add it to the control
             //This time use object initializers
             var rootFolder2 = new FileManagerRootFolder
@@ -87,6 +88,25 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager
                     }
                 );
             fileManager.RootFolders.Add(rootFolder2);
+
+
+            /*
+            Choosing the initial folder to select and display
+            By default, the first root folder is selected, however you can select any folder in any root folder
+            InitialFolder property should be set to the full path of the folder like "[RootFolderName]:\Some\Folder".
+
+            Below lines are same
+
+                fileManager.InitialFolder = @"[Root Folder 2]:\";
+                fileManager.InitialFolder = rootFolder2.GetFolder(@"\").FullPath;
+                fileManager.InitialFolder = fileManager.RootFolders[1].GetFolder(@"\").FullPath;
+
+            Below lines are same
+            
+                fileManager.InitialFolder = @"[Root Folder 2]:\Subfolder1";
+                fileManager.InitialFolder = rootFolder2.GetFolder(@"\Subfolder1").FullPath;
+                fileManager.InitialFolder = fileManager.RootFolders[1].GetFolder(@"\Subfolder1").FullPath;
+            */
         }
     }
 }

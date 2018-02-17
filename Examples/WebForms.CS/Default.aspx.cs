@@ -21,42 +21,42 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS
                         new Example
                         {
                             Title = "Overview",
-                            Url = "filemanager/overview.aspx",
+                            Url = "FileManager/Overview.aspx",
                             SourceFiles = new[] {"FileManager/Overview.aspx", "FileManager/Overview.aspx.cs"},
                             DescriptionFile = "Descriptions/FileManager/Overview.html"
                         },
                         new Example
                         {
                             Title = "Setting properties programmatically",
-                            Url = "filemanager/programmatic.aspx",
+                            Url = "FileManager/Programmatic.aspx",
                             SourceFiles = new[] { "FileManager/Programmatic.aspx", "FileManager/Programmatic.aspx.cs"},
                             DescriptionFile = "Descriptions/FileManager/Programmatic.html"
                         },
                         new Example
                         {
                             Title = "Displaying control on demand",
-                            Url = "filemanager/display.aspx",
+                            Url = "FileManager/Display.aspx",
                             SourceFiles = new[] {"FileManager/Display.aspx", "FileManager/Display.aspx.cs"},
                             DescriptionFile = "Descriptions/FileManager/Display.html"
                         },
                         new Example
                         {
                             Title = "Events",
-                            Url = "filemanager/events.aspx",
+                            Url = "FileManager/Events.aspx",
                             SourceFiles = new[] {"FileManager/Events.aspx", "FileManager/Events.aspx.cs"},
                             DescriptionFile = "Descriptions/FileManager/Events.html"
                         },
                         new Example
                         {
                             Title = "Dynamic folder and permissions",
-                            Url = "filemanager/dynamic.aspx",
+                            Url = "FileManager/Dynamic.aspx",
                             SourceFiles = new[] {"FileManager/Dynamic.aspx", "FileManager/Dynamic.aspx.cs"},
                             DescriptionFile = "Descriptions/FileManager/Dynamic.html"
                         },
                         new Example
                         {
                             Title = "File/Folder chooser",
-                            Url = "filemanager/chooser.aspx",
+                            Url = "FileManager/Chooser.aspx",
                             SourceFiles = new[] {"FileManager/Chooser.aspx", "FileManager/Chooser.aspx.cs"},
                             DescriptionFile = "Descriptions/FileManager/Chooser.html"
                         }

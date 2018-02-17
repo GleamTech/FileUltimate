@@ -1,11 +1,10 @@
-﻿Imports System.Web.UI.WebControls
-Imports GleamTech.AspNet.UI
+﻿Imports GleamTech.AspNet.UI
 Imports GleamTech.FileUltimate
 
 Namespace Controllers
     Partial Public Class FileManagerController
 
-        Public Function Layout() As ActionResult
+        Public Function UsingLayout() As ActionResult
             Dim fileManager = New FileManager() With {
              .Width = CssLength.Percentage(100),
              .DisplayLanguage = "en"

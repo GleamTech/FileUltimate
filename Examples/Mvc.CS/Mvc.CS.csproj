@@ -27,6 +27,7 @@
     <IISExpressWindowsAuthentication/>
     <IISExpressUseClassicPipelineMode/>
     <UseGlobalApplicationHostFile/>
+    <Use64BitIISExpress/>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,20 +50,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\packages\FileUltimate.5.18.5\lib\net40\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\packages\FileUltimate.5.19.0\lib\net40\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.DocumentUltimate">
-      <HintPath>..\packages\DocumentUltimate.3.10.5\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>
+      <HintPath>..\packages\DocumentUltimate.3.11.0\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\ImageUltimate.2.4.0\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\ImageUltimate.2.4.1\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.VideoUltimate">
-      <HintPath>..\packages\VideoUltimate.1.7.2\lib\net40\GleamTech.VideoUltimate.dll</HintPath>
+      <HintPath>..\packages\VideoUltimate.1.7.3\lib\net40\GleamTech.VideoUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.Core">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\GleamTech.Core.2.2.0\lib\net40\GleamTech.Core.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Core.2.3.0\lib\net40\GleamTech.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp"/>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -105,7 +106,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\FileManagerController.Layout.cs"/>
+    <Compile Include="Controllers\FileManagerController.UsingPartial.cs"/>
+    <Compile Include="Controllers\FileManagerController.UsingLayout.cs"/>
     <Compile Include="Controllers\FileManagerController.Chooser.cs"/>
     <Compile Include="Controllers\FileManagerController.Events.cs"/>
     <Compile Include="Controllers\FileManagerController.Dynamic.cs"/>
@@ -123,7 +125,8 @@
     <Content Include="Descriptions\FileManager\Display.html"/>
     <Content Include="Descriptions\FileManager\Dynamic.html"/>
     <Content Include="Descriptions\FileManager\Events.html"/>
-    <Content Include="Descriptions\FileManager\Layout.html"/>
+    <Content Include="Descriptions\FileManager\UsingPartial.html"/>
+    <Content Include="Descriptions\FileManager\UsingLayout.html"/>
     <Content Include="Descriptions\FileManager\Overview.html"/>
     <Content Include="Global.asax"/>
     <Content Include="Web.config">
@@ -139,7 +142,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\**\Placeholder.txt"/>
-    <Folder Include="App_GlobalResources\Languages\"/>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\FileManager\Display.cshtml"/>
@@ -157,7 +159,7 @@
     <Content Include="Views\Shared\_Layout.cshtml"/>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\FileManager\Layout.cshtml"/>
+    <Content Include="Views\FileManager\UsingLayout.cshtml"/>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.Debug.config">
@@ -171,6 +173,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Packages.config"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_GlobalResources\Languages\"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FileManager\UsingPartial.cshtml"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FileManager\FileManagerPartialView.cshtml"/>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

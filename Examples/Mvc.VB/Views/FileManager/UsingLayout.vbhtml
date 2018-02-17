@@ -3,11 +3,11 @@
 @ModelType FileManager
 
 @Code
-    ViewBag.Title = "Layout"
+    ViewBag.Title = "UsingLayout"
     Layout = "~/Views/Shared/_Layout.vbhtml"
 End Code
 
-@Section fileUltimateHead
+@Section LayoutHead
     @Me.RenderHead(Model)
 End Section
 

@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
-using GleamTech.FileUltimate;
+using GleamTech.FileUltimate.AspNet;
+using GleamTech.FileUltimate.AspNet.UI;
 
 namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
 {
@@ -278,10 +279,10 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
         private void PopulateLanguageSelector()
         {
             ViewBag.LanguageList = new SelectList(
-                FileUltimateConfiguration.AvailableDisplayCultures, 
+                FileUltimateWebConfiguration.AvailableDisplayCultures, 
                 "Name", 
                 "NativeName",
-                Request["languageSelector"] ?? FileUltimateConfiguration.CurrentLanguage.ClosestCulture.Name
+                Request["languageSelector"] ?? FileUltimateWebConfiguration.CurrentLanguage.ClosestCulture.Name
             );
         }
     }

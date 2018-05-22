@@ -1,6 +1,7 @@
 ﻿@Imports GleamTech.AspNet.Mvc
 @Imports GleamTech.Examples
 @Imports GleamTech.FileUltimate
+@Imports GleamTech.FileUltimate.AspNet.UI
 @Code
     Dim exampleExplorer = New ExampleExplorer() With {
         .DisplayMode = GleamTech.AspNet.UI.DisplayMode.Viewport,

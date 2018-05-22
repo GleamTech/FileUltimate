@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Web.Mvc;
 using System.Web.Routing;
+using GleamTech.AspNet;
 using GleamTech.FileUltimate;
 
 namespace GleamTech.FileUltimateExamples.Mvc.CS
@@ -28,7 +29,7 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS
 
             RegisterRoutes(RouteTable.Routes);
 
-            var licenseFile = Server.MapPath("~/App_Data/License.dat");
+            var licenseFile = Hosting.ResolvePhysicalPath("~/App_Data/License.dat");
             if (File.Exists(licenseFile))
                 FileUltimateConfiguration.Current.LicenseKey = File.ReadAllText(licenseFile);
         }

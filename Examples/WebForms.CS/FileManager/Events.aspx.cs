@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
-using GleamTech.FileUltimate;
+using GleamTech.FileUltimate.AspNet.UI;
 
 namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager
 {

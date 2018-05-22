@@ -53,7 +53,7 @@ Public Class DefaultPage
         }
 
         exampleExplorer.ExampleProjectName = "ASP.NET Web Forms (VB)"
-        exampleExplorer.ExampleProjects = ExamplesConfiguration.LoadExampleProjects(Server.MapPath("~/App_Data/ExampleProjects.json"))
+        exampleExplorer.ExampleProjects = ExamplesConfiguration.LoadExampleProjects("~/App_Data/ExampleProjects.json")
 
     End Sub
 

@@ -1,5 +1,5 @@
 ﻿Imports GleamTech.AspNet.UI
-Imports GleamTech.FileUltimate
+Imports GleamTech.FileUltimate.AspNet.UI
 
 Namespace Controllers
     Partial Public Class FileManagerController

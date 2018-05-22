@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
-using GleamTech.FileUltimate;
+using GleamTech.FileUltimate.AspNet.UI;
 
 namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
 {

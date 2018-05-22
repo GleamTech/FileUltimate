@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using GleamTech.FileUltimate;
+using GleamTech.FileUltimate.AspNet.UI;
 
 namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
 {

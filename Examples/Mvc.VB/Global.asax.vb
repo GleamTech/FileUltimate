@@ -1,6 +1,7 @@
 ﻿' Note: For instructions on enabling IIS6 or IIS7 classic mode, 
 ' visit http://go.microsoft.com/?LinkId=9394802
 Imports System.IO
+Imports GleamTech.AspNet
 Imports GleamTech.FileUltimate
 
 Public Class MvcApplication
@@ -26,7 +27,7 @@ Public Class MvcApplication
         
         RegisterRoutes(RouteTable.Routes)
 
-        Dim licenseFile = Server.MapPath("~/App_Data/License.dat")
+        Dim licenseFile = Hosting.ResolvePhysicalPath("~/App_Data/License.dat")
         If File.Exists(licenseFile) Then
 	        FileUltimateConfiguration.Current.LicenseKey = File.ReadAllText(licenseFile)
         End If

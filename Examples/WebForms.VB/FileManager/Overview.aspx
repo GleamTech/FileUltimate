@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Overview.aspx.vb" Inherits="GleamTech.FileUltimateExamples.WebForms.VB.FileManager.OverviewPage" %>
-<%@ Register TagPrefix="GleamTech" Namespace="GleamTech.FileUltimate" Assembly="GleamTech.FileUltimate" %>
+<%@ Register TagPrefix="GleamTech" Assembly="GleamTech.FileUltimate" Namespace="GleamTech.FileUltimate.AspNet.WebForms" %>
+<%@ Register TagPrefix="GleamTech" Assembly="GleamTech.FileUltimate" Namespace="GleamTech.FileUltimate.AspNet.UI" %>
 
 <!DOCTYPE html>
 

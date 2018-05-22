@@ -21,7 +21,7 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager1 As Global.GleamTech.FileUltimate.FileManagerControl
+        Protected WithEvents fileManager1 As Global.GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl
         
         '''<summary>
         '''fileManager2 control.
@@ -30,7 +30,7 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager2 As Global.GleamTech.FileUltimate.FileManagerControl
+        Protected WithEvents fileManager2 As Global.GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl
         
         '''<summary>
         '''fileManager3 control.
@@ -39,7 +39,7 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager3 As Global.GleamTech.FileUltimate.FileManagerControl
+        Protected WithEvents fileManager3 As Global.GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl
         
         '''<summary>
         '''fileManager4 control.
@@ -48,7 +48,7 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager4 As Global.GleamTech.FileUltimate.FileManagerControl
+        Protected WithEvents fileManager4 As Global.GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl
         
         '''<summary>
         '''fileManager5 control.
@@ -57,7 +57,7 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager5 As Global.GleamTech.FileUltimate.FileManagerControl
+        Protected WithEvents fileManager5 As Global.GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl
         
         '''<summary>
         '''fileManager6 control.
@@ -66,7 +66,7 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager6 As Global.GleamTech.FileUltimate.FileManagerControl
+        Protected WithEvents fileManager6 As Global.GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl
         
         '''<summary>
         '''fileManager7 control.
@@ -75,6 +75,6 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager7 As Global.GleamTech.FileUltimate.FileManagerControl
+        Protected WithEvents fileManager7 As Global.GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl
     End Class
 End Namespace

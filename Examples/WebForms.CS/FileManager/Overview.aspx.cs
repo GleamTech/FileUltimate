@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using GleamTech.FileUltimate;
+using GleamTech.FileUltimate.AspNet;
 
 namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager
 {
@@ -17,10 +17,10 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager
 
         private void PopulateLanguageSelector()
         {
-            foreach (var culture in FileUltimateConfiguration.AvailableDisplayCultures)
+            foreach (var culture in FileUltimateWebConfiguration.AvailableDisplayCultures)
             {
                 var listItem = new ListItem(culture.NativeName, culture.Name);
-                if (culture.Name == FileUltimateConfiguration.CurrentLanguage.ClosestCulture.Name)
+                if (culture.Name == FileUltimateWebConfiguration.CurrentLanguage.ClosestCulture.Name)
                     listItem.Selected = true;
                 LanguageSelector.Items.Add(listItem);
             }

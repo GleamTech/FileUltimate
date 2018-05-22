@@ -1,5 +1,5 @@
 ﻿@Imports GleamTech.AspNet.Mvc
-@Imports GleamTech.FileUltimate
+@Imports GleamTech.FileUltimate.AspNet.UI
 @ModelType FileManager
 
 <!DOCTYPE html>

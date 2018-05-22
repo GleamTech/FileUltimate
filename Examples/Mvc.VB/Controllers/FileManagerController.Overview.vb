@@ -1,4 +1,5 @@
-﻿Imports GleamTech.FileUltimate
+﻿Imports GleamTech.FileUltimate.AspNet
+Imports GleamTech.FileUltimate.AspNet.UI
 
 Namespace Controllers
     Partial Public Class FileManagerController
@@ -219,7 +220,7 @@ Namespace Controllers
         End Function
 
         Private Sub PopulateLanguageSelector()
-            ViewBag.LanguageList = New SelectList(FileUltimateConfiguration.AvailableDisplayCultures, "Name", "NativeName", If(Request("languageSelector"), FileUltimateConfiguration.CurrentLanguage.ClosestCulture.Name))
+            ViewBag.LanguageList = New SelectList(FileUltimateWebConfiguration.AvailableDisplayCultures, "Name", "NativeName", If(Request("languageSelector"), FileUltimateWebConfiguration.CurrentLanguage.ClosestCulture.Name))
         End Sub
     End Class
 End Namespace

@@ -21,6 +21,6 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager As Global.GleamTech.FileUltimate.FileManagerControl
+        Protected WithEvents fileManager As Global.GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl
     End Class
 End Namespace

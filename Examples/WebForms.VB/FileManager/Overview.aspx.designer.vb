@@ -9,10 +9,11 @@
 
 Option Strict On
 Option Explicit On
+
 Namespace FileManager
-
+    
     Partial Public Class OverviewPage
-
+        
         '''<summary>
         '''form1 control.
         '''</summary>
@@ -21,7 +22,7 @@ Namespace FileManager
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+        
         '''<summary>
         '''LanguageSelector control.
         '''</summary>
@@ -30,7 +31,7 @@ Namespace FileManager
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents LanguageSelector As Global.System.Web.UI.WebControls.DropDownList
-
+        
         '''<summary>
         '''fileManager control.
         '''</summary>
@@ -38,6 +39,6 @@ Namespace FileManager
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents fileManager As Global.GleamTech.FileUltimate.FileManagerControl
+        Protected WithEvents fileManager As Global.GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl
     End Class
 End Namespace

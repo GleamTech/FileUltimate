@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <AssemblyName>GleamTech.FileUltimateExamples.AspNetCore.CS</AssemblyName>
+    <RootNamespace>GleamTech.FileUltimateExamples.AspNetCore.CS</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <_CustomFiles Include="Controllers\**\*"/>
+    <_CustomFiles Include="Views\**\*"/>
+    <_CustomFiles Include="Descriptions\**\*"/>
+    <DotnetPublishFiles Include="@(_CustomFiles)">
+      <DestinationRelativePath>%(Identity)</DestinationRelativePath>
+    </DotnetPublishFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.2"/>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.3"/>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.ViewCompilation" Version="2.0.3" PrivateAssets="All"/>
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.0.2"/>
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.2"/>
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.0.2"/>
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GleamTech.Core">
+      <HintPath>..\..\Bin\GleamTech.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GleamTech.DocumentUltimate">
+      <HintPath>..\..\Bin\GleamTech.DocumentUltimate.dll</HintPath>
+    </Reference>
+    <Reference Include="GleamTech.FileUltimate">
+      <HintPath>..\..\Bin\GleamTech.FileUltimate.dll</HintPath>
+    </Reference>
+    <Reference Include="GleamTech.ImageUltimate">
+      <HintPath>..\..\Bin\GleamTech.ImageUltimate.dll</HintPath>
+    </Reference>
+    <Reference Include="GleamTech.VideoUltimate">
+      <HintPath>..\..\Bin\GleamTech.VideoUltimate.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\"/>
+  </ItemGroup>
+</Project>

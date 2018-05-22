@@ -4,7 +4,7 @@ Imports System.Collections.Generic
 Imports System.Linq
 Imports System.Text
 Imports System.Text.RegularExpressions
-Imports GleamTech.FileUltimate
+Imports GleamTech.FileUltimate.AspNet.UI
 
 Namespace Controllers
     Partial Public Class FileManagerController

@@ -63,20 +63,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\packages\FileUltimate.5.22.0\lib\net40\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\packages\FileUltimate.6.0.0\lib\net40\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.DocumentUltimate">
-      <HintPath>..\packages\DocumentUltimate.3.16.0\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>
+      <HintPath>..\packages\DocumentUltimate.4.0.0\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\ImageUltimate.3.0.6\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\ImageUltimate.3.1.0\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.VideoUltimate">
-      <HintPath>..\packages\VideoUltimate.1.7.6\lib\net40\GleamTech.VideoUltimate.dll</HintPath>
+      <HintPath>..\packages\VideoUltimate.1.8.0\lib\net40\GleamTech.VideoUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.Core">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\GleamTech.Core.2.4.5\lib\net40\GleamTech.Core.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Core.3.0.0\lib\net40\GleamTech.Core.dll</HintPath>
     </Reference>
     <Reference Include="System"/>
     <Reference Include="System.Core"/>
@@ -101,6 +101,10 @@
     <Import Include="System.Web.UI.WebControls"/>
     <Import Include="System.Web.UI.WebControls.WebParts"/>
     <Import Include="System.Web.UI.HtmlControls"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\**\*"/>
+    <Content Include="App_GlobalResources\**\*"/>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.designer.vb">
@@ -216,12 +220,6 @@
     <Content Include="FileManager\Display.aspx"/>
     <Content Include="FileManager\Overview.aspx"/>
     <Content Include="FileManager\Programmatic.aspx"/>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_Data\**\Placeholder.txt"/>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_GlobalResources\Languages\"/>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

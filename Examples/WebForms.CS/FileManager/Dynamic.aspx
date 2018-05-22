@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="True" CodeBehind="Dynamic.aspx.cs" Inherits="GleamTech.FileUltimateExamples.WebForms.CS.FileManager.DynamicPage" %>
-<%@ Register TagPrefix="GleamTech" Assembly="GleamTech.FileUltimate" Namespace="GleamTech.FileUltimate" %>
+<%@ Register TagPrefix="GleamTech" Assembly="GleamTech.FileUltimate" Namespace="GleamTech.FileUltimate.AspNet.WebForms" %>
+<%@ Register TagPrefix="GleamTech" Assembly="GleamTech.FileUltimate" Namespace="GleamTech.FileUltimate.AspNet.UI" %>
 
 <!DOCTYPE html>
 

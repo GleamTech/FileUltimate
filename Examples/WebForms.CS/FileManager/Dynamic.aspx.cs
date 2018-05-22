@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using GleamTech.FileUltimate;
+using GleamTech.FileUltimate.AspNet.UI;
 
 namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager
 {

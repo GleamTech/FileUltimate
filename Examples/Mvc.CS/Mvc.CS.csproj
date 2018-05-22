@@ -50,20 +50,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\packages\FileUltimate.5.22.0\lib\net40\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\packages\FileUltimate.6.0.0\lib\net40\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.DocumentUltimate">
-      <HintPath>..\packages\DocumentUltimate.3.16.0\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>
+      <HintPath>..\packages\DocumentUltimate.4.0.0\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\ImageUltimate.3.0.6\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\ImageUltimate.3.1.0\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.VideoUltimate">
-      <HintPath>..\packages\VideoUltimate.1.7.6\lib\net40\GleamTech.VideoUltimate.dll</HintPath>
+      <HintPath>..\packages\VideoUltimate.1.8.0\lib\net40\GleamTech.VideoUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.Core">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\GleamTech.Core.2.4.5\lib\net40\GleamTech.Core.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Core.3.0.0\lib\net40\GleamTech.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp"/>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -106,6 +106,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\**\*"/>
+    <Content Include="App_GlobalResources\**\*"/>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Controllers\FileManagerController.UsingPartial.cs"/>
     <Compile Include="Controllers\FileManagerController.UsingLayout.cs"/>
     <Compile Include="Controllers\FileManagerController.Chooser.cs"/>
@@ -141,9 +145,6 @@
     <Content Include="Views\FileManager\Overview.cshtml"/>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\**\Placeholder.txt"/>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\FileManager\Display.cshtml"/>
   </ItemGroup>
   <ItemGroup>
@@ -173,9 +174,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Packages.config"/>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_GlobalResources\Languages\"/>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\FileManager\UsingPartial.cshtml"/>

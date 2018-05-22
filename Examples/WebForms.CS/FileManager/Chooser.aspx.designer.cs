@@ -19,7 +19,7 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::GleamTech.FileUltimate.FileManagerControl fileManager1;
+        protected global::GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl fileManager1;
         
         /// <summary>
         /// fileManager2 control.
@@ -28,7 +28,7 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::GleamTech.FileUltimate.FileManagerControl fileManager2;
+        protected global::GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl fileManager2;
         
         /// <summary>
         /// fileManager3 control.
@@ -37,7 +37,7 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::GleamTech.FileUltimate.FileManagerControl fileManager3;
+        protected global::GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl fileManager3;
         
         /// <summary>
         /// fileManager4 control.
@@ -46,7 +46,7 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::GleamTech.FileUltimate.FileManagerControl fileManager4;
+        protected global::GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl fileManager4;
         
         /// <summary>
         /// fileManager5 control.
@@ -55,7 +55,7 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::GleamTech.FileUltimate.FileManagerControl fileManager5;
+        protected global::GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl fileManager5;
         
         /// <summary>
         /// fileManager6 control.
@@ -64,7 +64,7 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::GleamTech.FileUltimate.FileManagerControl fileManager6;
+        protected global::GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl fileManager6;
         
         /// <summary>
         /// fileManager7 control.
@@ -73,6 +73,6 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::GleamTech.FileUltimate.FileManagerControl fileManager7;
+        protected global::GleamTech.FileUltimate.AspNet.WebForms.FileManagerControl fileManager7;
     }
 }

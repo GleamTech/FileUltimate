@@ -1,5 +1,5 @@
 # ![FileUltimate Logo](fileultimate-logo.png) FileUltimate: ASP.NET File Manager
-File Manager Control for ASP.NET WebForms and ASP:NET MVC 3+ (.NET Framework 4.0+).
+File Manager Control for ASP.NET WebForms\ ASP.NET MVC 3+ (.NET Framework 4.0+) and ASP.NET Core.
 
 Integrate a file manager into your ASP.NET application or site rapidly. 
 
@@ -58,7 +58,7 @@ Integrate a file manager into your ASP.NET application or site rapidly.
 
     ```cshtml
     @using GleamTech.AspNet.Mvc
-    @using GleamTech.FileUltimate
+    @using GleamTech.FileUltimate.AspNet.UI
     ```
 
     Alternatively you can add the namespaces globally in **Views/Web.config** 
@@ -66,7 +66,7 @@ Integrate a file manager into your ASP.NET application or site rapidly.
 	
     ```xml
     <add namespace="GleamTech.AspNet.Mvc" />
-    <add namespace="GleamTech.FileUltimate" />
+    <add namespace="GleamTech.FileUltimate.AspNet.UI" />
     ```
 
     Now in your page insert these lines:
@@ -157,14 +157,16 @@ Integrate a file manager into your ASP.NET application or site rapidly.
 
 
     ```aspx
-    <%@ Register TagPrefix="GleamTech" Namespace="GleamTech.FileUltimate" Assembly="GleamTech.FileUltimate" %>
+    <%@ Register TagPrefix="GleamTech" Namespace="GleamTech.FileUltimate.AspNet.UI" Assembly="GleamTech.FileUltimate" %>
+    <%@ Register TagPrefix="GleamTech" Namespace="GleamTech.FileUltimate.AspNet.WebForms" Assembly="GleamTech.FileUltimate" %>
     ```
 
     Alternatively you can add the namespaces globally in **Web.config** under 
     `<system.web>/<pages>/<controls>` tag to avoid adding namespaces in your pages every time:
 
     ```xml
-    <add tagPrefix="GleamTech" namespace="GleamTech.FileUltimate" assembly="GleamTech.FileUltimate" />
+    <add tagPrefix="GleamTech" namespace="GleamTech.FileUltimate.AspNet.UI" assembly="GleamTech.FileUltimate" />
+    <add tagPrefix="GleamTech" namespace="GleamTech.FileUltimate.AspNet.WebForms" assembly="GleamTech.FileUltimate" />
     ```
 
     Now in your page insert these lines:

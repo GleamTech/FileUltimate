@@ -10,7 +10,7 @@
 namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager {
     
     
-    public partial class EventsPage {
+    public partial class ClientEventsPage {
         
         /// <summary>
         /// fileManager control.

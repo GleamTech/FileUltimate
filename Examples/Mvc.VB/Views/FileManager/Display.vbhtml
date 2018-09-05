@@ -6,7 +6,7 @@
 
 <html>
 <head>
-    <title>Display</title>
+    <title>Displaying control on demand</title>
     @Me.RenderHead(Model(0))
 </head>
 <body style="margin: 20px;">

@@ -1,13 +1,13 @@
-﻿@using GleamTech.AspNet.Mvc
-@using GleamTech.FileUltimate.AspNet.UI
-@model FileManager
+﻿@Imports GleamTech.AspNet.Mvc
+@Imports GleamTech.FileUltimate.AspNet.UI
+@ModelType FileManager
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <title>Events</title>
-    @this.RenderHead(Model)
+    <title>Server-side events</title>
+    @Me.RenderHead(Model)
 </head>
 <body style="margin: 20px;">
 
@@ -15,7 +15,7 @@
     <br /><input type="button" value="Get Latest Events" onclick="document.getElementById('eventsIframe').contentWindow.location.reload();" />
     <br /><br />
 
-    @this.RenderBody(Model)
+    @Me.RenderBody(Model)
 
 </body>
 </html>

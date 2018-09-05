@@ -4,16 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Web.Mvc;
+using GleamTech.AspNet;
 using GleamTech.FileUltimate.AspNet.UI;
+using Microsoft.AspNetCore.Mvc;
 
-namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
+namespace GleamTech.FileUltimateExamples.AspNetCore.CS.Controllers
 {
     public partial class FileManagerController
     {
         private const string EventLogSessionKey = "EventLog.CS";
 
-        public ActionResult Events()
+        public IActionResult ServerEvents()
         {
             var fileManager = new FileManager
             {
@@ -69,11 +70,12 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
             return View(fileManager);
         }
 
-        public ActionResult GetLatestEvents()
+        public IActionResult GetLatestEvents()
         {
             var sb = new StringBuilder("<pre>");
 
-            var eventLog = Session[EventLogSessionKey] as Stack<string>;
+            var context = Hosting.GetHttpContext();
+            var eventLog = context.Session.Get<Stack<string>>(EventLogSessionKey);
             if (eventLog == null || eventLog.Count == 0)
                 sb.AppendLine("No events.");
             else
@@ -86,7 +88,7 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
 
             sb.AppendLine("</pre>");
 
-            return Content(sb.ToString());
+            return Content(sb.ToString(), "text/html");
         }
 
         #region  Example event handlers for before events
@@ -426,17 +428,15 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
                 }
             }
 
-            var context = System.Web.HttpContext.Current;
-            var eventLog = context.Session[EventLogSessionKey] as Stack<string>;
+            var context = Hosting.GetHttpContext();
+            var eventLog = context.Session.Get<Stack<string>>(EventLogSessionKey);
             if (eventLog == null)
-            {
                 eventLog = new Stack<string>();
-                context.Session[EventLogSessionKey] = eventLog;
-            }
             if (eventLog.Count > 50)
                 eventLog.Clear();
 
             eventLog.Push(resultText.ToString());
+            context.Session.Set(EventLogSessionKey, eventLog);
         }
     }
 }

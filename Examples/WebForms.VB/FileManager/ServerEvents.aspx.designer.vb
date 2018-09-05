@@ -12,7 +12,7 @@ Option Explicit On
 
 Namespace FileManager
     
-    Partial Public Class EventsPage
+    Partial Public Class ServerEventsPage
         
         '''<summary>
         '''fileManager control.

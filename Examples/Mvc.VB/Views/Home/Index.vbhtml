@@ -24,12 +24,18 @@
                         .DescriptionFile = "Descriptions/FileManager/Display.html"
                     },
                     New Example() With {
-                        .Title = "Events",
-                        .Url = "FileManager/Events",
-                        .SourceFiles = New String() {"Views/FileManager/Events.vbhtml", "Controllers/FileManagerController.Events.vb"},
-                        .DescriptionFile = "Descriptions/FileManager/Events.html"
+                        .Title = "Server-side events",
+                        .Url = "FileManager/ServerEvents",
+                        .SourceFiles = New String() {"Views/FileManager/ServerEvents.vbhtml", "Controllers/FileManagerController.ServerEvents.vb"},
+                        .DescriptionFile = "Descriptions/FileManager/ServerEvents.html"
                     },
-                    New Example() With {
+                     New Example() With {
+                        .Title = "Client-side events",
+                        .Url = "FileManager/ClientEvents",
+                        .SourceFiles = New String() {"Views/FileManager/ClientEvents.vbhtml", "Controllers/FileManagerController.ClientEvents.vb"},
+                        .DescriptionFile = "Descriptions/FileManager/ClientEvents.html"
+                    },
+                   New Example() With {
                         .Title = "Dynamic folder and permissions",
                         .Url = "FileManager/Dynamic",
                         .SourceFiles = New String() {"Views/FileManager/Dynamic.vbhtml", "Controllers/FileManagerController.Dynamic.vb"},

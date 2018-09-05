@@ -6,26 +6,14 @@
 
 <html>
 <head>
-    <title>Chooser</title>
+    <title>File/Folder chooser</title>
     @Me.RenderHead(Model(0))
     <script>
-        function fileManagerChosen(sender, eventArgs) {
-            if (eventArgs.IsCanceled) {
-                alert("Canceled!");
-                return;
-            }
+        function fileManagerChosen(sender, e) {
+            //Pretty print the chosen info (from event object) when it changes
+            var json = JSON.stringify(e, null, 2);
 
-            var text = "ParentFullPath: " + eventArgs.ParentFullPath;
-            text += "\nItems: ";
-            for (var i = 0; i < eventArgs.Items.length; i++) {
-                var item = eventArgs.Items[i];
-                text += "\n\tName: " + item.Name;
-                text += "\n\tFullPath: " + item.FullPath;
-                text += "\n\tIsfolder: " + item.IsFolder;
-                text += "\n";
-            }
-
-            alert(text);
+            alert("Chosen event:\n" + json);
         }
     </script>
 </head>

@@ -6,7 +6,7 @@
 
 <html>
 <head>
-    <title>Dynamic</title>
+    <title>Dynamic folder and permissions</title>
     @Me.RenderHead(Model)
 </head>
 <body style="margin: 20px;">

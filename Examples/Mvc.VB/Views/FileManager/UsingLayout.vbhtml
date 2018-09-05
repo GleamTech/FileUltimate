@@ -3,7 +3,7 @@
 @ModelType FileManager
 
 @Code
-    ViewBag.Title = "UsingLayout"
+    ViewBag.Title = "Using MVC layout"
     Layout = "~/Views/Shared/_Layout.vbhtml"
 End Code
 

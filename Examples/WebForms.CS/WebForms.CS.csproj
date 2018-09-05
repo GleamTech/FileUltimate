@@ -24,6 +24,7 @@
     <IISExpressWindowsAuthentication/>
     <IISExpressUseClassicPipelineMode/>
     <UseGlobalApplicationHostFile/>
+    <Use64BitIISExpress/>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,24 +47,27 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\packages\FileUltimate.6.1.5\lib\net40\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\packages\FileUltimate.6.2.0\lib\net40\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.DocumentUltimate">
-      <HintPath>..\packages\DocumentUltimate.4.1.5\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>
+      <HintPath>..\packages\DocumentUltimate.4.2.0\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\ImageUltimate.3.2.0\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\ImageUltimate.3.2.5\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.VideoUltimate">
-      <HintPath>..\packages\VideoUltimate.1.9.0\lib\net40\GleamTech.VideoUltimate.dll</HintPath>
+      <HintPath>..\packages\VideoUltimate.1.9.1\lib\net40\GleamTech.VideoUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.Core">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\GleamTech.Core.3.1.2\lib\net40\GleamTech.Core.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Core.3.1.5\lib\net40\GleamTech.Core.dll</HintPath>
     </Reference>
     <Reference Include="System"/>
     <Reference Include="System.Core"/>
+    <Reference Include="System.Data"/>
+    <Reference Include="System.Drawing"/>
     <Reference Include="System.Web"/>
+    <Reference Include="System.Xml"/>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\**\*"/>
@@ -84,6 +88,13 @@
     <Compile Include="FileManager\Chooser.aspx.designer.cs">
       <DependentUpon>Chooser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FileManager\ClientEvents.aspx.cs">
+      <DependentUpon>ClientEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileManager\ClientEvents.aspx.designer.cs">
+      <DependentUpon>ClientEvents.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FileManager\Dynamic.aspx.cs">
       <DependentUpon>Dynamic.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -91,12 +102,12 @@
     <Compile Include="FileManager\Dynamic.aspx.designer.cs">
       <DependentUpon>Dynamic.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FileManager\Events.aspx.cs">
-      <DependentUpon>Events.aspx</DependentUpon>
+    <Compile Include="FileManager\ServerEvents.aspx.cs">
+      <DependentUpon>ServerEvents.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FileManager\Events.aspx.designer.cs">
-      <DependentUpon>Events.aspx</DependentUpon>
+    <Compile Include="FileManager\ServerEvents.aspx.designer.cs">
+      <DependentUpon>ServerEvents.aspx</DependentUpon>
     </Compile>
     <Compile Include="FileManager\Display.aspx.cs">
       <DependentUpon>Display.aspx</DependentUpon>
@@ -129,12 +140,14 @@
     <Content Include="Descriptions\FileManager\Chooser.html"/>
     <Content Include="Descriptions\FileManager\Display.html"/>
     <Content Include="Descriptions\FileManager\Dynamic.html"/>
-    <Content Include="Descriptions\FileManager\Events.html"/>
+    <Content Include="Descriptions\FileManager\ClientEvents.html"/>
+    <Content Include="Descriptions\FileManager\ServerEvents.html"/>
     <Content Include="Descriptions\FileManager\Overview.html"/>
     <Content Include="Descriptions\FileManager\Programmatic.html"/>
     <Content Include="FileManager\Chooser.aspx"/>
+    <Content Include="FileManager\ClientEvents.aspx"/>
     <Content Include="FileManager\Dynamic.aspx"/>
-    <Content Include="FileManager\Events.aspx"/>
+    <Content Include="FileManager\ServerEvents.aspx"/>
     <Content Include="FileManager\Display.aspx"/>
     <Content Include="FileManager\Programmatic.aspx"/>
     <Content Include="FileManager\Overview.aspx"/>

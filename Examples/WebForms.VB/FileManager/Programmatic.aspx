@@ -5,7 +5,7 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <title>Setting properties programmatically</title>
 </head>
 <body style="margin: 20px;">
     <div style="width: 800px;">

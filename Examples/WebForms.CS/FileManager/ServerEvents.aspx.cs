@@ -10,7 +10,7 @@ using GleamTech.FileUltimate.AspNet.UI;
 
 namespace GleamTech.FileUltimateExamples.WebForms.CS.FileManager
 {
-    public partial class EventsPage : Page
+    public partial class ServerEventsPage : Page
     {
         private const string EventLogSessionKey = "EventLog.CS";
 

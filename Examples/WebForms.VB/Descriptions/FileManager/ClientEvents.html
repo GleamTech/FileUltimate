@@ -1,0 +1,43 @@
+﻿FileManager raises client-side before and after events for each file action.
+<br /><br />
+<b>Before events:</b>
+<ul>
+    <li>ClientLoading</li>
+    <li>ClientCreating</li>
+    <li>ClientDeleting</li>
+    <li>ClientRenaming</li>
+    <li>ClientCopying</li>
+    <li>ClientMoving</li>
+    <li>ClientCompressing</li>
+    <li>ClientExtracting</li>
+    <li>ClientUploading</li>
+    <li>ClientDownloading</li>
+    <li>ClientPreviewing</li>
+</ul>
+It's possible to stop a file action (and optionally display a message) by canceling the corresponding before event:
+<pre style="font-family:Consolas;font-size:13px;color:black;background:white;"><span style="color:blue;">function</span>&nbsp;sampleCancelEventHandler(sender,&nbsp;e)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">//Canceling&nbsp;a&nbsp;before&nbsp;event&nbsp;(stops&nbsp;the&nbsp;corresponding&nbsp;action):
+</span>&nbsp;&nbsp;&nbsp;&nbsp;e.isCanceled&nbsp;=&nbsp;<span style="color:blue;">true</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">//Optionally&nbsp;displaying&nbsp;a&nbsp;message&nbsp;to&nbsp;the&nbsp;user&nbsp;when&nbsp;canceling
+</span>&nbsp;&nbsp;&nbsp;&nbsp;e.message&nbsp;=&nbsp;e.eventName&nbsp;+&nbsp;<span style="color:#a31515;">&quot;&nbsp;event&nbsp;is&nbsp;canceled!&quot;</span>;
+}
+</pre>
+<br />
+<b>After events:</b>
+<ul>
+    <li>ClientLoaded</li>
+    <li>ClientChosen</li>
+    <li>ClientFolderChanged</li>
+    <li>ClientSelectionChanged</li>
+    <li>ClientCreated</li>
+    <li>ClientDeleted</li>
+    <li>ClientRenamed</li>
+    <li>ClientCopied</li>
+    <li>ClientMoved</li>
+    <li>ClientCompressed</li>
+    <li>ClientExtracted</li>
+    <li>ClientUploaded</li>
+</ul>
+After events can be used to save information about a completed file action.
+For instance, the information can be logged on the client-side.

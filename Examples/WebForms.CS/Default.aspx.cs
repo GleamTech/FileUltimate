@@ -41,10 +41,17 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS
                         },
                         new Example
                         {
-                            Title = "Events",
-                            Url = "FileManager/Events.aspx",
-                            SourceFiles = new[] {"FileManager/Events.aspx", "FileManager/Events.aspx.cs"},
-                            DescriptionFile = "Descriptions/FileManager/Events.html"
+                            Title = "Server-side events",
+                            Url = "FileManager/ServerEvents.aspx",
+                            SourceFiles = new[] {"FileManager/ServerEvents.aspx", "FileManager/ServerEvents.aspx.cs"},
+                            DescriptionFile = "Descriptions/FileManager/ServerEvents.html"
+                        },
+                        new Example
+                        {
+                            Title = "Client-side events",
+                            Url = "FileManager/ClientEvents.aspx",
+                            SourceFiles = new[] {"FileManager/ClientEvents.aspx", "FileManager/ClientEvents.aspx.cs"},
+                            DescriptionFile = "Descriptions/FileManager/ClientEvents.html"
                         },
                         new Example
                         {

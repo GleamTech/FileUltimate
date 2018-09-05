@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Events.aspx.vb" Inherits="GleamTech.FileUltimateExamples.WebForms.VB.FileManager.EventsPage" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ServerEvents.aspx.vb" Inherits="GleamTech.FileUltimateExamples.WebForms.VB.FileManager.ServerEventsPage" %>
 <%@ Register TagPrefix="GleamTech" Assembly="GleamTech.FileUltimate" Namespace="GleamTech.FileUltimate.AspNet.WebForms" %>
 <%@ Register TagPrefix="GleamTech" Assembly="GleamTech.FileUltimate" Namespace="GleamTech.FileUltimate.AspNet.UI" %>
 
@@ -6,7 +6,7 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <title>Server-side events</title>
 </head>
 <body style="margin: 20px;">
     <iframe id="eventsIframe" src="<%=Request.Url.LocalPath%>?getLatestEvents=1" style="width: 800px; height: 200px; background-color: white; border: 1px solid black"></iframe>

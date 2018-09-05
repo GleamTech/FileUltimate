@@ -56,20 +56,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\packages\FileUltimate.6.1.5\lib\net40\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\packages\FileUltimate.6.2.0\lib\net40\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.DocumentUltimate">
-      <HintPath>..\packages\DocumentUltimate.4.1.5\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>
+      <HintPath>..\packages\DocumentUltimate.4.2.0\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\ImageUltimate.3.2.0\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\ImageUltimate.3.2.5\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.VideoUltimate">
-      <HintPath>..\packages\VideoUltimate.1.9.0\lib\net40\GleamTech.VideoUltimate.dll</HintPath>
+      <HintPath>..\packages\VideoUltimate.1.9.1\lib\net40\GleamTech.VideoUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.Core">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\GleamTech.Core.3.1.2\lib\net40\GleamTech.Core.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Core.3.1.5\lib\net40\GleamTech.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -112,9 +112,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\FileManagerController.Overview.vb"/>
+    <Compile Include="Controllers\FileManagerController.ClientEvents.vb"/>
     <Compile Include="Controllers\FileManagerController.UsingPartial.vb"/>
     <Compile Include="Controllers\FileManagerController.UsingLayout.vb"/>
-    <Compile Include="Controllers\FileManagerController.Events.vb"/>
+    <Compile Include="Controllers\FileManagerController.ServerEvents.vb"/>
     <Compile Include="Controllers\FileManagerController.Dynamic.vb"/>
     <Compile Include="Controllers\FileManagerController.Display.vb"/>
     <Compile Include="Controllers\FileManagerController.Chooser.vb"/>
@@ -158,21 +159,23 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <Content Include="Descriptions\FileManager\Chooser.html"/>
+    <Content Include="Descriptions\FileManager\ClientEvents.html"/>
     <Content Include="Descriptions\FileManager\Display.html"/>
     <Content Include="Descriptions\FileManager\Dynamic.html"/>
-    <Content Include="Descriptions\FileManager\Events.html"/>
+    <Content Include="Descriptions\FileManager\ServerEvents.html"/>
     <Content Include="Descriptions\FileManager\UsingLayout.html"/>
     <Content Include="Descriptions\FileManager\Overview.html"/>
     <Content Include="Descriptions\FileManager\UsingPartial.html"/>
     <Content Include="Views\FileManager\Chooser.vbhtml"/>
     <Content Include="Views\FileManager\Display.vbhtml"/>
     <Content Include="Views\FileManager\Dynamic.vbhtml"/>
-    <Content Include="Views\FileManager\Events.vbhtml"/>
+    <Content Include="Views\FileManager\ServerEvents.vbhtml"/>
     <Content Include="Views\FileManager\UsingLayout.vbhtml"/>
     <Content Include="Views\FileManager\Overview.vbhtml"/>
     <Content Include="Views\Home\Index.vbhtml"/>
     <Content Include="Views\FileManager\UsingPartial.vbhtml"/>
     <Content Include="Views\FileManager\FileManagerPartialView.vbhtml"/>
+    <Content Include="Views\FileManager\ClientEvents.vbhtml"/>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax"/>

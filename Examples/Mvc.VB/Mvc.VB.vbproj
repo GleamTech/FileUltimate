@@ -56,7 +56,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\packages\FileUltimate.6.5.0\lib\net40\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\packages\FileUltimate.6.5.2\lib\net40\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.DocumentUltimate">
       <HintPath>..\packages\DocumentUltimate.4.6.5\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>

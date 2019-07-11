@@ -23,7 +23,10 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
                     Title = "Choose a file",
                     Modal = true
                 },
-                ClientChosen = "fileManagerChosen",
+                ClientEvents = new FileManagerClientEvents
+                {
+                    Chosen = "fileManagerChosen"
+                },
                 Chooser = true
             };
             fileManager1.RootFolders.Add(new FileManagerRootFolder
@@ -52,7 +55,10 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
                     Title = "Choose a folder",
                     Modal = true
                 },
-                ClientChosen = "fileManagerChosen",
+                ClientEvents = new FileManagerClientEvents
+                {
+                    Chosen = "fileManagerChosen"
+                },
                 Chooser = true,
                 ChooserType = FileManagerChooserType.Folder
             };
@@ -82,7 +88,10 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
                     Title = "Choose a file or a folder",
                     Modal = true
                 },
-                ClientChosen = "fileManagerChosen",
+                ClientEvents = new FileManagerClientEvents
+                {
+                    Chosen = "fileManagerChosen"
+                },
                 Chooser = true,
                 ChooserType = FileManagerChooserType.FileOrFolder
             };
@@ -112,7 +121,10 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
                     Title = "Choose files",
                     Modal = true
                 },
-                ClientChosen = "fileManagerChosen",
+                ClientEvents = new FileManagerClientEvents
+                {
+                    Chosen = "fileManagerChosen"
+                },
                 Chooser = true,
                 ChooserMultipleSelection = true
             };
@@ -142,7 +154,10 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
                     Title = "Choose folders",
                     Modal = true
                 },
-                ClientChosen = "fileManagerChosen",
+                ClientEvents = new FileManagerClientEvents
+                {
+                    Chosen = "fileManagerChosen"
+                },
                 Chooser = true,
                 ChooserType = FileManagerChooserType.Folder,
                 ChooserMultipleSelection = true
@@ -173,7 +188,10 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
                     Title = "Choose files or folders",
                     Modal = true
                 },
-                ClientChosen = "fileManagerChosen",
+                ClientEvents = new FileManagerClientEvents
+                {
+                    Chosen = "fileManagerChosen"
+                },
                 Chooser = true,
                 ChooserType = FileManagerChooserType.FileOrFolder,
                 ChooserMultipleSelection = true
@@ -198,7 +216,10 @@ namespace GleamTech.FileUltimateExamples.Mvc.CS.Controllers
                 DisplayLanguage = "en",
                 Hidden = true,
                 ShowRibbon = false,
-                ClientChosen = "fileManagerChosen",
+                ClientEvents = new FileManagerClientEvents
+                {
+                    Chosen = "fileManagerChosen"
+                },
                 Chooser = true
             };
             fileManager7.RootFolders.Add(new FileManagerRootFolder

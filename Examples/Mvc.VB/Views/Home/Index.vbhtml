@@ -60,6 +60,17 @@
                         .DescriptionFile = "Descriptions/FileManager/UsingPartial.html"
                     }
                 }
+            },
+            New ExampleFolder() With {
+                .Title = "FileUploader",
+                .Children = New ExampleBase() {
+                    New Example() With {
+                        .Title = "Overview",
+                        .Url = "FileUploader/Overview",
+                        .SourceFiles = New String() {"Views/FileUploader/Overview.vbhtml", "Controllers/FileUploaderController.Overview.vb"},
+                        .DescriptionFile = "Descriptions/FileUploader/Overview.html"
+                    }
+                }
             }
         },
         .ExampleProjectName = "ASP.NET MVC (VB)",

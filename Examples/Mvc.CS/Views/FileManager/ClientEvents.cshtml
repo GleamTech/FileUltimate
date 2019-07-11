@@ -161,11 +161,11 @@
         }
 
         function sampleCancelEventHandler(sender, e) {
-            //Canceling a before event (stops the corresponding action):
-            e.isCanceled = true;
-
             //Optionally displaying a message to the user when canceling
-            e.message = e.eventName + " event is canceled!";
+            e.cancelMessage = e.eventName + " event is canceled!";
+
+            //Canceling a before event (stops the corresponding action):
+            return false;
         }
 
         function logEvent(e) {

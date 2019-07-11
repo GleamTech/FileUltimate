@@ -55,6 +55,17 @@ Public Class DefaultPage
                         .DescriptionFile = "Descriptions/FileManager/Chooser.html"
                     }
                 }
+            },
+            New ExampleFolder() With {
+                .Title = "FileUploader",
+                .Children = New ExampleBase() {
+                    New Example() With {
+                        .Title = "Overview",
+                        .Url = "FileUploader/Overview.aspx",
+                        .SourceFiles = New String() {"FileUploader/Overview.aspx", "FileUploader/Overview.aspx.vb"},
+                        .DescriptionFile = "Descriptions/FileUploader/Overview.html"
+                    }
+                }
             }
         }
 

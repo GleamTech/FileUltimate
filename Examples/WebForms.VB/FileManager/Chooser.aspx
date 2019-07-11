@@ -31,7 +31,7 @@
                            DisplayMode="Window" 
                            WindowOptions-Modal="True"
                            WindowOptions-Title="Choose a file"
-                           ClientChosen="fileManagerChosen"
+                           ClientEvents-Chosen="fileManagerChosen"
                            Chooser="True">
         <GleamTech:FileManagerRootFolder Name="Root Folder 1" Location="~/App_Data/RootFolder1" >
             <GleamTech:FileManagerAccessControl Path="\" AllowedPermissions="Full"/>
@@ -51,7 +51,7 @@
                            DisplayMode="Window" 
                            WindowOptions-Modal="True"
                            WindowOptions-Title="Choose a folder"
-                           ClientChosen="fileManagerChosen"
+                           ClientEvents-Chosen="fileManagerChosen"
                            Chooser="True"
                            ChooserType="Folder">
         <GleamTech:FileManagerRootFolder Name="Root Folder 1" Location="~/App_Data/RootFolder1" >
@@ -72,7 +72,7 @@
                            DisplayMode="Window" 
                            WindowOptions-Modal="True"
                            WindowOptions-Title="Choose a file or a folder"
-                           ClientChosen="fileManagerChosen"
+                           ClientEvents-Chosen="fileManagerChosen"
                            Chooser="True"
                            ChooserType="FileOrFolder">
         <GleamTech:FileManagerRootFolder Name="Root Folder 1" Location="~/App_Data/RootFolder1" >
@@ -93,7 +93,7 @@
                            DisplayMode="Window" 
                            WindowOptions-Modal="True"
                            WindowOptions-Title="Choose files"
-                           ClientChosen="fileManagerChosen"
+                           ClientEvents-Chosen="fileManagerChosen"
                            Chooser="True"
                            ChooserMultipleSelection="True">
         <GleamTech:FileManagerRootFolder Name="Root Folder 1" Location="~/App_Data/RootFolder1" >
@@ -114,7 +114,7 @@
                            DisplayMode="Window" 
                            WindowOptions-Modal="True"
                            WindowOptions-Title="Choose folders"
-                           ClientChosen="fileManagerChosen"
+                           ClientEvents-Chosen="fileManagerChosen"
                            Chooser="True"
                            ChooserType="Folder"
                            ChooserMultipleSelection="True">
@@ -136,7 +136,7 @@
                            DisplayMode="Window"
                            WindowOptions-Modal="True"
                            WindowOptions-Title="Choose files or folders"
-                           ClientChosen="fileManagerChosen"
+                           ClientEvents-Chosen="fileManagerChosen"
                            Chooser="True"
                            ChooserType="FileOrFolder"
                            ChooserMultipleSelection="True">
@@ -155,7 +155,7 @@
                            DisplayLanguage="en"
                            Hidden="True"
                            ShowRibbon ="False"
-                           ClientChosen="fileManagerChosen"
+                           ClientEvents-Chosen="fileManagerChosen"
                            Chooser="True">
         <GleamTech:FileManagerRootFolder Name="Root Folder 1" Location="~/App_Data/RootFolder1" >
             <GleamTech:FileManagerAccessControl Path="\" AllowedPermissions="Full"/>

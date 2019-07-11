@@ -8,6 +8,9 @@
     <_CustomFiles Include="Controllers\**\*"/>
     <_CustomFiles Include="Views\**\*"/>
     <_CustomFiles Include="Descriptions\**\*"/>
+    <_CustomFiles Remove="Controllers\FileUploaderController.cs"/>
+    <_CustomFiles Remove="Controllers\FileUploaderController.Overview.cs"/>
+    <_CustomFiles Remove="Views\FileUploader\Overview.cshtml"/>
     <DotnetPublishFiles Include="@(_CustomFiles)">
       <DestinationRelativePath>%(Identity)</DestinationRelativePath>
     </DotnetPublishFiles>

@@ -68,6 +68,20 @@ namespace GleamTech.FileUltimateExamples.WebForms.CS
                             DescriptionFile = "Descriptions/FileManager/Chooser.html"
                         }
                     }
+                },
+                new ExampleFolder
+                {
+                    Title = "FileUploader",
+                    Children = new ExampleBase[]
+                    {
+                        new Example
+                        {
+                            Title = "Overview",
+                            Url = "FileUploader/Overview.aspx",
+                            SourceFiles = new[] { "FileUploader/Overview.aspx", "FileUploader/Overview.aspx.cs"},
+                            DescriptionFile = "Descriptions/FileUploader/Overview.html"
+                        },
+                    }
                 }
             };
 

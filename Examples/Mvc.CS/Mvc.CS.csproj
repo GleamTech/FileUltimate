@@ -50,20 +50,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\packages\FileUltimate.6.5.2\lib\net40\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\packages\FileUltimate.7.0.0\lib\net40\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.DocumentUltimate">
-      <HintPath>..\packages\DocumentUltimate.4.6.5\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>
+      <HintPath>..\packages\DocumentUltimate.4.7.0\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\ImageUltimate.3.4.8\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\ImageUltimate.3.5.0\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.VideoUltimate">
-      <HintPath>..\packages\VideoUltimate.1.9.9\lib\net40\GleamTech.VideoUltimate.dll</HintPath>
+      <HintPath>..\packages\VideoUltimate.1.9.10\lib\net40\GleamTech.VideoUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.Core">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\GleamTech.Core.3.4.0\lib\net40\GleamTech.Core.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Core.3.5.0\lib\net40\GleamTech.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp"/>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -119,6 +119,7 @@
     <Compile Include="Controllers\FileManagerController.cs"/>
     <Compile Include="Controllers\FileManagerController.Display.cs"/>
     <Compile Include="Controllers\FileManagerController.Overview.cs"/>
+    <Compile Include="Controllers\FileUploaderController.cs"/>
     <Compile Include="Controllers\HomeController.cs"/>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -185,6 +186,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\FileManager\ClientEvents.cshtml"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FileUploader\Overview.cshtml"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\FileUploaderController.Overview.cs"/>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

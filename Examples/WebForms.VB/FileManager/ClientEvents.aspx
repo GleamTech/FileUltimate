@@ -160,11 +160,11 @@
         }
 
         function sampleCancelEventHandler(sender, e) {
-            //Canceling a before event (stops the corresponding action):
-            e.isCanceled = true;
-    
             //Optionally displaying a message to the user when canceling
-            e.message = e.eventName + " event is canceled!";
+            e.cancelMessage = e.eventName + " event is canceled!";
+
+            //Canceling a before event (stops the corresponding action):
+            return false;
         }
 
         function logEvent(e) {
@@ -191,34 +191,37 @@
     <GleamTech:FileManagerControl ID="fileManager" runat="server" 
         Width="800"
         Height="600"
-        DisplayLanguage="en"
-        ClientLoading="fileManagerLoading"
-        ClientLoaded="fileManagerLoaded"
-        ClientChosen="fileManagerChosen"
-        ClientFolderChanged="fileManagerFolderChanged" 
-        ClientSelectionChanged="fileManagerSelectionChanged"
-        ClientCreating="fileManagerCreating"
-        ClientCreated="fileManagerCreated"
-        ClientDeleting="fileManagerDeleting"
-        ClientDeleted="fileManagerDeleted"
-        ClientRenaming="fileManagerRenaming"
-        ClientRenamed="fileManagerRenamed"
-        ClientCopying="fileManagerCopying"
-        ClientCopied="fileManagerCopied"
-        ClientMoving="fileManagerMoving"
-        ClientMoved="fileManagerMoved"
-        ClientCompressing="fileManagerCompressing"
-        ClientCompressed="fileManagerCompressed"
-        ClientExtracting="fileManagerExtracting"
-        ClientExtracted="fileManagerExtracted"
-        ClientUploading="fileManagerUploading"
-        ClientUploaded="fileManagerUploaded"
-        ClientDownloading="fileManagerDownloading"
-        ClientPreviewing="fileManagerPreviewing">
+        DisplayLanguage="en">
+        
+        <ClientEvents Loading="fileManagerLoading"
+                      Loaded="fileManagerLoaded"
+                      Chosen="fileManagerChosen"
+                      FolderChanged="fileManagerFolderChanged" 
+                      SelectionChanged="fileManagerSelectionChanged"
+                      Creating="fileManagerCreating"
+                      Created="fileManagerCreated"
+                      Deleting="fileManagerDeleting"
+                      Deleted="fileManagerDeleted"
+                      Renaming="fileManagerRenaming"
+                      Renamed="fileManagerRenamed"
+                      Copying="fileManagerCopying"
+                      Copied="fileManagerCopied"
+                      Moving="fileManagerMoving"
+                      Moved="fileManagerMoved"
+                      Compressing="fileManagerCompressing"
+                      Compressed="fileManagerCompressed"
+                      Extracting="fileManagerExtracting"
+                      Extracted="fileManagerExtracted"
+                      Uploading="fileManagerUploading"
+                      Uploaded="fileManagerUploaded"
+                      Downloading="fileManagerDownloading"
+                      Previewing="fileManagerPreviewing" />
 
-        <GleamTech:FileManagerRootFolder Name="Root Folder 1" Location="~/App_Data/RootFolder1" >
-            <GleamTech:FileManagerAccessControl Path="\" AllowedPermissions="Full"/>
-        </GleamTech:FileManagerRootFolder>       
+        <RootFolders>
+            <GleamTech:FileManagerRootFolder Name="Root Folder 1" Location="~/App_Data/RootFolder1" >
+                <GleamTech:FileManagerAccessControl Path="\" AllowedPermissions="Full"/>
+            </GleamTech:FileManagerRootFolder>       
+        </RootFolders>
 
     </GleamTech:FileManagerControl>
 

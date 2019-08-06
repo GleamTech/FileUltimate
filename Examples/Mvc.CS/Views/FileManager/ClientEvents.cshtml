@@ -185,9 +185,11 @@
     </script>
 </head>
 <body style="margin: 20px;">
-    <textarea id="LogTextBox" style="width: 800px; height: 200px; background-color: white; border: 1px solid black"></textarea>
-    <br /><input type="button" value="Clear" onclick="clearLog();" />
-    <br /><br />
+    <p>
+        Events:<br/>
+        <textarea id="LogTextBox" style="width: 800px; height: 200px; background-color: white; border: 1px solid black"></textarea>
+        <br /><input type="button" value="Clear" onclick="clearLog();" />
+    </p>
 
     @this.RenderBody(Model)
 </body>

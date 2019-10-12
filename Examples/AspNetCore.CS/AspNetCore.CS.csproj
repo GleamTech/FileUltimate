@@ -25,19 +25,19 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="GleamTech.Core">
-      <HintPath>..\..\Bin\GleamTech.Core.dll</HintPath>
+      <HintPath>..\..\Bin\net40\GleamTech.Core.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.DocumentUltimate">
-      <HintPath>..\..\Bin\GleamTech.DocumentUltimate.dll</HintPath>
+      <HintPath>..\..\Bin\net40\GleamTech.DocumentUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\..\Bin\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\..\Bin\net40\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\..\Bin\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\..\Bin\net40\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.VideoUltimate">
-      <HintPath>..\..\Bin\GleamTech.VideoUltimate.dll</HintPath>
+      <HintPath>..\..\Bin\net40\GleamTech.VideoUltimate.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

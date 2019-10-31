@@ -1,0 +1,104 @@
+﻿@using GleamTech.AspNet.Core
+@using GleamTech.Examples
+@using GleamTech.FileUltimate
+@{
+    var exampleExplorer = new ExampleExplorer
+    {
+        DisplayMode = GleamTech.AspNet.UI.DisplayMode.Viewport,
+        NavigationTitle = "FileUltimate Examples",
+        VersionTitle = "v" + FileUltimateConfiguration.AssemblyInfo.FileVersion,
+        Examples = new ExampleBase[]
+        {
+            new ExampleFolder
+            {
+                Title = "FileManager",
+                Children = new ExampleBase[]
+                {
+                    new Example
+                    {
+                        Title = "Overview",
+                        Url = "FileManager/Overview",
+                        SourceFiles = new[] {"Views/FileManager/Overview.cshtml", "Controllers/FileManagerController.Overview.cs"},
+                        DescriptionFile = "Descriptions/FileManager/Overview.html"
+                    },
+                    new Example
+                    {
+                        Title = "Displaying control on demand",
+                        Url = "FileManager/Display",
+                        SourceFiles = new[] {"Views/FileManager/Display.cshtml", "Controllers/FileManagerController.Display.cs"},
+                        DescriptionFile = "Descriptions/FileManager/Display.html"
+                    },
+                    new Example
+                    {
+                        Title = "Server-side events",
+                        Url = "FileManager/ServerEvents",
+                        SourceFiles = new[] { "Views/FileManager/ServerEvents.cshtml", "Controllers/FileManagerController.ServerEvents.cs"},
+                        DescriptionFile = "Descriptions/FileManager/ServerEvents.html"
+                    },
+                    new Example
+                    {
+                        Title = "Client-side events",
+                        Url = "FileManager/ClientEvents",
+                        SourceFiles = new[] { "Views/FileManager/ClientEvents.cshtml", "Controllers/FileManagerController.ClientEvents.cs"},
+                        DescriptionFile = "Descriptions/FileManager/ClientEvents.html"
+                    },
+                    new Example
+                    {
+                        Title = "Dynamic folder and permissions",
+                        Url = "FileManager/Dynamic",
+                        SourceFiles = new[] {"Views/FileManager/Dynamic.cshtml", "Controllers/FileManagerController.Dynamic.cs"},
+                        DescriptionFile = "Descriptions/FileManager/Dynamic.html"
+                    },
+                    new Example
+                    {
+                        Title = "File/Folder chooser",
+                        Url = "FileManager/Chooser",
+                        SourceFiles = new[] {"Views/FileManager/Chooser.cshtml", "Controllers/FileManagerController.Chooser.cs"},
+                        DescriptionFile = "Descriptions/FileManager/Chooser.html"
+                    },
+                    new Example
+                    {
+                        Title = "Using MVC layout",
+                        Url = "FileManager/UsingLayout",
+                        SourceFiles = new[] {"Views/FileManager/UsingLayout.cshtml", "Views/Shared/_Layout.cshtml", "Controllers/FileManagerController.UsingLayout.cs"},
+                        DescriptionFile = "Descriptions/FileManager/UsingLayout.html"
+                    },
+                    new Example
+                    {
+                        Title = "Using MVC partial view",
+                        Url = "FileManager/UsingPartial",
+                        SourceFiles = new[] {"Views/FileManager/UsingPartial.cshtml", "Views/FileManager/FileManagerPartialView.cshtml", "Controllers/FileManagerController.UsingPartial.cs" },
+                        DescriptionFile = "Descriptions/FileManager/UsingPartial.html"
+                    }
+                }
+            },
+            new ExampleFolder
+            {
+                Title = "FileUploader",
+                Children = new ExampleBase[]
+                {
+                    new Example
+                    {
+                        Title = "Overview",
+                        Url = "FileUploader/Overview",
+                        SourceFiles = new[] { "Views/FileUploader/Overview.cshtml", "Controllers/FileUploaderController.Overview.cs"},
+                        DescriptionFile = "Descriptions/FileUploader/Overview.html"
+                    }
+                }
+            }
+        },
+        ExampleProjectName = "ASP.NET Core on .NET Framework (C#)",
+        ExampleProjects = ExamplesConfiguration.LoadExampleProjects("~/App_Data/ExampleProjects.json")
+    };
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>FileUltimate Examples - ASP.NET Core on .NET Framework (C#)</title>
+    @this.RenderHead(exampleExplorer)
+</head>
+<body>
+    @this.RenderBody(exampleExplorer)
+</body>
+</html>

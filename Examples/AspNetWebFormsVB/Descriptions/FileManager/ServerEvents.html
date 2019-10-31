@@ -1,0 +1,37 @@
+﻿FileManager raises server-side before and after events for each file action. Event handlers are attached in code rather than markup.
+<br /><br />
+<b>Before events:</b>
+<ul>
+    <li>Expanding</li>
+    <li>Listing</li>
+    <li>Creating</li>
+    <li>Deleting</li>
+    <li>Renaming</li>
+    <li>Copying</li>
+    <li>Moving</li>
+    <li>Compressing</li>
+    <li>Extracting</li>
+    <li>Uploading</li>
+    <li>Downloading</li>
+    <li>Previewing</li>
+</ul>
+It's possible to stop a file action (and optionally display a message) by canceling the corresponding before event.
+<br /><br />
+<b>After events:</b>
+<ul>
+    <li>Expanded</li>
+    <li>Listed</li>
+    <li>Created</li>
+    <li>Deleted</li>
+    <li>Renamed</li>
+    <li>Copied</li>
+    <li>Moved</li>
+    <li>Compressed</li>
+    <li>Extracted</li>
+    <li>Uploaded</li>
+    <li>Downloaded</li>
+    <li>Previewed</li>
+    <li>Failed</li>
+</ul>
+After events can be used to save information about a completed file action.
+For instance, the information can be logged or sent via email.

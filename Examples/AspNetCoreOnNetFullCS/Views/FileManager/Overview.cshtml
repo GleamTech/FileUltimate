@@ -1,0 +1,34 @@
+﻿@using GleamTech.AspNet.Core
+@using GleamTech.FileUltimate.AspNet.UI
+@model FileManager
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Overview</title>
+    @this.RenderHead(Model)
+
+    @*
+        If you prefer, JS can also be rendered at the bottom of the page, 
+        by first calling RenderHeadWithoutJs in <head>:
+
+        @this.RenderHeadWithoutJs(Model)
+
+        and then calling RenderJs before the closing </body> tag:
+
+        @this.RenderJs(Model)
+    *@
+</head>
+<body style="margin: 20px;">
+
+@using (Html.BeginForm())
+{
+    <text>Change language: </text>@Html.DropDownList("languageSelector", (SelectList) ViewBag.LanguageList, new {onchange = "this.form.submit();"})
+    <br/><br/>
+}
+
+@this.RenderBody(Model)
+
+</body>
+</html>

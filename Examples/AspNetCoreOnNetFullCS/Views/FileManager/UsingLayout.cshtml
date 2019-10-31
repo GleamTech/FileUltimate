@@ -1,0 +1,15 @@
+﻿@using GleamTech.AspNet.Core
+@using GleamTech.FileUltimate.AspNet.UI
+@model FileManager
+
+@{
+    ViewBag.Title = "Using MVC layout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section LayoutHead {
+    @this.RenderHead(Model)
+}
+
+@this.RenderBody(Model)
+

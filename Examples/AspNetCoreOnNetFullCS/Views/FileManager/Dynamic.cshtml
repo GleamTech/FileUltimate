@@ -1,0 +1,23 @@
+﻿@using GleamTech.AspNet.Core
+@using GleamTech.FileUltimate.AspNet.UI
+@model FileManager
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Dynamic folder and permissions</title>
+    @this.RenderHead(Model)
+</head>
+<body style="margin: 20px;">
+
+@using (Html.BeginForm())
+{
+    <text>Change user: </text>@Html.DropDownList("userSelector", (SelectList) ViewBag.UserList, new {onchange = "this.form.submit();"})
+    <br/><br/>
+}
+
+@this.RenderBody(Model)
+
+</body>
+</html>

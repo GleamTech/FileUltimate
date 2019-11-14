@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="GleamTech.Core" Version="4.0.1" />
-    <PackageReference Include="FileUltimate" Version="7.2.5" />
+    <PackageReference Include="GleamTech.Core" Version="4.0.2" />
+    <PackageReference Include="FileUltimate" Version="7.2.6" />
   </ItemGroup>
 
   <ItemGroup>

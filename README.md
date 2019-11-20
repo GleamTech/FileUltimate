@@ -1,6 +1,8 @@
-# <span style="margin-bottom:-15px">!["FileUltimate Logo](fileultimate-logo.png)</span> FileUltimate: ASP.NET File Manager and Uploader 
-Supports ASP.NET Core 2.0+, ASP.NET MVC 3+ and ASP.NET WebForms 4+ web applications/web sites.
+!["FileUltimate Logo](fileultimate-logo.png)
+# FileUltimate: ASP.NET File Manager and Uploader
+![Nuget](https://img.shields.io/nuget/v/GleamTech.FileUltimate)
 
+FileUltimate is an ASP.NET File Manager and Uploader which supports ASP.NET Core 2.0+, ASP.NET MVC 3+ and ASP.NET WebForms 4+ web applications/web sites.
 
 Integrate a file manager into your ASP.NET application or site rapidly. 
 
@@ -12,6 +14,9 @@ Integrate a file manager into your ASP.NET application or site rapidly.
 ![ASP.NET File Manager](fileultimate.png)
 
 **Note:** This project contains a fully working version of the product, however without a license key it will run in trial mode. For more information, please see [FileUltimate: ASP.NET File Manager and Uploader](http://www.gleamtech.com/fileultimate) product page.
+
+## Adding references to FileUltimate assemblies
+https://docs.gleamtech.com/fileultimate/html/adding-references-to-fileultimate-assemblies.htm
 
 ## Using FileUltimate in an ASP.NET Core project:
 https://docs.gleamtech.com/fileultimate/html/using-fileultimate-in-an-asp-net-core-project.htm

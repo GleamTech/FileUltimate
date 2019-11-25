@@ -15,7 +15,10 @@ Integrate a file manager into your ASP.NET application or site rapidly.
 
 **Note:** This project contains a fully working version of the product, however without a license key it will run in trial mode. For more information, please see [FileUltimate: ASP.NET File Manager and Uploader](http://www.gleamtech.com/fileultimate) product page.
 
-### Adding references to FileUltimate assemblies
+### Live Demo:
+https://demos.gleamtech.com/fileultimate/
+
+### Adding references to FileUltimate assemblies:
 https://docs.gleamtech.com/fileultimate/html/adding-references-to-fileultimate-assemblies.htm
 
 ### Using FileUltimate in an ASP.NET Core project:

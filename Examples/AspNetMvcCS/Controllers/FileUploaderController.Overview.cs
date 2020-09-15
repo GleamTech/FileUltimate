@@ -16,21 +16,30 @@ namespace GleamTech.FileUltimateExamples.AspNetMvcCS.Controllers
                 UploadLocation = "~/App_Data/Uploads"
             };
 
-            if (Request["languageSelector"] != null)
-                fileUploader.DisplayLanguage = Request["languageSelector"];
-
-            PopulateLanguageSelector();
+            HandleLanguage(fileUploader);
 
             return View(fileUploader);
         }
 
-        private void PopulateLanguageSelector()
+        private void HandleLanguage(FileUploader fileUploader)
+        {
+            var selectedLanguage = Request["languageSelector"];
+
+            if (selectedLanguage != null)
+                fileUploader.DisplayLanguage = selectedLanguage;
+            else
+                selectedLanguage = fileUploader.DisplayLanguage;
+
+            PopulateLanguageSelector(selectedLanguage);
+        }
+
+        private void PopulateLanguageSelector(string selectedLanguage)
         {
             ViewBag.LanguageList = new SelectList(
                 FileUltimateWebConfiguration.AvailableDisplayCultures,
                 "Name",
                 "NativeName",
-                Request["languageSelector"] ?? FileUltimateWebConfiguration.CurrentLanguage.ClosestCulture.Name
+                selectedLanguage
             );
         }
     }

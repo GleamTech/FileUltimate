@@ -13,17 +13,25 @@ Namespace Controllers
              .UploadLocation = "~/App_Data/Uploads"
             }
 
-            If Request("languageSelector") IsNot Nothing Then
-                fileUploader.DisplayLanguage = Request("languageSelector")
-            End If
-
-            PopulateLanguageSelector()
+            HandleLanguage(fileUploader)
 
             Return View(fileUploader)
         End Function
 
-        Private Sub PopulateLanguageSelector()
-            ViewBag.LanguageList = New SelectList(FileUltimateWebConfiguration.AvailableDisplayCultures, "Name", "NativeName", If(Request("languageSelector"), FileUltimateWebConfiguration.CurrentLanguage.ClosestCulture.Name))
+        Private Sub HandleLanguage(fileUploader As FileUploader)
+            Dim selectedLanguage = Request("languageSelector")
+
+            If selectedLanguage IsNot Nothing Then
+                fileUploader.DisplayLanguage = selectedLanguage
+            Else
+                selectedLanguage = fileUploader.DisplayLanguage
+            End If
+
+            PopulateLanguageSelector(selectedLanguage)
+        End Sub
+
+        Private Sub PopulateLanguageSelector(selectedLanguage As String)
+            ViewBag.LanguageList = New SelectList(FileUltimateWebConfiguration.AvailableDisplayCultures, "Name", "NativeName", selectedLanguage)
         End Sub
     End Class
 End Namespace

@@ -63,11 +63,7 @@ Namespace Controllers
             'Create the final root folder and add it to the control
             fileManager.RootFolders.Add(CreateRootFolder3())
 
-            If Request("languageSelector") IsNot Nothing Then
-                fileManager.DisplayLanguage = Request("languageSelector")
-            End If
-
-            PopulateLanguageSelector()
+            HandleLanguage(fileManager)
 
             Return View(fileManager)
         End Function
@@ -219,8 +215,20 @@ Namespace Controllers
             Return rootFolder
         End Function
 
-        Private Sub PopulateLanguageSelector()
-            ViewBag.LanguageList = New SelectList(FileUltimateWebConfiguration.AvailableDisplayCultures, "Name", "NativeName", If(Request("languageSelector"), FileUltimateWebConfiguration.CurrentLanguage.ClosestCulture.Name))
+        Private Sub HandleLanguage(fileManager As FileManager)
+            Dim selectedLanguage = Request("languageSelector")
+
+            If selectedLanguage IsNot Nothing Then
+                fileManager.DisplayLanguage = selectedLanguage
+            Else
+                selectedLanguage = fileManager.DisplayLanguage
+            End If
+
+            PopulateLanguageSelector(selectedLanguage)
+        End Sub
+
+        Private Sub PopulateLanguageSelector(selectedLanguage As String)
+            ViewBag.LanguageList = New SelectList(FileUltimateWebConfiguration.AvailableDisplayCultures, "Name", "NativeName", selectedLanguage)
         End Sub
     End Class
 End Namespace

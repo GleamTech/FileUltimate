@@ -70,13 +70,7 @@ namespace GleamTech.FileUltimateExamples.AspNetCoreOnNetFullCS.Controllers
             //Create the final root folder and add it to the control
             fileManager.RootFolders.Add(CreateRootFolder3());
 
-            var context = Hosting.GetHttpContext();
-            var selectedLanguage = context.Request["languageSelector"];
-
-            if (selectedLanguage != null)
-                fileManager.DisplayLanguage = selectedLanguage;
-
-            PopulateLanguageSelector(selectedLanguage);
+            HandleLanguage(fileManager);
 
             return View(fileManager);
         }
@@ -281,13 +275,26 @@ namespace GleamTech.FileUltimateExamples.AspNetCoreOnNetFullCS.Controllers
             return rootFolder;
         }
 
+        private void HandleLanguage(FileManager fileManager)
+        {
+            var context = Hosting.GetHttpContext();
+            var selectedLanguage = context.Request["languageSelector"];
+
+            if (selectedLanguage != null)
+                fileManager.DisplayLanguage = selectedLanguage;
+            else
+                selectedLanguage = fileManager.DisplayLanguage;
+
+            PopulateLanguageSelector(selectedLanguage);
+        }
+
         private void PopulateLanguageSelector(string selectedLanguage)
         {
             ViewBag.LanguageList = new SelectList(
-                FileUltimateWebConfiguration.AvailableDisplayCultures, 
-                "Name", 
+                FileUltimateWebConfiguration.AvailableDisplayCultures,
+                "Name",
                 "NativeName",
-                selectedLanguage ?? FileUltimateWebConfiguration.CurrentLanguage.ClosestCulture.Name
+                selectedLanguage
             );
         }
     }

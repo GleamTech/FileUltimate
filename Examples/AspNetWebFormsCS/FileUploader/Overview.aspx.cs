@@ -20,7 +20,7 @@ namespace GleamTech.FileUltimateExamples.AspNetWebFormsCS.FileUploader
             foreach (var culture in FileUltimateWebConfiguration.AvailableDisplayCultures)
             {
                 var listItem = new ListItem(culture.NativeName, culture.Name);
-                if (culture.Name == FileUltimateWebConfiguration.CurrentLanguage.ClosestCulture.Name)
+                if (culture.Name == fileUploader.DisplayLanguage)
                     listItem.Selected = true;
                 LanguageSelector.Items.Add(listItem);
             }

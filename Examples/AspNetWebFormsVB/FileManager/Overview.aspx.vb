@@ -17,7 +17,7 @@ Namespace FileManager
         Private Sub PopulateLanguageSelector()
             For Each cultureInfo As CultureInfo In FileUltimateWebConfiguration.AvailableDisplayCultures
                 Dim listItem = New ListItem(cultureInfo.NativeName, cultureInfo.Name)
-                If cultureInfo.Name = FileUltimateWebConfiguration.CurrentLanguage.ClosestCulture.Name Then
+                If cultureInfo.Name = fileManager.DisplayLanguage Then
                     listItem.Selected = True
                 End If
                 LanguageSelector.Items.Add(listItem)

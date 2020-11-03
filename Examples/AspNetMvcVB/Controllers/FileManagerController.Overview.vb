@@ -1,4 +1,5 @@
-﻿Imports GleamTech.FileUltimate.AspNet
+﻿Imports System.Linq
+Imports GleamTech.FileUltimate.AspNet
 Imports GleamTech.FileUltimate.AspNet.UI
 
 Namespace Controllers
@@ -228,7 +229,15 @@ Namespace Controllers
         End Sub
 
         Private Sub PopulateLanguageSelector(selectedLanguage As String)
-            ViewBag.LanguageList = New SelectList(FileUltimateWebConfiguration.AvailableDisplayCultures, "Name", "NativeName", selectedLanguage)
+            ViewBag.LanguageList =  New SelectList(
+                FileUltimateWebConfiguration.AvailableDisplayCultures.Select(function(culture) New With {
+                        .Value = culture.Name,
+                        .Text = culture.NativeName + $" ({culture.Name})"
+                    }), 
+                "Value",
+                "Text",
+                selectedLanguage
+            )            
         End Sub
     End Class
 End Namespace

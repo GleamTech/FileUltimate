@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using GleamTech.FileUltimate.AspNet;
 using GleamTech.FileUltimate.AspNet.UI;
 
@@ -288,9 +289,13 @@ namespace GleamTech.FileUltimateExamples.AspNetMvcCS.Controllers
         private void PopulateLanguageSelector(string selectedLanguage)
         {
             ViewBag.LanguageList = new SelectList(
-                FileUltimateWebConfiguration.AvailableDisplayCultures,
-                "Name",
-                "NativeName",
+                FileUltimateWebConfiguration.AvailableDisplayCultures.Select(culture => new
+                {
+                    Value = culture.Name,
+                    Text = culture.NativeName + $" ({culture.Name})"
+                }),
+                "Value",
+                "Text",
                 selectedLanguage
             );
         }

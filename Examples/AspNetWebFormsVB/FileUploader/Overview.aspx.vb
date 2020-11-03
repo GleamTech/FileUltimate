@@ -16,7 +16,7 @@ Namespace FileUploader
 
         Private Sub PopulateLanguageSelector()
             For Each cultureInfo As CultureInfo In FileUltimateWebConfiguration.AvailableDisplayCultures
-                Dim listItem = New ListItem(cultureInfo.NativeName, cultureInfo.Name)
+                Dim listItem = New ListItem(cultureInfo.NativeName + $" ({cultureInfo.Name})", cultureInfo.Name)
                 If cultureInfo.Name = fileUploader.DisplayLanguage Then
                     listItem.Selected = True
                 End If

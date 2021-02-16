@@ -1,4 +1,5 @@
-﻿Imports GleamTech.FileUltimate.AspNet.UI
+﻿Imports GleamTech.AspNet.UI
+Imports GleamTech.FileUltimate.AspNet.UI
 
 Namespace FileManager
 
@@ -9,7 +10,9 @@ Namespace FileManager
 
         Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
             If Request.QueryString("getLatestEvents") = "1" Then
-                GetLatestEvents()
+                Response.Output.WriteLine(EventUtil.GetLatestEvents())
+
+                Response.End()
             End If
 
             'Attached event handlers should be shared methods because they are raised out of the context of the host page.
@@ -50,112 +53,113 @@ Namespace FileManager
 #Region "Example event handlers for before events"
 
         Private Shared Sub FileManagerExpanding(sender As Object, e As FileManagerExpandingEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Expanding"},
-                             {"Path", e.Folder.FullPath},
-                             {"Is Refresh", e.IsRefresh}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Expanding"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"IsRefresh", e.IsRefresh}
+            })
         End Sub
 
         Private Shared Sub FileManagerListing(sender As Object, e As FileManagerListingEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Listing"},
-                             {"Path", e.Folder.FullPath},
-                             {"Is Refresh", e.IsRefresh}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Listing"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"IsRefresh", e.IsRefresh}
+            })
         End Sub
 
         Private Shared Sub FileManagerCreating(sender As Object, e As FileManagerCreatingEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Creating"},
-                             {"Path", e.Folder.FullPath},
-                             {"Creating Folder", e.ItemName}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Creating"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemName", e.ItemName}
+            })
         End Sub
 
         Private Shared Sub FileManagerDeleting(sender As Object, e As FileManagerDeletingEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Deleting"},
-                             {"Path", e.Folder.FullPath},
-                             {"Deleting Items", e.ItemNames}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Deleting"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemNames", e.ItemNames}
+            })
         End Sub
 
         Private Shared Sub FileManagerRenaming(sender As Object, e As FileManagerRenamingEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Renaming"},
-                             {"Path", e.Folder.FullPath},
-                             {"Item Old Name", e.ItemName},
-                             {"Item New Name", e.ItemNewName}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Renaming"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemName", e.ItemName},
+                {"ItemNewName", e.ItemNewName}
+            })
         End Sub
 
         Private Shared Sub FileManagerCopying(sender As Object, e As FileManagerCopyingEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Copying"},
-                             {"From Path", e.Folder.FullPath},
-                             {"Copying Items", e.ItemNames},
-                             {"To Path", e.TargetFolder.FullPath}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Copying"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemNames", e.ItemNames},
+                {"TargetFolder.FullPath", e.TargetFolder.FullPath}
+            })
         End Sub
 
         Private Shared Sub FileManagerMoving(sender As Object, e As FileManagerMovingEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Moving"},
-                             {"From Path", e.Folder.FullPath},
-                             {"Moving Items", e.ItemNames},
-                             {"To Target Path", e.TargetFolder.FullPath}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Moving"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemNames", e.ItemNames},
+                {"TargetFolder.FullPath", e.TargetFolder.FullPath}
+            })
         End Sub
 
         Private Shared Sub FileManagerCompressing(sender As Object, e As FileManagerCompressingEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Compressing"},
-                             {"Path", e.Folder.FullPath},
-                             {"Compressing Items", e.ItemNames},
-                             {"Zip File", e.ZipFileName}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Compressing"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemNames", e.ItemNames},
+                {"ZipFileName", e.ZipFileName}
+            })
         End Sub
 
         Private Shared Sub FileManagerExtracting(sender As Object, e As FileManagerExtractingEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Extracting"},
-                             {"Path", e.Folder.FullPath},
-                             {"Extracting to Subfolder", e.ToSubfolder},
-                             {"Archive File", e.ArchiveFileName}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Extracting"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ToSubfolder", e.ToSubfolder},
+                {"ArchiveFileName", e.ArchiveFileName}
+            })
         End Sub
 
         Private Shared Sub FileManagerUploading(sender As Object, e As FileManagerUploadingEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Uploading"},
-                             {"Path", e.Folder.FullPath},
-                             {"Upload Method", e.Method},
-                             {"Uploading Files", e.Validations.[Select](Function(validation) New Dictionary(Of String, Object)() From {
-                                                                           {"Name", validation.Name},
-                                                                           {"Content Type", validation.ContentType},
-                                                                           {"Size", If(validation.Size.HasValue, New ByteSizeValue(validation.Size.Value).ToFileSize().ToString(), "<unknown>")}
-                                                                           })}
-                             })
-        End Sub
-
-        Private Shared Sub FileManagerPreviewing(sender As Object, e As FileManagerPreviewingEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                {"Event Type", "Previewing"},
-                {"Path", e.Folder.FullPath},
-                {"Previewing File", e.ItemName},
-                {"Previewer", e.PreviewerType}
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Uploading"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"Queue.Method", e.Queue.Method},
+                {"Items", e.Items.Select(Function(item) New Dictionary(Of String, Object)() From {
+                    {"Name", item.Name},
+                    {"ContentType", item.ContentType},
+                    {"SizeAsString", item.SizeAsString},
+                    {"DateModified", item.DateModified}
+                })}
             })
         End Sub
 
         Private Shared Sub FileManagerDownloading(sender As Object, e As FileManagerDownloadingEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Downloading"},
-                             {"Path", e.Folder.FullPath},
-                             {"Downloading Items", e.ItemNames},
-                             {"Downloading File Name", e.DownloadFileName},
-                             {"Opening in browser", e.OpenInBrowser}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Downloading"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemNames", e.ItemNames},
+                {"DownloadFileName", e.DownloadFileName},
+                {"OpenInBrowser", e.OpenInBrowser}
+            })
+        End Sub
+
+        Private Shared Sub FileManagerPreviewing(sender As Object, e As FileManagerPreviewingEventArgs)
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Previewing"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemName", e.ItemName},
+                {"PreviewerType", e.PreviewerType}
+            })
         End Sub
 
 #End Region
@@ -163,197 +167,172 @@ Namespace FileManager
 #Region "Example event handlers for after events"
 
         Private Shared Sub FileManagerExpanded(sender As Object, e As FileManagerExpandedEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Expanded"},
-                             {"Path", e.Folder.FullPath},
-                             {"Is Refresh", e.IsRefresh}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Expanded"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"IsRefresh", e.IsRefresh}
+            })
         End Sub
 
         Private Shared Sub FileManagerListed(sender As Object, e As FileManagerListedEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Listed"},
-                             {"Path", e.Folder.FullPath},
-                             {"Is Refresh", e.IsRefresh}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Listed"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"IsRefresh", e.IsRefresh}
+            })
         End Sub
 
         Private Shared Sub FileManagerCreated(sender As Object, e As FileManagerCreatedEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Created"},
-                             {"Path", e.Folder.FullPath},
-                             {"Created Folder", e.ItemName}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Created"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemName", e.ItemName}
+            })
         End Sub
 
         Private Shared Sub FileManagerDeleted(sender As Object, e As FileManagerDeletedEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Deleted"},
-                             {"Path", e.Folder.FullPath},
-                             {"Deleted Items", e.ItemNames}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Deleted"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemNames", e.ItemNames}
+            })
         End Sub
 
         Private Shared Sub FileManagerRenamed(sender As Object, e As FileManagerRenamedEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Renamed"},
-                             {"Path", e.Folder.FullPath},
-                             {"Item Old Name", e.ItemName},
-                             {"Item New Name", e.ItemNewName}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Renamed"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemName", e.ItemName},
+                {"ItemNewName", e.ItemNewName}
+            })
         End Sub
 
         Private Shared Sub FileManagerCopied(sender As Object, e As FileManagerCopiedEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Copied"},
-                             {"From Path", e.Folder.FullPath},
-                             {"Source Items", e.ItemNames},
-                             {"To Path", e.TargetFolder.FullPath},
-                             {"Copied Items", e.TargetItemNames}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Copied"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemNames", e.ItemNames},
+                {"TargetFolder.FullPath", e.TargetFolder.FullPath},
+                {"TargetItemNames", e.TargetItemNames}
+            })
         End Sub
 
         Private Shared Sub FileManagerMoved(sender As Object, e As FileManagerMovedEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Moved"},
-                             {"From Path", e.Folder.FullPath},
-                             {"Moved Items", e.ItemNames},
-                             {"To Path", e.TargetFolder.FullPath}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Moved"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemNames", e.ItemNames},
+                {"TargetFolder.FullPath", e.TargetFolder.FullPath}
+            })
         End Sub
 
         Private Shared Sub FileManagerCompressed(sender As Object, e As FileManagerCompressedEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Compressed"},
-                             {"Path", e.Folder.FullPath},
-                             {"Compressed Items", e.ItemNames},
-                             {"Zip File", e.ZipFileName}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Compressed"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemNames", e.ItemNames},
+                {"ZipFileName", e.ZipFileName}
+            })
         End Sub
 
         Private Shared Sub FileManagerExtracted(sender As Object, e As FileManagerExtractedEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Extracted"},
-                             {"Path", e.Folder.FullPath},
-                             {"Extracted to Subfolder", e.ToSubfolder},
-                             {"Archive File", e.ArchiveFileName}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Extracted"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ToSubfolder", e.ToSubfolder},
+                {"ArchiveFileName", e.ArchiveFileName}
+            })
         End Sub
 
         Private Shared Sub FileManagerUploaded(sender As Object, e As FileManagerUploadedEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Uploaded"},
-                             {"Path", e.Folder.FullPath},
-                             {"Upload Method", e.Method},
-                             {"Uploaded Files", e.Items.[Select](Function(item) New Dictionary(Of String, Object)() From {
-                                                                    {"Name", If((item.Status = UploadItemStatus.Completed), item.ReceivedName, item.ReceivingName)},
-                                                                    {"Content Type", If((item.Status = UploadItemStatus.Completed), item.ReceivedContentType, item.ReceivingContentType)},
-                                                                    {"Size", New ByteSizeValue(If((item.Status = UploadItemStatus.Completed), item.ReceivedSize, item.ReceivingSize)).ToFileSize()},
-                                                                    {"Status", item.Status},
-                                                                    {"Status Message", If((Not String.IsNullOrEmpty(item.StatusMessage)), Regex.Replace(item.StatusMessage, "\n+", vbLf & vbTab & vbTab), "<none>")}
-                                                                    })},
-                             {"Total Size", New ByteSizeValue(e.TotalSize).ToFileSize()},
-                             {"Elapsed Time", e.ElapsedTime},
-                             {"Transfer Rate", e.TransferRate}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Uploaded"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"Queue.Method", e.Queue.Method},
+                {"Items", e.Items.[Select](Function(item) New Dictionary(Of String, Object)() From {
+                    {"Name", item.Name},
+                    {"ContentType", item.ContentType},
+                    {"SizeAsString", item.SizeAsString},
+                    {"DateModified", item.DateModified},
+                    {"Status", item.Status},
+                    {"StatusMessage", item.StatusMessage}
+                })},
+                {"Queue.TotalUploadedSizeAsString", e.Queue.TotalUploadedSizeAsString},
+                {"Queue.ElapsedTimeAsString", e.Queue.ElapsedTimeAsString},
+                {"Queue.TransferRateAsString", e.Queue.TransferRateAsString}
+            })
         End Sub
 
         Private Shared Sub FileManagerDownloaded(sender As Object, e As FileManagerDownloadedEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Downloaded"},
-                             {"Path", e.Folder.FullPath},
-                             {"Downloaded Items", e.ItemNames},
-                             {"Downloaded File Name", e.DownloadFileName},
-                             {"Opened in browser", e.OpenInBrowser},
-                             {"Total Size", New ByteSizeValue(e.TotalSize).ToFileSize()},
-                             {"Elapsed Time", e.ElapsedTime},
-                             {"Transfer Rate", e.TransferRate}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Downloaded"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemNames", e.ItemNames},
+                {"DownloadFileName", e.DownloadFileName},
+                {"OpenInBrowser", e.OpenInBrowser},
+                {"TotalDownloadedSizeAsString", e.TotalDownloadedSizeAsString},
+                {"ElapsedTimeAsString", e.ElapsedTimeAsString},
+                {"TransferRateAsString", e.TransferRateAsString}
+            })
         End Sub
 
         Private Shared Sub FileManagerPreviewed(sender As Object, e As FileManagerPreviewedEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                {"Event Type", "Previewed"},
-                {"Path", e.Folder.FullPath},
-                {"Previewed File", e.ItemName},
-                {"Previewer", e.PreviewerType}
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Previewed"},
+                {"Folder.FullPath", e.Folder.FullPath},
+                {"ItemName", e.ItemName},
+                {"PreviewerType", e.PreviewerType}
             })
         End Sub
 
         Private Shared Sub FileManagerFailed(sender As Object, e As FileManagerFailedEventArgs)
-            SaveEventInfo(New Dictionary(Of String, Object)() From {
-                             {"Event Type", "Failed"},
-                             {"Failed Action", e.FailedActionInfo.Name},
-                             {"Parameters", e.FailedActionInfo.Parameters},
-                             {"Error", e.Exception.ToString().Replace(vbLf, vbLf & vbTab)}
-                             })
+            EventUtil.SaveEventInfo(New Dictionary(Of String, Object)() From {
+                {"Event Name", "Failed"},
+                {"FailedActionInfo.Name", e.FailedActionInfo.Name},
+                {"FailedActionInfo.Parameters", e.FailedActionInfo.Parameters},
+                {"Exception", e.Exception}
+            })
         End Sub
 
 #End Region
 
-        Private Shared Sub SaveEventInfo(eventInfo As Dictionary(Of String, Object))
-            Dim resultText = New StringBuilder()
-            For Each kvp In eventInfo
-                resultText.Append(kvp.Key)
-                resultText.Append(": " & vbLf)
+        Private Class EventUtil
+            Public Shared Sub SaveEventInfo(eventInfo As Dictionary(Of String, Object))
+                Dim now = DateTime.Now.ToString("T")
+                Dim json = ComponentStateManager.SerializeState(eventInfo, True)
+                Dim formattedValue = "[" + now + "]" + vbLf & "Event arguments: " + json + vbLf & vbLf
 
-                Dim enumerable = TryCast(kvp.Value, IEnumerable)
-                If TypeOf enumerable Is String Then
-                    enumerable = Nothing
+                Dim eventLog As Stack(Of String) = Nothing
+                If Not ComponentStateManager.TryGetState(EventLogSessionKey, eventLog) Then
+                    eventLog = New Stack(Of String)()
                 End If
-                If enumerable IsNot Nothing Then
-                    For Each item In enumerable
-                        Dim subDictionary = TryCast(item, Dictionary(Of String, Object))
-                        If subDictionary IsNot Nothing Then
-                            For Each subKvp In subDictionary
-                                resultText.Append(vbTab)
-                                resultText.Append(subKvp.Key)
-                                resultText.Append(": ")
-                                resultText.Append(subKvp.Value)
-                                resultText.Append(vbLf)
-                            Next
-                        Else
-                            resultText.Append(vbTab)
-                            resultText.Append(item)
-                        End If
-                        resultText.Append(vbLf)
-                    Next
+
+                If eventLog.Count > 50 Then
+                    eventLog.Clear()
+                End If
+
+                eventLog.Push(formattedValue)
+                ComponentStateManager.SaveState(EventLogSessionKey, eventLog)
+            End Sub
+
+            Public Shared Function GetLatestEvents() As String
+                Dim eventLog As Stack(Of String) = Nothing
+                If Not ComponentStateManager.TryGetState(EventLogSessionKey, eventLog) Then
+                    eventLog = New Stack(Of String)()
+                End If
+
+                Dim sb As New StringBuilder("<pre>")
+                If eventLog.Count = 0 Then
+                    sb.AppendLine("No events.")
                 Else
-                    resultText.Append(vbTab)
-                    resultText.Append(kvp.Value)
-                    resultText.Append(vbLf)
+                    While eventLog.Count > 0
+                        sb.AppendLine(eventLog.Pop())
+                    End While
                 End If
-            Next
+                sb.AppendLine("</pre>")
 
-            Dim context = HttpContext.Current
-            Dim eventLog = TryCast(context.Session(EventLogSessionKey), Stack(Of String))
-            If eventLog Is Nothing Then
-                eventLog = New Stack(Of String)()
-                context.Session(EventLogSessionKey) = eventLog
-            End If
-            If eventLog.Count > 50 Then
-                eventLog.Clear()
-            End If
-
-            eventLog.Push(resultText.ToString())
-        End Sub
-
-        Private Sub GetLatestEvents()
-            Response.ContentType = "text/plain"
-
-            Dim eventLog = TryCast(Session(EventLogSessionKey), Stack(Of String))
-            If eventLog Is Nothing OrElse eventLog.Count = 0 Then
-                Response.Output.WriteLine("No events.")
-            Else
-                While eventLog.Count > 0
-                    Response.Output.WriteLine("Event " & Convert.ToString(eventLog.Count) + " - " + DateTime.Now.ToString("T"))
-                    Response.Output.WriteLine(New String("-"c, 80))
-                    Response.Output.WriteLine(eventLog.Pop())
-                End While
-            End If
-
-            Response.End()
-        End Sub
-
+                Return sb.ToString()
+            End Function
+        End Class
     End Class
 End Namespace

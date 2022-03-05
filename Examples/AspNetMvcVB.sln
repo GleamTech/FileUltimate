@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AspNetMvcVB", "AspNetMvcVB\AspNetMvcVB.vbproj", "{C416C73F-1705-4E4A-BE1F-87B65B42A88E}"
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 11.0.50727.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AspNetMvcVB", "AspNetMvcVB\AspNetMvcVB.vbproj", "{25B55037-14CB-42A7-91EF-B4D757BD54D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C416C73F-1705-4E4A-BE1F-87B65B42A88E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C416C73F-1705-4E4A-BE1F-87B65B42A88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C416C73F-1705-4E4A-BE1F-87B65B42A88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C416C73F-1705-4E4A-BE1F-87B65B42A88E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25B55037-14CB-42A7-91EF-B4D757BD54D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25B55037-14CB-42A7-91EF-B4D757BD54D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25B55037-14CB-42A7-91EF-B4D757BD54D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25B55037-14CB-42A7-91EF-B4D757BD54D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

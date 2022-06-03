@@ -50,20 +50,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\packages\GleamTech.FileUltimate.8.4.5\lib\net461\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.FileUltimate.8.4.7\lib\net461\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.DocumentUltimate">
-      <HintPath>..\packages\GleamTech.DocumentUltimate.6.4.5\lib\net461\GleamTech.DocumentUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.DocumentUltimate.6.4.6\lib\net461\GleamTech.DocumentUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\GleamTech.ImageUltimate.5.4.1\lib\net461\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.ImageUltimate.5.4.2\lib\net461\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.VideoUltimate">
-      <HintPath>..\packages\GleamTech.VideoUltimate.3.4.1\lib\net461\GleamTech.VideoUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.VideoUltimate.3.4.2\lib\net461\GleamTech.VideoUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.Common">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\GleamTech.Common.5.4.5\lib\net461\GleamTech.Common.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Common.5.4.7\lib\net461\GleamTech.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

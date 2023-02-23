@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>GleamTech.FileUltimateExamples.AspNetCoreCS</AssemblyName>
     <RootNamespace>GleamTech.FileUltimateExamples.AspNetCoreCS</RootNamespace>
     <!--disable NETSDK1138 outdated SDK warning-->
@@ -9,8 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GleamTech.Common" Version="5.5.5" />
-    <PackageReference Include="GleamTech.FileUltimate" Version="8.5.1" />
+    <PackageReference Include="GleamTech.Common" Version="5.6.0" />
+    <PackageReference Include="GleamTech.FileUltimate" Version="8.6.0" />
   </ItemGroup>
 
   <ItemGroup>

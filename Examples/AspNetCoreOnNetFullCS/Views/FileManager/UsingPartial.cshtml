@@ -29,7 +29,7 @@
     <button id="updateButton">Update partial view</button>
     <br/><br />
     <div id="partialViewContainer">
-        @Html.Partial("FileManagerPartialView", Model)
+	    @await Html.PartialAsync("FileManagerPartialView", Model)
     </div>
 </body>
 </html>

@@ -13,7 +13,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>GleamTech.FileUltimateExamples.AspNetWebFormsVB</RootNamespace>
     <AssemblyName>GleamTech.FileUltimateExamples.AspNetWebFormsVB</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <UseIISExpress>false</UseIISExpress>
     <FileUpgradeFlags>
@@ -66,20 +66,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\packages\GleamTech.FileUltimate.8.5.1\lib\net461\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.FileUltimate.8.6.0\lib\net472\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.DocumentUltimate">
-      <HintPath>..\packages\GleamTech.DocumentUltimate.6.6.2\lib\net461\GleamTech.DocumentUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.DocumentUltimate.6.7.0\lib\net472\GleamTech.DocumentUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\GleamTech.ImageUltimate.5.6.1\lib\net461\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.ImageUltimate.5.7.0\lib\net472\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.VideoUltimate">
-      <HintPath>..\packages\GleamTech.VideoUltimate.3.6.1\lib\net461\GleamTech.VideoUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.VideoUltimate.3.7.0\lib\net472\GleamTech.VideoUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.Common">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\GleamTech.Common.5.5.5\lib\net461\GleamTech.Common.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Common.5.6.0\lib\net472\GleamTech.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -262,15 +262,13 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>23320</DevelopmentServerPort>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>5211</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost:5211/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl></CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

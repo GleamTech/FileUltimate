@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
-MinimumVisualStudioVersion = 11.0.50727.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
+MinimumVisualStudioVersion = 14.0.23107.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetMvcCS", "AspNetMvcCS\AspNetMvcCS.csproj", "{51B698FB-5DA0-43BB-A2A1-09E77FDDD948}"
 EndProject
 Global

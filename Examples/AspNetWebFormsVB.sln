@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
-MinimumVisualStudioVersion = 11.0.50727.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
+MinimumVisualStudioVersion = 14.0.23107.0
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AspNetWebFormsVB", "AspNetWebFormsVB\AspNetWebFormsVB.vbproj", "{6C1AFBEB-71DF-4442-B489-B6145EDAFCFC}"
 EndProject
 Global

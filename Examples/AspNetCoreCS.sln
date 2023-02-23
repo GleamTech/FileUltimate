@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 16
 VisualStudioVersion = 16.0.30709.132
-MinimumVisualStudioVersion = 11.0.50727.1
+MinimumVisualStudioVersion = 14.0.23107.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreCS", "AspNetCoreCS\AspNetCoreCS.csproj", "{FDA0E92D-1D0D-4EC2-AA71-7D9D037A7C01}"
 EndProject
 Global

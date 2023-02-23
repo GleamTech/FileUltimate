@@ -2,7 +2,7 @@
 # FileUltimate: ASP.NET File Manager and Uploader
 [![GleamTech.FileUltimate Nuget](https://img.shields.io/nuget/v/GleamTech.FileUltimate)](https://www.nuget.org/packages/GleamTech.FileUltimate/ "GleamTech.FileUltimate Nuget")
 
-FileUltimate is an ASP.NET File Manager and Uploader which supports ASP.NET Core 2.0+, ASP.NET MVC 3.0+ and ASP.NET WebForms 4.6.1+ web applications/web sites.
+FileUltimate is an ASP.NET File Manager and Uploader which supports ASP.NET Core 2.1+, ASP.NET MVC 3.0+ and ASP.NET WebForms 4.7.2+ web applications/web sites.
 
 Integrate a file manager into your ASP.NET application or site rapidly. 
 

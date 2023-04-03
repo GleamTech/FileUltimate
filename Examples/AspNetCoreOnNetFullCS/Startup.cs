@@ -15,7 +15,11 @@ namespace GleamTech.FileUltimateExamples.AspNetCoreOnNetFullCS
         {
             services.AddMvc();
 
+
+            //----------------------
+            //Add GleamTech to the ASP.NET Core services container.
             services.AddGleamTech();
+            //----------------------
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -26,15 +30,23 @@ namespace GleamTech.FileUltimateExamples.AspNetCoreOnNetFullCS
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseGleamTech();
 
-            var gleamTechConfig = Hosting.ResolvePhysicalPath("~/App_Data/GleamTech.config");
-            if (File.Exists(gleamTechConfig))
-                GleamTechConfiguration.Current.Load(gleamTechConfig);
+            //----------------------
+            //Register GleamTech to the ASP.NET Core HTTP request pipeline.
+            app.UseGleamTech(() =>
+            {
+	            //The below custom config file loading is only for our demo publishing purpose:
 
-            var fileUltimateConfig = Hosting.ResolvePhysicalPath("~/App_Data/FileUltimate.config");
-            if (File.Exists(fileUltimateConfig))
-                FileUltimateConfiguration.Current.Load(fileUltimateConfig);
+	            var gleamTechConfig = Hosting.ResolvePhysicalPath("~/App_Data/GleamTech.config");
+	            if (File.Exists(gleamTechConfig))
+	                GleamTechConfiguration.Current.Load(gleamTechConfig);
+
+	            var fileUltimateConfig = Hosting.ResolvePhysicalPath("~/App_Data/FileUltimate.config");
+	            if (File.Exists(fileUltimateConfig))
+	                FileUltimateConfiguration.Current.Load(fileUltimateConfig);
+            });
+            //----------------------
+
 
             app.UseStaticFiles();
 

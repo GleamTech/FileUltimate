@@ -9,8 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GleamTech.Common" Version="5.8.0" />
-    <PackageReference Include="GleamTech.FileUltimate" Version="8.7.0" />
+    <PackageReference Include="GleamTech.Common" Version="5.8.5" />
+    <PackageReference Include="GleamTech.FileUltimate" Version="8.7.5" />
   </ItemGroup>
 
   <ItemGroup>

@@ -48,19 +48,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.Common">
-      <HintPath>..\packages\GleamTech.Common.5.8.6\lib\net472\GleamTech.Common.dll</HintPath>
+      <HintPath>..\packages\GleamTech.Common.5.8.7\lib\net472\GleamTech.Common.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\packages\GleamTech.FileUltimate.8.7.6\lib\net472\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.FileUltimate.8.8.0\lib\net472\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.DocumentUltimate">
-      <HintPath>..\packages\GleamTech.DocumentUltimate.6.8.6\lib\net472\GleamTech.DocumentUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.DocumentUltimate.6.9.0\lib\net472\GleamTech.DocumentUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
-      <HintPath>..\packages\GleamTech.ImageUltimate.5.8.2\lib\net472\GleamTech.ImageUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.ImageUltimate.5.8.3\lib\net472\GleamTech.ImageUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.VideoUltimate">
-      <HintPath>..\packages\GleamTech.VideoUltimate.3.8.2\lib\net472\GleamTech.VideoUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.VideoUltimate.3.8.3\lib\net472\GleamTech.VideoUltimate.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -226,7 +226,8 @@
           <IISUrl>http://localhost:5213/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl></CustomServerUrl>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

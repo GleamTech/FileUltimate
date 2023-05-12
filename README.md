@@ -4,14 +4,14 @@
 
 Integrate a file manager into your ASP.NET application or site rapidly.
 
-- Browse and manage files with access control. 
-- Accept files with the advanced upload functionality.
+- Browse and manage files with access control.
+- Accept files with the advanced upload functionality (uploader is also available as a standalone component).
 - Offer a structured and neat download area.
-- Preview documents (70+ file formats, including PDF &#169; Microsoft Office), images, audios and videos.
+- Preview documents (70+ file formats, including PDF & Microsoft Office), images, audios and videos.
 
 <kbd>![File Manager and File Uploader for ASP.NET](fileultimate-screenshot.png)</kbd>
 
-**Note:** This project contains a fully working version of the product, however without a license key it will run in trial mode. For more information, please see [File Manager and File Uploader for ASP.NET](https://www.gleamtech.com/fileultimate) product page.
+**Note:** This project contains a fully working version of the product, however without a license key it will run in trial mode. For more information, please see [ASP.NET File Manager and ASP.NET File Uploader](https://www.gleamtech.com/fileultimate) product page.
 
 ### Live Demo:
 https://demos.gleamtech.com/fileultimate/

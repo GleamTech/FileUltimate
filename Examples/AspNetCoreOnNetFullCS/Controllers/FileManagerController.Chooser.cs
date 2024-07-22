@@ -1,4 +1,4 @@
-﻿using GleamTech.AspNet.UI;
+using GleamTech.AspNet.UI;
 using GleamTech.FileUltimate.AspNet.UI;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,7 +23,8 @@ namespace GleamTech.FileUltimateExamples.AspNetCoreOnNetFullCS.Controllers
                     Title = "Choose a file",
                     Modal = true
                 },
-                ClientEvents = new FileManagerClientEvents { 
+                ClientEvents = new FileManagerClientEvents
+                {
                     Chosen = "fileManagerChosen"
                 },
                 Chooser = true

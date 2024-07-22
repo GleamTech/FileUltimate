@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using GleamTech.AspNet;
 using GleamTech.FileUltimate.AspNet;
 using GleamTech.FileUltimate.AspNet.UI;

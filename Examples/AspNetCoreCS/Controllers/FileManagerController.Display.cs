@@ -1,4 +1,4 @@
-﻿using GleamTech.AspNet.UI;
+using GleamTech.AspNet.UI;
 using GleamTech.FileUltimate.AspNet.UI;
 using Microsoft.AspNetCore.Mvc;
 
@@ -78,7 +78,7 @@ namespace GleamTech.FileUltimateExamples.AspNetCoreCS.Controllers
                 AllowedPermissions = FileManagerPermissions.Full
             });
 
-            return View(new[] {fileManager1, fileManager2, fileManager3});
+            return View(new[] { fileManager1, fileManager2, fileManager3 });
         }
     }
 }

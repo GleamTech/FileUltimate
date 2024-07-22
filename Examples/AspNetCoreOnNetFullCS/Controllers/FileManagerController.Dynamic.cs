@@ -1,4 +1,4 @@
-﻿using GleamTech.AspNet;
+using GleamTech.AspNet;
 using GleamTech.FileUltimate.AspNet.UI;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -59,7 +59,7 @@ namespace GleamTech.FileUltimateExamples.AspNetCoreOnNetFullCS.Controllers
                     new SelectListItem {Text = "User1 (Full permissions)", Value = "User1"},
                     new SelectListItem {Text = "User2 (ReadOnly plus Upload permissions)", Value = "User2"}
                 },
-                "Value", 
+                "Value",
                 "Text",
                 selectedUser
             );

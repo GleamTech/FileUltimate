@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace GleamTech.FileUltimateExamples.AspNetCoreOnNetFullCS.Controllers
 {

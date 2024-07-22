@@ -1,4 +1,4 @@
-﻿using GleamTech.AspNet.UI;
+using GleamTech.AspNet.UI;
 using GleamTech.FileUltimate.AspNet.UI;
 using Microsoft.AspNetCore.Mvc;
 

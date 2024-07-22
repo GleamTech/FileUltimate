@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -44,20 +44,20 @@ namespace GleamTech.FileUltimateExamples.AspNetCoreCS
             }
 
 
-			//----------------------
-			//Register GleamTech to the ASP.NET Core HTTP request pipeline.
-			app.UseGleamTech(() =>
-			{
+            //----------------------
+            //Register GleamTech to the ASP.NET Core HTTP request pipeline.
+            app.UseGleamTech(() =>
+            {
                 //The below custom config file loading is only for our demo publishing purpose:
 
-	            var gleamTechConfig = Hosting.ResolvePhysicalPath("~/App_Data/GleamTech.config");
-	            if (File.Exists(gleamTechConfig))
-	                GleamTechConfiguration.Current.Load(gleamTechConfig);
+                var gleamTechConfig = Hosting.ResolvePhysicalPath("~/App_Data/GleamTech.config");
+                if (File.Exists(gleamTechConfig))
+                    GleamTechConfiguration.Current.Load(gleamTechConfig);
 
-	            var fileUltimateConfig = Hosting.ResolvePhysicalPath("~/App_Data/FileUltimate.config");
-	            if (File.Exists(fileUltimateConfig))
-	                FileUltimateConfiguration.Current.Load(fileUltimateConfig);
-			});
+                var fileUltimateConfig = Hosting.ResolvePhysicalPath("~/App_Data/FileUltimate.config");
+                if (File.Exists(fileUltimateConfig))
+                    FileUltimateConfiguration.Current.Load(fileUltimateConfig);
+            });
             //----------------------
 
 

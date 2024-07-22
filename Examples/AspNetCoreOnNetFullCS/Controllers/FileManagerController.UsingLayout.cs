@@ -1,4 +1,4 @@
-﻿using GleamTech.AspNet.UI;
+using GleamTech.AspNet.UI;
 using GleamTech.FileUltimate.AspNet.UI;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,7 +10,7 @@ namespace GleamTech.FileUltimateExamples.AspNetCoreOnNetFullCS.Controllers
         {
             var fileManager = new FileManager
             {
-                Width = CssLength.Percentage(100), 
+                Width = CssLength.Percentage(100),
                 DisplayLanguage = "en"
             };
             fileManager.RootFolders.Add(new FileManagerRootFolder

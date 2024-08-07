@@ -29,7 +29,7 @@ https://docs.gleamtech.com/fileultimate/html/using-fileultimate-in-an-asp-net-mv
 https://docs.gleamtech.com/fileultimate/html/using-fileultimate-in-an-asp-net-webforms-project.htm
 
 ### Showcase videos:
-[![ASP.NET Core File Manager - Getting Started](https://i.ytimg.com/vi/oZ9ZfwsqchM/maxresdefault.jpg)](https://youtu.be/oZ9ZfwsqchM "ASP.NET Core File Manager - Getting Started")
+[![ASP.NET Core File Manager - Getting Started](https://i.ytimg.com/vi/gINbYx-VP2Y/maxresdefault.jpg)](https://youtu.be/gINbYx-VP2Y "ASP.NET Core File Manager - Getting Started")
 
 [![ASP.NET Core File Uploader - Getting Started](https://i.ytimg.com/vi/LWGYuZzYxzg/maxresdefault.jpg)](https://youtu.be/LWGYuZzYxzg "ASP.NET Core File Uploader - Getting Started")
 

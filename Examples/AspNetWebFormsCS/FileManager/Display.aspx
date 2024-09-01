@@ -24,7 +24,7 @@
         </GleamTech:FileManagerRootFolder>
     </GleamTech:FileManagerControl>
     
-    2. FileManager instance displayed as a modal dialog of viewport:
+    2. FileManager instance displayed as a modal dialog:
     <input type="button" value="Show" onclick="fileManager2.show()" />
     <br /><br />
     <GleamTech:FileManagerControl ID="fileManager2" runat="server" 
@@ -34,31 +34,30 @@
                            Hidden="True"
                            DisplayMode="Window"
                            WindowOptions-Modal="True"
-                           WindowOptions-Title="FileManager as a modal dialog of viewport">
+                           WindowOptions-Maximizable="True"
+                           WindowOptions-Minimizable="True"
+                           WindowOptions-Title="FileManager as a modal dialog">
         <GleamTech:FileManagerRootFolder Name="Root Folder 1" Location="~/App_Data/RootFolder1" >
             <GleamTech:FileManagerAccessControl Path="\" AllowedPermissions="Full"/>
         </GleamTech:FileManagerRootFolder>       
     </GleamTech:FileManagerControl>
 
-    3. FileManager instance displayed as a modal dialog of parent element:
+    3. FileManager instance displayed as a panel:
     <input type="button" value="Show" onclick="fileManager3.show()" />
     <input type="button" value="Hide" onclick="fileManager3.hide()" />
     <br /><br />
-    <div style="width: 1000px; height: 800px; border: 1px dashed black">
-        Parent &lt;div&gt; element
-        <GleamTech:FileManagerControl ID="fileManager3" runat="server" 
-                               Width="800"
-                               Height="600" 
-                               DisplayLanguage="en"
-                               Hidden="True"
-                               DisplayMode="Window" 
-                               WindowOptions-Modal="True"
-                               WindowOptions-Title="FileManager as a modal dialog of parent element">
-            <GleamTech:FileManagerRootFolder Name="Root Folder 1" Location="~/App_Data/RootFolder1" >
-                <GleamTech:FileManagerAccessControl Path="\" AllowedPermissions="Full"/>
-            </GleamTech:FileManagerRootFolder>       
-        </GleamTech:FileManagerControl>
-    </div>
+    <GleamTech:FileManagerControl ID="fileManager3" runat="server" 
+                           Width="800"
+                           Height="600" 
+                           DisplayLanguage="en"
+                           Hidden="True"
+                           DisplayMode="Panel"
+                           PanelOptions-Collapsible="True"                                  
+                           PanelOptions-Title="FileManager as a panel">
+        <GleamTech:FileManagerRootFolder Name="Root Folder 1" Location="~/App_Data/RootFolder1" >
+            <GleamTech:FileManagerAccessControl Path="\" AllowedPermissions="Full"/>
+        </GleamTech:FileManagerRootFolder>       
+    </GleamTech:FileManagerControl>
 
 </body>
 </html>

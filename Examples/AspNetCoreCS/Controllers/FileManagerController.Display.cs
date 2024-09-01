@@ -37,9 +37,10 @@ namespace GleamTech.FileUltimateExamples.AspNetCoreCS.Controllers
                 DisplayMode = DisplayMode.Window,
                 WindowOptions =
                 {
-                    Title = "FileManager as a modal dialog of viewport",
+                    Title = "FileManager as a modal dialog",
                     Modal = true,
-                    //FullViewport = true,
+                    Maximizable = true,
+                    Minimizable = true
                 }
             };
             fileManager2.RootFolders.Add(new FileManagerRootFolder
@@ -60,11 +61,11 @@ namespace GleamTech.FileUltimateExamples.AspNetCoreCS.Controllers
                 Height = 600,
                 DisplayLanguage = "en",
                 Hidden = true,
-                DisplayMode = DisplayMode.Window,
-                WindowOptions =
+                DisplayMode = DisplayMode.Panel,
+                PanelOptions =
                 {
-                    Title = "FileManager as a modal dialog of parent element",
-                    Modal = true,
+                    Title = "FileManager as a panel",
+                    Collapsible = true
                 }
             };
             fileManager3.RootFolders.Add(new FileManagerRootFolder

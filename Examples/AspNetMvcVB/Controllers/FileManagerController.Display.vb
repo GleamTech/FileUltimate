@@ -1,4 +1,4 @@
-﻿Imports GleamTech.AspNet.UI
+Imports GleamTech.AspNet.UI
 Imports GleamTech.FileUltimate.AspNet.UI
 
 Namespace Controllers
@@ -29,8 +29,10 @@ Namespace Controllers
              .Hidden = true,
              .DisplayMode = DisplayMode.Window,
              .WindowOptions = New WindowOptions() With {
-               .Title = "FileManager as a modal dialog of viewport",
-               .Modal = true rem FullViewport = true,
+               .Title = "FileManager as a modal dialog",
+               .Modal = true,
+               .Maximizable = true,
+               .Minimizable = true
               }
             }
             fileManager2.RootFolders.Add(New FileManagerRootFolder() With {
@@ -47,10 +49,11 @@ Namespace Controllers
              .Width = 800,
              .Height = 600,
              .DisplayLanguage = "en",
-             .Hidden = true,             
-             .WindowOptions = New WindowOptions() With {
-               .Title = "FileManager as a modal dialog of parent element",
-               .Modal = true
+             .Hidden = true,
+             .DisplayMode = DisplayMode.Panel,
+             .PanelOptions = New PanelOptions() With {
+              .Title = "FileManager as a panel",
+              .Collapsible = true
               }
             }
             fileManager3.RootFolders.Add(New FileManagerRootFolder() With {

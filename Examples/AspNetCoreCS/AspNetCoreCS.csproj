@@ -9,8 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GleamTech.Common" Version="6.3.1" />
-    <PackageReference Include="GleamTech.FileUltimate" Version="9.3.4" />
+    <PackageReference Include="GleamTech.Common" Version="6.4.0" />
+    <PackageReference Include="GleamTech.FileUltimate" Version="9.4.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,7 +18,7 @@
 
     <!-- For GleamTech.Common -->
     <PackageReference Include="System.Runtime.Caching">
-      <Version>5.0.0</Version>
+      <Version>6.0.1</Version>
     </PackageReference>
     <PackageReference Include="System.Security.Principal.Windows">
       <Version>5.0.0</Version>

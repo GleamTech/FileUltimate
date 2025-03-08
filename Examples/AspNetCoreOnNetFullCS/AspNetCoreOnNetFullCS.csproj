@@ -1,21 +1,27 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>GleamTech.FileUltimateExamples.AspNetCoreOnNetFullCS</AssemblyName>
     <RootNamespace>GleamTech.FileUltimateExamples.AspNetCoreOnNetFullCS</RootNamespace>
+    <AspNetCoreModuleName>AspNetCoreModuleV2</AspNetCoreModuleName>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="GleamTech.Common" Version="6.3.1" />
-    <PackageReference Include="GleamTech.FileUltimate" Version="9.3.4" />
+    <Reference Include="GleamTech.Common">
+      <HintPath>..\..\..\ProductReferences\net472\GleamTech.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="GleamTech.FileUltimate">
+      <HintPath>..\..\..\ProductReferences\net472\GleamTech.FileUltimate.dll</HintPath>
+    </Reference>
   </ItemGroup>
   
   <ItemGroup>

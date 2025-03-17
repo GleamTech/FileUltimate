@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
@@ -16,12 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="GleamTech.Common">
-      <HintPath>..\..\..\ProductReferences\net472\GleamTech.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\..\..\ProductReferences\net472\GleamTech.FileUltimate.dll</HintPath>
-    </Reference>
+    <PackageReference Include="GleamTech.Common" Version="6.4.1" />
+    <PackageReference Include="GleamTech.FileUltimate" Version="9.4.5" />
   </ItemGroup>
   
   <ItemGroup>

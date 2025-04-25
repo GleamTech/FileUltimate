@@ -66,10 +66,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GleamTech.FileUltimate">
-      <HintPath>..\packages\GleamTech.FileUltimate.9.6.0\lib\net472\GleamTech.FileUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.FileUltimate.9.6.1\lib\net472\GleamTech.FileUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.DocumentUltimate">
-      <HintPath>..\packages\GleamTech.DocumentUltimate.7.6.0\lib\net472\GleamTech.DocumentUltimate.dll</HintPath>
+      <HintPath>..\packages\GleamTech.DocumentUltimate.7.6.1\lib\net472\GleamTech.DocumentUltimate.dll</HintPath>
     </Reference>
     <Reference Include="GleamTech.ImageUltimate">
       <HintPath>..\packages\GleamTech.ImageUltimate.6.5.2\lib\net472\GleamTech.ImageUltimate.dll</HintPath>

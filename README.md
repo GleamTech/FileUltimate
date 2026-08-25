@@ -17,16 +17,16 @@ Integrate a file manager into your ASP.NET application or site rapidly.
 https://demos.gleamtech.com/fileultimate/
 
 ### Adding references to FileUltimate assemblies:
-https://docs.gleamtech.com/fileultimate/html/adding-references-to-fileultimate-assemblies.htm
+https://docs.gleamtech.com/fileultimate/articles/getting-started/adding-references-to-fileultimate-assemblies.html
 
 ### Using FileUltimate in an ASP.NET Core project:
-https://docs.gleamtech.com/fileultimate/html/using-fileultimate-in-an-asp-net-core-project.htm
+https://docs.gleamtech.com/fileultimate/articles/getting-started/using-fileultimate-in-an-asp-net-core-project.html
 
 ### Using FileUltimate in an ASP.NET MVC project:
-https://docs.gleamtech.com/fileultimate/html/using-fileultimate-in-an-asp-net-mvc-project.htm
+https://docs.gleamtech.com/fileultimate/articles/getting-started/using-fileultimate-in-an-asp-net-mvc-project.html
 
 ### Using FileUltimate in an ASP.NET WebForms project:
-https://docs.gleamtech.com/fileultimate/html/using-fileultimate-in-an-asp-net-webforms-project.htm
+https://docs.gleamtech.com/fileultimate/articles/getting-started/using-fileultimate-in-an-asp-net-webforms-project.html
 
 ### Showcase videos:
 [![ASP.NET Core File Manager - Getting Started](https://i.ytimg.com/vi/gINbYx-VP2Y/maxresdefault.jpg)](https://youtu.be/gINbYx-VP2Y "ASP.NET Core File Manager - Getting Started")
